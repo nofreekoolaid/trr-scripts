@@ -9,7 +9,7 @@ These scripts analyze **Ethereum smart contracts** to compute:
 
 ---
 
-## **🌜 Scripts**
+## **📜  Scripts**
 | Script | Description |
 |--------|------------|
 | [`function-summary.py`](#-function-summarypy) | Extracts **Cyclomatic Complexity (TCC)** and **Total External Calls (TEC)** per function. |
