@@ -1,20 +1,22 @@
-## **🔍 Slither Analysis Scripts**
-This repository contains **Python scripts** that extract key **complexity and risk metrics** from Solidity smart contracts using [Slither](https://github.com/crytic/slither).
+## **🔍 Smart Contract Analysis Scripts**
+This repository contains **Python scripts** that extract key **complexity and risk metrics** from Solidity and Vyper smart contracts using [Slither](https://github.com/crytic/slither).
 
 ### **📌 Overview**
 These scripts analyze **Ethereum smart contracts** to compute:
 1. **Cyclomatic Complexity (TCC)** and **External Calls (TEC)** from the `function-summary` printer.
 2. **Maximum Inheritance Depth (ID)** from the `inheritance` printer.
-3. **Total Decision Points (TDP)** by scanning the Solidity source code.
+3. **Total Decision Points (TDP)** by scanning Solidity or Vyper source code.
 
 ---
 
-## **📜  Scripts**
+## **📝 Scripts**
 | Script | Description |
 |--------|------------|
+| [`analyze_contract.py`](#-analyze_contractpy) | **Runs all analyses in one command** for Solidity or Vyper contracts. |
 | [`function-summary.py`](#-function-summarypy) | Extracts **Cyclomatic Complexity (TCC)** and **Total External Calls (TEC)** per function. |
 | [`inheritance.py`](#-inheritancepy) | Computes the **maximum inheritance depth** from Slither’s inheritance graph. |
-| [`tdp.py`](#-tdppy) | Scans Solidity source code to count **Total Decision Points (TDP)** (e.g., `if`, `require()`, `for`, `while`). |
+| [`tdp.py`](#-tdppy) | Scans **Solidity** source code to count **Total Decision Points (TDP)** (e.g., `if`, `require()`, `for`, `while`). |
+| [`tdp_vy.py`](#-tdp_vypy) | Scans **Vyper** source code to count **Total Decision Points (TDP)** (e.g., `if`, `assert`, `raise`). |
 
 ---
 
@@ -48,81 +50,86 @@ solc --version
 
 ---
 
-### **3️⃣ Running the Scripts**
-Each script requires an input file generated from **Slither**.
+## **🚀 Running the Analysis**
+### **💡 One-Command Analysis**
+The **`analyze_contract.py`** script automates all analysis steps for both Solidity and Vyper contracts.
 
-### **🔹 Function Complexity & External Calls**
+```sh
+python analyze_contract.py flat.sol  # Solidity
+python analyze_contract.py flat.vy   # Vyper
+```
+**✅ Expected Output Example:**
+```json
+{
+  "LOC": "2285",
+  "sLOC": 1092,
+  "TDP": 218,
+  "TCC": 10,
+  "TEC": 5,
+  "Max Inheritance Depth": 3
+}
+```
+
+---
+
+### **💡 Function Complexity & External Calls**
 Extracts:
 - **Cyclomatic Complexity (TCC)**: Measures function complexity.
 - **Total External Calls (TEC)**: Count of external contract interactions.
 
-#### **🔹 Generate Input:**
+#### **💡 Generate Input:**
 ```sh
-slither 0xCONTRACT_ADDRESS --print function-summary &> function-summary.txt
+slither 0xCONTRACT_ADDRESS --print function-summary --disable-color > function-summary.txt
 ```
-#### **🔹 Run Analysis:**
+#### **💡 Run Analysis:**
 ```sh
-python function-summary.py
-```
-
-**✅ Expected Output Example:**
-```
-Function: transfer(address,uint256)
-  - Cyclomatic Complexity (TCC): 4
-  - External Calls (TEC): 1
-
-=====================================
-✅ Total Cyclomatic Complexity (TCC): 92
-✅ Total External Calls (TEC): 15
-=====================================
+python function-summary.py function-summary.txt
 ```
 
 ---
 
-### **🔹 Inheritance Depth**
+### **💡 Inheritance Depth**
 Extracts:
 - **Maximum Inheritance Depth (ID)**: Measures contract hierarchy complexity.
 
-#### **🔹 Generate Input:**
+#### **💡 Generate Input:**
 ```sh
 slither 0xCONTRACT_ADDRESS --print inheritance --json - | jq '.' > inheritance.json
 ```
-#### **🔹 Run Analysis:**
+#### **💡 Run Analysis:**
 ```sh
-python inheritance.py
-```
-
-**✅ Expected Output Example:**
-```
-Contract: Token, Inheritance Depth: 2
-Contract: Governance, Inheritance Depth: 3
-
-=====================================
-✅ Maximum Inheritance Depth: 3
-=====================================
+python inheritance.py inheritance.json
 ```
 
 ---
 
-### **🔹 Total Decision Points**
+### **💡 Total Decision Points (Solidity)**
 Extracts:
 - **TDP (Total Decision Points)**: Counts control flow structures (`if`, `while`, `for`, `require()`, `assert()`, `revert()`).
 
-#### **🔹 Generate Input:**
+#### **💡 Generate Input:**
 ```sh
 slither 0xCONTRACT_ADDRESS
 cat $(find crytic-export -name "*sol") > flat.sol
 ```
-#### **🔹 Run Analysis:**
+#### **💡 Run Analysis:**
 ```sh
-python tdp.py
+python tdp.py flat.sol
 ```
 
-**✅ Expected Output Example:**
+---
+
+### **💡 Total Decision Points (Vyper)**
+Extracts:
+- **TDP (Total Decision Points)**: Counts control flow structures (`if`, `while`, `for`, `assert`, `raise`).
+
+#### **💡 Generate Input:**
+```sh
+vyper -f combined_json contract.vy > flat.vy
 ```
-=====================================
-✅ Total Decision Points (TDP): 120
-=====================================
+#### **💡 Run Analysis:**
+```sh
+python tdp_vy.py flat.vy
 ```
 
 ---
@@ -133,47 +140,16 @@ python tdp.py
 | **Cyclomatic Complexity (TCC)** | `function-summary.py` | `function-summary` |
 | **Total External Calls (TEC)** | `function-summary.py` | `function-summary` |
 | **Inheritance Depth (ID)** | `inheritance.py` | `inheritance` |
-| **Total Decision Points (TDP)** | `tdp.py` | _(Custom Solidity parsing)_ |
+| **Total Decision Points (TDP) - Solidity** | `tdp.py` | _(Custom Solidity parsing)_ |
+| **Total Decision Points (TDP) - Vyper** | `tdp_vy.py` | _(Custom Vyper parsing)_ |
 
 ---
 
-## **📅 Notes**
-- These scripts **do not modify Solidity files**—they only analyze complexity.
+## **🗓 Notes**
+- These scripts **do not modify source files**—they only analyze complexity.
 - **Slither must be installed inside the virtual environment (`venv`)**.
-- **Flattened Solidity code** is required for `tdp.py`.
-- Ensure the correct Solidity version is selected using `solc-select`.
+- **Flattened source code** is required for `tdp.py` and `tdp_vy.py`.
+- Ensure the correct compiler version is selected using `solc-select` or `vyper`.
 
 🚀 **Use these scripts to quickly assess smart contract complexity risks!** 🚀
 
----
-
-### **📜 Example Full Command Workflow**
-```sh
-# Step 1: Set Up venv & Install Dependencies
-python3 -m venv venv
-source venv/bin/activate  # (Linux/macOS) OR venv\Scripts\activate (Windows)
-pip install slither-analyzer jq solc-select
-
-# Step 2: Install & Select solc Version
-solc-select install 0.8.20
-solc-select use 0.8.20
-solc --version  # Verify installation
-
-# Step 3: Run Slither & Extract Data
-slither 0xCONTRACT_ADDRESS --print function-summary &> function-summary.txt
-slither 0xCONTRACT_ADDRESS --print inheritance --json - | jq '.' > inheritance.json
-slither 0xCONTRACT_ADDRESS
-cat $(find crytic-export -name "*sol") > flat.sol
-
-# Step 4: Analyze Metrics
-python function-summary.py
-python inheritance.py
-python tdp.py
-```
-
----
-
-## **💡 Future Improvements**
-- Automate running all scripts with a single command.
-- Improve parsing for **contracts with deep inheritance trees**.
-- Extend analysis to detect **loop nesting and inline assembly usage**.

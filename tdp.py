@@ -1,11 +1,6 @@
-# Steps to make input `flat.sol`:
-# slither 0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383
-# cat $(find crytic-export -name "*sol") > flat.sol
 import re
-
-# Load flattened Solidity contract
-with open("flat.sol", "r") as f:
-    lines = f.readlines()
+import sys
+import json
 
 # Function to remove comments
 def remove_comments(lines):
@@ -13,36 +8,42 @@ def remove_comments(lines):
     block_comment = False
 
     for line in lines:
-        # Detect the start and end of block comments
         if "/*" in line:
             block_comment = True
         if "*/" in line:
             block_comment = False
-            continue  # Skip this line as it closes a comment
+            continue  # Skip closing block comment
 
         if block_comment:
             continue  # Ignore lines inside block comments
 
-        # Remove single-line comments (//...)
+        # Remove single-line comments
         line = re.sub(r"//.*", "", line).strip()
 
-        if line:  # Avoid adding empty lines
+        if line:
             cleaned_lines.append(line)
 
     return cleaned_lines
-    
-# Clean comments and save the new file
-cleaned_lines = remove_comments(lines)
-    
-# Keywords indicating decision points
-decision_patterns = [r"\bif\b", r"\belse\b", r"\bwhile\s*\(", r"\bfor\s*\(",r"\brequire\s*\(", r"\bassert\s*\(", r"\brevert\b"]
-total_tdp = 0
 
-# Count occurrences of decision-making statements
-for line in cleaned_lines:
-    if any(re.search(pattern, line) for pattern in decision_patterns):
-        total_tdp += 1
+# Function to calculate Total Decision Points (TDP)
+def calculate_tdp(lines):
+    decision_patterns = [r"\bif\b", r"\belse\b", r"\bwhile\s*\(", r"\bfor\s*\(", r"\brequire\s*\(", r"\bassert\s*\(", r"\brevert\b"]
+    total_tdp = sum(1 for line in lines if any(re.search(pattern, line) for pattern in decision_patterns))
+    return total_tdp
 
-print("=====================================")
-print(f"✅ Total Decision Points (TDP): {total_tdp}")
-print("=====================================")
+# Run only if executed as a script (not when imported)
+if __name__ == "__main__":
+    try:
+        if len(sys.argv) > 1:
+            with open(sys.argv[1], "r") as f:
+                lines = f.readlines()
+        else:
+            lines = sys.stdin.readlines()
+
+        cleaned_lines = remove_comments(lines)
+        tdp_result = {"TDP": calculate_tdp(cleaned_lines)}
+        print(json.dumps(tdp_result))
+
+    except FileNotFoundError:
+        print(json.dumps({"Error": "File not found"}))
+        exit(1)

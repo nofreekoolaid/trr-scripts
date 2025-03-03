@@ -1,63 +1,86 @@
-import subprocess
-import argparse
 import os
 import json
+import argparse
+import subprocess
+from tdp import calculate_tdp
+from function_summary import parse_function_summary
+from inheritance import calculate_inheritance_depth
 
-# Set up argument parsing
-parser = argparse.ArgumentParser(description="Analyze Solidity contract complexity and structure metrics.")
-parser.add_argument("flatfile", type=str, help="Path to the flattened Solidity file (flat.sol)")
-args = parser.parse_args()
+# Helper function to run subprocess commands with optional debugging
+def run_command(command, allow_empty=False):
+    """Runs a shell command and returns its output. Optionally prints the command for debugging."""
+    if args.debug:
+        print(f"[DEBUG] Running: {' '.join(command)}")
 
-# Ensure the flat.sol file exists
-if not os.path.isfile(args.flatfile):
-    print(f"❌ Error: File '{args.flatfile}' not found.")
-    exit(1)
+    try:
+        output = subprocess.check_output(
+            command, text=True, stderr=subprocess.STDOUT  # Merge stderr into stdout
+        ).strip()
 
-# Initialize results dictionary
-results = {}
+        if not output and not allow_empty:
+            raise ValueError(f"Command returned empty output: {' '.join(command)}")
 
-# 1️⃣ Calculate LOC (Lines of Code)
-try:
-    loc_output = subprocess.check_output(["wc", "-l", args.flatfile], text=True)
-    results["LOC"] = int(loc_output.split()[0])
-except Exception as e:
-    results["LOC"] = f"Error: {e}"
+        return output
+    except subprocess.CalledProcessError as e:
+        return f"Error: {e}"
+    except ValueError as e:
+        return f"Error: {e}"
 
-# 2️⃣ Calculate sLOC (Source Lines of Code)
-try:
-    sloc_output = subprocess.check_output(["cloc", args.flatfile, "--quiet", "--json"], text=True)
-    sloc_data = json.loads(sloc_output)
-    results["sLOC"] = sloc_data.get("Solidity", {}).get("code", "N/A")
-except Exception as e:
-    results["sLOC"] = f"Error: {e}"
+def analyze_contract(flatfile, debug=False):
+    """Runs all Solidity contract analysis steps and returns a structured JSON result."""
+    global args
+    args = argparse.Namespace(debug=debug)
 
-# 3️⃣ Calculate TDP (Total Decision Points)
-try:
-    tdp_output = subprocess.check_output(["python", "~/work/src/github.com/nofreekoolaid/trr-scripts/tdp.py", args.flatfile], text=True)
-    results["TDP"] = tdp_output.strip()
-except Exception as e:
-    results["TDP"] = f"Error: {e}"
+    if not os.path.isfile(flatfile):
+        return {"Error": f"File '{flatfile}' not found."}
 
-# 4️⃣ Run Slither Function Summary (for TCC & TEC)
-func_summary_file = "function-summary.txt"
-try:
-    subprocess.run(["slither", args.flatfile, "--print", "function-summary", "--disable-color"], stderr=open(func_summary_file, "w"), check=True)
-    func_summary_output = subprocess.check_output(["python", "~/work/src/github.com/nofreekoolaid/trr-scripts/function-summary.py", func_summary_file], text=True)
-    results["TCC & TEC"] = func_summary_output.strip()
-except Exception as e:
-    results["TCC & TEC"] = f"Error: {e}"
+    results = {}
 
-# 5️⃣ Run Slither Inheritance Analysis (for ID)
-inheritance_file = "inheritance.json"
-try:
-    subprocess.run(["slither", args.flatfile, "--print", "inheritance", "--json", "-"], stdout=open(inheritance_file, "w"), check=True)
-    inheritance_output = subprocess.check_output(["python", "~/work/src/github.com/nofreekoolaid/trr-scripts/inheritance.py", inheritance_file], text=True)
-    results["Inheritance Depth (ID)"] = inheritance_output.strip()
-except Exception as e:
-    results["Inheritance Depth (ID)"] = f"Error: {e}"
+    # 1. Calculate LOC (Lines of Code)
+    results["LOC"] = run_command(["wc", "-l", flatfile]).split()[0]
 
-# Print final structured output
-print("\n=================== Solidity Contract Analysis ===================")
-for key, value in results.items():
-    print(f"✅ {key}: {value}")
-print("==================================================================")
+    # 2. Calculate sLOC (Source Lines of Code)
+    sloc_output = run_command(["cloc", flatfile, "--quiet", "--json"])
+    try:
+        sloc_data = json.loads(sloc_output)
+        results["sLOC"] = sloc_data.get("Solidity", {}).get("code", "N/A")
+    except json.JSONDecodeError:
+        results["sLOC"] = "Error: Invalid JSON from cloc"
+
+    # 3. Calculate TDP (Total Decision Points)
+    try:
+        with open(flatfile, "r") as f:
+            solidity_code = f.readlines()
+        results["TDP"] = calculate_tdp(solidity_code)
+    except Exception as e:
+        results["TDP"] = f"Error: {e}"
+
+    # 4. Run Slither Function Summary (for TCC and TEC)
+    slither_output = run_command(["slither", flatfile, "--print", "function-summary", "--disable-color"], allow_empty=True)
+    try:
+        results.update(parse_function_summary(slither_output))
+    except Exception as e:
+        results["TCC & TEC"] = f"Error: {e}"
+
+    # 5. Run Slither Inheritance Analysis (for ID)
+    slither_json_output = run_command(["slither", flatfile, "--print", "inheritance", "--json", "-"], allow_empty=True)
+    try:
+        slither_json = json.loads(slither_json_output)
+        results.update(calculate_inheritance_depth(slither_json))
+    except json.JSONDecodeError:
+        results["Inheritance Depth (ID)"] = "Error: Invalid or empty JSON"
+
+    return results
+
+# Run only if executed as a script (not when imported)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Analyze Solidity contract complexity and structure metrics.")
+    parser.add_argument("flatfile", type=str, help="Path to the flattened Solidity file (flat.sol)")
+    parser.add_argument("--debug", action="store_true", help="Print debug information before running commands")
+    args = parser.parse_args()
+
+    # Run the analysis
+    analysis_result = analyze_contract(args.flatfile, debug=args.debug)
+    
+    # Print JSON output
+    print(json.dumps(analysis_result, indent=2))
