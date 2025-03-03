@@ -1,20 +1,27 @@
-# Steps to make input `function-summary.txt`
-# slither 0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383 --print function-summary &> function-summary.txt
 import re
+import argparse
+
+# Set up argument parsing
+parser = argparse.ArgumentParser(description="Parse Slither function-summary output and compute TCC & TEC.")
+parser.add_argument("filename", type=str, help="Path to the function-summary.txt file")
+args = parser.parse_args()
 
 # Read Slither output file
-with open("function-summary.txt", "r") as f:
-    lines = f.readlines()
+try:
+    with open(args.filename, "r") as f:
+        lines = f.readlines()
+except FileNotFoundError:
+    print(f"❌ Error: File '{args.filename}' not found.")
+    exit(1)
 
 headers = []
-functions = []
 total_tcc = 0  # Total Cyclomatic Complexity
 total_tec = 0  # Total External Calls
 
 # Regex to match table rows
 row_pattern = re.compile(r"^\|(.+)\|$")
 
-# Extract header row
+# Extract header row and process table data
 for line in lines:
     if "Function" in line and "Cyclomatic Complexity" in line:
         headers = [h.strip() for h in line.split("|")[1:-1]]

@@ -1,12 +1,28 @@
-# Steps to make input `inheritance.json`:
-# slither 0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383 --print inheritance --json - | jq '.' > inheritance.json
 import json
+import argparse
+
+# Set up argument parsing
+parser = argparse.ArgumentParser(description="Parse Slither inheritance JSON output and compute inheritance depth.")
+parser.add_argument("filename", type=str, help="Path to the inheritance.json file")
+args = parser.parse_args()
 
 # Load JSON output
-with open("inheritance.json", "r") as f:
-    data = json.load(f)
+try:
+    with open(args.filename, "r") as f:
+        data = json.load(f)
+except FileNotFoundError:
+    print(f"❌ Error: File '{args.filename}' not found.")
+    exit(1)
+except json.JSONDecodeError:
+    print(f"❌ Error: File '{args.filename}' is not a valid JSON file.")
+    exit(1)
 
-inheritance_map = data["results"]["printers"][0]["additional_fields"]["child_to_base"]
+# Extract inheritance data
+try:
+    inheritance_map = data["results"]["printers"][0]["additional_fields"]["child_to_base"]
+except KeyError:
+    print(f"❌ Error: The file '{args.filename}' does not contain valid inheritance data.")
+    exit(1)
 
 def get_depth(contract, depth_map):
     """Recursively calculates inheritance depth."""
