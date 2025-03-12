@@ -1,49 +1,102 @@
 import re
 import sys
 import json
+import hashlib
 
-# Function to remove comments
-def remove_comments(lines):
+# Function to remove comments based on file type
+def remove_comments(lines, file_type):
     cleaned_lines = []
     block_comment = False
 
     for line in lines:
-        if "/*" in line:
-            block_comment = True
-        if "*/" in line:
-            block_comment = False
-            continue  # Skip closing block comment
+        if file_type == "sol":
+            if "/*" in line:
+                block_comment = True
+            if "*/" in line:
+                block_comment = False
+                continue  # Skip closing block comment
 
-        if block_comment:
-            continue  # Ignore lines inside block comments
+            if block_comment:
+                continue  # Ignore lines inside block comments
 
-        # Remove single-line comments
-        line = re.sub(r"//.*", "", line).strip()
+            # Remove single-line comments
+            line = re.sub(r"//.*", "", line).strip()
+        
+        elif file_type == "vy":
+            stripped_line = line.strip()
+            if '"""' in stripped_line or "'''" in stripped_line:
+                block_comment = not block_comment
+                continue  # Skip docstring lines
 
+            if block_comment:
+                continue  # Ignore lines inside docstrings
+
+            line = re.sub(r"#.*", "", line).strip()
+        
         if line:
             cleaned_lines.append(line)
 
     return cleaned_lines
 
-# Function to calculate Total Decision Points (TDP)
-def calculate_tdp(lines):
-    decision_patterns = [r"\bif\b", r"\belse\b", r"\bwhile\s*\(", r"\bfor\s*\(", r"\brequire\s*\(", r"\bassert\s*\(", r"\brevert\b"]
+# Function to calculate Total Decision Points (TDP) based on file type
+def calculate_tdp(lines, file_type):
+    if file_type == "sol":
+        decision_patterns = [
+            r"\bif\b", r"\belse\b", r"\bwhile\s*\(",
+            r"\bfor\s*\(", r"\brequire\s*\(", r"\bassert\s*\(",
+            r"\brevert\b"
+        ]
+    else:  # Vyper
+        decision_patterns = [
+            r"\bif\b", r"\belif\b", r"\bwhile\b", r"\bfor\b", r"\bassert\b", r"\braise\b"
+        ]
+    
     total_tdp = sum(1 for line in lines if any(re.search(pattern, line) for pattern in decision_patterns))
     return total_tdp
 
-# Run only if executed as a script (not when imported)
+# Function to compute file hash
+def compute_hash(content):
+    return hashlib.md5(content.encode()).hexdigest()
+
+# Main script execution
 if __name__ == "__main__":
     try:
+        file_results = {}
+        total_tdp = 0
+        seen_hashes = {}
+
         if len(sys.argv) > 1:
-            with open(sys.argv[1], "r") as f:
-                lines = f.readlines()
+            for file_path in sys.argv[1:]:
+                try:
+                    with open(file_path, "r") as f:
+                        content = f.read()
+                        file_hash = compute_hash(content)
+
+                        if file_hash in seen_hashes:
+                            file_results[file_path] = seen_hashes[file_hash]
+                            continue
+
+                        file_type = "sol" if file_path.endswith(".sol") else "vy" if file_path.endswith(".vy") else None
+                        if not file_type:
+                            file_results[file_path] = "Error: Unsupported file type"
+                            continue
+
+                        lines = content.splitlines()
+                        cleaned_lines = remove_comments(lines, file_type)
+                        tdp = calculate_tdp(cleaned_lines, file_type)
+                        file_results[file_path] = tdp
+                        seen_hashes[file_hash] = tdp
+                        total_tdp += tdp
+                except FileNotFoundError:
+                    file_results[file_path] = "Error: File not found"
+
         else:
-            lines = sys.stdin.readlines()
+            print(json.dumps({"Error": "No input files provided"}))
+            exit(1)
 
-        cleaned_lines = remove_comments(lines)
-        tdp_result = {"TDP": calculate_tdp(cleaned_lines)}
-        print(json.dumps(tdp_result))
-
-    except FileNotFoundError:
-        print(json.dumps({"Error": "File not found"}))
+        file_results["Total"] = total_tdp
+        print(json.dumps(file_results, indent=4))
+    
+    except Exception as e:
+        print(json.dumps({"Error": str(e)}))
         exit(1)
