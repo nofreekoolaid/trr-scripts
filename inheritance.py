@@ -1,11 +1,11 @@
 import sys
 import json
 
-# Function to calculate inheritance depth
 def calculate_inheritance_depth(data):
+    """Calculates the maximum inheritance depth from the Slither inheritance.json output."""
     if "results" not in data or "printers" not in data["results"]:
-        return {"Max Inheritance Depth": "Error: Invalid JSON format"}
-
+        return None  # Indicate an invalid JSON format
+    
     inheritance_map = data["results"]["printers"][0]["additional_fields"].get("child_to_base", {})
 
     def get_depth(contract):
@@ -14,25 +14,47 @@ def calculate_inheritance_depth(data):
         return 1 + max(get_depth(parent) for parent in inheritance_map[contract]["immediate"])
 
     depths = {contract: get_depth(contract) for contract in inheritance_map}
-    max_depth = max(depths.values(), default=0)
+    return max(depths.values(), default=0)
 
-    return {"Max Inheritance Depth": max_depth}
 
-# Run only if executed as a script (not when imported)
-if __name__ == "__main__":
-    try:
-        if len(sys.argv) > 1:
-            with open(sys.argv[1], "r") as f:
+def process_files(file_paths):
+    """Processes multiple inheritance.json files and computes max inheritance depth for each and overall."""
+    results = []
+    overall_max = 0
+    overall_max_file = None
+
+    for file_path in file_paths:
+        try:
+            with open(file_path, "r") as f:
                 data = json.load(f)
-        else:
-            data = json.load(sys.stdin)
+            
+            max_depth = calculate_inheritance_depth(data)
+            if max_depth is not None:
+                results.append({"file": file_path, "Max Inheritance Depth": max_depth})
+                if max_depth > overall_max:
+                    overall_max = max_depth
+                    overall_max_file = file_path
+            else:
+                results.append({"file": file_path, "Max Inheritance Depth": "Error: Invalid JSON format"})
 
-        result = calculate_inheritance_depth(data)
-        print(json.dumps(result))
+        except json.JSONDecodeError:
+            results.append({"file": file_path, "Max Inheritance Depth": "Error: Invalid or empty JSON"})
+        except Exception as e:
+            results.append({"file": file_path, "Max Inheritance Depth": f"Error: {e}"})
 
-    except json.JSONDecodeError:
-        print(json.dumps({"Max Inheritance Depth": "Error: Invalid or empty JSON"}))
-        exit(1)
-    except Exception as e:
-        print(json.dumps({"Max Inheritance Depth": f"Error: {e}"}))
-        exit(1)
+    return results, overall_max, overall_max_file
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print(json.dumps({"Error": "Usage: script.py <inheritance1.json> <inheritance2.json> ..."}))
+        sys.exit(1)
+    
+    file_paths = sys.argv[1:]
+    results, overall_max, overall_max_file = process_files(file_paths)
+    
+    # Output individual file results
+    print(json.dumps(results, indent=2))
+    
+    # Output overall max depth
+    print(json.dumps({"Overall Max Inheritance Depth": overall_max, "File": overall_max_file}, indent=2))
