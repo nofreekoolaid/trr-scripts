@@ -55,38 +55,37 @@ def calculate_tdp(lines, file_type):
     return total_tdp
 
 # Function to compute file hash
-def compute_hash(content):
-    return hashlib.md5(content.encode()).hexdigest()
+def compute_hash(lines):
+    return hashlib.md5("\n".join(lines).encode()).hexdigest()
 
 # Main script execution
 if __name__ == "__main__":
     try:
         file_results = {}
-        total_tdp = 0
+        total_tdp_unique = 0
+        total_tdp_all = 0
         seen_hashes = {}
 
         if len(sys.argv) > 1:
             for file_path in sys.argv[1:]:
                 try:
                     with open(file_path, "r") as f:
-                        content = f.read()
-                        file_hash = compute_hash(content)
+                        lines = f.read().splitlines()
 
-                        if file_hash in seen_hashes:
-                            file_results[file_path] = seen_hashes[file_hash]
-                            continue
+                    file_type = "sol" if file_path.endswith(".sol") else "vy" if file_path.endswith(".vy") else None
+                    if not file_type:
+                        file_results[file_path] = "Error: Unsupported file type"
+                        continue
 
-                        file_type = "sol" if file_path.endswith(".sol") else "vy" if file_path.endswith(".vy") else None
-                        if not file_type:
-                            file_results[file_path] = "Error: Unsupported file type"
-                            continue
+                    cleaned_lines = remove_comments(lines, file_type)
+                    file_hash = compute_hash(cleaned_lines)  # Compute hash after comment removal
+                    tdp = calculate_tdp(cleaned_lines, file_type)
+                    file_results[file_path] = tdp
+                    total_tdp_all += tdp
 
-                        lines = content.splitlines()
-                        cleaned_lines = remove_comments(lines, file_type)
-                        tdp = calculate_tdp(cleaned_lines, file_type)
-                        file_results[file_path] = tdp
+                    if file_hash not in seen_hashes:
                         seen_hashes[file_hash] = tdp
-                        total_tdp += tdp
+                        total_tdp_unique += tdp
                 except FileNotFoundError:
                     file_results[file_path] = "Error: File not found"
 
@@ -94,7 +93,8 @@ if __name__ == "__main__":
             print(json.dumps({"Error": "No input files provided"}))
             exit(1)
 
-        file_results["Total"] = total_tdp
+        file_results["Total (Unique)"] = total_tdp_unique
+        file_results["Total (All)"] = total_tdp_all
         print(json.dumps(file_results, indent=4))
     
     except Exception as e:

@@ -2,39 +2,39 @@ import re
 import sys
 import json
 
-# Function to remove comments and docstrings from Vyper code
+# Function to remove comments
 def remove_comments(lines):
     cleaned_lines = []
     block_comment = False
 
     for line in lines:
-        stripped_line = line.strip()
-
-        # Detect the start and end of docstrings (triple quotes)
-        if '"""' in stripped_line or "'''" in stripped_line:
-            block_comment = not block_comment
-            continue  # Skip docstring lines
+        if "/*" in line:
+            block_comment = True
+        if "*/" in line:
+            block_comment = False
+            continue  # Skip closing block comment
 
         if block_comment:
-            continue  # Ignore lines inside docstrings
+            continue  # Ignore lines inside block comments
 
-        # Remove single-line comments (#...)
-        line = re.sub(r"#.*", "", line).strip()
+        # Remove single-line comments
+        line = re.sub(r"//.*", "", line).strip()
 
-        if line:  # Avoid adding empty lines
+        if line:
             cleaned_lines.append(line)
 
     return cleaned_lines
 
 # Function to calculate Total Decision Points (TDP)
-def calculate_tdp_vy(lines):
+def calculate_tdp(lines):
     decision_patterns = [
         r"\bif\b",
-        r"\belif\b",
-        r"\bwhile\b",
-        r"\bfor\b",
-        r"\bassert\b",
-        r"\braise\b"
+        r"\belse\b",
+        r"\bwhile\s*\(",
+        r"\bfor\s*\(",
+        r"\brequire\s*\(",
+        r"\bassert\s*\(",
+        r"\brevert\b"
     ]
     total_tdp = sum(1 for line in lines if any(re.search(pattern, line) for pattern in decision_patterns))
     return total_tdp
@@ -51,7 +51,7 @@ if __name__ == "__main__":
                     with open(file_path, "r") as f:
                         lines = f.readlines()
                     cleaned_lines = remove_comments(lines)
-                    tdp = calculate_tdp_vy(cleaned_lines)
+                    tdp = calculate_tdp(cleaned_lines)
                     file_results[file_path] = tdp
                     total_tdp += tdp
                 except FileNotFoundError:
