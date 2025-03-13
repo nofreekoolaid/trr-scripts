@@ -3,6 +3,8 @@ import sys
 import json
 import hashlib
 
+#  python3 tdp.py $(find . -name "*.sol") $(find . -name "*.vy") > tdp.json
+
 # Function to remove comments based on file type
 def remove_comments(lines, file_type):
     cleaned_lines = []

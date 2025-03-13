@@ -2,6 +2,10 @@ import sys
 import json
 from stats import process_function_summary
 
+# python hash_mapper.py $(find 0x* -name "*.sol") > hashes.json
+# python unique_stats.py hashes.json $(find . -name function-summary.txt) > merged_stats.json
+# cat merged_stats.json | jq '{tec: ([.inputs[].ec] | add), tcc: ([.inputs[].cc] | add)}'
+
 # Function to merge multiple function summaries into one
 def merge_summaries(existing_summary, new_summary):
     for file_hash, new_data in new_summary["inputs"].items():

@@ -3,28 +3,7 @@ import json
 import hashlib
 import re
 
-# Function to remove comments
-def remove_comments(lines):
-    cleaned_lines = []
-    block_comment = False
-
-    for line in lines:
-        if "/*" in line:
-            block_comment = True
-        if "*/" in line:
-            block_comment = False
-            continue  # Skip closing block comment
-
-        if block_comment:
-            continue  # Ignore lines inside block comments
-
-        # Remove single-line comments
-        line = re.sub(r"//.*", "", line).strip()
-
-        if line:
-            cleaned_lines.append(line)
-
-    return cleaned_lines
+from tdp import remove_comments
 
 # Function to extract contract, library, interface, or struct name
 def extract_name(lines):
@@ -52,7 +31,7 @@ for filepath in sys.argv[1:]:
         with open(filepath, "r", encoding="utf-8") as f:
             lines = f.readlines()
         
-        cleaned_lines = remove_comments(lines)
+        cleaned_lines = remove_comments(lines, "sol")
         cleaned_content = "\n".join(cleaned_lines)
         
         # Compute MD5 hash
