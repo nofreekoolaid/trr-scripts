@@ -4,7 +4,6 @@ from stats import process_function_summary
 
 # python hash_mapper.py $(find 0x* -name "*.sol") > hashes.json
 # python unique_stats.py hashes.json $(find . -name function-summary.txt) > merged_stats.json
-# cat merged_stats.json | jq '{tec: ([.inputs[].ec] | add), tcc: ([.inputs[].cc] | add)}'
 
 # Function to merge multiple function summaries into one
 def merge_summaries(existing_summary, new_summary):
@@ -32,6 +31,14 @@ def process_and_merge_summaries(hashes_file, summary_files):
     
     return merged_summary
 
+# Function to calculate TEC and TCC
+def calculate_totals(merged_summary):
+    tec = sum(item["ec"] for item in merged_summary["inputs"].values())
+    tcc = sum(item["cc"] for item in merged_summary["inputs"].values())
+    merged_summary["tec"] = tec
+    merged_summary["tcc"] = tcc
+    return merged_summary
+
 # Main execution block
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -43,4 +50,9 @@ if __name__ == "__main__":
 
     # Process and merge summaries
     merged_summary = process_and_merge_summaries(hashes_file, summary_files)
+
+    # Compute TEC and TCC
+    merged_summary = calculate_totals(merged_summary)
+
+    # Output JSON with TEC and TCC
     print(json.dumps(merged_summary, indent=2))
