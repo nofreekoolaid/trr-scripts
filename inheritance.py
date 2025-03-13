@@ -1,6 +1,8 @@
 import sys
 import json
 
+# python3 inheritance.py $(find . -name "inheritance.json")  > inhiertance.json
+
 def calculate_inheritance_depth(data):
     """Calculates the maximum inheritance depth from the Slither inheritance.json output."""
     if "results" not in data or "printers" not in data["results"]:

@@ -4,6 +4,8 @@ import json
 import requests
 import subprocess
 
+# python3 rebuild_project.py 0x52d7BcB650c591f6E8da90f797A1d0Bfd8fD05F9
+
 # Check for contract address argument
 if len(sys.argv) < 2:
     print("❌ Error: Please provide a contract address.")
