@@ -10,24 +10,42 @@ ETHERSCAN_API_URLS = {
     "arb": "https://api.arbiscan.io/api"
 }
 
-# Load API key from environment
-API_KEY = os.getenv("ETHERSCAN_API_KEY")
-if not API_KEY:
-    print("Error: ETHERSCAN_API_KEY is not set. Please set it as an environment variable.")
-    exit(1)
+# Function to get the correct API key based on the network
+def get_api_key(network):
+    if network == "eth":
+        api_key = os.getenv("ETHERSCAN_API_KEY")
+        if not api_key:
+            raise ValueError("Error: ETHERSCAN_API_KEY is not set. Please set it as an environment variable.")
+        return api_key
 
+    elif network == "arb":
+        api_key = os.getenv("ARBISCAN_API_KEY")
+        if not api_key:
+            raise ValueError("Error: ARBISCAN_API_KEY is not set. Please set it as an environment variable.")
+        return api_key
+
+    else:
+        raise ValueError(f"Error: Unsupported network '{network}'")
+
+# Fetch contract source code from Etherscan or Arbiscan
 def fetch_contract_source(address, network="eth"):
-    """Fetch contract source code from Etherscan or Arbiscan."""
+    """Fetch contract source code from the appropriate blockchain explorer."""
     api_url = ETHERSCAN_API_URLS.get(network)
     if not api_url:
         print(f"Error: Unsupported network '{network}'")
+        return None
+
+    try:
+        api_key = get_api_key(network)
+    except ValueError as e:
+        print(e)
         return None
 
     params = {
         "module": "contract",
         "action": "getsourcecode",
         "address": address,
-        "apikey": API_KEY
+        "apikey": api_key
     }
     
     response = requests.get(api_url, params=params)
@@ -42,11 +60,13 @@ def fetch_contract_source(address, network="eth"):
     source_code = data["result"][0].get("SourceCode", "")
     return source_code
 
+# Extract the @title annotation from the contract source code
 def extract_title(source_code):
-    """Extract the @title annotation from the contract source code."""
+    """Extract the @title annotation from the Solidity contract."""
     title_match = re.search(r'@title\s+(.+)', source_code)
     return title_match.group(1).strip() if title_match else "N/A"
 
+# Main function
 def main(json_file, network):
     """Load contract addresses from a JSON file and fetch contract titles."""
     try:
@@ -89,6 +109,7 @@ def main(json_file, network):
 
     print(f"\nResults saved to {output_file}")
 
+# Command-line interface
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fetch contract titles from Etherscan/Arbiscan.")
     parser.add_argument("json_file", help="Path to the JSON file containing contract addresses.")
