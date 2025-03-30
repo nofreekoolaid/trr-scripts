@@ -4,6 +4,7 @@ import re
 import os
 import ast
 import subprocess
+from tdp import compute_tdp_from_file  # Import from tdp.py
 
 def parse_external_calls(external_calls):
     try:
@@ -118,10 +119,12 @@ def process_function_summary(hashes_file, function_summary_file):
             for file_hash, references in contract_hash_map.items():
                 if any(ref["contract_name"] == contract for ref in references):
                     loc = get_solidity_loc(references[0]["filepath"])  # Assume first match for LOC
+                    tdp = compute_tdp_from_file(references[0]["filepath"])  # TDP per file
                     contract_data[file_hash] = {
                         "ec": stats["ec"],
                         "cc": stats["cc"],
                         "loc": loc,
+                        "tdp": tdp,
                         "references": references
                     }
     except Exception as e:
@@ -141,4 +144,3 @@ if __name__ == "__main__":
     # Process and output JSON
     contract_data = process_function_summary(hashes_file, function_summary_file)
     print(json.dumps(contract_data, indent=2))
-

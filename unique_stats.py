@@ -2,9 +2,6 @@ import sys
 import json
 from stats import process_function_summary
 
-# python hash_mapper.py $(find 0x* -name "*.sol") > hashes.json
-# python unique_stats.py hashes.json $(find . -name function-summary.txt) > merged_stats.json
-
 # Function to merge multiple function summaries into one
 def merge_summaries(existing_summary, new_summary):
     for file_hash, new_data in new_summary["inputs"].items():
@@ -31,16 +28,16 @@ def process_and_merge_summaries(hashes_file, summary_files):
 
     return merged_summary
 
-# Function to calculate TEC, TCC, and total Solidity LOC
-
+# Function to calculate TEC, TCC, TLOC, TTDP
 def calculate_totals(merged_summary):
     tec = sum(item["ec"] for item in merged_summary["inputs"].values())
     tcc = sum(item["cc"] for item in merged_summary["inputs"].values())
-    tcloc = sum(item.get("loc", 0) for item in merged_summary["inputs"].values())
-
+    tloc = sum(item.get("loc", 0) for item in merged_summary["inputs"].values())
+    ttdp = sum(item.get("tdp", 0) for item in merged_summary["inputs"].values())
     merged_summary["tec"] = tec
     merged_summary["tcc"] = tcc
-    merged_summary["tcloc"] = tcloc
+    merged_summary["tloc"] = tloc
+    merged_summary["ttdp"] = ttdp
     return merged_summary
 
 # Main execution block
@@ -55,8 +52,8 @@ if __name__ == "__main__":
     # Process and merge summaries
     merged_summary = process_and_merge_summaries(hashes_file, summary_files)
 
-    # Compute TEC, TCC, and total Solidity LOC
+    # Compute totals
     merged_summary = calculate_totals(merged_summary)
 
-    # Output JSON with TEC, TCC, and LOC
+    # Output JSON with all totals
     print(json.dumps(merged_summary, indent=2))
