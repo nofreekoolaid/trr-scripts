@@ -1,23 +1,21 @@
+#!/usr/bin/env python3
 import sys
 import json
 
-# python3 inheritance.py $(find . -name "inheritance.json")  > inhiertance.json
-
 def calculate_inheritance_depth(data):
-    """Calculates the maximum inheritance depth from the Slither inheritance.json output."""
+    """Calculates the maximum inheritance depth (in edges) from the Slither inheritance.json output."""
     if "results" not in data or "printers" not in data["results"]:
-        return None  # Indicate an invalid JSON format
+        return None  # Invalid JSON format
 
     inheritance_map = data["results"]["printers"][0]["additional_fields"].get("child_to_base", {})
-
     visited = {}
 
     def get_depth(contract):
         if contract in visited:
             return visited[contract]
         if contract not in inheritance_map or not inheritance_map[contract]["immediate"]:
-            visited[contract] = 1
-            return 1
+            visited[contract] = 0  # Base contracts have depth 0 (no parents)
+            return 0
         max_parent_depth = max(get_depth(parent) for parent in inheritance_map[contract]["immediate"])
         visited[contract] = 1 + max_parent_depth
         return visited[contract]
@@ -36,7 +34,7 @@ def process_files(file_paths):
         try:
             with open(file_path, "r") as f:
                 data = json.load(f)
-            
+
             max_depth = calculate_inheritance_depth(data)
             if max_depth is not None:
                 results.append({"file": file_path, "Max Inheritance Depth": max_depth})
@@ -58,12 +56,15 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(json.dumps({"Error": "Usage: script.py <inheritance1.json> <inheritance2.json> ..."}))
         sys.exit(1)
-    
+
     file_paths = sys.argv[1:]
     results, overall_max, overall_max_file = process_files(file_paths)
-    
+
     # Output individual file results
     print(json.dumps(results, indent=2))
-    
+
     # Output overall max depth
-    print(json.dumps({"Overall Max Inheritance Depth": overall_max, "File": overall_max_file}, indent=2))
+    print(json.dumps({
+        "Overall Max Inheritance Depth": overall_max,
+        "File": overall_max_file
+    }, indent=2))
