@@ -28,15 +28,19 @@ def process_and_merge_summaries(hashes_file, summary_files):
             merged_summary = merge_summaries(merged_summary, result)
         except Exception as e:
             print(f"Error processing {summary_file}: {e}", file=sys.stderr)
-    
+
     return merged_summary
 
-# Function to calculate TEC and TCC
+# Function to calculate TEC, TCC, and total Solidity LOC
+
 def calculate_totals(merged_summary):
     tec = sum(item["ec"] for item in merged_summary["inputs"].values())
     tcc = sum(item["cc"] for item in merged_summary["inputs"].values())
+    tcloc = sum(item.get("loc", 0) for item in merged_summary["inputs"].values())
+
     merged_summary["tec"] = tec
     merged_summary["tcc"] = tcc
+    merged_summary["tcloc"] = tcloc
     return merged_summary
 
 # Main execution block
@@ -51,8 +55,8 @@ if __name__ == "__main__":
     # Process and merge summaries
     merged_summary = process_and_merge_summaries(hashes_file, summary_files)
 
-    # Compute TEC and TCC
+    # Compute TEC, TCC, and total Solidity LOC
     merged_summary = calculate_totals(merged_summary)
 
-    # Output JSON with TEC and TCC
+    # Output JSON with TEC, TCC, and LOC
     print(json.dumps(merged_summary, indent=2))

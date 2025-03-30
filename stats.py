@@ -3,6 +3,7 @@ import json
 import re
 import os
 import ast
+import subprocess
 
 def parse_external_calls(external_calls):
     try:
@@ -34,17 +35,17 @@ def parse_function_summary(data):
 
     # Split sections by INFO:Printers, each representing a contract
     sections = data.split("INFO:Printers:")
-    
+
     for section in sections:
         lines = section.split("\n")
         contract_match = contract_name_pattern.search(section)
-        
+
         if contract_match:
             current_contract = contract_match.group(1)
             contract_summaries[current_contract] = {"ec": 0, "cc": 0}
         else:
             continue  # Skip if contract name is not found
-        
+
         for line in lines:
             if "Function" in line and "Cyclomatic Complexity" in line:
                 headers = [h.strip() for h in line.split("|")[1:-1]]
@@ -75,7 +76,7 @@ def parse_function_summary(data):
 def map_contracts_to_hashes(hashes_file, base_dir):
     with open(hashes_file, "r", encoding="utf-8") as f:
         hashes_data = json.load(f)
-    
+
     base_dir = os.path.abspath(base_dir)  # Normalize base directory path
     file_map = {}
 
@@ -87,34 +88,45 @@ def map_contracts_to_hashes(hashes_file, base_dir):
                 if file_hash not in file_map:
                     file_map[file_hash] = []
                 file_map[file_hash].append({"contract_name": contract_name, "filepath": filepath})
-    
+
     return file_map
+
+# Run cloc and return number of Solidity lines
+def get_solidity_loc(filepath):
+    try:
+        result = subprocess.run(["cloc", "--json", filepath], capture_output=True, text=True, check=True)
+        data = json.loads(result.stdout)
+        return data.get("Solidity", {}).get("code", 0)
+    except Exception:
+        return 0
 
 # Function to process function summary and map contracts to hashes
 def process_function_summary(hashes_file, function_summary_file):
     base_dir = os.path.dirname(function_summary_file)  # Get base directory
     contract_hash_map = map_contracts_to_hashes(hashes_file, base_dir)
     contract_data = {}
-    
+
     try:
         with open(function_summary_file, "r", encoding="utf-8") as f:
             data = f.read()
-        
+
         # Parse function summary
         summaries = parse_function_summary(data)
-        
+
         # Store parsed summaries in contract_data
         for contract, stats in summaries.items():
             for file_hash, references in contract_hash_map.items():
                 if any(ref["contract_name"] == contract for ref in references):
+                    loc = get_solidity_loc(references[0]["filepath"])  # Assume first match for LOC
                     contract_data[file_hash] = {
                         "ec": stats["ec"],
                         "cc": stats["cc"],
+                        "loc": loc,
                         "references": references
                     }
     except Exception as e:
         print(f"Error processing {function_summary_file}: {e}", file=sys.stderr)
-    
+
     return {"inputs": contract_data}
 
 # Main execution block
@@ -129,3 +141,4 @@ if __name__ == "__main__":
     # Process and output JSON
     contract_data = process_function_summary(hashes_file, function_summary_file)
     print(json.dumps(contract_data, indent=2))
+
