@@ -13,20 +13,6 @@ NETWORKS = {
 }
 
 def download_contract(contract_address, network="eth"):
-    """
-    Download and process the source code of a contract given its address and network.
-    
-    Parameters:
-      contract_address (str): The contract address to fetch.
-      network (str): The network identifier ("eth" or "arb").
-      
-    This function will:
-      - Query the appropriate API (Etherscan/Arbiscan) for the contract's source code.
-      - Save the raw API response to a file.
-      - Use jq via subprocess to extract the source code, compiler version, and contract name.
-      - Save the Solidity source(s) to file(s).
-      - Generate a run_slither.sh script for further analysis if the compiler version is detected.
-    """
     contract_address = contract_address.lower()
     if network not in NETWORKS:
         raise ValueError(f"Invalid network: {network}. Supported networks: {', '.join(NETWORKS.keys())}.")
@@ -39,7 +25,7 @@ def download_contract(contract_address, network="eth"):
     API_KEY = API_KEYS[network]
     
     if not API_KEY:
-        raise RuntimeError(f"Error: Please set the API_KEY environment variable (ETHERSCAN_API_KEY or ARBISCAN_API_KEY).")
+        raise RuntimeError("❌ Error: Please set the appropriate API_KEY environment variable (ETHERSCAN_API_KEY or ARBISCAN_API_KEY).")
     
     API_URL = f"https://api.{domain}/api?module=contract&action=getsourcecode&address={contract_address}&apikey={API_KEY}"
     response = requests.get(API_URL)
@@ -94,7 +80,7 @@ def download_contract(contract_address, network="eth"):
 
     print(f"🔍 Extracted {len(source_files)} Solidity file(s) for contract {contract_address}.")
 
-    last_file_path = None
+    file_paths = []
     for file_path, content_dict in source_files.items():
         content = content_dict["content"] if isinstance(content_dict, dict) and "content" in content_dict else content_dict
         file_path = file_path.lstrip("/")
@@ -102,8 +88,11 @@ def download_contract(contract_address, network="eth"):
         os.makedirs(os.path.dirname(full_path), exist_ok=True)
         with open(full_path, "w", encoding="utf-8") as f:
             f.write(content)
-        last_file_path = file_path  # Save for later use in slither script
+        file_paths.append(file_path)
 
+    # Pick the best guess for entry point file
+    main_contract_path = next((f for f in file_paths if contract_name and contract_name in f), file_paths[0])
+    
     if compiler_version:
         script_path = os.path.join(contract_address, "run_slither.sh")
         script_content = f"""#!/bin/bash
@@ -117,8 +106,8 @@ fi
 solc-select install {compiler_version}
 solc-select use {compiler_version}
 
-slither ./{last_file_path} --print function-summary --disable-color 2> function-summary.txt
-slither ./{last_file_path} --print inheritance --json - | jq '.' > inheritance.json
+slither ./{main_contract_path} --print function-summary --disable-color 2> function-summary.txt
+slither ./{main_contract_path} --print inheritance --json - | jq '.' > inheritance.json
 """
         with open(script_path, "w", encoding="utf-8") as f:
             f.write(script_content)
