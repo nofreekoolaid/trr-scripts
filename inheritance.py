@@ -7,13 +7,20 @@ def calculate_inheritance_depth(data):
     """Calculates the maximum inheritance depth from the Slither inheritance.json output."""
     if "results" not in data or "printers" not in data["results"]:
         return None  # Indicate an invalid JSON format
-    
+
     inheritance_map = data["results"]["printers"][0]["additional_fields"].get("child_to_base", {})
 
+    visited = {}
+
     def get_depth(contract):
+        if contract in visited:
+            return visited[contract]
         if contract not in inheritance_map or not inheritance_map[contract]["immediate"]:
-            return 0
-        return 1 + max(get_depth(parent) for parent in inheritance_map[contract]["immediate"])
+            visited[contract] = 1
+            return 1
+        max_parent_depth = max(get_depth(parent) for parent in inheritance_map[contract]["immediate"])
+        visited[contract] = 1 + max_parent_depth
+        return visited[contract]
 
     depths = {contract: get_depth(contract) for contract in inheritance_map}
     return max(depths.values(), default=0)
