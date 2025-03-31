@@ -52,7 +52,6 @@ def extract_contract_names(lines):
             names[kind].append(name)
     return names
 
-
 def find_contract_file(contract_name):
     matches = []
     for path in Path.cwd().rglob("*.sol"):
@@ -60,7 +59,10 @@ def find_contract_file(contract_name):
             with open(path, 'r') as f:
                 lines = f.readlines()
                 names = extract_contract_names(lines)
-                if contract_name in sum(names.values(), []):
+
+                # Only consider contract, library, interface (exclude struct-only files)
+                search_space = names["contract"] + names["library"] + names["interface"]
+                if contract_name in search_space:
                     matches.append(str(path))
         except Exception as e:
             print(f"⚠️ Error reading file {path}: {e}")
@@ -70,7 +72,6 @@ def find_contract_file(contract_name):
     elif not matches:
         return None
     return matches[0] if matches else None
-
 
 def analyze_contracts_via_summary(sol_file_path):
     slither = Slither(sol_file_path)
