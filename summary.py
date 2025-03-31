@@ -3,7 +3,6 @@ import argparse
 import json
 import os
 
-
 def merge_code_outputs(contract_dirs):
     merged = {
         "contracts": [],
@@ -34,19 +33,19 @@ def merge_code_outputs(contract_dirs):
                     "total_tcc": contract["total_tcc"],
                     "total_tec": contract["total_tec"],
                     "inheritance_depth": contract["inheritance_depth"],
-                    "md5": contract["md5"],
-                    "contract_address": dir_path.name  # For reference aggregation
+                    "md5": contract["md5"]
                 })
 
             for fdata in data.get("files", []):
                 if fdata["md5"] not in seen_hashes:
-                    rel_path = os.path.relpath(fdata["source_path"], Path.cwd())
+                    rel_path = os.path.relpath(fdata["file"], Path.cwd())
                     merged["files"].append({
                         "md5": fdata["md5"],
                         "tdp": fdata["tdp"],
                         "sloc": fdata["sloc"],
                         "root": dir_path.name,
-                        "source_path": rel_path
+                        "source_path": rel_path,
+                        "contract_address": fdata.get("contract_address", "")
                     })
                     seen_hashes[fdata["md5"]] = dir_path.name
 
@@ -85,7 +84,7 @@ def aggregate_by_hash(merged):
         file_entry = next((f for f in merged["files"] if f["md5"] == file_hash), {})
         aggregated[file_hash]["references"].append({
             "contract": contract["contract"],
-            "contract_address": contract.get("contract_address", file_entry.get("root", "")),
+            "contract_address": file_entry.get("contract_address", ""),
             "source_path": file_entry.get("source_path", "")
         })
 
