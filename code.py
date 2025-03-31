@@ -1,3 +1,4 @@
+import os
 import sys
 import json
 import subprocess
@@ -19,9 +20,8 @@ def get_inheritance_depth_recursive(contract, visited=None):
 
 def get_cloc_sloc(filepath):
     try:
-        result = subprocess.run([
-            "cloc", filepath, "--json"
-        ], capture_output=True, text=True, check=True)
+        result = subprocess.run(["cloc", filepath, "--json"],
+                                capture_output=True, text=True, check=True)
         cloc_data = json.loads(result.stdout)
         return cloc_data.get("Solidity", {}).get("code", 0)
     except Exception as e:
@@ -74,9 +74,9 @@ def find_contract_file(contract_name):
 
 def analyze_contracts_via_summary(sol_file_path):
     slither = Slither(sol_file_path)
-    result = []
+    contracts = []
+    files_info = {}
     max_inheritance_depth = 0
-    seen_files = set()
 
     for contract in slither.contracts:
         try:
@@ -109,24 +109,27 @@ def analyze_contracts_via_summary(sol_file_path):
             max_inheritance_depth = max(max_inheritance_depth, inheritance_depth)
 
             contract_file = find_contract_file(name)
-            if contract_file:
+            rel_path = str(Path(contract_file).relative_to(Path.cwd())) if contract_file else None
+            file_hash = compute_md5(contract_file) if contract_file else None
+
+            # If file not already added, collect sloc/tdp stats for it
+            if contract_file and rel_path not in files_info:
                 tdp = compute_tdp_from_file(contract_file)
                 sloc = get_cloc_sloc(contract_file)
-                file_hash = compute_md5(contract_file)
-            else:
-                tdp = 0
-                sloc = 0
-                file_hash = None
+                files_info[rel_path] = {
+                    "file": rel_path,
+                    "md5": file_hash,
+                    "sloc": sloc,
+                    "tdp": tdp
+                }
 
-            result.append({
+            contracts.append({
                 "contract": name,
                 "total_tcc": total_tcc,
                 "total_tec": total_tec,
                 "inheritance_depth": inheritance_depth,
-                "sloc": sloc,
-                "tdp": tdp,
-                "md5": file_hash,
-                "source_path": contract_file
+                "source_path": rel_path,
+                "md5": file_hash
             })
 
         except Exception as e:
@@ -134,13 +137,14 @@ def analyze_contracts_via_summary(sol_file_path):
 
     return {
         "max_inheritance_depth": max_inheritance_depth,
-        "contracts": result
+        "contracts": contracts,
+        "files": list(files_info.values())
     }
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python main.py <contract.sol>")
+        print("Usage: python code.py <contract.sol>")
     else:
         analysis = analyze_contracts_via_summary(sys.argv[1])
         print(json.dumps(analysis, indent=2))
