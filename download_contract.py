@@ -97,6 +97,7 @@ def download_contract(contract_address, network="eth"):
     details_path = os.path.join(contract_address, "contract_details.json")
     with open(details_path, "w", encoding="utf-8") as f:
         json.dump({
+            "contract_address": contract_address,
             "main_contract_path": main_contract_path,
             "compiler_version": compiler_version
         }, f, indent=2)

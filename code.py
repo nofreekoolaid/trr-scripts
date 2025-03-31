@@ -52,6 +52,7 @@ def extract_contract_names(lines):
             names[kind].append(name)
     return names
 
+
 def find_contract_file(contract_name):
     matches = []
     for path in Path.cwd().rglob("*.sol"):
@@ -73,11 +74,20 @@ def find_contract_file(contract_name):
         return None
     return matches[0] if matches else None
 
+
 def analyze_contracts_via_summary(sol_file_path):
     slither = Slither(sol_file_path)
     contracts = []
     files_info = {}
     max_inheritance_depth = 0
+
+    try:
+        with open("contract_details.json", "r") as f:
+            contract_details = json.load(f)
+            contract_address = contract_details.get("contract_address")
+    except Exception as e:
+        print(f"⚠️ Warning: Could not read contract_details.json: {e}")
+        contract_address = None
 
     for contract in slither.contracts:
         try:
@@ -114,14 +124,15 @@ def analyze_contracts_via_summary(sol_file_path):
             file_hash = compute_md5(contract_file) if contract_file else None
 
             # If file not already added, collect sloc/tdp stats for it
-            if contract_file and rel_path not in files_info:
+            if contract_file and file_hash and file_hash not in files_info:
                 tdp = compute_tdp_from_file(contract_file)
                 sloc = get_cloc_sloc(contract_file)
-                files_info[rel_path] = {
+                files_info[file_hash] = {
                     "file": rel_path,
                     "md5": file_hash,
                     "sloc": sloc,
-                    "tdp": tdp
+                    "tdp": tdp,
+                    "contract_address": contract_address
                 }
 
             contracts.append({
@@ -129,7 +140,6 @@ def analyze_contracts_via_summary(sol_file_path):
                 "total_tcc": total_tcc,
                 "total_tec": total_tec,
                 "inheritance_depth": inheritance_depth,
-                "source_path": rel_path,
                 "md5": file_hash
             })
 
