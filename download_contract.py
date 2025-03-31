@@ -16,22 +16,22 @@ def download_contract(contract_address, network="eth"):
     contract_address = contract_address.lower()
     if network not in NETWORKS:
         raise ValueError(f"Invalid network: {network}. Supported networks: {', '.join(NETWORKS.keys())}.")
-    
+
     domain = NETWORKS[network]
     API_KEYS = {
         "eth": os.getenv("ETHERSCAN_API_KEY"),
         "arb": os.getenv("ARBISCAN_API_KEY")
     }
     API_KEY = API_KEYS[network]
-    
+
     if not API_KEY:
         raise RuntimeError("❌ Error: Please set the appropriate API_KEY environment variable (ETHERSCAN_API_KEY or ARBISCAN_API_KEY).")
-    
+
     API_URL = f"https://api.{domain}/api?module=contract&action=getsourcecode&address={contract_address}&apikey={API_KEY}"
     response = requests.get(API_URL)
     if response.status_code != 200:
         raise RuntimeError(f"Failed to fetch contract from API (HTTP {response.status_code}).")
-    
+
     os.makedirs(contract_address, exist_ok=True)
     raw_response_path = os.path.join(contract_address, "raw_response.json")
     with open(raw_response_path, "w", encoding="utf-8") as f:
@@ -92,13 +92,22 @@ def download_contract(contract_address, network="eth"):
 
     # Pick the best guess for entry point file
     main_contract_path = next((f for f in file_paths if contract_name and contract_name in f), file_paths[0])
-    
-    if compiler_version:
-        script_path = os.path.join(contract_address, "run_slither.sh")
-        script_content = f"""#!/bin/bash
 
-if ! command -v solc-select &> /dev/null
-then
+    # Write contract_details.json with entrypoint + compiler version
+    details_path = os.path.join(contract_address, "contract_details.json")
+    with open(details_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "main_contract_path": main_contract_path,
+            "compiler_version": compiler_version
+        }, f, indent=2)
+    print(f"✅ Wrote contract details to {details_path}")
+
+    # Write a prep_slither.sh setup script
+    script_path = os.path.join(contract_address, "prep_slither.sh")
+    script_content = f"""#!/bin/bash
+# Prep Slither environment (install + switch to correct solc)
+
+if ! command -v solc-select &> /dev/null; then
     echo "❌ solc-select is not installed. Please install it first."
     exit 1
 fi
@@ -106,22 +115,19 @@ fi
 solc-select install {compiler_version}
 solc-select use {compiler_version}
 
-slither ./{main_contract_path} --print function-summary --disable-color 2> function-summary.txt
-slither ./{main_contract_path} --print inheritance --json - | jq '.' > inheritance.json
+echo "✅ solc-select prepared for version {compiler_version}"
 """
-        with open(script_path, "w", encoding="utf-8") as f:
-            f.write(script_content)
-        os.chmod(script_path, 0o755)
-        print(f"✅ Created `run_slither.sh` in directory {contract_address} for analysis.")
-    else:
-        print("⚠️ Skipping generation of run_slither.sh due to missing compiler version.")
+    with open(script_path, "w", encoding="utf-8") as f:
+        f.write(script_content)
+    os.chmod(script_path, 0o755)
+    print(f"✅ Created `prep_slither.sh` in directory {contract_address}")
 
 def main():
     parser = argparse.ArgumentParser(description="Download and analyze Ethereum/Arbitrum contracts.")
     parser.add_argument("contract_address", help="Contract address to fetch source code for.")
     parser.add_argument("--network", choices=["eth", "arb"], default="eth", help="Network (eth=Ethereum, arb=Arbitrum)")
     args = parser.parse_args()
-    
+
     try:
         download_contract(args.contract_address, args.network)
     except Exception as e:
