@@ -2,9 +2,10 @@ import sys
 import json
 import subprocess
 import hashlib
+import re
 from slither.slither import Slither
 from pathlib import Path
-from tdp import compute_tdp_from_file  # Import from tdp.py
+from tdp import compute_tdp_from_file, remove_comments  # Import from tdp.py
 
 
 def get_inheritance_depth_recursive(contract, visited=None):
@@ -30,11 +31,26 @@ def get_cloc_sloc(filepath):
 
 def compute_md5(filepath):
     try:
-        with open(filepath, "rb") as f:
-            return hashlib.md5(f.read()).hexdigest()
+        with open(filepath, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        cleaned_lines = remove_comments(lines, "sol")
+        cleaned_content = "\n".join(cleaned_lines)
+        return hashlib.md5(cleaned_content.encode("utf-8")).hexdigest()
     except Exception as e:
         print(f"⚠️ Error computing MD5 for {filepath}: {e}")
         return None
+
+
+def extract_contract_names(lines):
+    names = {"contract": [], "library": [], "interface": [], "struct": []}
+    for line in lines:
+        line = line.strip()
+        match = re.match(r"^(abstract\s+)?(contract|library|interface|struct)\s+(\w+)", line)
+        if match:
+            kind = match.group(2)
+            name = match.group(3)
+            names[kind].append(name)
+    return names
 
 
 def find_contract_file(contract_name):
@@ -42,17 +58,18 @@ def find_contract_file(contract_name):
     for path in Path.cwd().rglob("*.sol"):
         try:
             with open(path, 'r') as f:
-                content = f.read()
-                if f"contract {contract_name} " in content and f"abstract contract {contract_name} " not in content:
+                lines = f.readlines()
+                names = extract_contract_names(lines)
+                if contract_name in sum(names.values(), []):
                     matches.append(str(path))
         except Exception as e:
             print(f"⚠️ Error reading file {path}: {e}")
 
     if len(matches) > 1:
-        raise RuntimeError(f"❌ Multiple files found for contract '{contract_name}': {matches}")
+        print(f"⚠️ Multiple files matched for contract '{contract_name}': {matches}, picking first.")
     elif not matches:
         return None
-    return matches[0]
+    return matches[0] if matches else None
 
 
 def analyze_contracts_via_summary(sol_file_path):
@@ -93,10 +110,6 @@ def analyze_contracts_via_summary(sol_file_path):
 
             contract_file = find_contract_file(name)
             if contract_file:
-                if contract_file in seen_files:
-                    raise RuntimeError(f"❌ Duplicate file reference in output: {contract_file}")
-                seen_files.add(contract_file)
-
                 tdp = compute_tdp_from_file(contract_file)
                 sloc = get_cloc_sloc(contract_file)
                 file_hash = compute_md5(contract_file)
