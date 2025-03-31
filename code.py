@@ -42,7 +42,8 @@ def find_contract_file(contract_name):
     for path in Path.cwd().rglob("*.sol"):
         try:
             with open(path, 'r') as f:
-                if f"contract {contract_name} " in f.read():
+                content = f.read()
+                if f"contract {contract_name} " in content and f"abstract contract {contract_name} " not in content:
                     matches.append(str(path))
         except Exception as e:
             print(f"⚠️ Error reading file {path}: {e}")
