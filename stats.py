@@ -48,7 +48,7 @@ def parse_function_summary(data):
             continue  # Skip if contract name is not found
 
         for line in lines:
-            if "Function" in line and "Cyclomatic Complexity" in line:
+            if "Function" in line and ("Cyclomatic Complexity" in line or "Cycl" in line):
                 headers = [h.strip() for h in line.split("|")[1:-1]]
                 continue
 
