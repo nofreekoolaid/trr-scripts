@@ -3,13 +3,15 @@ import argparse
 import json
 import os
 
+
 def merge_code_outputs(contract_dirs):
     merged = {
         "contracts": [],
         "files": [],
         "max_inheritance_depth": 0
     }
-    seen_hashes = {}
+    seen_contracts = set()
+    seen_files = set()
 
     for dir_name in contract_dirs:
         dir_path = Path(dir_name.strip().lower()).resolve()
@@ -28,26 +30,29 @@ def merge_code_outputs(contract_dirs):
             )
 
             for contract in data.get("contracts", []):
-                merged["contracts"].append({
-                    "contract": contract["contract"],
-                    "total_tcc": contract["total_tcc"],
-                    "total_tec": contract["total_tec"],
-                    "inheritance_depth": contract["inheritance_depth"],
-                    "md5": contract["md5"]
-                })
+                contract_id = (contract["contract"], contract["md5"])
+                if contract_id not in seen_contracts:
+                    merged["contracts"].append({
+                        "contract": contract["contract"],
+                        "total_tcc": contract["total_tcc"],
+                        "total_tec": contract["total_tec"],
+                        "inheritance_depth": contract["inheritance_depth"],
+                        "md5": contract["md5"]
+                    })
+                    seen_contracts.add(contract_id)
 
             for fdata in data.get("files", []):
-                if fdata["md5"] not in seen_hashes:
-                    rel_path = os.path.relpath(fdata["file"], Path.cwd())
+                key = (fdata["md5"], dir_path.name)
+                rel_path = os.path.relpath(fdata["file"], Path.cwd())
+                if key not in seen_files:
                     merged["files"].append({
                         "md5": fdata["md5"],
                         "tdp": fdata["tdp"],
                         "sloc": fdata["sloc"],
-                        "root": dir_path.name,
                         "source_path": rel_path,
-                        "contract_address": fdata.get("contract_address", "")
+                        "contract_address": dir_path.name
                     })
-                    seen_hashes[fdata["md5"]] = dir_path.name
+                    seen_files.add(key)
 
         except Exception as e:
             print(f"❌ Error reading/parsing {code_path}: {e}")
@@ -81,12 +86,20 @@ def aggregate_by_hash(merged):
             "inheritance_depth": contract["inheritance_depth"]
         })
 
-        file_entry = next((f for f in merged["files"] if f["md5"] == file_hash), {})
-        aggregated[file_hash]["references"].append({
-            "contract": contract["contract"],
-            "contract_address": file_entry.get("contract_address", ""),
-            "source_path": file_entry.get("source_path", "")
-        })
+
+        matching_files = [
+            f for f in merged["files"]
+            if f["md5"] == file_hash and f["contract_address"].lower() in [d.lower() for d in contract_dirs]
+        ]
+
+        for file_entry in matching_files:
+            ref = {
+                "contract": contract["contract"],
+                "contract_address": file_entry.get("contract_address", ""),
+                "source_path": file_entry.get("source_path", "")
+            }
+            if ref not in aggregated[file_hash]["references"]:
+                aggregated[file_hash]["references"].append(ref)
 
         aggregated[file_hash]["totals"]["total_tcc"] += contract["total_tcc"]
         aggregated[file_hash]["totals"]["total_tec"] += contract["total_tec"]
@@ -98,23 +111,23 @@ def aggregate_by_hash(merged):
     return aggregated
 
 
-def output_tsv(merged):
-    print("contract\tinheritance_depth\ttcc\ttec\tsource_path\tmd5\ttdp\tsloc")
-    for contract in merged["contracts"]:
-        file_entry = next((f for f in merged["files"] if f["md5"] == contract["md5"]), {})
+def output_tsv_from_aggregated(aggregated):
+    print("Contract Names\tTCC\tTEC\tTDP\tCLOC\tMax ID\tFile Hash\tContract Addresses")
+    for file_hash, entry in aggregated.items():
+        contract_names = ",".join(sorted(set(c["contract"] for c in entry["contracts"])))
+        contract_addresses = ",".join(sorted(set(r["contract_address"] for r in entry["references"])))
+        totals = entry["totals"]
         row = [
-            contract.get("contract", ""),
-            contract.get("inheritance_depth", ""),
-            contract.get("total_tcc", ""),
-            contract.get("total_tec", ""),
-            file_entry.get("source_path", ""),
-            contract.get("md5", ""),
-            file_entry.get("tdp", ""),
-            file_entry.get("sloc", "")
+            contract_names,
+            totals["total_tcc"],
+            totals["total_tec"],
+            totals["tdp"],
+            totals["cloc"],
+            totals["max_inheritance_depth"],
+            file_hash,
+            contract_addresses
         ]
         print("\t".join(map(str, row)))
-
-    print(f"\n# Max Inheritance Depth: {merged['max_inheritance_depth']}")
 
 
 if __name__ == "__main__":
@@ -124,12 +137,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     with open(args.input, "r") as f:
-        addresses = [line.strip() for line in f if line.strip()]
+        contract_dirs = [line.strip() for line in f if line.strip()]
 
-    merged_summary = merge_code_outputs(addresses)
+    merged_summary = merge_code_outputs(contract_dirs)
     aggregated = aggregate_by_hash(merged_summary)
 
     if args.tsv:
-        output_tsv(merged_summary)
+        output_tsv_from_aggregated(aggregated)
     else:
         print(json.dumps(aggregated, indent=2))
+
