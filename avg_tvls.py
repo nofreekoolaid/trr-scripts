@@ -6,6 +6,7 @@ import argparse
 def get_average_tvl(protocol: str, start_date: str, end_date: str):
     """
     Fetches and averages the daily TVL for a given protocol between start_date and end_date.
+    Days without TVL data (e.g., before launch) are treated as TVL = 0.
 
     Parameters:
     - protocol (str): The protocol name (as listed on DeFiLlama).
@@ -15,9 +16,9 @@ def get_average_tvl(protocol: str, start_date: str, end_date: str):
     Returns:
     - The average TVL over the given period.
     """
-    # Convert input dates to timestamps
-    start_timestamp = int(datetime.datetime.strptime(start_date, "%Y-%m-%d").timestamp())
-    end_timestamp = int(datetime.datetime.strptime(end_date, "%Y-%m-%d").timestamp())
+    # Convert input dates to date objects
+    start_dt = datetime.datetime.strptime(start_date, "%Y-%m-%d").date()
+    end_dt = datetime.datetime.strptime(end_date, "%Y-%m-%d").date()
 
     # Fetch historical TVL data from DeFiLlama
     url = f"https://api.llama.fi/protocol/{protocol}"
@@ -27,26 +28,29 @@ def get_average_tvl(protocol: str, start_date: str, end_date: str):
         raise ValueError(f"Error fetching data: {response.status_code}")
 
     data = response.json()
-
-    # Extract TVL data (sorted by timestamp)
     tvl_data = data.get("tvl", [])
 
     if not tvl_data:
         raise ValueError(f"No TVL data found for protocol {protocol}")
 
-    # Filter TVL data for the date range
-    filtered_tvl = [
-        entry["totalLiquidityUSD"]
+    # Build a map of date -> TVL
+    tvl_map = {
+        datetime.date.fromtimestamp(entry["date"]): entry["totalLiquidityUSD"]
         for entry in tvl_data
-        if start_timestamp <= entry["date"] <= end_timestamp
-    ]
+    }
 
-    if not filtered_tvl:
+    # Iterate over all dates in range and collect TVL values (default to 0 if missing)
+    current_date = start_dt
+    tvls = []
+    while current_date <= end_dt:
+        tvls.append(tvl_map.get(current_date, 0.0))
+        current_date += datetime.timedelta(days=1)
+
+    # Handle case where no data exists in the whole range
+    if not tvls:
         raise ValueError(f"No TVL data available between {start_date} and {end_date}")
 
-    # Compute and return the average TVL
-    avg_tvl = statistics.mean(filtered_tvl)
-    return avg_tvl
+    return statistics.mean(tvls)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calculate average TVL for a DeFi protocol.")
