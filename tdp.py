@@ -1,48 +1,114 @@
-# Steps to make input `flat.sol`:
-# slither 0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383
-# cat $(find crytic-export -name "*sol") > flat.sol
 import re
+import sys
+import json
+import hashlib
 
-# Load flattened Solidity contract
-with open("flat.sol", "r") as f:
-    lines = f.readlines()
-
-# Function to remove comments
-def remove_comments(lines):
+# Function to remove comments based on file type
+def remove_comments(lines, file_type):
     cleaned_lines = []
     block_comment = False
 
     for line in lines:
-        # Detect the start and end of block comments
-        if "/*" in line:
-            block_comment = True
-        if "*/" in line:
-            block_comment = False
-            continue  # Skip this line as it closes a comment
+        if file_type == "sol":
+            if "/*" in line:
+                block_comment = True
+            if "*/" in line:
+                block_comment = False
+                continue  # Skip closing block comment
 
-        if block_comment:
-            continue  # Ignore lines inside block comments
+            if block_comment:
+                continue
 
-        # Remove single-line comments (//...)
-        line = re.sub(r"//.*", "", line).strip()
+            line = re.sub(r"//.*", "", line).strip()
 
-        if line:  # Avoid adding empty lines
+        elif file_type == "vy":
+            stripped_line = line.strip()
+            if '"""' in stripped_line or "'''" in stripped_line:
+                block_comment = not block_comment
+                continue
+
+            if block_comment:
+                continue
+
+            line = re.sub(r"#.*", "", line).strip()
+
+        if line:
             cleaned_lines.append(line)
 
     return cleaned_lines
-    
-# Clean comments and save the new file
-cleaned_lines = remove_comments(lines)
-    
-# Keywords indicating decision points
-decision_patterns = [r"\bif\b", r"\belse\b", r"\bwhile\s*\(", r"\bfor\s*\(",r"\brequire\s*\(", r"\bassert\s*\(", r"\brevert\b"]
-total_tdp = 0
 
-# Count occurrences of decision-making statements
-for line in cleaned_lines:
-    if any(re.search(pattern, line) for pattern in decision_patterns):
-        total_tdp += 1
+# Function to calculate Total Decision Points (TDP) based on file type
+def calculate_tdp(lines, file_type):
+    if file_type == "sol":
+        decision_patterns = [
+            r"\bif\b", r"\belse\b", r"\bwhile\s*\(",
+            r"\bfor\s*\(", r"\brequire\s*\(", r"\bassert\s*\(",
+            r"\brevert\b"
+        ]
+    else:  # Vyper
+        decision_patterns = [
+            r"\bif\b", r"\belif\b", r"\bwhile\b", r"\bfor\b", r"\bassert\b", r"\braise\b"
+        ]
 
-print("=====================================")
-print(f"✅ Total Decision Points (TDP): {total_tdp}")
-print("=====================================")
+    total_tdp = sum(1 for line in lines if any(re.search(pattern, line) for pattern in decision_patterns))
+    return total_tdp
+
+# Exposed function to compute TDP from a file path
+def compute_tdp_from_file(filepath):
+    try:
+        with open(filepath, "r") as f:
+            lines = f.read().splitlines()
+
+        file_type = "sol" if filepath.endswith(".sol") else "vy" if filepath.endswith(".vy") else None
+        if not file_type:
+            raise ValueError(f"Unsupported file type for {filepath}")
+
+        cleaned_lines = remove_comments(lines, file_type)
+        return calculate_tdp(cleaned_lines, file_type)
+
+    except Exception as e:
+        print(f"⚠️ Error computing TDP for {filepath}: {e}", file=sys.stderr)
+        return 0
+
+# Main script execution (for CLI use)
+if __name__ == "__main__":
+    try:
+        file_results = {}
+        total_tdp_unique = 0
+        total_tdp_all = 0
+        seen_hashes = {}
+
+        if len(sys.argv) > 1:
+            for file_path in sys.argv[1:]:
+                try:
+                    with open(file_path, "r") as f:
+                        lines = f.read().splitlines()
+
+                    file_type = "sol" if file_path.endswith(".sol") else "vy" if file_path.endswith(".vy") else None
+                    if not file_type:
+                        file_results[file_path] = "Error: Unsupported file type"
+                        continue
+
+                    cleaned_lines = remove_comments(lines, file_type)
+                    file_hash = hashlib.md5("\n".join(cleaned_lines).encode()).hexdigest()
+                    tdp = calculate_tdp(cleaned_lines, file_type)
+                    file_results[file_path] = tdp
+                    total_tdp_all += tdp
+
+                    if file_hash not in seen_hashes:
+                        seen_hashes[file_hash] = tdp
+                        total_tdp_unique += tdp
+                except FileNotFoundError:
+                    file_results[file_path] = "Error: File not found"
+
+        else:
+            print(json.dumps({"Error": "No input files provided"}))
+            exit(1)
+
+        file_results["Total (Unique)"] = total_tdp_unique
+        file_results["Total (All)"] = total_tdp_all
+        print(json.dumps(file_results, indent=4))
+
+    except Exception as e:
+        print(json.dumps({"Error": str(e)}))
+        exit(1)
