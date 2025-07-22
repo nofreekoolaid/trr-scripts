@@ -1,0 +1,728 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2025-07-19">
+    <creator>NetworkX 3.5</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="name" type="string" />
+    </attributes>
+    <nodes>
+      <node id="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" label="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB">
+        <attvalues>
+          <attvalue for="0" value="DSPauseProxy" />
+        </attvalues>
+      </node>
+      <node id="0x03553f213bce4b35feb3cad08e26999e2f363745" label="0x03553f213bce4b35feb3cad08e26999e2f363745">
+        <attvalues>
+          <attvalue for="0" value="DssSpellAction" />
+        </attvalues>
+      </node>
+      <node id="0x173e314c7635b45322cd8cb14f44b312e079f3af" label="0x173e314c7635b45322cd8cb14f44b312e079f3af">
+        <attvalues>
+          <attvalue for="0" value="StakingRewards" />
+        </attvalues>
+      </node>
+      <node id="0x1923dfee706a8e78157416c29cbccfde7cdf4102" label="0x1923dfee706a8e78157416c29cbccfde7cdf4102">
+        <attvalues>
+          <attvalue for="0" value="Usds" />
+        </attvalues>
+      </node>
+      <node id="0x3225737a9bbb6473cb4a45b7244aca2befdb276a" label="0x3225737a9bbb6473cb4a45b7244aca2befdb276a">
+        <attvalues>
+          <attvalue for="0" value="DaiUsds" />
+        </attvalues>
+      </node>
+      <node id="0x3300f198988e4c9c63f75df86de36421f06af8c4" label="0x3300f198988e4c9c63f75df86de36421f06af8c4">
+        <attvalues>
+          <attvalue for="0" value="SubProxy" />
+        </attvalues>
+      </node>
+      <node id="0x35d1b3f3d7966a1dfe207aa4514c12a259a0492b" label="0x35d1b3f3d7966a1dfe207aa4514c12a259a0492b">
+        <attvalues>
+          <attvalue for="0" value="Vat" />
+        </attvalues>
+      </node>
+      <node id="0x38e4254bd82ed5ee97cd1c4278faae748d998865" label="0x38e4254bd82ed5ee97cd1c4278faae748d998865">
+        <attvalues>
+          <attvalue for="0" value="StakingRewards" />
+        </attvalues>
+      </node>
+      <node id="0x3959e23a63ca7ac12d658bb44f90cb1f7ee4c02c" label="0x3959e23a63ca7ac12d658bb44f90cb1f7ee4c02c">
+        <attvalues>
+          <attvalue for="0" value="VestedRewardsDistribution" />
+        </attvalues>
+      </node>
+      <node id="0x3c0f895007ca717aa01c8693e59df1e8c3777feb" label="0x3c0f895007ca717aa01c8693e59df1e8c3777feb">
+        <attvalues>
+          <attvalue for="0" value="UsdsJoin" />
+        </attvalues>
+      </node>
+      <node id="0x56072c95faa701256059aa122697b133aded9279" label="0x56072c95faa701256059aa122697b133aded9279">
+        <attvalues>
+          <attvalue for="0" value="Sky" />
+        </attvalues>
+      </node>
+      <node id="0x6464c34a02dd155dd0c630ce233dd6e21c24f9a5" label="0x6464c34a02dd155dd0c630ce233dd6e21c24f9a5">
+        <attvalues>
+          <attvalue for="0" value="VestedRewardsDistributionJob" />
+        </attvalues>
+      </node>
+      <node id="0x6b175474e89094c44da98b954eedeac495271d0f" label="0x6b175474e89094c44da98b954eedeac495271d0f">
+        <attvalues>
+          <attvalue for="0" value="Dai" />
+        </attvalues>
+      </node>
+      <node id="0x6d635c8d08a1ea2f1687a5e46b666949c977b7dd" label="0x6d635c8d08a1ea2f1687a5e46b666949c977b7dd">
+        <attvalues>
+          <attvalue for="0" value="DssVestTransferrable" />
+        </attvalues>
+      </node>
+      <node id="0x6eeb68b2c7a918f36b78e2db80dcf279236ddfb8" label="0x6eeb68b2c7a918f36b78e2db80dcf279236ddfb8">
+        <attvalues>
+          <attvalue for="0" value="MkrAuthority" />
+        </attvalues>
+      </node>
+      <node id="0x73e65dbd630f90604062f6e02fab9138e713edd9" label="0x73e65dbd630f90604062f6e02fab9138e713edd9">
+        <attvalues>
+          <attvalue for="0" value="MetaMorpho" />
+        </attvalues>
+      </node>
+      <node id="0x74e1ba852c864d689562b5977eedcb127fde0c9f" label="0x74e1ba852c864d689562b5977eedcb127fde0c9f">
+        <attvalues>
+          <attvalue for="0" value="SparkEthereum_20250626" />
+        </attvalues>
+      </node>
+      <node id="0x8de6ddbcd5053d32292aaa0d2105a32d108484a6" label="0x8de6ddbcd5053d32292aaa0d2105a32d108484a6">
+        <attvalues>
+          <attvalue for="0" value="DssExecLib" />
+        </attvalues>
+      </node>
+      <node id="0x9759a6ac90977b93b58547b4a71c78317f391a28" label="0x9759a6ac90977b93b58547b4a71c78317f391a28">
+        <attvalues>
+          <attvalue for="0" value="DaiJoin" />
+        </attvalues>
+      </node>
+      <node id="0x99cbc0e4e6427f6939536ed24d1275b95ff77404" label="0x99cbc0e4e6427f6939536ed24d1275b95ff77404">
+        <attvalues>
+          <attvalue for="0" value="StakingRewards" />
+        </attvalues>
+      </node>
+      <node id="0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2" label="0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2">
+        <attvalues>
+          <attvalue for="0" value="DSToken" />
+        </attvalues>
+      </node>
+      <node id="0xa1ea1ba18e88c381c724a75f23a130420c403f9a" label="0xa1ea1ba18e88c381c724a75f23a130420c403f9a">
+        <attvalues>
+          <attvalue for="0" value="MkrSky" />
+        </attvalues>
+      </node>
+      <node id="0xa3ee378bdd0b7dd403ced3a0a65b2b389a2eab7e" label="0xa3ee378bdd0b7dd403ced3a0a65b2b389a2eab7e">
+        <attvalues>
+          <attvalue for="0" value="VestedRewardsDistribution" />
+        </attvalues>
+      </node>
+      <node id="0xa950524441892a31ebddf91d3ceefa04bf454466" label="0xa950524441892a31ebddf91d3ceefa04bf454466">
+        <attvalues>
+          <attvalue for="0" value="Vow" />
+        </attvalues>
+      </node>
+      <node id="0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb" label="0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb">
+        <attvalues>
+          <attvalue for="0" value="Morpho" />
+        </attvalues>
+      </node>
+      <node id="0xbdcfca946b6cdd965f99a839e4435bcdc1bc470b" label="0xbdcfca946b6cdd965f99a839e4435bcdc1bc470b">
+        <attvalues>
+          <attvalue for="0" value="MkrSky" />
+        </attvalues>
+      </node>
+      <node id="0xbe286431454714f511008713973d3b053a2d38f3" label="0xbe286431454714f511008713973d3b053a2d38f3">
+        <attvalues>
+          <attvalue for="0" value="DSPause" />
+        </attvalues>
+      </node>
+      <node id="0xbe8e3e3618f7474f8cb1d074a26affef007e98fb" label="0xbe8e3e3618f7474f8cb1d074a26affef007e98fb">
+        <attvalues>
+          <attvalue for="0" value="DSPauseProxy" />
+        </attvalues>
+      </node>
+      <node id="0xbf7111f13386d23cb2fba5a538107a73f6872bcf" label="0xbf7111f13386d23cb2fba5a538107a73f6872bcf">
+        <attvalues>
+          <attvalue for="0" value="Splitter" />
+        </attvalues>
+      </node>
+      <node id="0xc20059e0317de91738d13af027dfc4a50781b066" label="0xc20059e0317de91738d13af027dfc4a50781b066">
+        <attvalues>
+          <attvalue for="0" value="SDAO" />
+        </attvalues>
+      </node>
+      <node id="0xc7bdd1f2b16447dcf3de045c4a039a60ec2f0ba3" label="0xc7bdd1f2b16447dcf3de045c4a039a60ec2f0ba3">
+        <attvalues>
+          <attvalue for="0" value="DssAutoLine" />
+        </attvalues>
+      </node>
+      <node id="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" label="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e">
+        <attvalues>
+          <attvalue for="0" value="DssSpell" />
+        </attvalues>
+      </node>
+      <node id="0xce01c90de7fd1bcfa39e237fe6d8d9f569e8a6a3" label="0xce01c90de7fd1bcfa39e237fe6d8d9f569e8a6a3">
+        <attvalues>
+          <attvalue for="0" value="LockstakeEngine" />
+        </attvalues>
+      </node>
+      <node id="0xda0ab1e0017debcd72be8599041a2aa3ba7e740f" label="0xda0ab1e0017debcd72be8599041a2aa3ba7e740f">
+        <attvalues>
+          <attvalue for="0" value="ChainLog" />
+        </attvalues>
+      </node>
+      <node id="0xdc035d45d973e3ec169d2276ddab16f1e407384f" label="0xdc035d45d973e3ec169d2276ddab16f1e407384f">
+        <attvalues>
+          <attvalue for="0" value="ERC1967Proxy" />
+        </attvalues>
+      </node>
+      <node id="0xf9a2002b471f600a5484da5a735a2a053d377078" label="0xf9a2002b471f600a5484da5a735a2a053d377078">
+        <attvalues>
+          <attvalue for="0" value="DssVestTransferrable" />
+        </attvalues>
+      </node>
+      <node id="0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee" label="0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee">
+        <attvalues>
+          <attvalue for="0" value="PoolAddressesProvider" />
+        </attvalues>
+      </node>
+      <node id="0x2276f52afba7cf2525fd0a050df464ac8532d0ef" label="0x2276f52afba7cf2525fd0a050df464ac8532d0ef">
+        <attvalues>
+          <attvalue for="0" value="CapAutomator" />
+        </attvalues>
+      </node>
+      <node id="0x3254f7cd0565aa67eedc86c2fb608be48d5ccd78" label="0x3254f7cd0565aa67eedc86c2fb608be48d5ccd78">
+        <attvalues>
+          <attvalue for="0" value="AaveV3ConfigEngine" />
+        </attvalues>
+      </node>
+      <node id="0x340f923e5c7cbb2171146f64169ec9d5a9ffe647" label="0x340f923e5c7cbb2171146f64169ec9d5a9ffe647">
+        <attvalues>
+          <attvalue for="0" value="SystemConfig" />
+        </attvalues>
+      </node>
+      <node id="0x49048044d57e1c92a77f79988d21fa8faf74e97e" label="0x49048044d57e1c92a77f79988d21fa8faf74e97e">
+        <attvalues>
+          <attvalue for="0" value="Proxy" />
+        </attvalues>
+      </node>
+      <node id="0x542dba469bde58faee189ffb60c6b49ce60e0738" label="0x542dba469bde58faee189ffb60c6b49ce60e0738">
+        <attvalues>
+          <attvalue for="0" value="InitializableImmutableAdminUpgradeabilityProxy" />
+        </attvalues>
+      </node>
+      <node id="0x5ae329203e00f76891094dcfedd5aca082a50e1b" label="0x5ae329203e00f76891094dcfedd5aca082a50e1b">
+        <attvalues>
+          <attvalue for="0" value="Pool" />
+        </attvalues>
+      </node>
+      <node id="0x5d5a095665886119693f0b41d8dfee78da033e8b" label="0x5d5a095665886119693f0b41d8dfee78da033e8b">
+        <attvalues>
+          <attvalue for="0" value="L1CrossDomainMessenger" />
+        </attvalues>
+      </node>
+      <node id="0x6d3522b1c623e76b6f74c0e6d4e963510d12f879" label="0x6d3522b1c623e76b6f74c0e6d4e963510d12f879">
+        <attvalues>
+          <attvalue for="0" value="DssSpellAction" />
+        </attvalues>
+      </node>
+      <node id="0x73a79fab69143498ed3712e519a88a918e1f4072" label="0x73a79fab69143498ed3712e519a88a918e1f4072">
+        <attvalues>
+          <attvalue for="0" value="Proxy" />
+        </attvalues>
+      </node>
+      <node id="0x7a5fd5cf045e010e62147f065ceae59e5344b188" label="0x7a5fd5cf045e010e62147f065ceae59e5344b188">
+        <attvalues>
+          <attvalue for="0" value="RateLimits" />
+        </attvalues>
+      </node>
+      <node id="0x866e82a600a1414e583f7f13623f1ac5d58b0afa" label="0x866e82a600a1414e583f7f13623f1ac5d58b0afa">
+        <attvalues>
+          <attvalue for="0" value="ResolvedDelegateProxy" />
+        </attvalues>
+      </node>
+      <node id="0x870ac11d48b15db9a138cf899d20f13f79ba00bc" label="0x870ac11d48b15db9a138cf899d20f13f79ba00bc">
+        <attvalues>
+          <attvalue for="0" value="AdaptiveCurveIrm" />
+        </attvalues>
+      </node>
+      <node id="0x8efb6b5c4767b09dc9aa6af4eaa89f749522bae2" label="0x8efb6b5c4767b09dc9aa6af4eaa89f749522bae2">
+        <attvalues>
+          <attvalue for="0" value="AddressManager" />
+        </attvalues>
+      </node>
+      <node id="0xb443da3e07052204a02d630a8933dac05a0d6fb4" label="0xb443da3e07052204a02d630a8933dac05a0d6fb4">
+        <attvalues>
+          <attvalue for="0" value="OptimismPortal2" />
+        </attvalues>
+      </node>
+      <node id="0xbf5ef05a578f270c0e54c7f6ef7ccfb5c9cd56b0" label="0xbf5ef05a578f270c0e54c7f6ef7ccfb5c9cd56b0">
+        <attvalues>
+          <attvalue for="0" value="DssSpell" />
+        </attvalues>
+      </node>
+      <node id="0xc13e21b648a5ee794902342038ff3adab66be987" label="0xc13e21b648a5ee794902342038ff3adab66be987">
+        <attvalues>
+          <attvalue for="0" value="InitializableImmutableAdminUpgradeabilityProxy" />
+        </attvalues>
+      </node>
+      <node id="0xda135cd78a086025bcdc87b038a1c462032b510c" label="0xda135cd78a086025bcdc87b038a1c462032b510c">
+        <attvalues>
+          <attvalue for="0" value="ACLManager" />
+        </attvalues>
+      </node>
+      <node id="0xf485e3351a4c3d7d1f89b1842af625fd0dfb90c8" label="0xf485e3351a4c3d7d1f89b1842af625fd0dfb90c8">
+        <attvalues>
+          <attvalue for="0" value="SparkEthereum_20250612" />
+        </attvalues>
+      </node>
+      <node id="0xf7b656c95420194b79687fc86d965fb51da4799f" label="0xf7b656c95420194b79687fc86d965fb51da4799f">
+        <attvalues>
+          <attvalue for="0" value="PoolConfigurator" />
+        </attvalues>
+      </node>
+      <node id="0xf8dff673b555a225e149218c5005fc88f4a13870" label="0xf8dff673b555a225e149218c5005fc88f4a13870">
+        <attvalues>
+          <attvalue for="0" value="MainnetController" />
+        </attvalues>
+      </node>
+      <node id="0x0650caf159c5a49f711e8169d4336ecb9b950275" label="0x0650caf159c5a49f711e8169d4336ecb9b950275">
+        <attvalues>
+          <attvalue for="0" value="StakingRewards" />
+        </attvalues>
+      </node>
+      <node id="0x09b354cda89203bb7b3131cc728dfa06ab09ae2f" label="0x09b354cda89203bb7b3131cc728dfa06ab09ae2f">
+        <attvalues>
+          <attvalue for="0" value="L1GovernanceRelay" />
+        </attvalues>
+      </node>
+      <node id="0x0bd48f6b86a26d3a217d0fa6ffe2b491b956a7a2" label="0x0bd48f6b86a26d3a217d0fa6ffe2b491b956a7a2">
+        <attvalues>
+          <attvalue for="0" value="Proxy" />
+        </attvalues>
+      </node>
+      <node id="0x1196f688c585d3e5c895ef8954ffb0dcdafc566a" label="0x1196f688c585d3e5c895ef8954ffb0dcdafc566a">
+        <attvalues>
+          <attvalue for="0" value="Escrow" />
+        </attvalues>
+      </node>
+      <node id="0x1995043bd592cedf7d027e4947dbf40612bcd703" label="0x1995043bd592cedf7d027e4947dbf40612bcd703">
+        <attvalues>
+          <attvalue for="0" value="0x1995...d703" />
+        </attvalues>
+      </node>
+      <node id="0x19c0976f590d67707e62397c87829d896dc0f1f1" label="0x19c0976f590d67707e62397c87829d896dc0f1f1">
+        <attvalues>
+          <attvalue for="0" value="Jug" />
+        </attvalues>
+      </node>
+      <node id="0x229047fed2591dbec1ef1118d64f7af3db9eb290" label="0x229047fed2591dbec1ef1118d64f7af3db9eb290">
+        <attvalues>
+          <attvalue for="0" value="Proxy" />
+        </attvalues>
+      </node>
+      <node id="0x25ace71c97b33cc4729cf772ae268934f7ab5fa1" label="0x25ace71c97b33cc4729cf772ae268934f7ab5fa1">
+        <attvalues>
+          <attvalue for="0" value="Lib_ResolvedDelegateProxy" />
+        </attvalues>
+      </node>
+      <node id="0x2f0c88e935db5a60dda73b0b4eaeef55883896d9" label="0x2f0c88e935db5a60dda73b0b4eaeef55883896d9">
+        <attvalues>
+          <attvalue for="0" value="VestedRewardsDistribution" />
+        </attvalues>
+      </node>
+      <node id="0x3968a022d955bbb7927cc011a48601b65a33f346" label="0x3968a022d955bbb7927cc011a48601b65a33f346">
+        <attvalues>
+          <attvalue for="0" value="SparkEthereum_20250529" />
+        </attvalues>
+      </node>
+      <node id="0x3d25b7d486cae1810374d37a48bcf0963c9b8057" label="0x3d25b7d486cae1810374d37a48bcf0963c9b8057">
+        <attvalues>
+          <attvalue for="0" value="ERC1967Proxy" />
+        </attvalues>
+      </node>
+      <node id="0x467194771dae2967aef3ecbedd3bf9a310c76c65" label="0x467194771dae2967aef3ecbedd3bf9a310c76c65">
+        <attvalues>
+          <attvalue for="0" value="L1Escrow" />
+        </attvalues>
+      </node>
+      <node id="0x4e7991e5c547ce825bdeb665ee14a3274f9f61e0" label="0x4e7991e5c547ce825bdeb665ee14a3274f9f61e0">
+        <attvalues>
+          <attvalue for="0" value="SUsds" />
+        </attvalues>
+      </node>
+      <node id="0x67eadb3288ccede034ce95b0511dcc65cf630bb6" label="0x67eadb3288ccede034ce95b0511dcc65cf630bb6">
+        <attvalues>
+          <attvalue for="0" value="DssVestTransferrable" />
+        </attvalues>
+      </node>
+      <node id="0x691a6c29e9e96dd897718305427ad5d534db16ba" label="0x691a6c29e9e96dd897718305427ad5d534db16ba">
+        <attvalues>
+          <attvalue for="0" value="AllocatorVault" />
+        </attvalues>
+      </node>
+      <node id="0x8098f676033a377b9defe302e9fe6877cd63d575" label="0x8098f676033a377b9defe302e9fe6877cd63d575">
+        <attvalues>
+          <attvalue for="0" value="AddressManager" />
+        </attvalues>
+      </node>
+      <node id="0x86f5a13c95ecf7263634b6e14e483d05d7d4aa0b" label="0x86f5a13c95ecf7263634b6e14e483d05d7d4aa0b">
+        <attvalues>
+          <attvalue for="0" value="DssSpell" />
+        </attvalues>
+      </node>
+      <node id="0x8a925ccfd5f7f46332e2d719a916f8b4a643599f" label="0x8a925ccfd5f7f46332e2d719a916f8b4a643599f">
+        <attvalues>
+          <attvalue for="0" value="L1TokenBridge" />
+        </attvalues>
+      </node>
+      <node id="0x9a3d64e386c18cb1d6d5179a9596a4b5736e98a6" label="0x9a3d64e386c18cb1d6d5179a9596a4b5736e98a6">
+        <attvalues>
+          <attvalue for="0" value="ResolvedDelegateProxy" />
+        </attvalues>
+      </node>
+      <node id="0x9a865a710399cea85dbd9144b7a09c889e94e803" label="0x9a865a710399cea85dbd9144b7a09c889e94e803">
+        <attvalues>
+          <attvalue for="0" value="AllocatorRoles" />
+        </attvalues>
+      </node>
+      <node id="0xa3931d71877c0e7a3148cb7eb4463524fec27fbd" label="0xa3931d71877c0e7a3148cb7eb4463524fec27fbd">
+        <attvalues>
+          <attvalue for="0" value="ERC1967Proxy" />
+        </attvalues>
+      </node>
+      <node id="0xa50adbad34c1e9786979bd44220f8fd46e43a6b0" label="0xa50adbad34c1e9786979bd44220f8fd46e43a6b0">
+        <attvalues>
+          <attvalue for="0" value="L1TokenBridge" />
+        </attvalues>
+      </node>
+      <node id="0xb313eab3fde99b2bb4ba9750c2ddfbe2729d1ce9" label="0xb313eab3fde99b2bb4ba9750c2ddfbe2729d1ce9">
+        <attvalues>
+          <attvalue for="0" value="DssVestMintable" />
+        </attvalues>
+      </node>
+      <node id="0xb383070cf9f4f01c3a2cfd0ef6da4bc057b429b7" label="0xb383070cf9f4f01c3a2cfd0ef6da4bc057b429b7">
+        <attvalues>
+          <attvalue for="0" value="L1GovernanceRelay" />
+        </attvalues>
+      </node>
+      <node id="0xbeb5fc579115071764c7423a4f12edde41f106ed" label="0xbeb5fc579115071764c7423a4f12edde41f106ed">
+        <attvalues>
+          <attvalue for="0" value="Proxy" />
+        </attvalues>
+      </node>
+      <node id="0xc395d150e71378b47a1b8e9de0c1a83b75a08324" label="0xc395d150e71378b47a1b8e9de0c1a83b75a08324">
+        <attvalues>
+          <attvalue for="0" value="AllocatorBuffer" />
+        </attvalues>
+      </node>
+      <node id="0xc407398d063f942febbcc6f80a156b47f3f1bda6" label="0xc407398d063f942febbcc6f80a156b47f3f1bda6">
+        <attvalues>
+          <attvalue for="0" value="Proxy" />
+        </attvalues>
+      </node>
+      <node id="0xc8d67fcf101d3f89d0e1f3a2857485a84072a63f" label="0xc8d67fcf101d3f89d0e1f3a2857485a84072a63f">
+        <attvalues>
+          <attvalue for="0" value="VestedRewardsDistribution" />
+        </attvalues>
+      </node>
+      <node id="0xde1fcfb0851916ca5101820a69b13a4e276bd81f" label="0xde1fcfb0851916ca5101820a69b13a4e276bd81f">
+        <attvalues>
+          <attvalue for="0" value="Lib_AddressManager" />
+        </attvalues>
+      </node>
+      <node id="0xdf0535a4c96c9cd8921d8fec92a7680b281681d2" label="0xdf0535a4c96c9cd8921d8fec92a7680b281681d2">
+        <attvalues>
+          <attvalue for="0" value="ERC1967Proxy" />
+        </attvalues>
+      </node>
+      <node id="0x09e05ff6142f2f9de8b6b65855a1d56b6cfe4c58" label="0x09e05ff6142f2f9de8b6b65855a1d56b6cfe4c58">
+        <attvalues>
+          <attvalue for="0" value="ESM" />
+        </attvalues>
+      </node>
+      <node id="0x135954d155898d42c90d2a57824c690e0c7bef1b" label="0x135954d155898d42c90d2a57824c690e0c7bef1b">
+        <attvalues>
+          <attvalue for="0" value="Dog" />
+        </attvalues>
+      </node>
+      <node id="0x1ab3145e281c01a1597c8c62f9f060e8e3e02fab" label="0x1ab3145e281c01a1597c8c62f9f060e8e3e02fab">
+        <attvalues>
+          <attvalue for="0" value="D3MMom" />
+        </attvalues>
+      </node>
+      <node id="0x237e3985dd7e373f2ec878ec1ac48a228cf2e7a3" label="0x237e3985dd7e373f2ec878ec1ac48a228cf2e7a3">
+        <attvalues>
+          <attvalue for="0" value="SparkLendFreezerMom" />
+        </attvalues>
+      </node>
+      <node id="0x2b16c07d5fd5cc701a0a871eae2aad6da5fc8f12" label="0x2b16c07d5fd5cc701a0a871eae2aad6da5fc8f12">
+        <attvalues>
+          <attvalue for="0" value="LockstakeEngine" />
+        </attvalues>
+      </node>
+      <node id="0x35526314f18feb5b7f124e40d6a99d64f7d7e89a" label="0x35526314f18feb5b7f124e40d6a99d64f7d7e89a">
+        <attvalues>
+          <attvalue for="0" value="LockstakeClipper" />
+        </attvalues>
+      </node>
+      <node id="0x374d9c3d5134052bc558f432afa1df6575f07407" label="0x374d9c3d5134052bc558f432afa1df6575f07407">
+        <attvalues>
+          <attvalue for="0" value="FlapperUniV2SwapOnly" />
+        </attvalues>
+      </node>
+      <node id="0x467b32b0407ad764f56304420cddaa563bdab425" label="0x467b32b0407ad764f56304420cddaa563bdab425">
+        <attvalues>
+          <attvalue for="0" value="DssLitePsmMom" />
+        </attvalues>
+      </node>
+      <node id="0x473d777f608c3c24b441ab6bd4bbca6b7f9af90b" label="0x473d777f608c3c24b441ab6bd4bbca6b7f9af90b">
+        <attvalues>
+          <attvalue for="0" value="LockstakeMigrator" />
+        </attvalues>
+      </node>
+      <node id="0x4cf3daefa2683cd18df00f7aff5169c00a9eccd5" label="0x4cf3daefa2683cd18df00f7aff5169c00a9eccd5">
+        <attvalues>
+          <attvalue for="0" value="VoteDelegateFactory" />
+        </attvalues>
+      </node>
+      <node id="0x511485bbd96e7e3a056a8d1b84c5071071c52d6f" label="0x511485bbd96e7e3a056a8d1b84c5071071c52d6f">
+        <attvalues>
+          <attvalue for="0" value="OSM" />
+        </attvalues>
+      </node>
+      <node id="0x53222d00ffbff48bd74bddde5592b1b98793bb07" label="0x53222d00ffbff48bd74bddde5592b1b98793bb07">
+        <attvalues>
+          <attvalue for="0" value="DssSpell" />
+        </attvalues>
+      </node>
+      <node id="0x5a464c28d19848f44199d003bef5ecc87d090f87" label="0x5a464c28d19848f44199d003bef5ecc87d090f87">
+        <attvalues>
+          <attvalue for="0" value="IlkRegistry" />
+        </attvalues>
+      </node>
+      <node id="0x65c79fcb50ca1594b025960e539ed7a9a6d434a3" label="0x65c79fcb50ca1594b025960e539ed7a9a6d434a3">
+        <attvalues>
+          <attvalue for="0" value="Spotter" />
+        </attvalues>
+      </node>
+      <node id="0x76416a4d5190d071bfed309861527431304aa14f" label="0x76416a4d5190d071bfed309861527431304aa14f">
+        <attvalues>
+          <attvalue for="0" value="OsmMom" />
+        </attvalues>
+      </node>
+      <node id="0x79fbdf16b366dfb14f66ce4ac2815ca7296405a0" label="0x79fbdf16b366dfb14f66ce4ac2815ca7296405a0">
+        <attvalues>
+          <attvalue for="0" value="ClipperMom" />
+        </attvalues>
+      </node>
+      <node id="0x929d9a1435662357f54adcf64dcee4d6b867a6f9" label="0x929d9a1435662357f54adcf64dcee4d6b867a6f9">
+        <attvalues>
+          <attvalue for="0" value="Chief" />
+        </attvalues>
+      </node>
+      <node id="0x9c257e5aaf73d964aebc2140ca38078988fb0c10" label="0x9c257e5aaf73d964aebc2140ca38078988fb0c10">
+        <attvalues>
+          <attvalue for="0" value="LineMom" />
+        </attvalues>
+      </node>
+      <node id="0xb8f8c7caabfa320717e3e848948450e120f0d9bb" label="0xb8f8c7caabfa320717e3e848948450e120f0d9bb">
+        <attvalues>
+          <attvalue for="0" value="StairstepExponentialDecrease" />
+        </attvalues>
+      </node>
+      <node id="0xc238e3d63dfd677fa0fa9985576f0945c581a266" label="0xc238e3d63dfd677fa0fa9985576f0945c581a266">
+        <attvalues>
+          <attvalue for="0" value="L1EscrowMom" />
+        </attvalues>
+      </node>
+      <node id="0xc290bf292900318eadade782a1f6953f6e13a331" label="0xc290bf292900318eadade782a1f6953f6e13a331">
+        <attvalues>
+          <attvalue for="0" value="0xc290...a331" />
+        </attvalues>
+      </node>
+      <node id="0xc3d809e87a2c9da4f6d98fecea9135d834d6f5a0" label="0xc3d809e87a2c9da4f6d98fecea9135d834d6f5a0">
+        <attvalues>
+          <attvalue for="0" value="VoteDelegateFactory" />
+        </attvalues>
+      </node>
+      <node id="0xc40611ac4fff8572dc5f02a238176edcf15ea7ba" label="0xc40611ac4fff8572dc5f02a238176edcf15ea7ba">
+        <attvalues>
+          <attvalue for="0" value="SparkEthereum_20250515" />
+        </attvalues>
+      </node>
+      <node id="0xf0c6e6ec8b367cc483a411e595d3ba0a816d37d0" label="0xf0c6e6ec8b367cc483a411e595d3ba0a816d37d0">
+        <attvalues>
+          <attvalue for="0" value="SPBEAMMom" />
+        </attvalues>
+      </node>
+      <node id="0xf51a075d468de7de3599c1dc47f5c42d02c9230e" label="0xf51a075d468de7de3599c1dc47f5c42d02c9230e">
+        <attvalues>
+          <attvalue for="0" value="SplitterMom" />
+        </attvalues>
+      </node>
+      <node id="0xf9a9cfd3229e985b91f99bc866d42938044ffa1c" label="0xf9a9cfd3229e985b91f99bc866d42938044ffa1c">
+        <attvalues>
+          <attvalue for="0" value="LockstakeSky" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x03553f213bce4b35feb3cad08e26999e2f363745" id="0" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x173e314c7635b45322cd8cb14f44b312e079f3af" id="1" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x1923dfee706a8e78157416c29cbccfde7cdf4102" id="2" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3225737a9bbb6473cb4a45b7244aca2befdb276a" id="3" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3300f198988e4c9c63f75df86de36421f06af8c4" id="4" weight="4" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x35d1b3f3d7966a1dfe207aa4514c12a259a0492b" id="5" weight="4" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x38e4254bd82ed5ee97cd1c4278faae748d998865" id="6" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3959e23a63ca7ac12d658bb44f90cb1f7ee4c02c" id="7" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3c0f895007ca717aa01c8693e59df1e8c3777feb" id="8" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x56072c95faa701256059aa122697b133aded9279" id="9" weight="3" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x6464c34a02dd155dd0c630ce233dd6e21c24f9a5" id="10" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x6b175474e89094c44da98b954eedeac495271d0f" id="11" weight="3" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x6d635c8d08a1ea2f1687a5e46b666949c977b7dd" id="12" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x6eeb68b2c7a918f36b78e2db80dcf279236ddfb8" id="13" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x73e65dbd630f90604062f6e02fab9138e713edd9" id="14" weight="3" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x74e1ba852c864d689562b5977eedcb127fde0c9f" id="15" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x8de6ddbcd5053d32292aaa0d2105a32d108484a6" id="16" weight="4" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x9759a6ac90977b93b58547b4a71c78317f391a28" id="17" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x99cbc0e4e6427f6939536ed24d1275b95ff77404" id="18" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2" id="19" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xa1ea1ba18e88c381c724a75f23a130420c403f9a" id="20" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xa3ee378bdd0b7dd403ced3a0a65b2b389a2eab7e" id="21" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xa950524441892a31ebddf91d3ceefa04bf454466" id="22" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb" id="23" weight="3" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbdcfca946b6cdd965f99a839e4435bcdc1bc470b" id="24" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbe286431454714f511008713973d3b053a2d38f3" id="25" weight="4" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbe8e3e3618f7474f8cb1d074a26affef007e98fb" id="26" weight="10" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbf7111f13386d23cb2fba5a538107a73f6872bcf" id="27" weight="3" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc20059e0317de91738d13af027dfc4a50781b066" id="28" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc7bdd1f2b16447dcf3de045c4a039a60ec2f0ba3" id="29" weight="4" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" id="30" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xce01c90de7fd1bcfa39e237fe6d8d9f569e8a6a3" id="31" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xda0ab1e0017debcd72be8599041a2aa3ba7e740f" id="32" weight="4" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xdc035d45d973e3ec169d2276ddab16f1e407384f" id="33" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf9a2002b471f600a5484da5a735a2a053d377078" id="34" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x02c3ea4e34c0cbd694d2adfa2c690eecbc1793ee" id="35" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x2276f52afba7cf2525fd0a050df464ac8532d0ef" id="36" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3254f7cd0565aa67eedc86c2fb608be48d5ccd78" id="37" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x340f923e5c7cbb2171146f64169ec9d5a9ffe647" id="38" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x49048044d57e1c92a77f79988d21fa8faf74e97e" id="39" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x542dba469bde58faee189ffb60c6b49ce60e0738" id="40" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x5ae329203e00f76891094dcfedd5aca082a50e1b" id="41" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x5d5a095665886119693f0b41d8dfee78da033e8b" id="42" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x6d3522b1c623e76b6f74c0e6d4e963510d12f879" id="43" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x73a79fab69143498ed3712e519a88a918e1f4072" id="44" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x7a5fd5cf045e010e62147f065ceae59e5344b188" id="45" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x866e82a600a1414e583f7f13623f1ac5d58b0afa" id="46" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x870ac11d48b15db9a138cf899d20f13f79ba00bc" id="47" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x8efb6b5c4767b09dc9aa6af4eaa89f749522bae2" id="48" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xb443da3e07052204a02d630a8933dac05a0d6fb4" id="49" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbf5ef05a578f270c0e54c7f6ef7ccfb5c9cd56b0" id="50" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc13e21b648a5ee794902342038ff3adab66be987" id="51" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xda135cd78a086025bcdc87b038a1c462032b510c" id="52" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf485e3351a4c3d7d1f89b1842af625fd0dfb90c8" id="53" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf7b656c95420194b79687fc86d965fb51da4799f" id="54" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf8dff673b555a225e149218c5005fc88f4a13870" id="55" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x0650caf159c5a49f711e8169d4336ecb9b950275" id="56" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x09b354cda89203bb7b3131cc728dfa06ab09ae2f" id="57" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x0bd48f6b86a26d3a217d0fa6ffe2b491b956a7a2" id="58" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x1196f688c585d3e5c895ef8954ffb0dcdafc566a" id="59" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x1995043bd592cedf7d027e4947dbf40612bcd703" id="60" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x19c0976f590d67707e62397c87829d896dc0f1f1" id="61" weight="2" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x229047fed2591dbec1ef1118d64f7af3db9eb290" id="62" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x25ace71c97b33cc4729cf772ae268934f7ab5fa1" id="63" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x2f0c88e935db5a60dda73b0b4eaeef55883896d9" id="64" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3968a022d955bbb7927cc011a48601b65a33f346" id="65" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x3d25b7d486cae1810374d37a48bcf0963c9b8057" id="66" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x467194771dae2967aef3ecbedd3bf9a310c76c65" id="67" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x4e7991e5c547ce825bdeb665ee14a3274f9f61e0" id="68" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x67eadb3288ccede034ce95b0511dcc65cf630bb6" id="69" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x691a6c29e9e96dd897718305427ad5d534db16ba" id="70" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x8098f676033a377b9defe302e9fe6877cd63d575" id="71" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x86f5a13c95ecf7263634b6e14e483d05d7d4aa0b" id="72" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x8a925ccfd5f7f46332e2d719a916f8b4a643599f" id="73" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x9a3d64e386c18cb1d6d5179a9596a4b5736e98a6" id="74" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x9a865a710399cea85dbd9144b7a09c889e94e803" id="75" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xa3931d71877c0e7a3148cb7eb4463524fec27fbd" id="76" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xa50adbad34c1e9786979bd44220f8fd46e43a6b0" id="77" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xb313eab3fde99b2bb4ba9750c2ddfbe2729d1ce9" id="78" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xb383070cf9f4f01c3a2cfd0ef6da4bc057b429b7" id="79" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xbeb5fc579115071764c7423a4f12edde41f106ed" id="80" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc395d150e71378b47a1b8e9de0c1a83b75a08324" id="81" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc407398d063f942febbcc6f80a156b47f3f1bda6" id="82" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc8d67fcf101d3f89d0e1f3a2857485a84072a63f" id="83" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xde1fcfb0851916ca5101820a69b13a4e276bd81f" id="84" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xdf0535a4c96c9cd8921d8fec92a7680b281681d2" id="85" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x09e05ff6142f2f9de8b6b65855a1d56b6cfe4c58" id="86" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x135954d155898d42c90d2a57824c690e0c7bef1b" id="87" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x1ab3145e281c01a1597c8c62f9f060e8e3e02fab" id="88" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x237e3985dd7e373f2ec878ec1ac48a228cf2e7a3" id="89" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x2b16c07d5fd5cc701a0a871eae2aad6da5fc8f12" id="90" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x35526314f18feb5b7f124e40d6a99d64f7d7e89a" id="91" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x374d9c3d5134052bc558f432afa1df6575f07407" id="92" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x467b32b0407ad764f56304420cddaa563bdab425" id="93" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x473d777f608c3c24b441ab6bd4bbca6b7f9af90b" id="94" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x4cf3daefa2683cd18df00f7aff5169c00a9eccd5" id="95" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x511485bbd96e7e3a056a8d1b84c5071071c52d6f" id="96" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x53222d00ffbff48bd74bddde5592b1b98793bb07" id="97" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x5a464c28d19848f44199d003bef5ecc87d090f87" id="98" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x65c79fcb50ca1594b025960e539ed7a9a6d434a3" id="99" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x76416a4d5190d071bfed309861527431304aa14f" id="100" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x79fbdf16b366dfb14f66ce4ac2815ca7296405a0" id="101" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x929d9a1435662357f54adcf64dcee4d6b867a6f9" id="102" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0x9c257e5aaf73d964aebc2140ca38078988fb0c10" id="103" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xb8f8c7caabfa320717e3e848948450e120f0d9bb" id="104" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc238e3d63dfd677fa0fa9985576f0945c581a266" id="105" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc290bf292900318eadade782a1f6953f6e13a331" id="106" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc3d809e87a2c9da4f6d98fecea9135d834d6f5a0" id="107" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xc40611ac4fff8572dc5f02a238176edcf15ea7ba" id="108" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf0c6e6ec8b367cc483a411e595d3ba0a816d37d0" id="109" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf51a075d468de7de3599c1dc47f5c42d02c9230e" id="110" weight="1" />
+      <edge source="0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB" target="0xf9a9cfd3229e985b91f99bc866d42938044ffa1c" id="111" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x03553f213bce4b35feb3cad08e26999e2f363745" id="112" weight="2" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x173e314c7635b45322cd8cb14f44b312e079f3af" id="113" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x1923dfee706a8e78157416c29cbccfde7cdf4102" id="114" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x3225737a9bbb6473cb4a45b7244aca2befdb276a" id="115" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x3300f198988e4c9c63f75df86de36421f06af8c4" id="116" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x35d1b3f3d7966a1dfe207aa4514c12a259a0492b" id="117" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x38e4254bd82ed5ee97cd1c4278faae748d998865" id="118" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x3959e23a63ca7ac12d658bb44f90cb1f7ee4c02c" id="119" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x3c0f895007ca717aa01c8693e59df1e8c3777feb" id="120" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x56072c95faa701256059aa122697b133aded9279" id="121" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x6464c34a02dd155dd0c630ce233dd6e21c24f9a5" id="122" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x6b175474e89094c44da98b954eedeac495271d0f" id="123" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x6d635c8d08a1ea2f1687a5e46b666949c977b7dd" id="124" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x6eeb68b2c7a918f36b78e2db80dcf279236ddfb8" id="125" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x73e65dbd630f90604062f6e02fab9138e713edd9" id="126" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x74e1ba852c864d689562b5977eedcb127fde0c9f" id="127" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x8de6ddbcd5053d32292aaa0d2105a32d108484a6" id="128" weight="2" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x9759a6ac90977b93b58547b4a71c78317f391a28" id="129" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x99cbc0e4e6427f6939536ed24d1275b95ff77404" id="130" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2" id="131" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xa1ea1ba18e88c381c724a75f23a130420c403f9a" id="132" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xa3ee378bdd0b7dd403ced3a0a65b2b389a2eab7e" id="133" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xa950524441892a31ebddf91d3ceefa04bf454466" id="134" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb" id="135" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xbdcfca946b6cdd965f99a839e4435bcdc1bc470b" id="136" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xbe286431454714f511008713973d3b053a2d38f3" id="137" weight="2" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xbe8e3e3618f7474f8cb1d074a26affef007e98fb" id="138" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xbf7111f13386d23cb2fba5a538107a73f6872bcf" id="139" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xc20059e0317de91738d13af027dfc4a50781b066" id="140" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xc7bdd1f2b16447dcf3de045c4a039a60ec2f0ba3" id="141" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" id="142" weight="3" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xce01c90de7fd1bcfa39e237fe6d8d9f569e8a6a3" id="143" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xda0ab1e0017debcd72be8599041a2aa3ba7e740f" id="144" weight="2" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xdc035d45d973e3ec169d2276ddab16f1e407384f" id="145" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0xf9a2002b471f600a5484da5a735a2a053d377078" id="146" weight="1" />
+      <edge source="0xc9c4ddf824e4ff80158ab7862d168a35ce616e8e" target="0x929d9a1435662357f54adcf64dcee4d6b867a6f9" id="147" weight="1" />
+    </edges>
+  </graph>
+</gexf>

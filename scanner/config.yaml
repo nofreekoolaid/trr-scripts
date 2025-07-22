@@ -1,0 +1,15 @@
+seed_contracts:
+  - "0xbe8e3e3618f7474f8cb1d074a26affef007e98fb"  # PauseProxy
+
+blacklist_contracts:
+  - "0x1F98431c8aD98523631AE4a59f267346ea31F984"  # Uniswap
+
+num_transactions: 10
+max_depth: 2
+
+tenderly_credentials:
+  user: "your_user"
+  project: "your_project"
+  access_key: "<REDACTED>"
+
+etherscan_api_key: "<REDACTED>"
