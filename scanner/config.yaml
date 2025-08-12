@@ -5,7 +5,8 @@ blacklist_contracts:
   - "0x1F98431c8aD98523631AE4a59f267346ea31F984"  # Uniswap
 
 num_transactions: 10
-max_depth: 2
+max_depth: 1
+
 
 tenderly_credentials:
   user: "your_user"

@@ -2,3 +2,4 @@ requests
 networkx
 numpy
 web3
+tenacity
