@@ -286,6 +286,11 @@ def annotate_and_add_contract(contract_addr, method, contract_graph, discovered_
 
 def save_discovered_contracts(contracts: Set[str]):
     try:
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamped_file = f"discovered_contracts_{timestamp}.json"
+        with open(timestamped_file, 'w') as f:
+            json.dump(list(contracts), f)
+        # Latest
         with open(DISCOVERED_CONTRACTS_FILE, 'w') as f:
             json.dump(list(contracts), f)
     except Exception as e:
@@ -479,23 +484,18 @@ def deployer_discovery_pass(contracts_to_check, blacklist, contract_graph, disco
 
 def update_graph(source: str, targets: Set[str], current_depth: int, depth_queues: Dict[int, Set[str]]):
     global contract_graph, discovered_contracts
-    # logging.info(f"Updating graph from {source[:8]}... to {len(targets)} targets")
 
     for target in targets:
         if is_eoa(target):
-            # logging.info(f"Skipping EOA target: {target[:8]}...")
             continue
         if target in processed_contracts or target in depth_queues.get(current_depth + 1, set()):
             print(f"Skipping already processed or queued target: {target[:8]}...")
             continue 
 
         target = Web3.to_checksum_address(target)
-        # logging.info(f"   - Target: {target[:8]}...")
         if target not in discovered_contracts:
-            # logging.info(f"    - New contract discovered: {target[:8]}...")
             discovered_contracts.add(target)
             if target not in contract_graph:
-                # logging.info(f"     - Adding to graph: {target[:8]}...")
                 name = fetch_contract_name(target)
                 contract_graph.add_node(
                     target,
@@ -504,39 +504,14 @@ def update_graph(source: str, targets: Set[str], current_depth: int, depth_queue
                     discovery_method="interaction"
                 )
         if not any(target in q for q in depth_queues.values()):
-            # logging.info(f"     - Adding to depth queue for depth {current_depth + 1}: {target[:8]}...")
             if current_depth + 1 not in depth_queues:
                 depth_queues[current_depth + 1] = set()
             depth_queues[current_depth + 1].add(target)
         if contract_graph.has_edge(source, target):
-            # logging.info(f"     - Incrementing edge weight from {source[:8]}... to {target[:8]}...")
             contract_graph[source][target]["weight"] += 1
         else:
-            # logging.info(f"     - Adding edge from {source[:8]}... to {target[:8]}...")
             contract_graph.add_edge(source, target, weight=1)
 
-        # if target not in contract_graph:
-        #     name = fetch_contract_name(target)
-        #     contract_graph.add_node(
-        #         target, 
-        #         name=name,
-        #         label=name if name.strip() else short_addr(target),
-        #         discovery_method="interaction"
-        #     )
-        # else:
-        #     if "discovery_method" not in contract_graph.nodes[target]:
-        #         contract_graph.nodes[target]["discovery_method"] = "interaction"
-
-        # discovered_contracts.add(target)
-
-        # already_queued = any(target in queue for queue in depth_queues.values())
-        # if not already_queued:
-        #     depth_queues[current_depth + 1].add(target)
-
-        # if contract_graph.has_edge(source, target):
-        #     contract_graph[source][target]["weight"] += 1
-        # else:
-        #     contract_graph.add_edge(source, target, weight=1)
 processed_contracts = set()
 
 def process_contract(contract: str, current_depth: int, depth_queues: Dict[int, Set[str]]):
@@ -660,7 +635,6 @@ def main():
         current_queue = depth_queues[current_depth].copy()
         depth_queues[current_depth].clear()
         for contract in current_queue:
-            # logging.info(f"Processing Depth {current_depth} contract: {contract}")
             if is_eoa(contract):
                 continue
 
@@ -677,23 +651,6 @@ def main():
             current_depth += 1
         if all(not queue for queue in depth_queues.values()):
             break
-                
-        
-        # for contract in list(depth_queues[current_depth]):
-        #     if is_eoa(contract):
-        #         depth_queues[current_depth].remove(contract)
-        #         continue
-        #     process_contract(contract)
-        #     contracts_processed += 1
-            
-        #     if current_depth + 1 not in depth_queues:
-        #         depth_queues[current_depth + 1] = set()
-            
-        #     for new_contract in discovered_contracts - set(depth_queues[current_depth]):
-        #         if is_eoa(new_contract):
-        #             continue
-        #         if new_contract not in depth_queues.get(current_depth + 1, set()):
-        #             depth_queues[current_depth + 1].add(new_contract)
         
         if current_depth == 1:
             logging.info("\n=== Deployer Discovery Pass (POST-CRAWL) ===")
@@ -734,9 +691,8 @@ def main():
     logging.info(f"New contracts discovered: {len(new_discovered)}")
     logging.info(f"Contracts from previous run not rediscovered: {len(disappeared)}")
     
-    # Save new discoveries to timestamped file
+    # Save new discoveries
     if new_discovered:
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         new_filename = f"new_contracts.json"
         with open(new_filename, 'w') as f:
             json.dump(list(new_discovered), f)
@@ -766,6 +722,7 @@ def main():
     for method, count in sorted(methods.items()):
         logging.info(f"  {method}: {count} contracts")
 
+    save_discovered_contracts(discovered_contracts)
     ranked_contracts = rank_contracts(contract_graph)
 
 if __name__ == '__main__':
