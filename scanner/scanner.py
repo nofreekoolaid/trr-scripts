@@ -89,22 +89,53 @@ def load_contract_cache() -> Dict[str, str]:
             return {}
         cleaned = {}
         for k, v in raw.items():
-            if isinstance(k, str) and ADDR_RE.match(k) and isinstance(v, str):
-                # normalize keys to checksum
-                try:
-                    ck = Web3.to_checksum_address(k)
-                except Exception:
-                    continue
-                cleaned[ck] = v
+            if not isinstance(k, str) or not ADDR_RE.match(k):
+                continue
+                
+            try:
+                ck = Web3.to_checksum_address(k)
+            except Exception:
+                continue
+
+            # Old format
+            if isinstance(v, str):
+                cleaned[ck] = {
+                    'name': v,
+                    'creation_date': None
+                }
+            
+            # New format
+            elif isinstance(v, dict):
+                cleaned[ck] = {
+                    'name': v.get('name', ''),
+                    'creation_date': v.get('creation_date')
+                }
+
         return cleaned
     except (FileNotFoundError, json.JSONDecodeError):
         return {}
 
-def save_contract_cache(cache: Dict[str, str]) -> None:
+def save_contract_cache(cache: Dict[str, Dict]) -> None:
     tmp = CONTRACT_CACHE_FILE + ".tmp"
-    with open(tmp, 'w') as f:
-        json.dump(cache, f, indent=2, sort_keys=True)
-    os.replace(tmp, CONTRACT_CACHE_FILE)
+    cleaned = {}
+    for addr, data in cache.items():
+        try:
+            ck = Web3.to_checksum_address(addr)
+            cleaned[ck] = {
+                'name': data.get('name', ''),
+                'creation_date': data.get('creation_date')
+            }
+        except Exception:
+            continue
+
+    try:
+        with open(tmp, 'w') as f:
+            json.dump(cleaned, f, indent=2, sort_keys=True)
+        os.replace(tmp, CONTRACT_CACHE_FILE)
+    except Exception as e:
+        logging.error(f"Error saving contract cache: {e}")
+        if os.path.exists(tmp):
+            os.unlink(tmp)
 
 contract_name_cache = load_contract_cache()
 
@@ -122,6 +153,13 @@ def short_addr(addr: str) -> str:
 def fetch_contract_name(addr):
     checksum_addr = Web3.to_checksum_address(addr)
     cached = contract_name_cache.get(checksum_addr)
+
+    if cached and isinstance(cached, dict) and cached.get('name'):
+        return cached['name']
+    # Old cache
+    elif isinstance(cached, str) and cached.strip():
+        return cached
+    
     if isinstance(cached, str) and cached.strip():
         return cached
 
@@ -136,6 +174,7 @@ def fetch_contract_name(addr):
         resp = requests.get(ETHERSCAN_URL, params=params)
         resp.raise_for_status()
         result = resp.json().get("result") or []
+        
         if result and isinstance(result, list):
             entry = result[0]
 
@@ -160,7 +199,10 @@ def fetch_contract_name(addr):
                         name = f"{name} (Proxy)"
 
             if name:
-                contract_name_cache[checksum_addr] = name
+                contract_name_cache[checksum_addr] = {
+                    'name': name,
+                    'creation_date': None
+                }
                 save_contract_cache(contract_name_cache)
                 return name
     except Exception:
@@ -275,14 +317,104 @@ def annotate_and_add_contract(contract_addr, method, contract_graph, discovered_
     """
     if contract_addr not in contract_graph:
         name = fetch_contract_name(contract_addr)
+        cached = contract_name_cache.get(Web3.to_checksum_address(contract_addr))
+        creation_date = cached.get('creation_date') if cached and isinstance(cached, dict) else None
+
         contract_graph.add_node(
             contract_addr, 
             name=name,
             label=name if name.strip() else short_addr(contract_addr),
-            discovery_method=method
+            discovery_method=method,
+            creation_date=creation_date
         )
     discovered_contracts.add(contract_addr)
     untraced_contracts.add(contract_addr)
+
+
+@retry(
+    wait=wait_exponential(multiplier=1, min=2, max=10),
+    stop=stop_after_attempt(5),
+    retry=retry_if_exception_type(RequestException)
+)
+def fetch_and_store_creation_date(addr):
+    """Fetch contract creation date and store in cache"""
+    checksum_addr = Web3.to_checksum_address(addr)
+    # Skip if we already have date
+    cached = contract_name_cache.get(checksum_addr)
+    if cached and isinstance(cached, dict) and cached.get('creation_date'):
+        return cached['creation_date']
+    
+    try:
+        params = {
+            "module": "contract",
+            "action": "getcontractcreation",
+            "contractaddresses": checksum_addr,
+            "apikey": ETHERSCAN_API_KEY
+        }
+        limiter.wait()
+        resp = requests.get(ETHERSCAN_URL, params=params)
+        resp.raise_for_status()
+        result = resp.json().get("result", [])
+        
+        if not result or not isinstance(result, list):
+            return None
+            
+        creation_data = result[0]
+        if creation_data.get("timestamp"):
+            timestamp = int(creation_data["timestamp"])
+            creation_date = datetime.datetime.fromtimestamp(timestamp).isoformat()
+
+            # Update cache
+            if checksum_addr not in contract_name_cache:
+                contract_name_cache[checksum_addr] = {
+                    'name': fetch_contract_name(checksum_addr),
+                    'creation_date': creation_date
+                }
+            else:
+                if isinstance(contract_name_cache[checksum_addr], dict):
+                    contract_name_cache[checksum_addr]['creation_date'] = creation_date
+                else:  # Old format
+                    contract_name_cache[checksum_addr] = {
+                        'name': contract_name_cache[checksum_addr],
+                        'creation_date': creation_date
+                    }
+            save_contract_cache(contract_name_cache)
+            return creation_date
+        else:
+            return None
+            
+    except Exception as e:
+        logging.warning(f"Failed to fetch creation date for {checksum_addr[:8]}...: {str(e)}")
+        return None
+
+
+def display_newest_contracts(graph, top_n=10):
+    """Display newest contracts by creation date"""
+    contracts_with_dates = []
+    
+    for addr in graph.nodes():
+        node = graph.nodes[addr]
+        creation_date = node.get('creation_date')
+        
+        if creation_date:
+            try:
+                # Convert to datetime
+                dt = datetime.datetime.fromisoformat(creation_date)
+                contracts_with_dates.append((addr, dt, creation_date))
+            except ValueError:
+                continue
+    
+    # Sort by date
+    contracts_with_dates.sort(key=lambda x: x[1], reverse=True)
+    
+    logging.info(f"Top {top_n} Newest Contracts:")
+    for i, (addr, dt, date_str) in enumerate(contracts_with_dates[:top_n], 1):
+        name = display_label(addr)
+        method = graph.nodes[addr].get('discovery_method', 'unknown')
+        logging.info(f"{i}. {name} ({addr[:8]}...) - Created: {date_str} [via {method}]")
+    
+    return contracts_with_dates[:top_n]
+
 
 def save_discovered_contracts(contracts: Set[str]):
     try:
@@ -489,7 +621,6 @@ def update_graph(source: str, targets: Set[str], current_depth: int, depth_queue
         if is_eoa(target):
             continue
         if target in processed_contracts or target in depth_queues.get(current_depth + 1, set()):
-            print(f"Skipping already processed or queued target: {target[:8]}...")
             continue 
 
         target = Web3.to_checksum_address(target)
@@ -594,11 +725,13 @@ def main():
 
     for contract in SEED_CONTRACTS:
         name = fetch_contract_name(contract)
+        creation_date = fetch_and_store_creation_date(contract)
         contract_graph.add_node(
             contract, 
             name=name,
             label=name if name.strip() else short_addr(contract),
-            discovery_method="seed"
+            discovery_method="seed",
+            creation_date=creation_date
         )
         discovered_contracts.add(contract)
         untraced_contracts.add(contract)
@@ -667,6 +800,13 @@ def main():
                 untraced_contracts=untraced_contracts,
                 label="deployer_post"
             )
+    
+    logging.info("\n=== Fetching Contract Creation Dates ===")
+    for contract in discovered_contracts:
+        if 'creation_date' not in contract_graph.nodes[contract]:
+            creation_date = fetch_and_store_creation_date(contract)
+            if creation_date:
+                contract_graph.nodes[contract]['creation_date'] = creation_date
 
     logging.info("\n=== Discovery Comparison ===")
     
@@ -707,6 +847,9 @@ def main():
 
     # Final output and analysis
     graph_path = os.path.join(output_dir, "contract_graph.gexf")
+    for node in contract_graph.nodes():
+        if contract_graph.nodes[node].get('creation_date') is None:
+            contract_graph.nodes[node].pop('creation_date', None)
     nx.write_gexf(contract_graph, graph_path)
 
     logging.info("\n=== Summary ===")
@@ -724,6 +867,8 @@ def main():
 
     save_discovered_contracts(discovered_contracts)
     ranked_contracts = rank_contracts(contract_graph)
+
+    display_newest_contracts(contract_graph)
 
 if __name__ == '__main__':
     main()
