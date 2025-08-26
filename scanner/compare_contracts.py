@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 import json
+import os
 from typing import Set, Dict, List
 from web3 import Web3
 import argparse
 
-def compare_contract_files(file1: str, file2: str, verbose: bool = False, output_diff: bool = False):
+def short_addr(addr: str) -> str:
+    c = Web3.to_checksum_address(addr)
+    return c[:6] + "..." + c[-4:]
+
+def compare_contract_files(file1: str, file2: str, contract_cache=None, verbose: bool = False, output_diff: bool = False):
     def load_contracts(file_path: str) -> Set[str]:
         try:
             with open(file_path, 'r') as f:
@@ -12,6 +17,20 @@ def compare_contract_files(file1: str, file2: str, verbose: bool = False, output
         except (FileNotFoundError, json.JSONDecodeError) as e:
             print(f"Error loading {file_path}: {str(e)}")
             return set()
+        
+    def get_contract_name_from_cache(address: str) -> str:
+        if contract_cache:
+            cached = contract_cache.get(Web3.to_checksum_address(address))
+            if cached:
+                if isinstance(cached, dict):
+                    name = cached.get('name', '')
+                    if name and name.strip():
+                        return name
+                elif isinstance(cached, str) and cached.strip():
+                    return cached
+        # Fallback to shortened address if no name found
+        return short_addr(address)
+        
 
     contracts1 = load_contracts(file1)
     contracts2 = load_contracts(file2)
@@ -30,20 +49,38 @@ def compare_contract_files(file1: str, file2: str, verbose: bool = False, output
         print("Sample differences (max 20 each):")
         print(f"Unique to {file1}:")
         for i, addr in enumerate(sorted(unique_to_file1)[:20], 1):
-            print(f"{i}. {addr}")
+            name = get_contract_name_from_cache(addr)
+            print(f"{i}. {name}")
             
         print(f"Unique to {file2}:")
         for i, addr in enumerate(sorted(unique_to_file2)[:20], 1):
-            print(f"{i}. {addr}")
+            name = get_contract_name_from_cache(addr)
+            print(f"{i}. {name}")
 
     if output_diff:
-        with open(f"diff_{file1}_unique.json", 'w') as f:
-            json.dump(sorted(unique_to_file1), f, indent=2)
-        with open(f"diff_{file2}_unique.json", 'w') as f:
-            json.dump(sorted(unique_to_file2), f, indent=2)
-        print("Saved full diffs to:")
-        print(f"- diff_{file1}_unique.json")
-        print(f"- diff_{file2}_unique.json")
+        unique1_with_names = []
+        for addr in sorted(unique_to_file1):
+            name = get_contract_name_from_cache(addr)
+            unique1_with_names.append({"address": addr, "name": name})
+
+        unique2_with_names = []
+        for addr in sorted(unique_to_file2):
+            name = get_contract_name_from_cache(addr)
+            unique2_with_names.append({"address": addr, "name": name})
+
+        with open(f"diff_{os.path.basename(file1)}_unique.json", 'w') as f:
+            json.dump(unique1_with_names, f, indent=2)
+        with open(f"diff_{os.path.basename(file2)}_unique.json", 'w') as f:
+            json.dump(unique2_with_names, f, indent=2)
+        print(f"\nSaved full diffs to:")
+        print(f"- diff_{os.path.basename(file1)}_unique.json")
+        print(f"- diff_{os.path.basename(file2)}_unique.json")
+    
+    return {
+        'unique_to_file1': unique_to_file1,
+        'unique_to_file2': unique_to_file2,
+        'common': contracts1 & contracts2
+    }
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Compare two contract discovery files')
