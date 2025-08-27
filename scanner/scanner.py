@@ -19,6 +19,8 @@ from functools import lru_cache
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from compare_contracts import compare_contract_files
+from contextlib import redirect_stdout
+import io
 
 random.seed(0)
 
@@ -284,6 +286,7 @@ def deduplicate_by_bytecode(contracts: Set[str]) -> Tuple[Dict[str, str], Dict[s
             if bh not in unique_by_hash:
                 unique_by_hash[bh] = addr
             else:
+                # logging.info(f"Duplicate bytecode detected: {addr} and {unique_by_hash[bh]} (hash: {bh})")
                 duplicates_by_hash.setdefault(bh, []).append(addr)
     
     save_contract_cache(contract_name_cache)
@@ -1111,16 +1114,21 @@ def main():
         json.dump(sorted(previous_discovered), f)
     with open(temp_curr_file, 'w') as f:
         json.dump(sorted(discovered_contracts), f)
-    print(f"Comparing previous and current contract discoveries:\n"
-            f"  Previous: {len(previous_discovered)} contracts\n"
-            f"  Current: {len(discovered_contracts)} contracts\n")
-    compare_contract_files(
-        temp_prev_file, 
-        temp_curr_file,
-        contract_cache=contract_name_cache,
-        verbose=True,
-        output_diff=False
-    )
+    logging.info("Comparing previous and current contract discoveries:")
+    output_buffer = io.StringIO()
+
+    with redirect_stdout(output_buffer):
+        compare_contract_files(
+            temp_prev_file, 
+            temp_curr_file,
+            contract_cache=contract_name_cache,
+            verbose=True,
+            output_diff=False
+        )
+    captured_output = output_buffer.getvalue()
+    for line in captured_output.split('\n'):
+        if line.strip():
+            logging.info(line)
         
         # Clean up temp files
     try:
