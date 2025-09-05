@@ -1,4 +1,10 @@
 {
+  "0x0000000000001Deb2E653D32C2e557A96cE2b91D": {
+    "bytecode_hash": "0xe22b5d7edc2243237371175c39d17a9728fda9f5e72b927aa684ce854c965dab",
+    "creation_date": "2025-04-15T20:35:23",
+    "deployer": "0xDa9Cf2ec45b8F3B05926d2C684205B1beF946ee3",
+    "name": "BlessnetTokenGateway"
+  },
   "0x000000000000c9B3E2C3Ec88B1B4c0cD853f4321": {
     "bytecode_hash": "0xb83558675d57f3b1608912d79b6c59a00c757c7ffcb9a9e77e91834f09828ea0",
     "creation_date": "2023-12-18T02:23:35",
@@ -401,6 +407,18 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
   },
+  "0x0d9EA0D5E3f400b1df8F695be04292308c041E77": {
+    "bytecode_hash": "0x97944ee3a54ce7916f06e3a7355ab6ec48d7d4088871dd46c5231e794fbb5368",
+    "creation_date": "2025-04-03T03:49:35",
+    "deployer": "0x2d7A5Fb2b451239E371A3b27e6b67D6b70eEa18B",
+    "name": "PancakeV3Pool"
+  },
+  "0x0de76c2e3f53f6f957CAB29E2D0261846B702bC2": {
+    "bytecode_hash": "0xf1de1e06ba519965d85a7517e76040ff002d01334f510fbe8232aefca76d69c6",
+    "creation_date": "2025-06-25T09:50:11",
+    "deployer": "0x630Dc07F1798F0bD6dD7f05050D6AaEB6F4d9e91",
+    "name": "PILSO"
+  },
   "0x0e998AB2abF00e0015B935bEA36BFB40b61428A8": {
     "bytecode_hash": "0x03958db33725acf344e202e77a2316db6f63f1be71cb9a315630b34735492b86",
     "creation_date": "2025-08-07T08:59:59",
@@ -432,10 +450,16 @@
     "name": "ChainlinkOracle"
   },
   "0x109830a1AAaD605BbF02a9dFA7B0B92EC2FB7dAa": {
-    "bytecode_hash": null,
+    "bytecode_hash": "0x759cdaadad37345b62152ff2f67dfa7f01091fb28ab16033d52bf6ec357912d3",
     "creation_date": "2022-08-21T06:33:04",
     "deployer": "0xFE57B98851732723F67ED7e3A648F2223155a2fD",
     "name": "UniswapV3Pool"
+  },
+  "0x10EE9F68EE4e4d311e854AE14C53F5B25A917f85": {
+    "bytecode_hash": "0x59e82b5143eab48cd3f5a0ab72ad6048f5ead256e821b9942673e99ee89b2810",
+    "creation_date": "2025-08-04T04:06:23",
+    "deployer": "0x6fEFF036A6142Eb8467ddD143339afCdecc1bCA0",
+    "name": "MacroHard"
   },
   "0x111111125421cA6dc452d289314280a0f8842A65": {
     "bytecode_hash": "0xa5a286be4b80006cc547d7e899871aa01a0e0551e2a509233375405f92098c2f",
@@ -581,6 +605,12 @@
     "deployer": "0x5c6f11d58a8daB3D107BA5Cc90b38cDA09a8B093",
     "name": "UniswapV3Pool"
   },
+  "0x154ED44b252c58e5768f022C5143929329b28Ed9": {
+    "bytecode_hash": "0x54a4f786b30b157435d11c83c1365e64ca960c78de6fe125777e69bd3b1bc494",
+    "creation_date": "2025-08-27T01:57:35",
+    "deployer": "0x7594AeBEEfD14418342e1627aD3D67B4656943a6",
+    "name": "BeaconProxy"
+  },
   "0x155020C32cEb5E1BFdD6217c2E7906c92bcAC8c1": {
     "bytecode_hash": "0x00719f944bfad47ceee99cfb454660afa882920b582056a5feda6acfc7019b85",
     "creation_date": "2022-03-17T12:01:36",
@@ -682,6 +712,12 @@
     "creation_date": "2021-11-30T03:44:21",
     "deployer": "0x71fc0D3cE5d9a1D4e992B03eA4D8711f32db33A4",
     "name": "0x18Ad...8Eb5"
+  },
+  "0x18eFE565A5373f430e2F809b97De30335B3ad96A": {
+    "bytecode_hash": "0xc9cddf88f86a54e1d2dda61dcfdbe314ec398987af4c6795721231b1fc827e7c",
+    "creation_date": "2024-12-15T09:13:47",
+    "deployer": "0x31DB4c2360d0fE6881c9015b11a93f4E7e78a3b0",
+    "name": "InitializableImmutableAdminUpgradeabilityProxy"
   },
   "0x196446caDDe6DA4d4AFCde0c2A06DCB7B6085C12": {
     "bytecode_hash": "0xd339a8663e0a473a63c43da95d071dd959e0b3c74aa62a1e9b371cb35f7c0d38",
@@ -833,6 +869,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
   },
+  "0x20622fcD4476fbc9d5Ef36EBd371307a56d9028c": {
+    "bytecode_hash": "0xc5fdabd4ece41f6ce821ed2f2862a265f6e609fbedd2968353f8d70c4e6aaa08",
+    "creation_date": "2025-08-25T10:07:23",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "BeaconProxy"
+  },
   "0x208fF5Eb543814789321DaA1B5Eb551881D16b06": {
     "bytecode_hash": "0x9769c059efbf3caff1aeadaf9de22fb71a780f2d06964e7b467dfbc5cc8a4e07",
     "creation_date": "2025-06-10T12:09:47",
@@ -844,6 +886,12 @@
     "creation_date": "2025-05-27T02:44:59",
     "deployer": "0x420834b74bdD13595181523d7B5E0526b0dBE0Bd",
     "name": "PendleERC4626SYV2"
+  },
+  "0x215D1B184fC2480f3932454D63cB796a3b022088": {
+    "bytecode_hash": "0xcb300b24a7ea92c1776e75efe796e45ed468bba00f8b71819231d9d354928142",
+    "creation_date": "2025-08-26T08:11:59",
+    "deployer": "0x1D59D1Bebd1FFF9645845f1Ea3F81B0a70CF3be4",
+    "name": "0x215D...2088"
   },
   "0x218f2C85a53B7a3051561F8Bf2475D40eFd3ADA1": {
     "bytecode_hash": "0x14d627e5a875614276823a1f18f21415376fb1bf8317ccc95553548001cfc340",
@@ -898,6 +946,12 @@
     "creation_date": "2025-06-05T13:05:59",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": ""
+  },
+  "0x23878914EFE38d27C4D67Ab83ed1b93A74D4086a": {
+    "bytecode_hash": "0x82c6d153799b3226525e3b7ec27b843ef44c5f6bca21fcf8b3c80db61ba64881",
+    "creation_date": "2023-02-13T05:52:23",
+    "deployer": "0x329c54289Ff5D6B7b7daE13592C6B1EDA1543eD4",
+    "name": "InitializableImmutableAdminUpgradeabilityProxy"
   },
   "0x239DE90Ac71a220Ba745A10988BC2AbF6F4Dc2E8": {
     "bytecode_hash": "0xddc689da4e3b88f67e53b2f00103e30b642280ac9fb215dfe8d6829ddaf267e8",
@@ -1079,6 +1133,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "GenericFactory"
   },
+  "0x29f92d88d36C72de658265E661549fd00BB7932c": {
+    "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
+    "creation_date": "2025-03-19T19:46:35",
+    "deployer": "0x2819E6d730Fd8c5291f753E101Af0D75736dBa03",
+    "name": "UniswapV2Pair"
+  },
   "0x2A0cda8Da0c1601A4B1581DA8FfBc50d8066C5Dd": {
     "bytecode_hash": "0xbf24f89adfe98e80bea6a628f8c4f69601b29200ce101d855fc49075bc1e9df1",
     "creation_date": "2025-01-15T13:01:11",
@@ -1120,6 +1180,12 @@
     "creation_date": "2021-11-29T06:00:37",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": ""
+  },
+  "0x2D2d86Af3EAE41A3741151D5a5d5221e98DD1E07": {
+    "bytecode_hash": "0xd254354ef45618c7d0f6b1bf3972e749c8215ea6db4d11fcd899e3c775a5bb3c",
+    "creation_date": "2025-06-18T03:10:23",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleYieldToken"
   },
   "0x2E1Dee213BA8d7af0934C49a23187BabEACa8764": {
     "bytecode_hash": "0x568770ad08179815d11941f09538246f14f36c180e259bcf3f3a67d4f6b53e0a",
@@ -1175,6 +1241,12 @@
     "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
     "name": "BeaconProxy"
   },
+  "0x2e9d63788249371f1DFC918a52f8d799F4a38C94": {
+    "bytecode_hash": "0xb5013c25a05cd70f169a99877a8ef928895c3fb324847737f758fa99df6afd7c",
+    "creation_date": "2021-08-04T16:37:05",
+    "deployer": "0x9e0bcE7ec474B481492610eB9dd5D69EB03718D5",
+    "name": "Toke"
+  },
   "0x2eA2b307cD934a6e705eAcFCb6B806d018Cd62CF": {
     "bytecode_hash": "0x4168e7d1c0ad97ebe0a2f4e31d94ad1ef646137875b10a59300f189c27413de5",
     "creation_date": "2024-08-27T09:21:23",
@@ -1198,6 +1270,12 @@
     "creation_date": "2024-12-12T06:54:35",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
+  },
+  "0x3036155a3eD3e7F6FFf1E96e88f1FE51b6D2f3aD": {
+    "bytecode_hash": "0xa3274080355eaa8dd2548e4e2c2a8250c6fa8ff54cb93a3f9603c02e2e5f935d",
+    "creation_date": "2025-08-26T10:24:11",
+    "deployer": "0x5f5a6E0F769BBb9232d2F6EDA84790296b288974",
+    "name": "BeaconProxy"
   },
   "0x306121f1344ac5F84760998484c0176d7BFB7134": {
     "bytecode_hash": "0xa36cacf67b551ed3dbe1dea7ccd4039067ff339efff8c23d8f22bcd62215b000",
@@ -1313,6 +1391,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PythOracle"
   },
+  "0x332A24318d56f9Cca677a242aFF668314492bF80": {
+    "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
+    "creation_date": "2025-08-04T05:16:23",
+    "deployer": "0x6fEFF036A6142Eb8467ddD143339afCdecc1bCA0",
+    "name": "UniswapV2Pair"
+  },
   "0x339cD07BdA6b8ca8a6e4541670B68bB286ff6B21": {
     "bytecode_hash": "0xc47151dab4ed2a9b2f45d5a1b0ed0a088708ecf374290ea10ee610c0f57ebd24",
     "creation_date": "2024-08-31T11:37:11",
@@ -1385,8 +1469,14 @@
     "deployer": "0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc",
     "name": "Vat"
   },
+  "0x35D8949372D46B7a3D5A56006AE77B215fc69bC0": {
+    "bytecode_hash": "0x485804b5530477178f294db26fa4106793e3e4ae9c494369602d0a092a4d2434",
+    "creation_date": "2024-06-05T05:56:35",
+    "deployer": "0xAb175F3Ed4e9E021Fa491Ae12c7A08d85B27fEef",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0x35fA164735182de50811E8e2E824cFb9B6118ac2": {
-    "bytecode_hash": null,
+    "bytecode_hash": "0x0b58ec11caee361ca0c1e484c12f6e7177634222186f7639bd9183dfee9d2278",
     "creation_date": "2023-07-10T09:03:35",
     "deployer": "0xf8a86ea1Ac39EC529814c377Bd484387D395421e",
     "name": "UUPSProxy"
@@ -1408,6 +1498,12 @@
     "creation_date": "2024-08-27T09:31:59",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PythOracle"
+  },
+  "0x36251663a2B24Ca0DC849442874Ec3DCfa3cA8a8": {
+    "bytecode_hash": "0x8ca71c6613dc09c2e30b7568b5bdaf2b33c473d9ea7e3f62882f944b999317f7",
+    "creation_date": "2025-08-29T08:03:35",
+    "deployer": "0x4c36Ff0b59D016ECdCBe1FC4A9442467D0109a99",
+    "name": "EulerSwap"
   },
   "0x365AccFCa291e7D3914637ABf1F7635dB165Bb09": {
     "bytecode_hash": null,
@@ -1475,6 +1571,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Reverter"
   },
+  "0x38c0E310345D54E8068D236f0923bB5480bA1188": {
+    "bytecode_hash": "0xc95aac661381112bbaed8a50cfc2fc367e8367fd0ccfc085ab34503d57fb1422",
+    "creation_date": "2024-12-26T03:16:59",
+    "deployer": "0xd873d124D79cA220eBEd2b93Eb1205c61d228864",
+    "name": "UniswapV3Pool"
+  },
   "0x390f3595bCa2Df7d23783dFd126427CCeb997BF4": {
     "bytecode_hash": "0x06a0d9fefe2940f35a5e0b347ff8e2f8085c76ce487b5b234b2e3c831160e34f",
     "creation_date": "2023-05-14T05:08:23",
@@ -1529,11 +1631,23 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PythOracle"
   },
+  "0x3A8992754E2EF51D8F90620d2766278af5C59b90": {
+    "bytecode_hash": "0xd1802264438ede76c191d17dc12eca7c8c0c336426fbf3b3edfd5488d4dcdfe1",
+    "creation_date": "2024-11-28T01:29:11",
+    "deployer": "0x3B8DfE237895f737271371F339eEcbd66Face43e",
+    "name": "BeaconProxy"
+  },
   "0x3Aa370AacF4CB08C7E1E7AA8E8FF9418D73C7e0F": {
     "bytecode_hash": "0x7eb38a112ba6d7614d58b369913cb45d181c2879b1d55f22da50134627d5c3f3",
     "creation_date": "2020-09-09T10:17:36",
     "deployer": "0x546553718b1B255742566f10A34D86FC22F02b1f",
     "name": "CroDefiSwapPair"
+  },
+  "0x3B4802FDb0E5d74aA37d58FD77d63e93d4f9A4AF": {
+    "bytecode_hash": "0x42c93b5cb148e1634a82cd8ea3202c35de6e79320f3607704f0d66913c00d0a9",
+    "creation_date": "2025-08-18T03:26:11",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "EulerEarn"
   },
   "0x3B66ebD98f9E5D53A9d2Cc7ffFD2F760f7EbDD19": {
     "bytecode_hash": "0x99c5807b0df1fe6cd2ec5971c3572a0f5db8dc72e554df47d3f0566ecbe1c68b",
@@ -1751,6 +1865,12 @@
     "deployer": "0x0562F16415fCf6fb5ACAF433e4796f8f328b7C7d",
     "name": "EulerRouter"
   },
+  "0x417CA8828ccB314C61C646B32C3bf900399A2477": {
+    "bytecode_hash": "0x1ce5b59835f4085a0e1b020f0b1697600cff64de243a2f105c136ab441beaf40",
+    "creation_date": "2024-11-28T01:29:11",
+    "deployer": "0x3B8DfE237895f737271371F339eEcbd66Face43e",
+    "name": "DToken"
+  },
   "0x41C4a30be92711B377C8F184705f037fEdA78e73": {
     "bytecode_hash": "0x2553f9426f4275f8db480aa5a670ec5eef854bbbb77eeaa992f9d2e0c8a0c054",
     "creation_date": "2024-12-26T02:20:59",
@@ -1792,6 +1912,12 @@
     "creation_date": "2025-01-05T21:59:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Fee"
+  },
+  "0x42cf3B7e98a1BBc51ED6e5C09F5A93743E600889": {
+    "bytecode_hash": "0x26ed406e0d08d00f0add06e4e8a7871007af02ee4c2a5dc49be30eaf5e4f4001",
+    "creation_date": "2025-07-04T03:53:35",
+    "deployer": "0xf7Bd34Dd44B92fB2f9C3D2e31aAAd06570a853A6",
+    "name": "CurveStableSwapNG"
   },
   "0x42ec0eb1d2746A9f2739D7501C5d5608bdE9eE89": {
     "bytecode_hash": "0x019c98b1eb5e0b1023f223ddeb2b7652f616ad3d493662796ab81fe49f8a5bce",
@@ -1871,6 +1997,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
   },
+  "0x45F163E583D34b8E276445dd3Da9aE077D137d72": {
+    "bytecode_hash": "0x0ba176c86b5923e5c771279a03198dcdd88dfd8d49bcce5a1c25c9f49bb83fe4",
+    "creation_date": "2025-04-18T01:37:23",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleMarketV3"
+  },
   "0x45c3B59d53e2e148Aaa6a857521059676D5c0489": {
     "bytecode_hash": null,
     "creation_date": "2025-01-18T23:13:35",
@@ -1936,6 +2068,12 @@
     "creation_date": "2022-11-23T02:29:23",
     "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
     "name": "ERC1967Proxy"
+  },
+  "0x48C3399719B582dD63eB5AADf12A40B4C3f52FA2": {
+    "bytecode_hash": "0x91016740a8855260560e1e8d22bef33119ca86d5524509a1b2ae0c783e1e44e0",
+    "creation_date": "2021-04-19T10:24:52",
+    "deployer": "0x1867c96601bc5fE24F685d112314B8F3Fe228D5A",
+    "name": "AdminUpgradeabilityProxy"
   },
   "0x48DA0965ab2d2cbf1C17C09cFB5Cbe67Ad5B1406": {
     "bytecode_hash": "0xdc1c1e099f1c3036fa2a44f0ae5c18b77738e49b12c4d105350db10a0c875a4f",
@@ -2026,6 +2164,12 @@
     "creation_date": "2024-10-02T11:10:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
+  },
+  "0x4F95C5bA0C7c69FB2f9340E190cCeE890B3bd87c": {
+    "bytecode_hash": "0x436b61dbc56c2644bc35c107977606841b02e12d62a305c3233c95e8b9cb1c8b",
+    "creation_date": "2025-04-04T09:56:23",
+    "deployer": "0x6e74053a3798e0fC9a9775F7995316b27f21c4D2",
+    "name": "TransparentUpgradeableProxy"
   },
   "0x4FD36Cd1C23BE30db86679f391087fd8a984f893": {
     "bytecode_hash": "0x75a990308dc85bbc2c3f04a46d0b6147fd01ac3405898814f7e332e00a1144c0",
@@ -2129,6 +2273,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
   },
+  "0x4e033931ad43597d96D6bcc25c280717730B58B1": {
+    "bytecode_hash": "0xd41cd8f8e4c76b8b7fadd9f85740a205975011e18c25b87549e0806d754a6af4",
+    "creation_date": "2024-07-08T07:33:47",
+    "deployer": "0x020E4359255f907DF480EbFfc8a7b7beac0c0216",
+    "name": "InitializableImmutableAdminUpgradeabilityProxy"
+  },
   "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B": {
     "bytecode_hash": "0xfa5d25e3982980ec31d90377da689c97859cbd1a7f524b9d9da4a9421988a3f5",
     "creation_date": "2021-05-17T02:08:45",
@@ -2159,6 +2309,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkBasedOracle"
   },
+  "0x4fD5691B59387c8A8857cfB7fF21a8aB80D468a8": {
+    "bytecode_hash": "0x351540a80b12b1c67a7dca6ce0d88e8a293017189032c1170924202541857e79",
+    "creation_date": "2025-08-29T10:42:35",
+    "deployer": "0xEdDC81D008624CA4C5eA34BF31459AA11594D545",
+    "name": "EulerSwap"
+  },
   "0x4fdD5f93795A694a1301cA49cC07AEc19EcEEc9d": {
     "bytecode_hash": "0xd86b707444b16e3e51e073a656e276ccba7cffb1d3bc4d7a62d77ce16cab7495",
     "creation_date": "2024-08-31T16:08:59",
@@ -2182,6 +2338,12 @@
     "creation_date": "2024-08-14T13:56:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
+  },
+  "0x50Bd66D59911F5e086Ec87aE43C811e0D059DD11": {
+    "bytecode_hash": "0x0ea19fe2f945c7b62c640b71a8e10ace2623226dad29e82f11d85c428c8defd8",
+    "creation_date": "2025-06-05T08:00:11",
+    "deployer": "0x149B3E30Dc9332B96B2278944b569c1eFE90a190",
+    "name": "sBold"
   },
   "0x50dD9ce3E599c3209582f0429d6896ECc1DAE732": {
     "bytecode_hash": "0xd5ea2d9ead877109b189f08778aa064a757cd0f6878c3dcc55f9d4cf25712cc1",
@@ -2321,6 +2483,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
   },
+  "0x5527D8f3669D30a1b96dAe756C075955C22345e6": {
+    "bytecode_hash": "0x9a3def42dff56d1818efd798a23367d337567166b171f838b5bde1524e2f821a",
+    "creation_date": "2025-09-01T19:12:11",
+    "deployer": "0xa17aD080F9C696E424E649A3433486bEF8E6A212",
+    "name": "ShiftReplica20"
+  },
   "0x554ee3d9ed7E9ec21E186c7dd636430669812f73": {
     "bytecode_hash": "0x94f74b98a167f38e9b9ccbe2381663511f24fb8eb32d6e9ca0ac58d03ae0543a",
     "creation_date": "2021-11-29T15:38:45",
@@ -2381,6 +2549,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "VaultLens"
   },
+  "0x57d74318f938404B2fE1416b9E9ba5D380f505AF": {
+    "bytecode_hash": "0xeb52d8163342da25a6dc08360fcb2ef526e0bfa565f8e575bbe2ec92d869ec6c",
+    "creation_date": "2025-08-31T15:55:47",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "BeaconProxy"
+  },
   "0x57e114B691Db790C35207b2e685D4A43181e6061": {
     "bytecode_hash": "0x0da00342e67404f8e369602a4e3d60895f8d85a014242bf4effcb46b8079f00c",
     "creation_date": "2024-03-05T13:29:59",
@@ -2398,6 +2572,12 @@
     "creation_date": "2024-08-16T09:28:59",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
+  },
+  "0x58b9cB810A68a7f3e1E4f8Cb45D1B9B3c79705E8": {
+    "bytecode_hash": "0x9fe80773ed408f8c2a88677a082965e2c28e8d04ce8a9775d4a381034db5f327",
+    "creation_date": "2023-09-03T14:41:35",
+    "deployer": "0xb82119772dEd0318b1930c6ed45BC4bCd3009cfF",
+    "name": "TransparentUpgradeableProxy"
   },
   "0x5903C59B12219cB93355EEbD3397f1B5dE91B45a": {
     "bytecode_hash": "0xa3803aa4f89942c481b3938a146358f46fdd7e0efb801c20d495fa7e461a4de2",
@@ -2465,6 +2645,12 @@
     "deployer": "0xcaEc63ce78a0D4DAb2b5112295789A542A0fdAee",
     "name": "SmardexToken"
   },
+  "0x5E32618d6FA0ee1eD87067E6008d8529F3F5CAB0": {
+    "bytecode_hash": "0xa9695275563c31643f88b1d24a6ebddce09e67d39e0211b266fb4d905ae78858",
+    "creation_date": "2023-01-18T17:51:59",
+    "deployer": "0xbFA4B238b8f2d354774cA3faB0919577659F470D",
+    "name": "PancakePair"
+  },
   "0x5E9381A17d413e8aBA4AcF33786BdB20Ae97Bd34": {
     "bytecode_hash": "0x4c457bcb0cbbe6e7486b4b515fae0b694ceb139cbd19190298c048293c462211",
     "creation_date": "2024-08-27T09:30:47",
@@ -2482,6 +2668,12 @@
     "creation_date": "2025-08-04T14:37:47",
     "deployer": "0xEFa5788A198281eb554C6649b5A7B8cED76Fe01b",
     "name": "EulerRouter"
+  },
+  "0x5Fa464CEfe8901d66C09b85d5Fcdc55b3738c688": {
+    "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
+    "creation_date": "2021-08-07T01:44:39",
+    "deployer": "0xBD445883D29a1631c8a69D1F26537F4f551D7763",
+    "name": "UniswapV2Pair"
   },
   "0x5a435d7b7E5f39e19172b0f4D5012363b7d2036F": {
     "bytecode_hash": "0x08d71ba418a8f4e4da18770e690eedbb2eac538dc2e1313e7510dff00e260650",
@@ -2963,6 +3155,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
   },
+  "0x6bbDcb2d52B1319AED9615035844F56597C8a088": {
+    "bytecode_hash": "0xc87ce6a85c52584998a54aa9ce284f0522154f6ce839358ddb46968684bcf9a6",
+    "creation_date": "2025-08-27T06:33:23",
+    "deployer": "0x1D59D1Bebd1FFF9645845f1Ea3F81B0a70CF3be4",
+    "name": "0x6bbD...a088"
+  },
   "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8": {
     "bytecode_hash": "0xbc22d0b1173d9ff26383e64a50a807afa931a2809a7b6bae3b051723a1a9ebe1",
     "creation_date": "2022-11-07T17:14:47",
@@ -3071,6 +3269,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Extractor"
   },
+  "0x7122985656e38BDC0302Db86685bb972b145bD3C": {
+    "bytecode_hash": "0x12acb36eedb2cd0f3d4c2b068700f89015ee0c403dc049e4447e74a392d10289",
+    "creation_date": "2023-09-23T23:10:11",
+    "deployer": "0xc1364aD857462e1B60609D9e56b5E24C5c21a312",
+    "name": "Stone"
+  },
   "0x7185a1026cA03e29fa6045939F68a6873dFfd024": {
     "bytecode_hash": "0x29c0e752932ca31617198be8a16b9909624729f6c4de5ea6e03da635d590b111",
     "creation_date": "2024-11-19T11:02:23",
@@ -3101,6 +3305,12 @@
     "deployer": "0xb36a0671B3D49587236d7833B01E79798175875f",
     "name": "SDT"
   },
+  "0x73A15FeD60Bf67631dC6cd7Bc5B6e8da8190aCF5": {
+    "bytecode_hash": "0x8ebb5cb5adcd4782e740269f2fc94d09fcac26165845ecb59a2210dacd910172",
+    "creation_date": "2024-05-23T06:43:59",
+    "deployer": "0xAb175F3Ed4e9E021Fa491Ae12c7A08d85B27fEef",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0x73bDDD7B48B653D4e78D88916a40f9890049ebE9": {
     "bytecode_hash": "0x543f47c5936fee3103e981fcf92d73fa8043a13753532fe7bd5fb1e52d419cc8",
     "creation_date": "2024-08-27T10:36:47",
@@ -3113,6 +3323,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ERC1967Proxy"
   },
+  "0x74034eb8d5B2E480825263A975E4CF82A081c959": {
+    "bytecode_hash": "0xba229408dcd200ca88f1718feffd99761cedfcf0851889f9af11818d26b0d4a2",
+    "creation_date": "2025-06-29T15:54:23",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "BeaconProxy"
+  },
   "0x741Beca7cebc054923b2881caA2469fDC33F3217": {
     "bytecode_hash": "0x0a55fa54b149b0656fe7b7215083a4999286b043328a5ab369526b53146b776b",
     "creation_date": "2024-08-27T09:53:11",
@@ -3124,6 +3340,12 @@
     "creation_date": "2021-03-10T20:06:04",
     "deployer": "0x135F03F89C6b2D8D1bD0181526ef18258B5e5516",
     "name": "STRK"
+  },
+  "0x742B4166878Bfd339Db65a29a17E49b81a6B6Aac": {
+    "bytecode_hash": "0x4a8b667e91d867e6153994c468abafcf8e08c55cff1dc079796170309d7f6d61",
+    "creation_date": "2025-05-20T20:08:59",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendlePrincipalToken"
   },
   "0x74667A9C90bb67C67b84653e6Ed465BcAce63440": {
     "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
@@ -3160,6 +3382,12 @@
     "creation_date": "2022-10-11T08:54:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkBasedOracle"
+  },
+  "0x759B703efc8932E0d8404583A2e1FeD68A726071": {
+    "bytecode_hash": "0xe1123bd6405978c7be328320770b39429b960936f6671d809fce00c8bbc1ae55",
+    "creation_date": "2025-08-27T01:57:47",
+    "deployer": "0x7594AeBEEfD14418342e1627aD3D67B4656943a6",
+    "name": "BeaconProxy"
   },
   "0x75AAf54F12784935128306BEe2520de55890a29A": {
     "bytecode_hash": "0x2a570fff892e3a265b92a5063346178e02a5da04728f338c04b23ca569582747",
@@ -3329,11 +3557,23 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
   },
+  "0x7Bc3485026Ac48b6cf9BaF0A377477Fff5703Af8": {
+    "bytecode_hash": "0x055f90d52d0dc151b24f319a39db8b83a164b9134415a5e9d37daa5b9fb88147",
+    "creation_date": "2024-11-27T08:09:59",
+    "deployer": "0x076d6da60aAAC6c97A8a0fE8057f9564203Ee545",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0x7C89d05eFB0555DCe244283B9459512fc82B3D4A": {
     "bytecode_hash": "0x6a298785ebf4f2185d538cbe0b192d0e06c75e69d09adbc0534a4577a58f0e0c",
     "creation_date": "2025-01-09T21:20:59",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PythOracle"
+  },
+  "0x7D00aFaF9C7847602264497A810a1E587f54338c": {
+    "bytecode_hash": "0x4a1a105d3ee0f20421432408d167f6785561b83b4edd1307620c4a2e5d63d847",
+    "creation_date": "2025-06-29T22:49:47",
+    "deployer": "0xEba675F1D0fE4C00e179c1f224b8B18Dd476e76A",
+    "name": "PendleYieldToken"
   },
   "0x7D3edA18100702520c04B1bb08Fb4e51398FC88F": {
     "bytecode_hash": "0xbda07ee930ecafadf62b70a031ce2ffe001b41b02f1f8907ee45a4a4ead81531",
@@ -3346,6 +3586,12 @@
     "creation_date": "2024-08-14T13:20:23",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Initialize"
+  },
+  "0x7EB59373D63627be64b42406B108B602174B4CCC": {
+    "bytecode_hash": "0x2464f6821274faf59e8c64afda1504cb568926d1dde2c902d6cecfa788118630",
+    "creation_date": "2025-02-18T16:07:35",
+    "deployer": "0x7e12fbe97FE5786C1d27ebB4D7131A488538DF88",
+    "name": "UniswapV3Pool"
   },
   "0x7F12be038cA9143085fdaff550C883baEbA53fc5": {
     "bytecode_hash": "0x87899841e61038f282b315a36916ae85e56a31e77dc212a4f20c2f05d228ed67",
@@ -3401,6 +3647,12 @@
     "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
     "name": "BeaconProxy"
   },
+  "0x7c34962B4738BAE5DbE8577d4FB05355E0ebbC26": {
+    "bytecode_hash": "0x217425dd97cd5293b9655c819e93059ed2166796c6be4b8448677d9ce5887ed6",
+    "creation_date": "2024-06-06T12:11:35",
+    "deployer": "0x21F4756dC85f89C755983437bb21466B3047467E",
+    "name": "ERC1967Proxy"
+  },
   "0x7c37aB8Cd76Ee8888ad7F19C1F8a3A6D1622e9B8": {
     "bytecode_hash": "0x36dbf0b75662d0364149da785c2c035c253390a05035f9c788ed3f55afc8ba8c",
     "creation_date": "2024-09-03T09:01:11",
@@ -3425,6 +3677,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
   },
+  "0x7cfab87AaC0899c093235b342AC0e5B1ACF159EB": {
+    "bytecode_hash": "0x72e826e5ec1e970f37af4b41635535232c58bcb7795871b2738347fd8c1314ca",
+    "creation_date": "2020-01-09T11:54:20",
+    "deployer": "0x60Fb0b38ff0fCb98462E70Aa5DA4Dff047635EC3",
+    "name": "Vyper_contract"
+  },
   "0x7e3a179572e48720D5f4A74288E66aC27eF8D24D": {
     "bytecode_hash": "0xaba20b4841073c35b0a9b5d01cb7f2279f6b828300e03ed1cb6cf2b550067d4a",
     "creation_date": "2025-08-06T15:49:35",
@@ -3437,6 +3695,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "FixedRateOracle"
   },
+  "0x7ea4aD8C803653498bF6AC1D2dEbc04DCe8Fd2aD": {
+    "bytecode_hash": "0xb944164a34a4ec23354115b7cf3040e2ea0cb43d688ccf8922bf5f4f401c5696",
+    "creation_date": "2022-04-26T14:46:16",
+    "deployer": "0x9e0bcE7ec474B481492610eB9dd5D69EB03718D5",
+    "name": "Vyper_contract"
+  },
   "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0": {
     "bytecode_hash": "0x630181884786c962140041cffa3acffbf39d8c93bde1a62b7b55046e57400557",
     "creation_date": "2021-02-19T08:37:20",
@@ -3448,6 +3712,12 @@
     "creation_date": "2024-08-31T07:28:59",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "SnapshotRegistry"
+  },
+  "0x801c868Ce08fB5B396E6911eAc351beb259d386C": {
+    "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
+    "creation_date": "2023-12-07T13:43:35",
+    "deployer": "0x1d4B9b250B1Bd41DAA35d94BF9204Ec1b0494eE3",
+    "name": "UniswapV2Pair"
   },
   "0x804C4fC1eb2202332eabaB8d2d81b1A5Cd48D875": {
     "bytecode_hash": "0x4fa933fbafad51394251b9608a04da1e807a805943e40de9cb454496cb57656f",
@@ -4109,11 +4379,23 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "CrossAdapter"
   },
+  "0x982bE58C67689e0BAb9e884C30E7a6e78E064C9D": {
+    "bytecode_hash": "0x09fa28928d63e04c6aac39b8505e34bc4900773c6bcca9f97b66ea5e18885ab9",
+    "creation_date": "2025-06-09T22:19:11",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0x98601E27d41ccff643da9d981dc708cf9eF1F150": {
     "bytecode_hash": "0x0d8148547f7c8cdb1eda7b09497d25bba6efe3698f6ea3870f56a8dca5d9fa84",
     "creation_date": "2024-03-11T23:13:11",
     "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
     "name": "PendleYieldToken"
+  },
+  "0x987e33d3717761C1Ccd2705CF537289367Ea6088": {
+    "bytecode_hash": "0xcb300b24a7ea92c1776e75efe796e45ed468bba00f8b71819231d9d354928142",
+    "creation_date": "2025-08-26T09:37:35",
+    "deployer": "0x1D59D1Bebd1FFF9645845f1Ea3F81B0a70CF3be4",
+    "name": "0x987e...6088"
   },
   "0x98C23E9d8f34FEFb1B7BD6a91B7FF122F4e16F5c": {
     "bytecode_hash": "0x82c6d153799b3226525e3b7ec27b843ef44c5f6bca21fcf8b3c80db61ba64881",
@@ -4307,6 +4589,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Liquidation"
   },
+  "0xA004dD9439c2CF00794786C9662267beE6d9F723": {
+    "bytecode_hash": "0x09fa28928d63e04c6aac39b8505e34bc4900773c6bcca9f97b66ea5e18885ab9",
+    "creation_date": "2025-05-20T20:08:23",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0xA01227A26A7710bc75071286539E47AdB6DEa417": {
     "bytecode_hash": "0x4d9be648c5bf39973670d9f8b481d5d0b971e6a2db2deccc6b98cde21c5dd83e",
     "creation_date": "2025-05-30T01:21:11",
@@ -4385,6 +4673,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
   },
+  "0xA4e489d21dDdF750fB0E71B512189504427c48C9": {
+    "bytecode_hash": "0x4775451ba9f44ec281c3eb3cf8e211c32b654f4613b69df62e852af1940c3e9d",
+    "creation_date": "2024-12-06T05:45:11",
+    "deployer": "0x454f193FD7AD2a395bb54711df5eC4662A8E34ce",
+    "name": "UniswapV3Pool"
+  },
   "0xA60FAc495f0e52f221437d062815b4db109233D9": {
     "bytecode_hash": "0x549b1994f7ee2a43b9ae3f5d52e3115269f2af5f53feaef95dec3ef79e939a1d",
     "creation_date": "2024-08-31T17:19:11",
@@ -4457,6 +4751,12 @@
     "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
     "name": "PendlePrincipalToken"
   },
+  "0xAC0047886a985071476a1186bE89222659970d65": {
+    "bytecode_hash": "0x75a782d0610fddc765357991c9911a5767634962bc0330fa998245703753d439",
+    "creation_date": "2024-01-09T04:47:35",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleWEEthSY"
+  },
   "0xACC25c4d40651676FEEd43a3467F3169e3E68e42": {
     "bytecode_hash": "0x22ee44c6e075592f3ff90c1b83f79a5a491cea1a9bc1b5c0eab87d8fb2f7f2f4",
     "creation_date": "2022-03-29T10:24:14",
@@ -4510,6 +4810,12 @@
     "creation_date": "2023-04-17T09:10:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "AztecDistributor"
+  },
+  "0xB0465546E8D70E667d4a187F66eF959B1522cc77": {
+    "bytecode_hash": "0x31442b42c13d52b4cd8ff801c0586716c054fa60e23bcdcb8b499dc999785898",
+    "creation_date": "2025-02-14T06:33:47",
+    "deployer": "0x75cFE4ef963232ae8313aC33e21fC39241338618",
+    "name": "BeaconProxy"
   },
   "0xB04d0c959025bB71f3e3C62aF4b5f42E432Ac8Be": {
     "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
@@ -4613,11 +4919,29 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
   },
+  "0xB93d4928f39fBcd6C89a7DFbF0A867E6344561bE": {
+    "bytecode_hash": "0xa4042fd30f103f6d8dd2e54689852df83234739aa57023e287048b38eaaeea7f",
+    "creation_date": "2024-08-18T14:35:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "BeaconProxy"
+  },
   "0xBA12222222228d8Ba445958a75a0704d566BF2C8": {
     "bytecode_hash": "0x9eb70db20a41bfbf4b022fd070fa7f154b7c4aec98177120dde7a958384f4e66",
     "creation_date": "2021-04-19T11:36:47",
     "deployer": "0x697A71353A4BC1eb1356763018a229c27a3fbA0C",
     "name": "Vault"
+  },
+  "0xBAac2B4491727D78D2b78815144570b9f2Fe8899": {
+    "bytecode_hash": "0x5f64affd22663ecb1345b29a266b1bb6b7b84b311a85aac5abce248a00a1de2a",
+    "creation_date": "2021-08-30T18:11:17",
+    "deployer": "0x99BC02c239025E431D5741cC1DbA8CE77fc51CE3",
+    "name": "InitializedProxy"
+  },
+  "0xBAfC1A885e25C6F594e06F12edaeB46858547724": {
+    "bytecode_hash": "0x570ab18877e8d95da36a4993e9add95676091dfbbac8049631785dfadb98d3de",
+    "creation_date": "2025-08-26T10:20:35",
+    "deployer": "0x5f5a6E0F769BBb9232d2F6EDA84790296b288974",
+    "name": "BeaconProxy"
   },
   "0xBC6736d346a5eBC0dEbc997397912CD9b8FAe10a": {
     "bytecode_hash": "0xf50da505b2d9e31c40d3f905216062ff219f8169b2fb71de24f43ba6bb3a2d6c",
@@ -4721,6 +5045,18 @@
     "deployer": "0xB6ab73b6A141Db9E01b9847B0d792b430999bC54",
     "name": "TokenMessenger"
   },
+  "0xBdADf3E9c6Fc2e6C5e6979F4Caa5b05B04E355b5": {
+    "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
+    "creation_date": "2025-06-25T09:50:11",
+    "deployer": "0x630Dc07F1798F0bD6dD7f05050D6AaEB6F4d9e91",
+    "name": "UniswapV2Pair"
+  },
+  "0xBe6C8f2810EF39420d2DC2901b8414C8c45FEE6D": {
+    "bytecode_hash": "0xbf43415abc856fcf3c64a5ac78b0a0692e212a5f053fd6b1cdc948d01924e1b2",
+    "creation_date": "2018-10-23T12:00:39",
+    "deployer": "0x2A7941F00FeEa963fBa2b02c7f6a9694000471c1",
+    "name": "MICROMINES"
+  },
   "0xBf442Eb964Fe9b69D722c72AbD7ded46C9B7434b": {
     "bytecode_hash": "0x9ca68f0802671ecf3e22d2830c400ae0ff5f952f37857160d10125ed89482c26",
     "creation_date": "2024-08-27T09:37:59",
@@ -4786,6 +5122,12 @@
     "creation_date": "2024-11-25T13:24:11",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PendleOracle"
+  },
+  "0xC275a7390966E4bcbf331B837cD7316C4A3EFa83": {
+    "bytecode_hash": "0x46fa207df623503bfe4552075275f72ec5a80bd11cfe64468929c484b74940a3",
+    "creation_date": "2025-02-21T02:43:47",
+    "deployer": "0x650Fb08ee058E2081b93adb06Ec69db4e85C5973",
+    "name": "UniswapV3Pool"
   },
   "0xC293f25d36fBCAd9931F47D801e93b903164a4C6": {
     "bytecode_hash": "0x662526e2745ce564c9e6096250c80756569713a7f0da137b15da8b469db221ed",
@@ -4871,6 +5213,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PythOracle"
   },
+  "0xC71Ea051a5F82c67ADcF634c36FFE6334793D24C": {
+    "bytecode_hash": "0x055f90d52d0dc151b24f319a39db8b83a164b9134415a5e9d37daa5b9fb88147",
+    "creation_date": "2024-12-20T09:49:23",
+    "deployer": "0x854B004700885A61107B458f11eCC169A019b764",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0xC7e6B676bfC73Ae40bcC4577F22aab1682C691C6": {
     "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
     "creation_date": "2023-10-26T04:07:47",
@@ -4906,6 +5254,12 @@
     "creation_date": "2024-08-31T13:42:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
+  },
+  "0xCAcd6fd266aF91b8AeD52aCCc382b4e165586E29": {
+    "bytecode_hash": "0x0e5148763950930aed9716ed6e3c45af3fe4a9a2a94e4222a4a3cba2b4ec69de",
+    "creation_date": "2025-01-03T02:28:47",
+    "deployer": "0x5B35dBeFb8b4918799246664ed3A7Fe099619814",
+    "name": "TransparentUpgradeableProxy"
   },
   "0xCBCdF9626bC03E24f779434178A73a0B4bad62eD": {
     "bytecode_hash": "0x385084b66be309c0ba96c1488cf8999e306533675a3826b64bf5b3c8f4949ae1",
@@ -5225,6 +5579,12 @@
     "deployer": null,
     "name": "UniswapV3Pool"
   },
+  "0xDeC5d74720c4Cecb42c1BE46854D0977d59F2088": {
+    "bytecode_hash": "0x9c93a7a36565c2fc92f8168d9f8a3b3eae92dd72468c648475c5cdd86f8f3b63",
+    "creation_date": "2025-08-29T12:04:35",
+    "deployer": "0x1D59D1Bebd1FFF9645845f1Ea3F81B0a70CF3be4",
+    "name": "0xDeC5...2088"
+  },
   "0xDf9c440111A17eAFBeCF5db37dD04c948e878878": {
     "bytecode_hash": null,
     "creation_date": "2024-09-30T17:10:59",
@@ -5261,6 +5621,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "PendleOracle"
   },
+  "0xE3620C1aE560AF090704899aCA62209C31C4c77b": {
+    "bytecode_hash": "0x217425dd97cd5293b9655c819e93059ed2166796c6be4b8448677d9ce5887ed6",
+    "creation_date": "2024-06-06T11:26:35",
+    "deployer": "0x21F4756dC85f89C755983437bb21466B3047467E",
+    "name": "ERC1967Proxy"
+  },
   "0xE39Da17508ec3fE7806a58b0aBe15A2df742cBfE": {
     "bytecode_hash": "0x2554c20dc7df2dea5e7f3463c430cd9c5751293a7619ad5be03917946c7bf852",
     "creation_date": "2024-08-27T09:17:35",
@@ -5284,6 +5650,12 @@
     "creation_date": "2024-08-27T09:18:11",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
+  },
+  "0xE467c5C54748f0125d729280F90DeD77C4e720a4": {
+    "bytecode_hash": "0x1ff27afaf338894383b4b3eaa55037767b93181737b28e52d46a6dad7b87fba6",
+    "creation_date": "2025-06-18T03:10:23",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleMarketV3"
   },
   "0xE46A0c83F8061DF2B372fe1579aB6CeAe75F4471": {
     "bytecode_hash": "0x26ae95e770682621078e12f0df234bae9f675c159d0ebcb81be596744e70b9f5",
@@ -5465,6 +5837,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "UtilsLens"
   },
+  "0xF037eeEBA7729c39114B9711c75FbccCa4A343C8": {
+    "bytecode_hash": "0xc0483853bcdb63cc53a504e68c74f3c343b93a438e093ad6ad674b5915841bb7",
+    "creation_date": "2025-02-07T03:31:11",
+    "deployer": "0x420698393d38f3B93316f00Ea6C72822ed5c95be",
+    "name": "BeaconProxy"
+  },
   "0xF047ab4c75cebf0eB9ed34Ae2c186f3611aEAfa6": {
     "bytecode_hash": "0x330b630638e45df0445f7ad6ee5ad6ac7c53b176a8ffc25b4c920e01b55d5d7f",
     "creation_date": "2024-02-15T17:38:11",
@@ -5494,6 +5872,12 @@
     "creation_date": "2023-10-28T00:15:23",
     "deployer": "0x10129f3Fe44dD32745D6E64E5d84cB84a524F114",
     "name": "TITANX"
+  },
+  "0xF2ad4eC58033BE97Ec3f4f61b660156fB38ECB30": {
+    "bytecode_hash": "0x4eafc9dfbe761707d3aa49dd2ba21c4bcdb2292f6635ca07ae4493a3c94630bd",
+    "creation_date": "2025-05-20T20:08:59",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleYieldToken"
   },
   "0xF376Cf2D9c3C792197EF6cE8a87b97aD1242bcFc": {
     "bytecode_hash": "0xbf84ca93c3c7f6ce169f987e3352e185ab91482cb13aa84192c0ad1e8dc15edc",
@@ -5549,6 +5933,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "EulerSwap"
   },
+  "0xF854AC65A40f1EabFD32E6D4C7d0E1c4B1753Cc5": {
+    "bytecode_hash": "0x0d6dd06d4997057e673b137cb18c2c827c4cb4263192c66f66caab6526425bcb",
+    "creation_date": "2024-09-15T15:05:23",
+    "deployer": "0xEa94E11fAd45675B3ED9102b8565ea7121984EB6",
+    "name": "WormholeDataAdapter"
+  },
   "0xF86E1E57797fA1A1b979AF7CD474d210109d10f1": {
     "bytecode_hash": "0x54f6fbaebc223e179b498b35b48aa90bdd3b201fe8c41592ce2119a1c95814ea",
     "creation_date": "2024-08-31T17:43:59",
@@ -5590,6 +5980,12 @@
     "creation_date": "2025-08-16T07:08:59",
     "deployer": "0x092E629219B069CF9B1A44B62dac44EcE1cDA177",
     "name": "UniswapV2Pair"
+  },
+  "0xFF1e55f96fA77bcFb5d40f6641E0AcaBd47AC34F": {
+    "bytecode_hash": "0x7931988fa70101aac7bb6a4a403b465c0ca14b045e496f1f353aba9819b8dd95",
+    "creation_date": "2025-04-18T01:37:23",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleYieldToken"
   },
   "0xFFf8D5fFF6Ee3226fa2F5d7D5D8C3Ff785be9C74": {
     "bytecode_hash": "0x5b83bdbcc56b2e630f2807bbadd2b0c21619108066b92a58de081261089e9ce5",
@@ -5741,11 +6137,23 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
   },
+  "0xa780d7F775B4eFf6846A8c28981f086bC6a7d637": {
+    "bytecode_hash": "0x09fa28928d63e04c6aac39b8505e34bc4900773c6bcca9f97b66ea5e18885ab9",
+    "creation_date": "2025-04-18T01:23:11",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0xa87dA6Bb80fB51155D245B0A6f27184E425B4952": {
     "bytecode_hash": "0x76b946888337a8d9179b88a2492a3b26169dc89a2bbfd96f0a10634d08cb628c",
     "creation_date": "2024-08-14T13:44:23",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "ChainlinkOracle"
+  },
+  "0xa96B72470f4193a4E637dE8BcC6a009d1DD360A2": {
+    "bytecode_hash": "0x79c4e178c9b4fdf9e1a914b9d19f396e36c86922490421c47e403fcf99a458be",
+    "creation_date": "2025-08-31T15:41:11",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "BeaconProxy"
   },
   "0xa9D0726D0188a1E503fb959e5fC57d658D508d2a": {
     "bytecode_hash": null,
@@ -5981,11 +6389,23 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Swapper"
   },
+  "0xbFAE1f099e9EBD8481c127dc1D2EaDc7Faf636b3": {
+    "bytecode_hash": "0x861180faca6059147ace3c07453fafb180807666b7c250b715324bbc1e3eadeb",
+    "creation_date": "2025-08-31T15:13:35",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "BeaconProxy"
+  },
   "0xbb0D4bb654a21054aF95456a3B29c63e8D1F4c0a": {
     "bytecode_hash": "0x0b9652d55f2b9b616fab3b715f87b4609ffff782e05ee6c8f065705420083ab9",
     "creation_date": "2022-08-17T21:03:31",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "EToken"
+  },
+  "0xbdC7c08592Ee4aa51D06C27Ee23D5087D65aDbcD": {
+    "bytecode_hash": "0x5e4dcb0bb1910f6429e5fe91678990088a51c6d1cfe1b31d05fb9d948cc7867c",
+    "creation_date": "2024-04-22T10:12:23",
+    "deployer": "0xEE3E6FC1AC9296345cb0277ac5fFdF7aeC17406F",
+    "name": "ERC1967Proxy"
   },
   "0xbe0A16D3D822Cf320ca5723a4A21172fdB0C22AB": {
     "bytecode_hash": "0x7b00ca713f3f7bb616346cbec92d0b5e28f9d6c64c7edd44bd5de3b0f8e06f1a",
@@ -6071,6 +6491,12 @@
     "deployer": "0xebf757ceCF22b1534F20473480d8CF9e16c3A41e",
     "name": "UniswapV3Pool"
   },
+  "0xc3a99a855D060D727367c599Ecb2423e0bEbEe24": {
+    "bytecode_hash": "0x7ba84e3bc20a8da43bdc2069f3f066f74214a7d05863bf3f879a06d4a311943c",
+    "creation_date": "2024-03-21T06:29:59",
+    "deployer": "0xaB066655a991550DebAeC0aA1CDD4F3bd7BB5483",
+    "name": "TwapDelay"
+  },
   "0xc4406E4a14D2c0378952649BF56716A39CE64c6B": {
     "bytecode_hash": "0x88a7ee09c5d37abc24d3d02758116ab9b55b5f5702b7987b25ea36c2e2d3fec7",
     "creation_date": "2024-10-02T11:10:35",
@@ -6112,6 +6538,12 @@
     "creation_date": "2024-08-27T09:50:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
+  },
+  "0xc65B7a0f8Fc97e1D548860d866f4304E039EF016": {
+    "bytecode_hash": "0x96a11ec16c6d52af69a6375d7970803dc8d3064a907f442a6797cdb9e901ca5b",
+    "creation_date": "2025-06-29T22:49:47",
+    "deployer": "0xEba675F1D0fE4C00e179c1f224b8B18Dd476e76A",
+    "name": "PendleMarketV3"
   },
   "0xc667d21d0BFfd9007cDB68A119Bc6b121b1Cb2eD": {
     "bytecode_hash": "0x8e0dacf3ccc50b4030950623253634ed285571aa9d9a3419365b72e17cee22a9",
@@ -6160,6 +6592,12 @@
     "creation_date": "2024-08-31T09:09:47",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
+  },
+  "0xc8CF6D7991f15525488b2A83Df53468D682Ba4B0": {
+    "bytecode_hash": "0x8bd06d4fd3cc7a1ab03dc0205dcd59abd679201b9dabc30040b882b6205b6552",
+    "creation_date": "2025-02-10T11:23:59",
+    "deployer": "0x804016c31e52805eb00e0Ef42126Fd3e980A0b33",
+    "name": "TransparentUpgradeableProxy"
   },
   "0xc8b36227C9C496f6d9C06462f285f55C93fBd7D9": {
     "bytecode_hash": "0x84a0d3d96fd1a100d6dfe59d5001682db25288c40a3a29b4808922b464b54b2c",
@@ -6257,6 +6695,12 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "RedstoneCoreOracle"
   },
+  "0xce133401B2214Ada39CACb23add4C9984F562293": {
+    "bytecode_hash": "0x09fa28928d63e04c6aac39b8505e34bc4900773c6bcca9f97b66ea5e18885ab9",
+    "creation_date": "2025-06-18T03:07:11",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "TransparentUpgradeableProxy"
+  },
   "0xce1b8F00454cd70C04BAA5613541954e9e9eE0DC": {
     "bytecode_hash": "0x4f8c349fbba39756f4e8f622301ef7ec6a03c0c38205d6f3e2ae5f4afb8d083c",
     "creation_date": "2024-08-27T09:41:11",
@@ -6268,6 +6712,12 @@
     "creation_date": "2025-07-08T19:45:47",
     "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
     "name": "PendlePrincipalToken"
+  },
+  "0xd17b3c9784510E33cD5B87b490E79253BcD81e2E": {
+    "bytecode_hash": "0x72fd2b7e1ce82463717aba010deb02386e6fe7b155d5776115b3239c2b2fd58b",
+    "creation_date": "2023-02-22T21:01:35",
+    "deployer": "0xaB066655a991550DebAeC0aA1CDD4F3bd7BB5483",
+    "name": "Proxy"
   },
   "0xd19393e02c3cc60C21A89b5e85656fF1122eBd51": {
     "bytecode_hash": "0x42708e5ad0cf45512c48e15723898c248b52c36edea834a2664761c771392a47",
@@ -6323,6 +6773,12 @@
     "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
     "name": "ERC1967Proxy"
   },
+  "0xd4e7a6e2D03e4e48DfC27dd3f46DF1c176647E38": {
+    "bytecode_hash": "0xcd82e2d9daddbf51cbce8d5429a0996e16fc670c4056566f19cf8864ad45a746",
+    "creation_date": "2021-08-07T01:44:13",
+    "deployer": "0xBD445883D29a1631c8a69D1F26537F4f551D7763",
+    "name": "UniswapV2Pair"
+  },
   "0xd524E29E3BAF5BB085403Ca5665301E94387A7e2": {
     "bytecode_hash": "0xec066a0fa900dc6665ffc296753b42e701cd759e413ddb204e56a8795bf77acb",
     "creation_date": "2022-06-16T12:38:25",
@@ -6335,6 +6791,12 @@
     "deployer": "0x467282eFABf015286d832EB079E78123eA3DC39b",
     "name": "ORX"
   },
+  "0xd591d048C07818b2318271CA0baC2276d7906F83": {
+    "bytecode_hash": "0xd14793ce7a92d28f95ac8a6e7fad0bc2094acaadae457c48472b680287a82216",
+    "creation_date": "2025-06-29T15:54:23",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "DToken"
+  },
   "0xd5950Bc3763Af2f61Cb8cE96e68345E0de1919B8": {
     "bytecode_hash": "0x36e16820b196280e0f29599e9c0e0503a42980ee4323b0e8af01bcdcf1beca80",
     "creation_date": "2024-08-31T16:15:23",
@@ -6346,6 +6808,18 @@
     "creation_date": "2025-01-05T21:59:35",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Hooks"
+  },
+  "0xd64e12101614209eE810EFDe214542A2cb68d9fD": {
+    "bytecode_hash": "0x3e236fca36cc4422f5006f41cc4c1d591f176bb00feb275927dd743aedd4495b",
+    "creation_date": "2025-03-22T01:25:23",
+    "deployer": "0xF9eC23C0387b2780c3761C2C5cFC6c92bFd49F90",
+    "name": "FluidDexT1"
+  },
+  "0xd67e18eD798A9667e84595bf88C25Ae163Af7e0a": {
+    "bytecode_hash": "0x4c6ed155d9df408c843ee664aad23e7b8bc4317a75b88f80d5d8977d88ddd765",
+    "creation_date": "2025-03-19T19:03:23",
+    "deployer": "0x2819E6d730Fd8c5291f753E101Af0D75736dBa03",
+    "name": "TOKEN"
   },
   "0xd737eE2bB39F49C62a436002A77f2710cc45eD98": {
     "bytecode_hash": "0x62c74e44941157c623647cf4b7a619a3dbaece63f646d201be38a93ab9554c16",
@@ -6533,6 +7007,12 @@
     "deployer": "0x00000C771F6176268D5A9846E0956C3eF58597A1",
     "name": "Core"
   },
+  "0xe0e970a99bc4F53804D8145beBBc7eBc9422Ba7F": {
+    "bytecode_hash": "0x6dfb9f924888fe0d10b50c35ced3f2cf372073a7e524450f1ebe491415db66e0",
+    "creation_date": "2022-04-26T14:46:16",
+    "deployer": "0x9e0bcE7ec474B481492610eB9dd5D69EB03718D5",
+    "name": "Vyper_contract"
+  },
   "0xe16E7d93720B470C71e02CD2D483ba18aE0e3DF7": {
     "bytecode_hash": "0xa37466a28849c8cb62482a729100c3e8412170243feffc80cc5b8638c9d098b4",
     "creation_date": "2024-08-27T09:36:59",
@@ -6580,6 +7060,12 @@
     "creation_date": "2022-04-09T15:20:01",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "DToken"
+  },
+  "0xe3B0e4Db870aA58A24f87d895c62D3dc5CD05883": {
+    "bytecode_hash": "0xbdbc32f206722a8980c2482d26192b1517ed1a301c1cfbc08192d922b240c690",
+    "creation_date": "2024-09-15T15:18:47",
+    "deployer": "0xEa94E11fAd45675B3ED9102b8565ea7121984EB6",
+    "name": "SpokeGasToken"
   },
   "0xe46bFb8b191D1C7F6D7b0325D6adBa8A1c947d21": {
     "bytecode_hash": "0x0735770d28e2a36b9492c58a58ee90a77292cbafe023a4b2e6561caf4a077cfa",
@@ -6815,6 +7301,18 @@
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "Swap"
   },
+  "0xf449194CF5e8642cDefbc1979FD980A3a06520b5": {
+    "bytecode_hash": "0x4c0ec7e32c4f63ece148159e910d2a0827cd3fa67a7f7ea7e628fe91177f7933",
+    "creation_date": "2025-09-03T22:17:35",
+    "deployer": "0xa17aD080F9C696E424E649A3433486bEF8E6A212",
+    "name": "ShiftReplica721"
+  },
+  "0xf4Be316983b70B5fF8dc8C0DDd62156EF2DCa454": {
+    "bytecode_hash": "0x9bc501fef280f2e86e06346a86aa518caca6fb4150413c06e577c04c39484324",
+    "creation_date": "2025-08-27T01:57:23",
+    "deployer": "0x7594AeBEEfD14418342e1627aD3D67B4656943a6",
+    "name": "BeaconProxy"
+  },
   "0xf4C449d6a2D1840625211769779ADA42857d04dD": {
     "bytecode_hash": "0xafbcc6b66208d8a999df3dd08911ebaec56fe291f0efb87ff3dd9f2c25c65efc",
     "creation_date": "2025-07-28T01:05:11",
@@ -6887,6 +7385,18 @@
     "deployer": "0xe2d0F9DCc81267c36a47D9E26ADf479501124bBe",
     "name": "Ondo"
   },
+  "0xfB7E8A3BbB8EB242Ce46EAC2a9E8E77F2d423667": {
+    "bytecode_hash": "0x7a98c6e1b519df59e86c074af5260aafbebf2ab74055ae6a75bf57123b2c8e29",
+    "creation_date": "2025-08-25T10:07:35",
+    "deployer": "0x95058F3d4C69F14f6125ad4602E925845BD5d6A4",
+    "name": "BeaconProxy"
+  },
+  "0xfC1E690f61EFd961294b3e1Ce3313fBD8aa4f85d": {
+    "bytecode_hash": "0x7fe6b874c5cd4129ca87207d1fa18a8ebd1dd764a9429e6342c4df04294f443f",
+    "creation_date": "2020-01-08T08:32:47",
+    "deployer": "0x2fbB0c60a41cB7Ea5323071624dCEAD3d213D0Fa",
+    "name": "AToken"
+  },
   "0xfC66d247F577Bfc87df8a5267C43676C4a088B8b": {
     "bytecode_hash": "0x23f3826e09f2541e099aeb520fe9a9dba912e7da5b11941df0172477d91cf7fb",
     "creation_date": "2025-04-03T23:27:47",
@@ -6934,6 +7444,12 @@
     "creation_date": "2024-12-26T02:56:35",
     "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
     "name": "TimelockController"
+  },
+  "0xfb35Fd0095dD1096b1Ca49AD44d8C5812A201677": {
+    "bytecode_hash": "0xe63058a73ffb2f2e6ad30f694d458f54b312688d9b42bd70a8eadb530e971b6e",
+    "creation_date": "2024-01-09T04:53:59",
+    "deployer": "0x1FcCC097db89A86Bfc474A1028F93958295b1Fb7",
+    "name": "PendleYieldToken"
   },
   "0xfd63eED8Db6F5Bae46B2860C4B8a8a07eD8BF8bb": {
     "bytecode_hash": "0xbfa522ddab8fe272e455248bfb77ff5b74628ef5dfb031db73a8edf9f77d8d3f",

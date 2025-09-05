@@ -574,7 +574,7 @@ def display_newest_contracts(graph, top_n=10):
         name = display_label(addr)
         methods = graph.nodes[addr].get('discovery_methods', ['unknown'])
         method_str = ", ".join(methods)
-        logging.info(f"{i}. {name} ({addr[:8]}...) - Created: {date_str} [via {method_str}]")
+        logging.info(f"{i}. {name} ({addr}) - Created: {date_str} [via {method_str}]")
     
     return contracts_with_dates[:top_n]
 
