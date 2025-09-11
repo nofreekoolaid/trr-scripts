@@ -17,6 +17,13 @@ name_blacklist_regex: "(?i)tether"
 num_transactions: 10
 max_depth: 1
 
+strict_interaction_mode: false  # Enable trace-based filtering
+trace_provider_preference: ["tenderly", "geth", "erigon"]  # Provider fallback order
+
+# Protocol-specific filtering
+protocol_factory_addresses: []
+allowed_event_signatures: ["CALL", "DELEGATECALL", "STATICCALL"]
+
 
 tenderly_credentials:
   user: "your_user"

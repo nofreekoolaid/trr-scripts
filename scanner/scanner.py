@@ -20,6 +20,8 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from compare_contracts import compare_contract_files
 from contextlib import redirect_stdout
+from trace_providers import get_trace_provider
+from interaction_filters import InteractionFilter
 import io
 
 random.seed(0)
@@ -131,6 +133,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Contract discovery tool')
     parser.add_argument('--previous', type=str, 
                        help='Path to previous discovered contracts file for comparison')
+    parser.add_argument('--strict-interactions', action='store_true',
+                       help='Enable strict trace-based interaction filtering')
     return parser.parse_args()
 
 def load_contract_cache() -> Dict[str, str]:
@@ -430,6 +434,84 @@ def fetch_recent_transactions(contract: str, limit=10):
         return []
 
 
+def get_strict_interactions(tx_hash: str, source_addr: str, tx_data: Dict = None, interaction_filter: InteractionFilter = None) -> List[str]:
+    """Get interactions using trace-based analysis with strict filtering"""
+    if not config.get('strict_interaction_mode', False):
+        interactions = get_receipt_interactions_strict(tx_hash, source_addr, interaction_filter)
+        return interaction_filter.filter_interactions(interactions, source_addr, tx_data)
+
+    providers = config.get('trace_provider_preference', ['tenderly', 'geth', 'erigon'])
+    
+    for provider_name in providers:
+        try:
+            provider = get_trace_provider(provider_name, ETH_RPC_URL)
+            trace = provider.get_transaction_trace(tx_hash)
+            
+            if not trace:
+                continue
+                
+            # Extract only direct calls where source is caller and of allowed types
+            direct_calls = provider.extract_direct_calls(
+                trace, 
+                source_addr, 
+                interaction_filter.get_allowed_call_types() if interaction_filter else None
+            )
+            
+            # Filter out EOAs and blacklisted addresses
+            basic_filtered = []
+            for addr in direct_calls:
+                try:
+                    checksum_addr = Web3.to_checksum_address(addr)
+                    if checksum_addr in BLACKLIST:
+                        continue
+                    if not is_eoa(checksum_addr):
+                        basic_filtered.append(checksum_addr)
+                except:
+                    continue
+            
+            # Apply enhanced filtering
+            enhanced_filtered = interaction_filter.filter_interactions(
+                basic_filtered, source_addr, tx_data
+            )
+
+            # logging.info(f"Trace found {len(enhanced_filtered)} filtered calls from {source_addr[:8]}...")
+            return sorted(enhanced_filtered)
+            
+        except Exception as e:
+            logging.warning(f"Trace provider {provider_name} failed: {e}")
+            continue
+    
+    # Fallback to receipt-based discovery
+    logging.info(f"All trace providers failed, falling back for {tx_hash}")
+    interactions = get_receipt_interactions_strict(tx_hash, source_addr, interaction_filter)
+    return interaction_filter.filter_interactions(interactions, source_addr, tx_data)
+
+def get_receipt_interactions_strict(tx_hash: str, source_addr: str, interaction_filter: InteractionFilter = None) -> List[str]:
+    """Strict version of receipt-based interaction discovery"""
+    # First get the transaction receipt for event analysis
+    receipt = get_transaction_receipt(tx_hash)
+    
+    targets = fetch_interactions_etherscan(tx_hash)
+    
+    if not config.get('strict_interaction_mode', False):
+        return targets
+    
+    # Basic filtering
+    filtered_targets = []
+    for addr in targets:
+        try:
+            checksum_addr = Web3.to_checksum_address(addr)
+            if checksum_addr in BLACKLIST:
+                continue
+            if is_eoa(checksum_addr):
+                continue
+            filtered_targets.append(checksum_addr)
+        except:
+            continue
+    
+    # Apply enhanced filtering with receipt data for event analysis
+    return interaction_filter.filter_interactions(filtered_targets, source_addr, receipt)
+
 
 @retry(
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -639,73 +721,79 @@ def load_previous_discovered_contracts() -> Set[str]:
     stop=stop_after_attempt(5),
     retry=retry_if_exception_type(Exception)
 )
-def simulate_and_extract(tx_hash):
-    limiter.wait()
-    logging.info(f"Simulating tx: {tx_hash}")
-    
-    # Try Tenderly first
-    try:
-        payload = {
-            "jsonrpc": "2.0",
-            "id": 1,
-            "method": SIM_METHOD,
-            "params": [tx_hash]
-        }
-        resp = session.post(ETH_RPC_URL, headers={"Content-Type": "application/json"}, json=payload, timeout=60)
-        resp.raise_for_status()
-        resp_json = resp.json()
+def simulate_and_extract(tx_hash, source_addr=None, tx_data=None, interaction_filter=None):
+    if config.get('strict_interaction_mode', False) and source_addr:
+        return get_strict_interactions(tx_hash, source_addr, tx_data, interaction_filter)
+    else:
+
+        limiter.wait()
+        logging.info(f"Simulating tx: {tx_hash}")
         
-        # Handle error response
-        if "error" in resp_json:
-            logging.warning(f"Tenderly error: {resp_json['error']}")
-            return []
+        # Try Tenderly first
+        try:
+            # Issue with Tenderly using fetch_interactions_etherscan instead
+            return fetch_interactions_etherscan(tx_hash)
+            # payload = {
+            #     "jsonrpc": "2.0",
+            #     "id": 1,
+            #     "method": SIM_METHOD,
+            #     "params": [tx_hash]
+            # }
+            # resp = session.post(ETH_RPC_URL, headers={"Content-Type": "application/json"}, json=payload, timeout=60)
+            # resp.raise_for_status()
+            # resp_json = resp.json()
             
-        result = resp_json.get("result", {})
-        
-        # Extract all possible interaction targets
-        targets = set()
-        
-        # 1. From trace calls
-        trace = result.get("trace", [])
-        if isinstance(trace, list):
-            for call in trace:
-                if call.get("to"):
-                    targets.add(call["to"])
-        
-        # 2. From logs
-        logs = result.get("logs", [])
-        for log in logs:
-            if log.get("address"):
-                targets.add(log["address"])
-        
-        # 3. From state changes (contract creations)
-        state_changes = result.get("stateChanges", [])
-        for change in state_changes:
-            addr = change.get("address")
-            if addr and addr not in targets:
-                # Check if it's a contract
-                code = w3.eth.get_code(Web3.to_checksum_address(addr))
-                if code and code != b'':
-                    targets.add(addr)
-        
-        # Filter out EOAs and blacklisted addresses
-        filtered_targets = []
-        for addr in targets:
-            try:
-                checksum_addr = Web3.to_checksum_address(addr)
-                if checksum_addr in BLACKLIST:
-                    continue
-                if not is_eoa(checksum_addr):
-                    filtered_targets.append(checksum_addr)
-            except:
-                continue
-        
-        logging.info(f"Found {len(filtered_targets)} interactions")
-        return sorted(filtered_targets)
-        
-    except Exception as e:
-        logging.error(f"Tenderly simulation failed: {str(e)}")
-        return fetch_interactions_etherscan(tx_hash)
+            # # Handle error response
+            # if "error" in resp_json:
+            #     logging.warning(f"Tenderly error: {resp_json['error']}")
+            #     return []
+                
+            # result = resp_json.get("result", {})
+            
+            # # Extract all possible interaction targets
+            # targets = set()
+            
+            # # 1. From trace calls
+            # trace = result.get("trace", [])
+            # if isinstance(trace, list):
+            #     for call in trace:
+            #         if call.get("to"):
+            #             targets.add(call["to"])
+            
+            # # 2. From logs
+            # logs = result.get("logs", [])
+            # for log in logs:
+            #     if log.get("address"):
+            #         targets.add(log["address"])
+            
+            # # 3. From state changes (contract creations)
+            # state_changes = result.get("stateChanges", [])
+            # for change in state_changes:
+            #     addr = change.get("address")
+            #     if addr and addr not in targets:
+            #         # Check if it's a contract
+            #         code = w3.eth.get_code(Web3.to_checksum_address(addr))
+            #         if code and code != b'':
+            #             targets.add(addr)
+            
+            # # Filter out EOAs and blacklisted addresses
+            # filtered_targets = []
+            # for addr in targets:
+            #     try:
+            #         checksum_addr = Web3.to_checksum_address(addr)
+            #         if checksum_addr in BLACKLIST:
+            #             continue
+            #         if not is_eoa(checksum_addr):
+            #             filtered_targets.append(checksum_addr)
+            #     except:
+            #         continue
+            
+            # logging.info(f"Found {len(filtered_targets)} interactions")
+            # return sorted(filtered_targets)
+            
+        except Exception as e:
+            logging.error(f"Tenderly simulation failed: {str(e)}")
+            return get_receipt_interactions_strict(tx_hash, source_addr, interaction_filter)
     
 def fetch_interactions_etherscan(tx_hash):
     params = {
@@ -872,7 +960,25 @@ def update_graph(source: str, targets: Set[str], current_depth: int, depth_queue
 
 processed_contracts = set()
 
-def process_contract(contract: str, current_depth: int, depth_queues: Dict[int, Set[str]]):
+def get_transaction_receipt(tx_hash: str) -> Dict:
+    """Get transaction receipt"""
+    params = {
+        "module": "proxy",
+        "action": "eth_getTransactionReceipt",
+        "txhash": tx_hash,
+        "apikey": ETHERSCAN_API_KEY
+    }
+    
+    try:
+        limiter.wait()
+        response = session.get(ETHERSCAN_URL, params=params, timeout=30)
+        response.raise_for_status()
+        return response.json().get("result", {})
+    except Exception as e:
+        logging.warning(f"Failed to get receipt for {tx_hash}: {e}")
+        return {}
+
+def process_contract(contract: str, current_depth: int, depth_queues: Dict[int, Set[str]], interaction_filter: InteractionFilter = None):
     if contract in processed_contracts:
         logging.info(f"Skipping already-processed contract: {contract[:8]}...")
         return
@@ -902,7 +1008,9 @@ def process_contract(contract: str, current_depth: int, depth_queues: Dict[int, 
 
         for tx in txs:
             try:
-                targets = fetch_interactions_etherscan(tx)
+                receipt_data = get_transaction_receipt(tx) if config.get('strict_interaction_mode', False) else None
+
+                targets = simulate_and_extract(tx, source_addr=contract, tx_data=receipt_data, interaction_filter=interaction_filter)
                 if not targets:
                     continue
                 
@@ -931,7 +1039,7 @@ def rank_contracts(graph, addresses=None, top_n=10):
         name = display_label(contract)
         methods = graph.nodes[contract].get('discovery_methods', ['unknown'])
         method_str = ", ".join(methods)
-        logging.info(f"{i}. {name} ({contract[:8]}...): {score:.6f} [via {method_str}]")
+        logging.info(f"{i}. {name} ({contract}...): {score:.6f} [via {method_str}]")
     
     return ranked
 
@@ -945,11 +1053,16 @@ def main():
     global contract_graph, discovered_contracts, untraced_contracts
 
     args = parse_args()
+    if args.strict_interactions:
+        config['strict_interaction_mode'] = True
     # Output directory setup
     output_dir = os.path.dirname(__file__)
 
     # Testing limitations
     test_mode_limit = 10
+
+    # Initialize interaction filter
+    interaction_filter = InteractionFilter(config)
 
     global logging
     for handler in logging.root.handlers[:]:
@@ -1015,7 +1128,7 @@ def main():
             if is_eoa(contract):
                 continue
 
-            process_contract(contract, current_depth, depth_queues)
+            process_contract(contract, current_depth, depth_queues, interaction_filter)
             contracts_processed += 1
 
             # if contracts_processed >= test_mode_limit:

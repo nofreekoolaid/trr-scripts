@@ -3,10 +3,10 @@ import os
 import unittest
 from unittest import TestCase, mock
 from web3 import Web3
-from scanner import processed_deployers
+from trace_providers import TenderlyTraceProvider
 import networkx as nx
 
-
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from scanner import (
     short_addr,
@@ -20,8 +20,16 @@ from scanner import (
     deployer_discovery_pass,
     simulate_and_extract,
     contract_name_cache,
-    APIRateLimiter
+    APIRateLimiter,
+    get_strict_interactions,
+    get_receipt_interactions_strict,
+    InteractionFilter,
+    get_trace_provider,
+    processed_deployers,
+    session,
+    _is_eoa_cached
 )
+
 
 
 class TestScannerUtils(TestCase):
@@ -33,13 +41,17 @@ class TestScannerUtils(TestCase):
 class TestEOACheck(TestScannerUtils):
     @mock.patch('scanner.w3.eth.get_code')
     def test_is_eoa(self, mock_get_code):
-        # empty code
+        # Test empty code (should be EOA)
         mock_get_code.return_value = b''
-        self.assertTrue(is_eoa(self.test_addr))
+        result = is_eoa(self.test_addr)
+        self.assertTrue(result)
+        _is_eoa_cached.cache_clear()
         
         # non empty code
-        mock_get_code.return_value = b'0x123'
-        self.assertFalse(is_eoa(self.test_addr))
+        mock_get_code.return_value = b'0x123456'
+        result = is_eoa(self.test_addr)
+        self.assertFalse(result)
+        _is_eoa_cached.cache_clear()
         
         # blacklisted
         self.assertFalse(is_eoa("0x1F98431c8aD98523631AE4a59f267346ea31F984"))
@@ -49,7 +61,7 @@ class TestEtherscanAPI(TestScannerUtils):
         super().setUp()
         contract_name_cache.clear()
 
-        self.mock_get_patcher = mock.patch('requests.get')
+        self.mock_get_patcher = mock.patch('scanner.session.get')
         self.mock_get = self.mock_get_patcher.start()
         
         self.original_limiter_wait = APIRateLimiter.wait
@@ -104,7 +116,12 @@ class TestEtherscanAPI(TestScannerUtils):
                 'creationBytecode': '0x61010060...'
             }]
         }
-        self.mock_get.return_value.json.return_value = CONTRACT_CREATION
+
+        mock_response = mock.MagicMock()
+        mock_response.json.return_value = CONTRACT_CREATION
+        mock_response.raise_for_status.return_value = None
+
+        self.mock_get.return_value = mock_response
 
         creator = get_contract_creator(self.test_addr)
         
@@ -115,10 +132,11 @@ class TestEtherscanAPI(TestScannerUtils):
             "https://api.etherscan.io/api",
             params={
                 "module": "contract",
-                "action": "getcontractcreation",
+                "action": "getcontractcreation", 
                 "contractaddresses": self.checksum_addr,
                 "apikey": mock.ANY
-            }
+            },
+            timeout=30
         )
 
     def test_fetch_recent_transactions(self):
@@ -163,7 +181,7 @@ class TestSimulateAndExtract(TestScannerUtils):
 
         self.mock_w3.eth.get_code.return_value = b'0x123'
         
-        self.requests_patch = mock.patch('scanner.requests.post')
+        self.requests_patch = mock.patch('scanner.session.post')
         self.mock_post = self.requests_patch.start()
         self.limiter_patch = mock.patch('scanner.limiter.wait')
         self.mock_limiter = self.limiter_patch.start()
@@ -177,33 +195,34 @@ class TestSimulateAndExtract(TestScannerUtils):
         self.etherscan_patch.stop()
         super().tearDown()
 
-    def test_tenderly_success(self):
-        self.mock_post.return_value.json.return_value = {
-            "result": {
-                "trace": [{"to": "0x1111111111111111111111111111111111111111"}],
-                "logs": [{"address": "0x2222222222222222222222222222222222222222"}],
-                "stateChanges": [{"address": "0x3333333333333333333333333333333333333333"}]
-            }
-        }
+    # This function has been changed
+    # def test_tenderly_success(self):
+    #     self.mock_post.return_value.json.return_value = {
+    #         "result": {
+    #             "trace": [{"to": "0x1111111111111111111111111111111111111111"}],
+    #             "logs": [{"address": "0x2222222222222222222222222222222222222222"}],
+    #             "stateChanges": [{"address": "0x3333333333333333333333333333333333333333"}]
+    #         }
+    #     }
         
-        def get_code_side_effect(addr):
-            addr = addr.lower() if addr else addr
-            if addr == "0x1111111111111111111111111111111111111111":
-                return b'0x123'
-            elif addr == "0x2222222222222222222222222222222222222222":
-                return b'0x123'
-            elif addr == "0x3333333333333333333333333333333333333333":
-                return b'0x123'
-            return b''
+    #     def get_code_side_effect(addr):
+    #         addr = addr.lower() if addr else addr
+    #         if addr == "0x1111111111111111111111111111111111111111":
+    #             return b'0x123'
+    #         elif addr == "0x2222222222222222222222222222222222222222":
+    #             return b'0x123'
+    #         elif addr == "0x3333333333333333333333333333333333333333":
+    #             return b'0x123'
+    #         return b''
             
-        self.mock_w3.eth.get_code.side_effect = get_code_side_effect
+    #     self.mock_w3.eth.get_code.side_effect = get_code_side_effect
         
-        result = simulate_and_extract(self.tx_hash)
+    #     result = simulate_and_extract(self.tx_hash)
         
-        self.assertEqual(len(result), 3)
-        self.assertIn("0x1111111111111111111111111111111111111111", result)
-        self.assertIn("0x2222222222222222222222222222222222222222", result)
-        self.assertIn("0x3333333333333333333333333333333333333333", result)
+    #     self.assertEqual(len(result), 3)
+    #     self.assertIn("0x1111111111111111111111111111111111111111", result)
+    #     self.assertIn("0x2222222222222222222222222222222222222222", result)
+    #     self.assertIn("0x3333333333333333333333333333333333333333", result)
 
 class TestDeployerDiscovery(TestScannerUtils):
     def setUp(self):
@@ -212,7 +231,7 @@ class TestDeployerDiscovery(TestScannerUtils):
         self.sibling1 = Web3.to_checksum_address("0xabcd000000000000000000000000000000000001")
         self.sibling2 = Web3.to_checksum_address("0xabcd000000000000000000000000000000000002")
         
-        self.mock_get_patcher = mock.patch('scanner.requests.get')
+        self.mock_get_patcher = mock.patch('scanner.session.get')
         self.mock_get = self.mock_get_patcher.start()
         
         self.mock_w3 = mock.MagicMock()
@@ -228,48 +247,87 @@ class TestDeployerDiscovery(TestScannerUtils):
 
     def test_get_contracts_deployed_by(self):
         blacklist_addr = Web3.to_checksum_address(list(self.blacklist)[0])
-        self.mock_get.return_value.json.return_value = {
+        mock_response = mock.MagicMock()
+        mock_json_response = {
             "status": "1",
+            "message": "OK", 
             "result": [
                 {"to": "", "contractAddress": self.sibling1},
-                {"to": "", "contractAddress": self.sibling2}, 
-                {"to": "0x0000000000000000000000000000000000000000", "contractAddress": ""}, 
-                {"to": "", "contractAddress": blacklist_addr} 
+                {"to": "", "contractAddress": self.sibling2},
+                {"to": "0x0000000000000000000000000000000000000000", "contractAddress": ""},
+                {"to": "", "contractAddress": blacklist_addr}
             ]
         }
+        mock_response.json.return_value = mock_json_response
+        mock_response.raise_for_status.return_value = None
 
-        with mock.patch('scanner.is_eoa') as mock_is_eoa:
-            blacklist_lower = blacklist_addr.lower()
-            mock_is_eoa.side_effect = lambda addr: addr == "" or addr.lower() == blacklist_lower
-            contracts = get_contracts_deployed_by(self.deployer_addr)
+        self.mock_get.return_value = mock_response
+
+        contracts = get_contracts_deployed_by(self.deployer_addr)
+
+        # Verify API call was made correctly
+        self.mock_get.assert_called_once_with(
+            "https://api.etherscan.io/api",
+            params={
+                "module": "account",
+                "action": "txlist",
+                "address": self.deployer_addr,
+                "startblock": 0,
+                "endblock": 99999999,
+                "sort": "asc",
+                "apikey": mock.ANY
+            },
+            timeout=30
+        )
         
-        for contract in contracts:
-            print(f"Contract Address: {contract}")
-
+        # Verify results
         self.assertEqual(len(contracts), 2)
         self.assertIn(self.sibling1, contracts)
         self.assertIn(self.sibling2, contracts)
         self.assertNotIn(blacklist_addr, contracts)
 
     def test_deployer_discovery_pass(self):
-        self.mock_get.return_value.json.side_effect = [
-            {  # get_contract_creator response
-                "result": [{
-                    "contractCreator": self.deployer_addr,
-                    "contractAddress": self.test_addr
-                }]
-            },
-            {  # get_contracts_deployed_by response
-                "result": [
-                    {"to": "", "contractAddress": self.sibling1},
-                    {"to": "", "contractAddress": self.sibling2}
-                ]
-            }
-        ]
+        # Create mock responses for ALL API calls (3 total)
+        mock_response1 = mock.MagicMock()  # For fetch_contract_name (getsourcecode)
+        mock_response1.json.return_value = {
+            "status": "1",
+            "message": "OK", 
+            "result": [{"ContractName": "TestContract", "Proxy": "0"}]
+        }
+        mock_response1.raise_for_status.return_value = None
+        
+        mock_response2 = mock.MagicMock()  # For get_contract_creator (getcontractcreation)
+        mock_response2.json.return_value = {
+            "status": "1",
+            "message": "OK",
+            "result": [{
+                "contractCreator": self.deployer_addr,
+                "contractAddress": self.test_addr
+            }]
+        }
+        mock_response2.raise_for_status.return_value = None
+        
+        mock_response3 = mock.MagicMock()  # For get_contracts_deployed_by (txlist)
+        mock_response3.json.return_value = {
+            "status": "1",
+            "message": "OK",
+            "result": [
+                {"to": "", "contractAddress": self.sibling1},
+                {"to": "", "contractAddress": self.sibling2}
+            ]
+        }
+        mock_response3.raise_for_status.return_value = None
+        
+        # Set up the side effect for all 3 calls
+        self.mock_get.side_effect = [mock_response1, mock_response2, mock_response3]
 
         test_graph = nx.DiGraph()
         discovered = set()
         untraced = set()
+        
+        # Clear processed deployers before test
+        global processed_deployers
+        processed_deployers.clear()
         
         new_contracts = deployer_discovery_pass(
             contracts_to_check=[self.test_addr],
@@ -280,17 +338,316 @@ class TestDeployerDiscovery(TestScannerUtils):
             label="test"
         )
 
+        self.assertEqual(self.mock_get.call_count, 5)
+
+        
+        # Verify results
         self.assertEqual(len(new_contracts), 2)
         self.assertEqual(len(discovered), 2)
         self.assertIn(self.sibling1, discovered)
         self.assertIn(self.sibling2, discovered)
+        self.assertEqual(test_graph.number_of_nodes(), 3)
+        self.assertEqual(test_graph.number_of_edges(), 2)
+        
+        # Verify graph properties
+        discovery_methods = test_graph.nodes[self.sibling1].get('discovery_methods', [])
+        self.assertIn("test", discovery_methods)
+        
+        # Verify deployer edge was created
+        self.assertTrue(test_graph.has_edge(self.deployer_addr, self.sibling1))
+        self.assertTrue(test_graph.has_edge(self.deployer_addr, self.sibling2))
 
-        self.assertEqual(test_graph.number_of_nodes(), 3) 
-        self.assertEqual(test_graph.number_of_edges(), 2) 
-        self.assertEqual(
-            test_graph.nodes[self.sibling1]["discovery_method"],
-            "test"
+class TestTraceBasedDiscovery(TestScannerUtils):
+    def setUp(self):
+        super().setUp()
+        self.tx_hash = "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+        
+        # Mock the trace provider
+        self.trace_provider_patch = mock.patch('scanner.get_trace_provider')
+        self.mock_get_provider = self.trace_provider_patch.start()
+        
+        # Mock interaction filter
+        self.filter_patch = mock.patch('scanner.InteractionFilter')
+        self.mock_filter_class = self.filter_patch.start()
+        self.mock_filter = mock.MagicMock()
+        self.mock_filter_class.return_value = self.mock_filter
+        
+        # Mock config
+        self.config_patch = mock.patch('scanner.config', {
+            'strict_interaction_mode': True,
+            'trace_provider_preference': ['tenderly']
+        })
+        self.config_patch.start()
+
+    def tearDown(self):
+        self.trace_provider_patch.stop()
+        self.filter_patch.stop()
+        self.config_patch.stop()
+        super().tearDown()
+
+    def test_get_strict_interactions_trace_success(self):
+        """Test successful trace-based interaction discovery"""
+        # Mock trace provider
+        mock_provider = mock.MagicMock()
+        mock_provider.get_transaction_trace.return_value = {
+            "from": self.test_addr,
+            "to": "0xTarget",
+            "calls": [{"from": self.test_addr, "to": "0xDirectCall"}]
+        }
+        mock_provider.extract_direct_calls.return_value = {"0xDirectCall"}
+        self.mock_get_provider.return_value = mock_provider
+        
+        # Mock filter
+        self.mock_filter.filter_interactions.return_value = ["0xDirectCall"]
+        
+        result = get_strict_interactions(
+            self.tx_hash, 
+            self.test_addr,
+            interaction_filter=self.mock_filter
         )
+        
+        self.assertEqual(result, ["0xDirectCall"])
+        mock_provider.get_transaction_trace.assert_called_once_with(self.tx_hash)
+        self.mock_filter.filter_interactions.assert_called_once()
+
+    def test_get_strict_interactions_provider_fallback(self):
+        """Test provider fallback mechanism"""
+        # First provider fails
+        mock_provider1 = mock.MagicMock()
+        mock_provider1.get_transaction_trace.side_effect = Exception("Provider failed")
+        
+        # Second provider succeeds
+        mock_provider2 = mock.MagicMock()
+        mock_provider2.get_transaction_trace.return_value = {
+            "from": self.test_addr,
+            "calls": [{"from": self.test_addr, "to": "0xDirectCall"}]
+        }
+        mock_provider2.extract_direct_calls.return_value = {"0xDirectCall"}
+        
+        self.mock_get_provider.side_effect = [mock_provider1, mock_provider2]
+        
+        # Mock filter
+        self.mock_filter.filter_interactions.return_value = ["0xDirectCall"]
+        
+        # Mock config with multiple providers
+        with mock.patch('scanner.config', {
+            'strict_interaction_mode': True,
+            'trace_provider_preference': ['failed_provider', 'working_provider']
+        }):
+            result = get_strict_interactions(
+                self.tx_hash,
+                self.test_addr,
+                interaction_filter=self.mock_filter
+            )
+            
+            # Should have tried both providers
+            self.assertEqual(self.mock_get_provider.call_count, 2)
+            # Should return the result from the second provider
+            self.assertEqual(result, ["0xDirectCall"])
+            # Should have called filter interactions
+            self.mock_filter.filter_interactions.assert_called_once()
+
+    def test_get_strict_interactions_strict_mode_disabled(self):
+        """Test behavior when strict mode is disabled"""
+        with mock.patch('scanner.config', {'strict_interaction_mode': False}):
+            # Mock receipt interactions
+            with mock.patch('scanner.get_receipt_interactions_strict') as mock_receipt:
+                mock_receipt.return_value = ["0xReceiptTarget"]
+                self.mock_filter.filter_interactions.return_value = ["0xFilteredTarget"]
+                
+                result = get_strict_interactions(
+                    self.tx_hash,
+                    self.test_addr,
+                    interaction_filter=self.mock_filter
+                )
+                
+                # Should use receipt-based approach
+                mock_receipt.assert_called_once_with(
+                    self.tx_hash,
+                    self.test_addr,
+                    self.mock_filter
+                )
+                self.mock_filter.filter_interactions.assert_called_once_with(
+                    ["0xReceiptTarget"], self.test_addr, None
+                )
+                # Should return filtered result
+                self.assertEqual(result, ["0xFilteredTarget"])
+
+class TestInteractionFilter(TestScannerUtils):
+    def setUp(self):
+        super().setUp()
+        self.config = {
+            'strict_interaction_mode': True,
+            'protocol_factory_addresses': ['0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'],
+            'allowed_event_signatures': ['0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9'],
+            'blacklist_contracts': ['0x1F98431c8aD98523631AE4a59f267346ea31F984']
+        }
+        
+        self.filter = InteractionFilter(self.config)
+
+    def test_is_protocol_factory(self):
+        """Test factory address detection"""
+        self.assertTrue(self.filter.is_protocol_factory("0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"))
+        self.assertFalse(self.filter.is_protocol_factory("0xNonFactoryAddress"))
+
+    def test_filter_interactions_basic(self):
+        """Test basic interaction filtering"""
+        interactions = [
+            "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",          # Should keep (factory)
+            "0x1F98431c8aD98523631AE4a59f267346ea31F984",          # Should remove (blacklisted)
+            "0x6B175474E89094C44Da98b954EedeAC495271d0F",          # Should keep (default behavior)
+            "0x0000000000000000000000000000000000000000"           # Should remove (EOA)
+        ]
+        
+        # Mock EOA check
+        with mock.patch('scanner.is_eoa') as mock_is_eoa:
+            mock_is_eoa.side_effect = lambda addr: addr == "0x0000000000000000000000000000000000000000"
+            
+            result = self.filter.filter_interactions(
+                interactions, 
+                self.test_addr,
+                None
+            )
+        
+        self.assertIn("0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", result)
+        self.assertIn("0x6B175474E89094C44Da98b954EedeAC495271d0F", result)
+        self.assertNotIn("0x1F98431c8aD98523631AE4a59f267346ea31F984", result)
+        self.assertNotIn("0x0000000000000000000000000000000000000000", result)
+
+    def test_filter_interactions_with_event_data(self):
+        """Test filtering with event data"""
+        interactions = ["0x6B175474E89094C44Da98b954EedeAC495271d0F"]
+        
+        tx_data = {
+            "logs": [
+                {
+                    "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+                    "topics": ["0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde31afa28d0e9", "0xOtherData"]
+                }
+            ]
+        }
+        
+        result = self.filter.filter_interactions(
+            interactions,
+            self.test_addr,
+            tx_data
+        )
+        
+        # Should keep contract with allowed event
+        self.assertIn("0x6B175474E89094C44Da98b954EedeAC495271d0F", result)
+
+class TestReceiptInteractionsStrict(TestScannerUtils):
+    def setUp(self):
+        super().setUp()
+        self.tx_hash = "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+        
+        # Mock dependencies
+        self.receipt_patch = mock.patch('scanner.get_transaction_receipt')
+        self.mock_get_receipt = self.receipt_patch.start()
+        
+        self.etherscan_patch = mock.patch('scanner.fetch_interactions_etherscan')
+        self.mock_etherscan = self.etherscan_patch.start()
+        
+        self.filter_patch = mock.patch('scanner.InteractionFilter')
+        self.mock_filter = mock.MagicMock()
+        self.filter_patch.return_value = self.mock_filter
+        
+        # Mock config
+        self.config_patch = mock.patch('scanner.config', {'strict_interaction_mode': True})
+        self.config_patch.start()
+
+    def tearDown(self):
+        self.receipt_patch.stop()
+        self.etherscan_patch.stop()
+        self.filter_patch.stop()
+        self.config_patch.stop()
+        super().tearDown()
+
+    def test_get_receipt_interactions_strict(self):
+        """Test strict receipt-based interactions"""
+        # Use checksum addresses for the mock
+        target1 = Web3.to_checksum_address("0x1234567890123456789012345678901234567890")
+        blacklisted = Web3.to_checksum_address("0x1F98431c8aD98523631AE4a59f267346ea31F984")
+        zero_addr = Web3.to_checksum_address("0x0000000000000000000000000000000000000000")
+        
+        # Mock responses
+        self.mock_etherscan.return_value = [
+            target1,
+            blacklisted,  # Blacklisted
+            zero_addr     # EOA
+        ]
+        
+        self.mock_get_receipt.return_value = {"logs": []}
+        self.mock_filter.filter_interactions.return_value = [target1]
+        
+        # Mock is_eoa and temporarily replace BLACKLIST
+        with mock.patch('scanner.is_eoa') as mock_is_eoa, \
+            mock.patch('scanner.BLACKLIST', new={blacklisted}):
+            
+            # Set up is_eoa mock
+            mock_is_eoa.side_effect = lambda addr: addr == zero_addr
+            
+            result = get_receipt_interactions_strict(
+                self.tx_hash,
+                self.test_addr,
+                interaction_filter=self.mock_filter
+            )
+        
+        self.mock_etherscan.assert_called_once_with(self.tx_hash)
+        self.mock_get_receipt.assert_called_once_with(self.tx_hash)
+        self.mock_filter.filter_interactions.assert_called_once_with(
+            [target1], self.test_addr, {"logs": []}
+        )
+        # Verify output correctness
+        self.assertEqual(result, [target1])
+
+class TestSimulateAndExtractIntegration(TestScannerUtils):
+    def setUp(self):
+        super().setUp()
+        self.tx_hash = "0x1234567890abcdef"
+        
+        # Mock strict interactions function
+        self.strict_patch = mock.patch('scanner.get_strict_interactions')
+        self.mock_strict = self.strict_patch.start()
+        
+        # Mock config
+        self.config_patch = mock.patch('scanner.config', {'strict_interaction_mode': True})
+        self.config_patch.start()
+
+    def tearDown(self):
+        self.strict_patch.stop()
+        self.config_patch.stop()
+        super().tearDown()
+
+    def test_simulate_and_extract_strict_mode(self):
+        """Test simulate_and_extract in strict mode"""
+        mock_filter = mock.MagicMock()
+        self.mock_strict.return_value = ["0xStrictTarget"]
+        
+        result = simulate_and_extract(
+            self.tx_hash,
+            source_addr=self.test_addr,
+            interaction_filter=mock_filter
+        )
+        
+        self.mock_strict.assert_called_once_with(
+            self.tx_hash,
+            self.test_addr,
+            None,
+            mock_filter
+        )
+        self.assertEqual(result, ["0xStrictTarget"])
+
+    def test_simulate_and_extract_legacy_mode(self):
+        """Test simulate_and_extract in legacy mode"""
+        with mock.patch('scanner.config', {'strict_interaction_mode': False}):
+            with mock.patch('scanner.fetch_interactions_etherscan') as mock_etherscan:
+                mock_etherscan.return_value = ["0xLegacyTarget"]
+                
+                result = simulate_and_extract(self.tx_hash)
+                
+                mock_etherscan.assert_called_once_with(self.tx_hash)
+                self.assertEqual(result, ["0xLegacyTarget"])
 
 
 if __name__ == '__main__':
