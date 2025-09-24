@@ -1,0 +1,4142 @@
+{
+  "0x000000000022D473030F116dDEE9F6B43aC78BA3": {
+    "bytecode_hash": "0xc67d1657868aa5146eaf24fb879fb1fdec3d2d493b3683a61c9c2f4fb2851131",
+    "creation_date": "2022-11-16T17:17:59",
+    "deployer": "0xD32Ff78579352cA78f416120A9f68b65c410871b",
+    "name": "Permit2"
+  },
+  "0x0009A4657c52ea648490aA06138b88cE0f46A0c9": {
+    "bytecode_hash": "0x1372ff32bb74923c89b5e6aa6b8f8726a43ea5ccabfaf7151c9a4cff9e372748",
+    "creation_date": "2024-10-29T08:08:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Fee"
+  },
+  "0x000D8AA9E414b9E7E7591A456CA910Fb3bb05875": {
+    "bytecode_hash": "0x9da64662c6e67ebcdea4504c589f8f1a43302012475eda30d76922f9658201da",
+    "creation_date": "2024-09-25T10:07:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerUngovernedPerspective"
+  },
+  "0x0081d84174d84EE37973fc553b2a3A0101873193": {
+    "bytecode_hash": "0xde8e25c48ed91a1e3f2a7c766fd1ad9d3b63a38fd730b4c4082b13fae06b7d02",
+    "creation_date": "2024-08-27T09:40:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x009bd94AD5Fa60e676bfd3A45b5305463216a0d8": {
+    "bytecode_hash": "0x1cbe1b49ac4c23f86ee015abec8178cf6dc207778356c7f7ac4131feaa1d6db6",
+    "creation_date": "2024-08-14T13:23:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "UtilsLens"
+  },
+  "0x00D54F129293b1580C779c8F04b2d8cE370cA69d": {
+    "bytecode_hash": "0x42716877c9805e9e05f4282079d9d83d19647d681439c42135fd772183df7836",
+    "creation_date": "2021-11-29T15:47:54",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RiskManager"
+  },
+  "0x013F30a593718D962c0CeeDe0a66f5f9EF5451b5": {
+    "bytecode_hash": "0x08b06f00232e4ea7398afdf44ceab1a4ba6b3daacff36479313de23792965c99",
+    "creation_date": "2024-09-09T12:20:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x018b43eCFBE95617c0240A19eb734d973A074267": {
+    "bytecode_hash": "0x346025b369d3b00df93e60b50c62e8270bd1d0628b042ce82ddb14c1baea89bc",
+    "creation_date": "2024-08-27T09:44:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x02122aFd2687ddB1dd3B9F2F2D7Cc6fd422DBD05": {
+    "bytecode_hash": "0x6ccc2d85625165ca08291baa719fd5f3eaaff0c4d461b8db34fa7a881d0e646e",
+    "creation_date": "2024-10-29T08:07:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnVault"
+  },
+  "0x02dd5B7ab536629d2235276aBCDf8eb3Af9528D7": {
+    "bytecode_hash": "0xa70cf01ba5e4d615597bc0bbb4f011f2d7a754e2ae8edfc08f6cc265af8011ff",
+    "creation_date": "2024-08-16T09:36:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x03601eDc8aF4b0439d63Eb3a45ed11B01c6975d7": {
+    "bytecode_hash": "0x9b7f569d30cebf5f101b81b0531a6761d237e1176bc02e1f4f3557a73342e853",
+    "creation_date": "2021-12-09T18:42:45",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "DToken"
+  },
+  "0x03ED909Ab6102c3F1Bb9c665839Ae580aC472dAC": {
+    "bytecode_hash": "0xea8ec2336a54f0a4c9dbe26fda49773bdb995ffd370303b0f75aafa2ed4c8ace",
+    "creation_date": "2024-09-01T06:47:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x0409951BaF30bfAd7EC3c2584CBCB120f816b31B": {
+    "bytecode_hash": "0x3e74de1ab8fb4315c636a5669344cbd8cc16e1a55a53635477a80cd4db556a5d",
+    "creation_date": "2024-08-27T09:09:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x0484Df76f561443d93548D86740b5C4A826e5A33": {
+    "bytecode_hash": "0x69e7814ef251d72e713b2ffb96187ba9bb5f1379e461d8a80efc372cd2cdf4d4",
+    "creation_date": "2024-08-27T09:10:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x04A56636015Ef379e21Bb78aa61069E721D0cf1C": {
+    "bytecode_hash": "0xaf79d60027efdb0367f5253907d6131ff0b60349c4f99709dcb7cefd38ad7938",
+    "creation_date": "2024-09-12T09:58:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x04CB462a121e1799722Fe84C60E790B64D5adfDE": {
+    "bytecode_hash": "0x64f414fc37984322a8bbfb687358919253dd5a1d650be14ec404d7b938d0fa6d",
+    "creation_date": "2022-08-17T21:05:48",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Governance"
+  },
+  "0x04D3214E0e0a21c5b22a81F82D810171B6525332": {
+    "bytecode_hash": "0x1d3e79d4112e22c56bb0e0b5bad7eadf889b15ab0708c1f8008d2bf1078f4f04",
+    "creation_date": "2024-08-14T13:23:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0x04D3...5332"
+  },
+  "0x04F50861b2CeC7831B27b74b565EfEeCeABED4Fd": {
+    "bytecode_hash": "0xb44644808449dd44f00f9a9a2349a28130ff4b73e319350f388ccdfb4bb45e94",
+    "creation_date": "2024-08-27T09:43:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x05D6C4D46A794468f282469c0E9346f121EA92Ee": {
+    "bytecode_hash": "0x518a82dc39c0c8001357c0441fcf8454ebef9cc10117b5395c9c6848b1de4fc8",
+    "creation_date": "2025-05-29T12:29:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwap"
+  },
+  "0x05df5bb999Bac668713122b83Fb5De75B6973377": {
+    "bytecode_hash": "0xa10f7ab12c61a4099754383f6c85db9f04e9c655be4e9bf70b9be1170f2569ea",
+    "creation_date": "2023-04-19T06:21:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Extractor"
+  },
+  "0x07df2ad9878F8797B4055230bbAE5C808b8259b3": {
+    "bytecode_hash": "0xee1cc956021ca0fc82edd7f21986fda3782df30017a3fa38ba344c8580fbe42b",
+    "creation_date": "2021-12-09T18:38:09",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FlashLoan"
+  },
+  "0x0831C0EaC6D6d1411F31965146BfA81fcF24f546": {
+    "bytecode_hash": "0x6d804e7d3f25cb4fa523456498fb83a7c3b1d327871650b2633c8a9f2605082d",
+    "creation_date": "2024-08-27T10:06:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x088756eB730A08CbEb98Dfe67Ca74697a8A63153": {
+    "bytecode_hash": "0x43b374c96e49f6a55103baa50db5cef696ec6e7d2157009673a1a6ed238bbd60",
+    "creation_date": "2024-12-26T02:56:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GovernorAccessControlEmergency"
+  },
+  "0x090c752B7b26d3cc382BF532eC9C4403C80D56CF": {
+    "bytecode_hash": "0x2f379d91441be584833a921fb7382274235e3c13bbf49b4ee91f39437e92bc12",
+    "creation_date": "2021-12-09T18:40:30",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0x098B76Fc7D7488C5d567D28540497cA7785c7A4c": {
+    "bytecode_hash": "0x6e31a243445af07091ea2592eb61f343ae82958fa2a14c15cf8f8c6cac721455",
+    "creation_date": "2024-12-26T02:10:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x0Bf04952a5b3eF6bAD343C2218F584a7413bb44d": {
+    "bytecode_hash": "0xbf46e80784c09a19440257c99ab900d3536714ca61721a05862f5bb955d7d978",
+    "creation_date": "2022-08-17T21:04:31",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Exec"
+  },
+  "0x0C8541ba08F81CFcE8B35E74A87B0e8Fc4669974": {
+    "bytecode_hash": "0x6e3fb9ea57a67cb1d00a0331181bce920a69f0840bc85bc5dce83f35fc22cceb",
+    "creation_date": "2024-08-27T10:12:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383": {
+    "bytecode_hash": "0x79e2fb648ff1e9d2fd847f9ce75de24dd41b4b5f39beddc8f595f20fd31bbfb0",
+    "creation_date": "2024-08-14T13:18:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EthereumVaultConnector"
+  },
+  "0x0D52d06ceB8Dcdeeb40Cfd9f17489B350dD7F8a3": {
+    "bytecode_hash": "0xc859e21aa0fb68a0908e23886c0dfb8e35b0f0eaede292f2545e4e0375440a0f",
+    "creation_date": "2024-08-14T13:19:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "TrackingRewardStreams"
+  },
+  "0x0D99c644EAdc9237550430D1ACa226690EAc4E4f": {
+    "bytecode_hash": "0x651992459b25c0c466b5c93474179980ebb5a568021fa9a2918ad9ab7135ea1b",
+    "creation_date": "2024-08-27T10:09:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x0Dd643580a1B137DB748651A6a9be13Ba5734Fd8": {
+    "bytecode_hash": "0xdfc1cd578ec7c72f1022ba28fdf6bed5d0be227f4cc0a6870971c8c727abbc8f",
+    "creation_date": "2024-10-15T06:25:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x0E45B0bc6D05872E355cca26f14ec5519E302db6": {
+    "bytecode_hash": "0xa79b9f83ac75b64243f39dbab8912994cbf6375f7805e24bba9f70514458f262",
+    "creation_date": "2024-09-02T05:52:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x0Ee5c537E91bb988Fe615d0da78582ED21e2fCeC": {
+    "bytecode_hash": "0xd4d84c10e282de5ee99164de8d9d841567180a2c2d15975bb6ffde992e417f48",
+    "creation_date": "2024-10-29T08:07:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Rewards"
+  },
+  "0x0F239a09D9B4f048d2EfE36a4204692F8DF5B564": {
+    "bytecode_hash": "0x038e578130f8cd8ac83d10ee028683509bcf51df2117310322a256746df736a7",
+    "creation_date": "2024-08-27T09:13:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x0F8560f6361051De80Cd15Dc439c76199C47bd4f": {
+    "bytecode_hash": "0xd48d59902c88136db06e7fd63c0497fb07fe7d80c61924ed151afa946ead914e",
+    "creation_date": "2024-08-16T08:56:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x0a6bF6C5BB7301fa6731261c6cFb65df778e7743": {
+    "bytecode_hash": "0x9276cff3f1bf52e41e628ca2e33af17dd3da801efd7b54d6753720a0f4602637",
+    "creation_date": "2024-08-31T07:32:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMLens"
+  },
+  "0x0a71C167d6FBDb6721f37e1d543B4bAcCB76A9E0": {
+    "bytecode_hash": "0x95f1a14701b424803db35c6ef23217936882efcf33e578e2d31b0a962a4173d5",
+    "creation_date": "2023-03-13T05:47:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0x0a7B3d7836C8D06FA2Db5e991658ab2C161544E4": {
+    "bytecode_hash": "0x7798a618aea817a4cc0199b8f559341b2698fc914afda0a01b58c1dad87c886d",
+    "creation_date": "2024-08-27T10:36:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x0c5Ec740e53b42b03Bd4700591c82465e93404Ce": {
+    "bytecode_hash": "0xddae260043372fc6376dde060b9a8862922aa3ee01a24004c1bbc71f88e46fa4",
+    "creation_date": "2024-12-26T02:23:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x0f316b9f0bf1FFBADFa131E7d605265Da3587f05": {
+    "bytecode_hash": "0xed41202777b6289dce8da23f866815fd89bef4176a6c00bda89729953cabc5e4",
+    "creation_date": "2024-08-27T09:19:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x0fe1A11CC41459A60471BEF0177C08C4f09f94d9": {
+    "bytecode_hash": "0x0640e78e4df54ddb626ac672e36f86b3130df3a16948e3238d3fefe1a17fe27e",
+    "creation_date": "2024-08-27T09:12:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x105c9463d83D06c05b976248C3CCE01F739B0127": {
+    "bytecode_hash": "0x4ccaba583153ee03479765c9271629e8ea44191e1a8a94451fc66eac96fc82f4",
+    "creation_date": "2024-08-31T11:30:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x10674C8C1aE2072d4a75FE83f1E159425fd84E1D": {
+    "bytecode_hash": "0x3ca490004e0a5c4f7da41ac551c06778fbbdd681da035336dc71ba473a6b3b1a",
+    "creation_date": "2024-08-16T09:28:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x11D5e473665038A9093b404F4744B48e44397910": {
+    "bytecode_hash": "0x0f69248f39d91d5fa141e6c2139d40605bf1540de378f949947d51b433bc6437",
+    "creation_date": "2024-08-27T09:59:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x12401F97e2264adBF8FF98DA72e3465D97B41477": {
+    "bytecode_hash": "0x7015b9b532889e69cdf1ad0d1b475cca558d536058fa07d4aaf466666be2bf88",
+    "creation_date": "2022-04-10T05:20:05",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Markets"
+  },
+  "0x1245f078A5b6161E6CB66C4cF00419ae2BeafbDb": {
+    "bytecode_hash": "0x0391530599538d6be4a09a51a911963c47e83ebcccb912bb7dfbf9dfb8ec1c96",
+    "creation_date": "2022-03-17T12:02:57",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0x12Dd0ceea79F97250bba5816eE44DfCBC3A9d9E2": {
+    "bytecode_hash": "0x4cb3053156b7cd66b5e048955b18956b5073c89368705c91f0eb067440aa4b73",
+    "creation_date": "2024-08-27T09:20:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x1336052327cEcea1a8e6365AF6DD48b78F14cb31": {
+    "bytecode_hash": "0x11b8e009f785bfe26b2e6031399779153f886d929f5c5785c496695b99df2438",
+    "creation_date": "2024-08-27T10:11:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x1343a8334c2C7d04f6126Ab6502642845060f435": {
+    "bytecode_hash": "0x61e4c5f851bbacccc45a683c8f82fe69c22f2c27c0ade73b509039a26cab707f",
+    "creation_date": "2024-08-27T09:39:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x13d7392f5A8a6A75020eAC90F761F56Acb7175f0": {
+    "bytecode_hash": "0xe4f0c5851c3ac60d6babf2ff85b1607d0679640b414b25c703082d97682d2bb1",
+    "creation_date": "2023-03-13T04:14:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0x13e66cEf90715a6E5B353Ce356259eC0CB2b7442": {
+    "bytecode_hash": "0xd592f2eb263a156d89c05f4056fd64312f9f5a60df691b37943f31abdf99544e",
+    "creation_date": "2024-08-31T11:38:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x1430635296fC1494560ab60f58EA7f6C7b56EFB6": {
+    "bytecode_hash": "0x6ffa1a3f1255a8f6efa62ebca15d5677d07b4b2a94fc8103991a4aa77f00d142",
+    "creation_date": "2024-08-27T10:12:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x14Bdc3A3AE09f5518b923b69489CBcAfB238e617": {
+    "bytecode_hash": null,
+    "creation_date": null,
+    "deployer": null,
+    "name": "TestContract"
+  },
+  "0x14C855046e91E91033Aaff3191EA6717Fb759A05": {
+    "bytecode_hash": "0x82d0aacdba056585986f25112bea186950011688346f7afe089f71c2defb6da4",
+    "creation_date": "2024-09-12T09:51:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x14cBaC4eC5673DEFD3968693ebA994F07F8436D2": {
+    "bytecode_hash": "0x1a8203069726bdd2833693c5b6d285cccbfc756cd700476641cd8eb8ebad3b4c",
+    "creation_date": "2021-11-29T15:36:43",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Exec"
+  },
+  "0x155020C32cEb5E1BFdD6217c2E7906c92bcAC8c1": {
+    "bytecode_hash": "0x00719f944bfad47ceee99cfb454660afa882920b582056a5feda6acfc7019b85",
+    "creation_date": "2022-03-17T12:01:36",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Exec"
+  },
+  "0x156242F8ec2c8Ec185b45cBF9b167f1dfce462b9": {
+    "bytecode_hash": "0x2b7d16ccf2d6a22657eee8ae6f8f74df7f15d0687414c3fb390a37beb3b1be62",
+    "creation_date": "2023-04-13T08:20:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Extractor"
+  },
+  "0x157E7ea776cb684df4185782AEe266D81036f496": {
+    "bytecode_hash": "0x7cd8186afc78c68e10c05ab4ba241e86667612bba2d26fe0451144e09dcec1fa",
+    "creation_date": "2024-08-27T10:00:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x16230668587e47252A905D5425B82bb9619cD1a5": {
+    "bytecode_hash": "0xcb2192649d71d2d5ed5458ec2f83c5c66f68f5a71136d923042866e3bbce167a",
+    "creation_date": "2024-08-27T09:34:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x16805c0eC021ee5e5cE80803D3fB9194ec454e82": {
+    "bytecode_hash": "0xc1f8f36b1f795aaa0bc843d8416cbb2cf3f3775f24afe9b798a59951b0dbb339",
+    "creation_date": "2024-08-27T10:03:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x169FcDf7ee4975E5dE4859cd4030F25Cb399be8c": {
+    "bytecode_hash": "0xf340c490cd50a6ce4a7f9909bc09008d40b4d80a860be89418695f681ffdf863",
+    "creation_date": "2022-08-03T09:53:40",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "DToken"
+  },
+  "0x16a18A08d88B38a09a4bb86d378B79fAaF1fA5d4": {
+    "bytecode_hash": "0x9bfa4ef718d9ab569f8b59b303a9555f10f592f577836aebd738299fc8a6d718",
+    "creation_date": "2024-12-12T06:45:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x16a8760feB814AfC9e3748d09A46f602C8Ade027": {
+    "bytecode_hash": "0xd727fa2f5eed42b3b4f8fbf65d5db6920ccb9cfe15f999d3f256a634d93085d9",
+    "creation_date": "2025-01-27T11:13:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x16fa62D8c322a6156fb5eF267342A3C7952AD23C": {
+    "bytecode_hash": "0xa52b717b22beaf56711b1ab732f74275c9cfa42b309818e0c45849ad71e9d03a",
+    "creation_date": "2024-08-14T13:21:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Liquidation"
+  },
+  "0x175b1A1347F207AA0529430012385A14C46D9638": {
+    "bytecode_hash": "0xedaf47aa039b2a930de73cf2f28fb9251fc597f1378baaa5bdf32d7e9e0198eb",
+    "creation_date": "2024-08-27T09:42:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x175eCF37C049c089e44A6C195519f0Ed4368A370": {
+    "bytecode_hash": "0x3258efff812e2f9a77f82d3d3d6e19e7d077526fe69658e87dd2b71741e6d6b9",
+    "creation_date": "2024-08-27T09:09:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x1800B00250dF88fa5461edF957722a352B3C6378": {
+    "bytecode_hash": "0x26cc8618e87027441286b36d9282a2a5b908483270976c5c7824fa4218388153",
+    "creation_date": "2024-08-27T09:37:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x182CF2A51672c71227Ea1fEDE9C8Ed285C158fAc": {
+    "bytecode_hash": "0x389e80cdce1db76ac65abce1d9343db7a0b3d0d149104379fc07b158364b840e",
+    "creation_date": "2024-12-12T06:46:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x196446caDDe6DA4d4AFCde0c2A06DCB7B6085C12": {
+    "bytecode_hash": "0xd339a8663e0a473a63c43da95d071dd959e0b3c74aa62a1e9b371cb35f7c0d38",
+    "creation_date": "2024-09-09T11:21:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x196fdd95EAE8c673150e5EFe727F4cC84ED33Cb8": {
+    "bytecode_hash": "0x3a36d1d33da9da0a8549a921a94b35b4c433d9dcce8c381925e21d3a88ed74b7",
+    "creation_date": "2022-08-03T09:53:01",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0x19bfe3aca80C61070cd22F84a59768988d199EEd": {
+    "bytecode_hash": "0xe7955127ea4bee9142dffa2026e5041a250878a78faa48f68e8dde904645d059",
+    "creation_date": "2024-08-27T10:09:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x1B965dB157027423b493328CbddeF2335063897b": {
+    "bytecode_hash": "0xd84c992cb754cc32d53e09422672564a3739accbbceb66a28e5767217ba4fcf6",
+    "creation_date": "2024-08-16T09:29:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x1BB5d7e38AF13fA56895b27D1358323F3DA713CA": {
+    "bytecode_hash": "0x9e0ebfd240b0589527e45c0453bc308819cb627ee991bd3e4ab7c3d8820bfa18",
+    "creation_date": "2024-11-19T11:03:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x1BdDdB80Baeb5892b71c32137Cd8A35f8B7eb695": {
+    "bytecode_hash": "0xc7b82f850deea8140df0ba3f1b0c0411261c55e3e3b23be29b27424630278aef",
+    "creation_date": "2024-09-09T11:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x1CED4418D789636ea9358F47859C3f74D9e26453": {
+    "bytecode_hash": "0xef8ece395a967f0026adb9f8f29e705b12be0c7fe04a86d5480e4c5c069d6944",
+    "creation_date": "2024-09-01T06:46:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x1DF4f5afD2Ad4E830a343C7C32824A9F4b525496": {
+    "bytecode_hash": "0x42b641d3b2f5a010803c8ceccb64bb8d1b60bee8c2fe3dcca2022a2958853db0",
+    "creation_date": "2024-08-27T10:35:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x1E10D23Ec871dD8bfE9740e193C714f8B2FFCfe5": {
+    "bytecode_hash": "0x6c60b44f7f8dde2e21c06bddf80dfc984149d48b8077e68118efcfbf65fc0725",
+    "creation_date": "2024-08-31T08:13:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x1E21CAc3eB590a5f5482e1CCe07174DcDb7f7FCe": {
+    "bytecode_hash": "0xb18a512e5d35127b2ddb40c316a6cce4802fef82006dfc4a2c2c3ef2ecc1bc30",
+    "creation_date": "2022-08-17T21:13:41",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Markets"
+  },
+  "0x1E87e5D9F675F4883cd81f6Cf4B92E03cc326eBF": {
+    "bytecode_hash": "0x0d1de4d1b1a746cea52b18fa58f383525500bc423ead589a95be1b87bebe3ce0",
+    "creation_date": "2024-11-25T13:31:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x1F929d571FA089A0308AfCa96129d28527Df86cd": {
+    "bytecode_hash": "0x6df911624683c3a4fcb31b4c14a48c46f677c99cd01c1cd6185d4e42b17f1b34",
+    "creation_date": "2024-08-27T09:30:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x1aA4B12e93D8F3CFd7431757b545eFC83030fd7d": {
+    "bytecode_hash": "0xb58c56c26bf461ccbfcec792cff702e8aedc6962c5859cfb77551a359e6c71f8",
+    "creation_date": "2024-08-27T10:36:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x1aab4Ade343a2d80aE9b6e516D1e1f71E688fCe3": {
+    "bytecode_hash": "0x78c1137eb2a572f325af2f23f840b727fc46a0538f3b7ae7d7844f9d746d2027",
+    "creation_date": "2024-12-17T13:16:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x1bDc02Cc6F129815Cb666Cb10f08037985D8A7d2": {
+    "bytecode_hash": "0xc690b3bbaf98eb0a70e7cd45709c0ddf45807ecbffa4be1510911ee2a4d406e6",
+    "creation_date": "2024-09-03T12:41:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x1c4224B8f39B53e8317740258e4870cDD3fE518e": {
+    "bytecode_hash": "0xab6669c97df0d30e03bf2f173242dc9dde371e5f7264a18b362e42622e82d252",
+    "creation_date": "2024-09-13T10:37:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x1eF5A6Ad9F80605Ae4DD8aBfdCdAc3E4440D321f": {
+    "bytecode_hash": "0xcede1fe7d47b536198a7085f74ede68bd3bf74fa8808d5b27a86a13e6721b9cb",
+    "creation_date": "2025-01-28T04:21:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerIRMAdaptiveCurveFactory"
+  },
+  "0x205934fCB64523CA9DaCee5Cac93e82F2544422c": {
+    "bytecode_hash": "0xbfccbfa752ff9183c81e09081e074776c7a35ff371253060fa79a90458b23643",
+    "creation_date": "2024-08-27T10:39:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x208fF5Eb543814789321DaA1B5Eb551881D16b06": {
+    "bytecode_hash": "0x9769c059efbf3caff1aeadaf9de22fb71a780f2d06964e7b467dfbc5cc8a4e07",
+    "creation_date": "2025-06-10T12:09:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwapPeriphery"
+  },
+  "0x218f2C85a53B7a3051561F8Bf2475D40eFd3ADA1": {
+    "bytecode_hash": "0x14d627e5a875614276823a1f18f21415376fb1bf8317ccc95553548001cfc340",
+    "creation_date": "2024-08-27T09:28:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x2206c3341582daAF007BA4569321c8Dd39f0710b": {
+    "bytecode_hash": "0x9cd17a7ffce1cec4dc59e5d520525d4fa929734f8b32eb06645d25b793980b2c",
+    "creation_date": "2024-08-31T07:49:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerUngovernedPerspective"
+  },
+  "0x222fC2383C13D91ff8a3421dc977Fa2f3501931D": {
+    "bytecode_hash": "0x9bf64a034ba29e715a3216286a175279aaa3c447c67ca7a5eabaa9fa20d58bb7",
+    "creation_date": "2024-09-01T06:46:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x229443bf7F1297192394B7127427DB172a5bDe9E": {
+    "bytecode_hash": "0x9732e584821101171b06edea8213fe6538cf1bb704a52feb326adc430494a982",
+    "creation_date": "2022-12-01T07:36:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "StakingRewards"
+  },
+  "0x232F49b73B3E1C65bcCB1FF4874CAdcD16EB9399": {
+    "bytecode_hash": "0xf783a30b59b146be2c5e404530a07aed531d92c7e15c87d36337a57f32206f8d",
+    "creation_date": "2024-08-14T13:23:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GovernableWhitelistPerspective"
+  },
+  "0x23731D5B57f4199Afd5080eAA9F22715DF45d7C2": {
+    "bytecode_hash": "0x6508085f0ed9dc5d26d1f84120d3751bb9b2a0219e16bf4150106f0d1b4a2d0d",
+    "creation_date": "2025-06-05T13:05:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0x2373...d7C2"
+  },
+  "0x239DE90Ac71a220Ba745A10988BC2AbF6F4Dc2E8": {
+    "bytecode_hash": "0xddc689da4e3b88f67e53b2f00103e30b642280ac9fb215dfe8d6829ddaf267e8",
+    "creation_date": "2024-11-27T06:47:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkInfrequentOracle"
+  },
+  "0x23E4a1A73fD3fE3c7F8596bb74886e6c478EEC59": {
+    "bytecode_hash": "0x845152e226f1fa1517f74f6a21b9e9bb844516b6ec1121797b7bab19d4ba8254",
+    "creation_date": "2023-04-14T08:58:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "MeanFinanceDistributor"
+  },
+  "0x24eFfF312944A66eE45058550fEBDcc65C9f099e": {
+    "bytecode_hash": "0x7d53d4d465ffd73f46791ba69e2b17490e6b54d6612867e5c954c4821e8b1090",
+    "creation_date": "2024-08-27T09:11:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x253453BC43F0b961528C9CbC18A3aE3DE0A4daAb": {
+    "bytecode_hash": "0x2345e11f345125368439b5271f6609848a24cb4ddbe8a29c793040d219733c69",
+    "creation_date": "2024-10-29T08:08:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarn"
+  },
+  "0x256f8fA018e8e6F5B54b1fF708efd5ec73E20AC6": {
+    "bytecode_hash": "0xe0bc55d2d021d90dba14005da688ff3566bacf02dc5fa207beb89ab4e525ea50",
+    "creation_date": "2024-10-14T05:29:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x259bCEf8F8b5dce0379d9CAE1b98c2dDB0429085": {
+    "bytecode_hash": "0x93300af38099137f67eaeb5073efe454e8defebe4ae765dc5098bbbc99e57bef",
+    "creation_date": "2024-08-31T16:17:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x25A766eB4bF76Df40395a95aF4fe9F649B1950e6": {
+    "bytecode_hash": "0x56df901c6469df832edde1738418fa139a45f190591ccaf0f797fcd31e45945d",
+    "creation_date": "2024-08-27T10:04:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x26283C9B18FAb5BF46b85b4bF46FbC56f92BeA8c": {
+    "bytecode_hash": "0xe874b65044ef15cb34ab0dd8966e801c3831ccd7d6cf4ac64e69ce776871d07a",
+    "creation_date": "2024-08-27T09:29:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x264baD4d1C4c0B88aCE859854450aDCf2A44E27C": {
+    "bytecode_hash": "0x6ccc2d85625165ca08291baa719fd5f3eaaff0c4d461b8db34fa7a881d0e646e",
+    "creation_date": "2024-10-29T08:04:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnVault"
+  },
+  "0x26B1E253c3E5AEd049c2283Fa1d9BeF4e226A867": {
+    "bytecode_hash": "0xfcd0580eb49d7b10d4a96891eb31f589b749d827ff6f31d99d19826573711800",
+    "creation_date": "2024-09-03T09:15:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x26bDa7a7A660a5e9Ac70f64b69f56EF1e2275a07": {
+    "bytecode_hash": "0x98b9cff3b63825f7a2ceb0750954b15eca6928c07999e70a059be8e5d79d40cd",
+    "creation_date": "2024-10-03T09:03:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x27895A6295a5117CB989d610DF1Df39DC2CDBf8F": {
+    "bytecode_hash": "0x8d4f9715c36fe6d7fc69ca5a93caae8fbf61c5c78a7cf8f1764361699467174a",
+    "creation_date": "2024-08-27T09:17:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x27C688462fa0dD39e2C8DeB399561F49bF100d5F": {
+    "bytecode_hash": "0x5752304cab14c4cd21ade804d833d7536920f5e0a7d1dbbfd938ec67ba324bfc",
+    "creation_date": "2024-08-27T09:45:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x281b24Ba7FEFD1233C0a06967eAA811F235F3466": {
+    "bytecode_hash": "0x1bd764c5087b29d794ba355fe45fbef3c78fd09573b06f31c2a9935ca94188db",
+    "creation_date": "2024-08-31T15:53:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x286b8d05f9A9427899ad4dfF9A5298E238Ce80e7": {
+    "bytecode_hash": "0xdf78913f0d64dd8a7bc5250b7291024c6a10a93be362faf000e5731183af98a0",
+    "creation_date": "2024-09-09T11:21:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x28B99170918f7441C4850E691dD44D2dC3150A75": {
+    "bytecode_hash": "0xd32f647393d9cbf37ce9440746261030af0a1966d61f9e1d79fc48cea2ae0641",
+    "creation_date": "2024-09-09T11:24:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x29DaDdfdA3442693c21A50351a2B4820DDbBFF79": {
+    "bytecode_hash": "0x4e424e25bf48c22ccf4030cdd0a86f0d2343afb20118a3f392f9463157aaa8d9",
+    "creation_date": "2022-08-17T21:02:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "DToken"
+  },
+  "0x29a56a1b8214D9Cf7c5561811750D5cBDb45CC8e": {
+    "bytecode_hash": "0xeae381444da7aebe662b6ab22300b74f721b0e4fdabc514d0bcf88a484e552b2",
+    "creation_date": "2024-08-14T13:22:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GenericFactory"
+  },
+  "0x2A0cda8Da0c1601A4B1581DA8FfBc50d8066C5Dd": {
+    "bytecode_hash": "0xbf24f89adfe98e80bea6a628f8c4f69601b29200ce101d855fc49075bc1e9df1",
+    "creation_date": "2025-01-15T13:01:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x2A95e7bAC6D8cA0a5d0B4b915B3A9DbD21ad64e5": {
+    "bytecode_hash": "0x0e60f6be8ed6f01b799ed92f36c6f803273243faa45082a85813c905501cd44c",
+    "creation_date": "2024-08-27T09:57:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x2B23B4EAAe78D0343d5168A6A489F7daBc9a8205": {
+    "bytecode_hash": "0x16da3660eb50e1404c6c5129aea0a814bf34b6f8ff0a4ee87b01e2d970168b87",
+    "creation_date": "2024-08-27T10:35:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x2Bba09866b6F1025258542478C39720A09B728bF": {
+    "bytecode_hash": "0x7ece8c669bbc7a67a35bfffb2c8ccc4d9c7934aab2aebdeb8eb92aaa8f5c7fdc",
+    "creation_date": "2024-11-15T12:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swapper"
+  },
+  "0x2D2F24c7614CeA33a6c03c81DA6DE5Cdb03dE6F8": {
+    "bytecode_hash": "0x51eab6faee77e94e00e06509decdc7821c7cf5d396e19ab6f50a151094061d65",
+    "creation_date": "2021-11-29T06:00:37",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0x2D2F...E6F8"
+  },
+  "0x2E5c0B799eFbe406b98b7D5aDA26d6CD31734D6d": {
+    "bytecode_hash": "0x4ab60f2b58f39ea9ae8c9dbe07708cd5082e8f56d76dc17392c3821b0845568f",
+    "creation_date": "2024-09-09T11:21:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x2F13256E04022d6356d8CE8C53C7364e13DC1f3d": {
+    "bytecode_hash": "0x05051c113c2268bcce2fefab766c69feb69071a2aab89f4ef18900318b4ed54e",
+    "creation_date": "2024-12-26T02:55:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FactoryGovernor"
+  },
+  "0x2Fe6b211a3e73683ca90d08C0AD8f5ba6CfaDfbc": {
+    "bytecode_hash": "0xed840d684403ffa001834cf65872d738b3828b898d475a23c1d6ad8cccea7c84",
+    "creation_date": "2024-09-09T11:23:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x2aa25A20918EE96A4af4C0F420764FbFbA98826E": {
+    "bytecode_hash": "0xdca8db99e7d35da92988877ddf8e5f02978c6ab52371576929cb26d5548764a6",
+    "creation_date": "2024-08-27T10:05:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x2b4aeb7737d6C55cB387065e8C4844BC1d8089bE": {
+    "bytecode_hash": "0xc7dd2c7a43e5a5eac279fa7971005220e980f4a0074f94eef0c4aef6a0801c12",
+    "creation_date": "2024-08-27T09:33:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x2be3c0051a6e32de5a17543F71D68826eBe1414A": {
+    "bytecode_hash": "0x65135c07ab1dfe4acc7637ab098da4ee04ac403c13c0b21f086f5e4ed9a5177f",
+    "creation_date": "2025-01-27T11:14:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x2eA2b307cD934a6e705eAcFCb6B806d018Cd62CF": {
+    "bytecode_hash": "0x4168e7d1c0ad97ebe0a2f4e31d94ad1ef646137875b10a59300f189c27413de5",
+    "creation_date": "2024-08-27T09:21:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x2fA5758eE41B34b2f80983351a799084ec8A6cf5": {
+    "bytecode_hash": "0xeb197d5452f1b7b66970b64b7968ae6e693d23bffa09782dbbe70751ae285419",
+    "creation_date": "2024-08-31T16:18:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x301a937a790dab07a3B59DbbB9AE9c4aF6C04685": {
+    "bytecode_hash": "0x370502935932a2a00eaaad65608a3ba5f24e9af99ee03ba1b87fa011903edddd",
+    "creation_date": "2024-12-12T06:54:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x3071EeBBAF219Ab3764cD076915ad55393704616": {
+    "bytecode_hash": "0xf8764ae5362ad5444f2a076bdf941e599d60dacf954d9f31b423ef0363ce881e",
+    "creation_date": "2024-08-27T09:16:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x30f7EB18B625090E32381efFCb922bD188746E3E": {
+    "bytecode_hash": "0xae6e2e4ae106acbd868a71b8ade8f640d6c294453e7ed253914bdf1497f42c77",
+    "creation_date": "2024-10-07T10:29:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x31B9F827bA569E405d85388d5CEC79D8BFf44533": {
+    "bytecode_hash": "0x28365def899fa30a8b10d886b79c41155db7e7d85ebc02b44e2d2d01637ad2a6",
+    "creation_date": "2024-08-27T10:10:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x31bd697842aD9e41cEae622C6044CEFFFee43faC": {
+    "bytecode_hash": "0xff32c6a1f700b0b5f7237d98a189411491fc2514d6ac71aa85ba22e7add44800",
+    "creation_date": "2024-08-31T16:29:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x32673dAA164F4a290AE1f75DDc6aea5A2d343065": {
+    "bytecode_hash": "0xb5fc932ff822671dd4253e0ecca48e2e23d154cd08f7d066909526dc69161654",
+    "creation_date": "2022-10-18T13:29:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SwapHandler1Inch"
+  },
+  "0x32737a15c40d7d42E6C9013138d3b2A775978ba3": {
+    "bytecode_hash": "0xeabc316c36f6690d274f227a45845b9cb7c37de6eb3f21a0508fa0b302dcaec5",
+    "creation_date": "2024-10-29T08:08:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Hooks"
+  },
+  "0x3297c8db9360f87a7f7826f52A4FA143988931a6": {
+    "bytecode_hash": "0x06db86fba5ba871c9db72ced2126378919bbe82bea26b80dc6bec566b605dd20",
+    "creation_date": "2022-08-17T21:14:20",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RiskManager"
+  },
+  "0x32Ffe7cBAe228A6C27630F73fbe2F7c41138E86A": {
+    "bytecode_hash": "0x8991521a92690874b138027aa32802c8da84b2542f6d65e004676b8e7381f175",
+    "creation_date": "2024-08-27T10:10:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x33243BfB60C05d9F20A0064365DC10F5Ee599956": {
+    "bytecode_hash": "0x2b167ad976da9ca0c8936c052a7cf45d62234eb62cdcd83b64e7c834400e7337",
+    "creation_date": "2024-08-27T09:29:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x339cD07BdA6b8ca8a6e4541670B68bB286ff6B21": {
+    "bytecode_hash": "0xc47151dab4ed2a9b2f45d5a1b0ed0a088708ecf374290ea10ee610c0f57ebd24",
+    "creation_date": "2024-08-31T11:37:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x33Aaab978c31C8d2617De81B89C8e49636517785": {
+    "bytecode_hash": "0x1d124ddb5ea5d988d821164e9453e6472770064d52cd3009c5ad01f2d32dc55f",
+    "creation_date": "2024-08-27T09:37:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x34238129479f1423aBDB16C0d29abf4bd1354D29": {
+    "bytecode_hash": "0xfdd207e76cb85f1b502ac63ab1b99636028740335d26983cb26f4009ecae60a3",
+    "creation_date": "2024-08-27T09:44:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x350Db14882475dA44CabDd621448C4Fab0fa8CE6": {
+    "bytecode_hash": "0xb4a826d3fda07c522ddd627a89f7798348343ec676f8604ef752c7a82c407601",
+    "creation_date": "2024-08-27T09:30:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x352e64E70bd1d2Fa46bDc2331D8220202c3f2c3B": {
+    "bytecode_hash": "0xb1e49cded4fab81352bc1708b20c80d4e9e8ec00c530750fbb71ef78f2e49eb6",
+    "creation_date": "2024-09-13T10:39:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x3613732Adb68CB66b2B2d3a29779C74A1b53e0e8": {
+    "bytecode_hash": "0x2a66952197645a4b0068c3461249a31531677223e83e53cb345ddb8d4e5d368a",
+    "creation_date": "2024-12-17T13:19:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x362320361e14c1E351e84cA85a0C03A6Eef71286": {
+    "bytecode_hash": "0x1d5542d5c8744ee1bc5493d7b2c303fde1da9a3dea77cbbf717db8ff3a8816ab",
+    "creation_date": "2024-08-27T09:31:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x36e2FA4A545bfda4c5cDaF1d28dc3C138bB77aA9": {
+    "bytecode_hash": "0x46ca0c47656fff734b5ddd03bc7b37de45054a6a9c7ea329b4937c3859d76606",
+    "creation_date": "2024-08-27T09:28:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x371f237536551fA48827132bB4FA6671a65d7Aa7": {
+    "bytecode_hash": "0xf5e382f4faa7870836bf272e6db87dcab557bc4957f249f3bb01bf7b6c75d0ec",
+    "creation_date": "2024-08-27T09:52:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x375b0dcFE72efBc03937A3FfFc1de13d97D6F4B1": {
+    "bytecode_hash": "0x213f20c2017eddb26da85b1bc48b06cbce63b522db200657976d4512971132b9",
+    "creation_date": "2024-08-27T09:17:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x3792AE101b15Eef45bF713b562383e0399659D64": {
+    "bytecode_hash": "0x222c42d24b1d265d2bfbf319a85074774cc7d2bb97fe3099ccbf3f2fe836c44b",
+    "creation_date": "2024-08-27T09:14:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x37d7c05f5613C16933649708b142f0adaF2668AD": {
+    "bytecode_hash": "0xfdb7f85e2d7c628f457dd1e0c60bfcb9cb22552cb2cd75d38593fba1906a72d0",
+    "creation_date": "2024-08-27T09:41:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x37f80384FD1439ebFc22fb82670CcC33D1f0271A": {
+    "bytecode_hash": "0x7910b65cd0e87a9f0f9e4d29f51a7e7bfc152d39f54731251387a5db4c76f768",
+    "creation_date": "2024-08-31T09:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x38c061DF62fccE6ae6F69C12E3ebEb2f35A2aa38": {
+    "bytecode_hash": "0x602929bfa1cf8a262090dc5c6eb79c1dc04051d0a733b55b206d4bf4e8511190",
+    "creation_date": "2023-03-13T04:56:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0x3932448015fc79A86efAAf9151515D3e2B3bbbfe": {
+    "bytecode_hash": "0x33bac9003650ba17e4771ac4356108bff15dabe84418aadc5602230b950f8f34",
+    "creation_date": "2024-09-01T06:45:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x398D64a49149110803D9b421144A08bf94f20d5E": {
+    "bytecode_hash": "0x960aea71b0b7f5871f5d1f67a1b8b5edf7ece26ecba74aebd1d9c5c7fd97afd0",
+    "creation_date": "2024-08-27T09:31:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x39cEa17D7c03a56fECacb6f3850C14DD473Fe2F4": {
+    "bytecode_hash": "0xc84a85dc65beeb5638e154f0bb8dd940e3749ad91af4dd98673a5af48109272f",
+    "creation_date": "2024-11-14T10:46:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "UtilsLens"
+  },
+  "0x3A73697B07C273A04183765561d6f68a9D327DE7": {
+    "bytecode_hash": "0x55a68b1149c237d33ad4a03e6c53b16601b396b951b8cf9990de2449cc6fa72c",
+    "creation_date": "2024-08-27T09:15:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x3A7671201963fE50A06DA2D612bAb26FB24caF7d": {
+    "bytecode_hash": "0xefb2dbb6e9fa8fdd977125b61cbd690a3780b1d4caf226e8cd45ec40012f9268",
+    "creation_date": "2024-08-27T09:32:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x3B66ebD98f9E5D53A9d2Cc7ffFD2F760f7EbDD19": {
+    "bytecode_hash": "0x99c5807b0df1fe6cd2ec5971c3572a0f5db8dc72e554df47d3f0566ecbe1c68b",
+    "creation_date": "2024-08-14T13:44:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x3C292300b5D7331D53258d6BbA7f6dB66Bc77e1A": {
+    "bytecode_hash": "0x8718118c02b74e95782d413664ad0c32bc85e9f17495e146ffeb81e567b145f8",
+    "creation_date": "2024-08-27T10:04:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x3CED8b2bABeA37018308A88C36a9d128Cf1bEc1c": {
+    "bytecode_hash": "0xe8df746143e7a9c237f00a9e3fef91be94a974bb509f9b915d4a2639c347f05a",
+    "creation_date": "2024-08-27T09:52:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x3D289eb12505E8147460f27beC775419f3350a80": {
+    "bytecode_hash": "0x86b0237be4b8069111b3cebd011e7be2f67babdccdec9729ef31b1ed8f969f80",
+    "creation_date": "2024-08-27T10:11:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x3DE5712130038E484084981f45940f4a562f2C2D": {
+    "bytecode_hash": "0x0308844b960687696ae161752ab9c6cca545b6b0ddc188f668b8f248ea6c6827",
+    "creation_date": "2025-06-02T04:02:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0x3DE5...2C2D"
+  },
+  "0x3FbFf9a3B7f95aD64AFD57f6B43EC0C86D437637": {
+    "bytecode_hash": "0xfd4b0fcef3eacf2a8a86ae93e464b89aa6973432b2b9d8be8499e7a55f6365cb",
+    "creation_date": "2024-10-02T11:09:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x3ba9dc51E9a814D1B8fb3E8919be413d5D07114d": {
+    "bytecode_hash": "0xe067fb5cc8939cbd0325c9b6ccb89ee26d8578dcca3475f1e11e3eb2f228dbb2",
+    "creation_date": "2024-11-26T11:40:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x3bf1bD5dB4457d22A85D45791b6291b98d0Fc5b5": {
+    "bytecode_hash": "0x7ab650d641052afdb530e6a978b7d52180c1c81ea694e38e0233d9701048b9ab",
+    "creation_date": "2025-01-28T13:18:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OFTAdapterUpgradeable"
+  },
+  "0x3d7d70Ca0fD559266873F0dCED49f2F48969F980": {
+    "bytecode_hash": "0x009965cac4d268ca481dcaee08c6f09798fddfa5de24f3fb1b42d0ac42ee6247",
+    "creation_date": "2024-08-14T13:19:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0x3d7d...F980"
+  },
+  "0x3e520C015d093F22a26f83DD83408B890A723540": {
+    "bytecode_hash": "0x36c7795967c5f66e7a031e98649ee32c31e134b0e8b26a41cb67c0036a10e1be",
+    "creation_date": "2024-09-01T06:44:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x3eF9cd1D61d8Ed4a0915Cb07D4491aEA9f1b0B4e": {
+    "bytecode_hash": "0x04cfc87e96e2ffe0ce23325fd60a533da60de4dd0fef5ff9de71a7b52535b3c3",
+    "creation_date": "2024-09-23T11:30:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x3ecFAC4f67b83b219a5Ac571E1d0555eC59dF903": {
+    "bytecode_hash": "0x143813f4283b2fe38e2a74d09cdcbfaf1dc2b532318ee708d84ed62f5d4de67a",
+    "creation_date": "2024-11-07T07:01:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x3f323E75E98ff55d6fc28fb322A3C7A46877F418": {
+    "bytecode_hash": "0x4995d482028b87011e1bcd39e6cb810cdf46848afc4180eb59b06ada7e1e80dc",
+    "creation_date": "2024-08-16T09:13:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GovernableWhitelistPerspective"
+  },
+  "0x3f3ba9678e30b0033e2887C9dc5A61f7bF5728E8": {
+    "bytecode_hash": "0x1d7fe2eda4ff04f50bba6f24664687f15ceb14248d42088a7518983fa7976d50",
+    "creation_date": "2024-08-31T14:08:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x4000439DD7F435d2236f154fEfa1Fb0B99f9Dbc4": {
+    "bytecode_hash": "0x7b88791d1193cd1fb800c2717e48bc8d229f5f07c8408c5e960aeb58af196789",
+    "creation_date": "2024-10-15T06:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x402c858DAc359dc1165b782c22d2524F672Ca376": {
+    "bytecode_hash": "0x96d66f9de00056c215ebeaa891e083f8c776e5281119b4a5be50497087c387cd",
+    "creation_date": "2024-08-14T13:21:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RiskManager"
+  },
+  "0x404F45046a22b3A4A97F73bAe28231648FDFf11e": {
+    "bytecode_hash": "0xa31f705a7d4209d35a07d2850764696ad5de1eb0427ad4b2fcb4ec52347d96fb",
+    "creation_date": "2024-08-27T09:10:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x40D2162b799Ee21bF6E63e4ab81A40bf3048C618": {
+    "bytecode_hash": "0x6d8d3d7108d152f60b975f1b7fb5ba527c1602888ff09e685a22479eb489e076",
+    "creation_date": "2024-08-27T09:18:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x40fC79ABE0923A12a070285f8eED75E6bf71445f": {
+    "bytecode_hash": "0xf398f0236959b18aff728cdc4261def5c7779eb63865a3d61ff1754df5338fb1",
+    "creation_date": "2024-08-14T13:19:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0x41C4a30be92711B377C8F184705f037fEdA78e73": {
+    "bytecode_hash": "0x2553f9426f4275f8db480aa5a670ec5eef854bbbb77eeaa992f9d2e0c8a0c054",
+    "creation_date": "2024-12-26T02:20:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x420a9855fA5FE985b9A6458780214a2700e0D9c6": {
+    "bytecode_hash": "0x6b25efa524180e7ac75517f253d0c95f83666d0b0ce8b399f20cb061d01d734b",
+    "creation_date": "2024-09-23T09:15:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0x42331b6A43D14453a2BB2E4a450187Ff9841CFf6": {
+    "bytecode_hash": "0x90a9042ba473bf9bfdec2058510bd609baaf5c7c4451d445e3cc24ffdcfcc1de",
+    "creation_date": "2024-08-31T11:33:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x424775a622eE9156DeED13B627B9Abe08B5BFa57": {
+    "bytecode_hash": "0xe9ba79397c9cc949e4f65952df7f08a7d2af16f3f1aa9aee6e4426a3b4230c1a",
+    "creation_date": "2024-08-27T09:19:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x425fB2F58160FC16cA98C5da2442741De646748C": {
+    "bytecode_hash": "0x2c0f112d3ae14d1119ce2bfce22b0d427e3f57fcde5164e529d2f1bde4d474f2",
+    "creation_date": "2024-09-01T06:45:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x42aeb7951103f080caA1983A5AF35185dfFfBe13": {
+    "bytecode_hash": "0xd7141f851447e891d15f9fe80e0ad733def24d72f69524f9e61c3ddf74cb0979",
+    "creation_date": "2025-01-05T21:59:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Fee"
+  },
+  "0x42ec0eb1d2746A9f2739D7501C5d5608bdE9eE89": {
+    "bytecode_hash": "0x019c98b1eb5e0b1023f223ddeb2b7652f616ad3d493662796ab81fe49f8a5bce",
+    "creation_date": "2021-11-29T16:55:29",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassStable"
+  },
+  "0x438d3B26BDa1a3a81f915F31a8dBEf429d7F25fE": {
+    "bytecode_hash": "0x406c409350631a08f80f7d0d66f49ae935ab5305d8d87cdd296ed6021905c218",
+    "creation_date": "2024-10-02T11:11:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x43EA4d02fE0a87D9e7E8069e7b2fA017207a9d25": {
+    "bytecode_hash": "0x65d257ec5ba38344e27f2bd4b6e376b6af99390506ab0a244acedc7266f10483",
+    "creation_date": "2024-08-27T09:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x4440A1DE1Fbd7F9ebEaD7C3DD42a44e0031F37Af": {
+    "bytecode_hash": "0x2dc6f5e8d0d1fbc66e6c1e55086b5ec219fd2897ec59d735b932dbd66df96cab",
+    "creation_date": "2022-04-09T15:20:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swap"
+  },
+  "0x44510211b3A0801914F1Dab71B286637dbF2aB70": {
+    "bytecode_hash": "0xc73fb21efb2fed6266d2e5613084eb82b5dc849627f952a6e8e7e28dc128a014",
+    "creation_date": "2024-10-02T11:11:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x45BE109F2A11d9521cC77b95d739F5c4A041C054": {
+    "bytecode_hash": "0x9713569611f373159ea8e31673bea6a6feaf479d4e439f8c5498d2a28bcc414b",
+    "creation_date": "2024-08-27T10:11:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x46157bC6110D803E602C342203C8414cc6e61433": {
+    "bytecode_hash": "0xf398f0236959b18aff728cdc4261def5c7779eb63865a3d61ff1754df5338fb1",
+    "creation_date": "2024-08-14T13:19:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0x470a05A180dF40D3706032325Ea750eB6Af1A092": {
+    "bytecode_hash": "0x89f50cb87a9aadab7a8526faeee68d11de24609340235383f71b8c206f2eea6c",
+    "creation_date": "2024-08-27T09:15:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x473D85A00c3eC2393376CDDa6df3d9F978125B43": {
+    "bytecode_hash": "0x28155d1304e121bc6fa0ced36106ce4104c635a187ac1299dec05f3d1a55a969",
+    "creation_date": "2024-08-27T09:14:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x478eD3991F3e9A0CC8FB4e9A981d6a7442668197": {
+    "bytecode_hash": "0x29cf5274e6e32cd99f6467e4ed53836c6e872d72f3b53fcbb8037c127812637c",
+    "creation_date": "2024-08-27T09:33:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x48Ec37776D027fB339E2da857D90df99afa93792": {
+    "bytecode_hash": "0xebb8d1ba19e24d7174693bc973b8225ec69db3909ee7286e7cffca5aa8df571f",
+    "creation_date": "2024-08-27T09:20:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x499316dB0A18A3d8499825D69701FAf2f9Fb8F2D": {
+    "bytecode_hash": "0x0c642a414cb13586d0e83a2b7ba2e0adace6b1042eae408156079d6773bd9490",
+    "creation_date": "2024-08-27T09:33:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x4A337CA01a3f53477e17E502cFbb484120a325Dc": {
+    "bytecode_hash": "0x7a332ee0c981f42e1610a3c8738df126b6ba72418d32b57123d8efcafe0b9533",
+    "creation_date": "2024-08-16T05:46:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0x4C631cBBd02B9b510ccB8d47A0D237F485bB4B17": {
+    "bytecode_hash": "0x7cc92526e876e4b571f6c1430467def5c39d8c139ed84cfcdd0b866f222f7204",
+    "creation_date": "2024-12-12T06:45:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x4CAa7f4357A45667176E142051FB0fBcF3812c8D": {
+    "bytecode_hash": "0x951772ae23db146680830b860753ff1af9744c2afdd548a663ef7fd10d03a336",
+    "creation_date": "2024-08-27T09:59:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x4DDce44ab524F49b4050D9d59D7cF61cDa865F84": {
+    "bytecode_hash": "0x79d382edc8545c09c891c237d9b279ee33643ebe34e887a3304b5130dba3ecf3",
+    "creation_date": "2023-04-19T09:08:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerClaims"
+  },
+  "0x4DF63d20Cb2A5Faa5B9Cb978089bDFcCFd318c39": {
+    "bytecode_hash": "0x7cd769235f97c423cdc88808e19a0f4599452d442cdfe7114c8139d2d6d11754",
+    "creation_date": "2024-08-16T09:14:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerBasePerspective"
+  },
+  "0x4E33D9874EbB7847C9C11E47aEEa8D3F215bF676": {
+    "bytecode_hash": "0xeba6357dfca55b75c645b66247d5a385ef1c076a66ab64e28a6f9badf47b745f",
+    "creation_date": "2024-08-27T09:29:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x4E72f877b823654c32dDED3a52C67D5Af3CFaC97": {
+    "bytecode_hash": "0x7a332ee0c981f42e1610a3c8738df126b6ba72418d32b57123d8efcafe0b9533",
+    "creation_date": "2024-08-16T05:44:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0x4F0585d46e23DBc50017E348d4D37dF3DED6e4b4": {
+    "bytecode_hash": "0x064794a6e1d1f0990f592947a13152fb3d6cebe9c9c5089eac58f7168769b022",
+    "creation_date": "2024-12-05T08:53:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x4F1Bb8dCE9c9f5943873c8Ac1c35F31331D3271E": {
+    "bytecode_hash": "0xa69a6408ce0ae55ffc783935b04b464b4e245883aa084daee66ca779fec84bbf",
+    "creation_date": "2024-10-02T11:10:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x4FD36Cd1C23BE30db86679f391087fd8a984f893": {
+    "bytecode_hash": "0x75a990308dc85bbc2c3f04a46d0b6147fd01ac3405898814f7e332e00a1144c0",
+    "creation_date": "2024-11-26T11:40:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x4FE5A6ee0bE736Cf7EC34c95A55B9d006E6E6BE8": {
+    "bytecode_hash": "0xe798906956aad41e460cbf1446d5cbe0f1fd3a64bfc9a86d681d857f158e57f9",
+    "creation_date": "2025-01-05T21:59:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Strategy"
+  },
+  "0x4a9208BB40337eE983e2898eCb1009c763Eebf5f": {
+    "bytecode_hash": "0x6759be93e455552c53beeea33adbe8a6a10c6b44ad296549900ff99083a04be1",
+    "creation_date": "2022-08-18T11:21:17",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "WSTETHOracle"
+  },
+  "0x4add41F7DC14813C48f5AA5a3c453Ef1096581B7": {
+    "bytecode_hash": "0xaa0d4f712217c17daabad132af058bb1f43f68e1eca0e978e31e3e4212900378",
+    "creation_date": "2024-09-12T09:58:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x4b65470f3D24E0D3cdb4A12f3D4BF89c24FbDd52": {
+    "bytecode_hash": "0x78ea2777ee6270451fbd89cddf1d1587beca1b8d1e0e5e462b025024290b69a0",
+    "creation_date": "2024-08-27T09:31:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x4c00c56a52C1Da5b835a62C55f590b9EE60F1c59": {
+    "bytecode_hash": "0x8b3c7ee0f3660cdae2093346980183831798a2e8ddef8377f77e63f88034709c",
+    "creation_date": "2024-11-19T11:04:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x4c2A73ff36565F513F83a57CC5668551bdFd7499": {
+    "bytecode_hash": "0xd84119f3ec4485dd842e273420917224aba220a6ca287ab9001c4e4f4e166f95",
+    "creation_date": "2024-11-19T11:03:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x4cD6BF1D183264c02Be7748Cb5cd3A47d013351b": {
+    "bytecode_hash": "0x7dd9f270974ebba1a615a6fdad5646afe03f1708adfc0ea63fc65eda54a3c6a9",
+    "creation_date": "2024-08-14T13:18:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ProtocolConfig"
+  },
+  "0x4d0d1B45834e8185e7ddB4aD8Fc64884fa8e6D5D": {
+    "bytecode_hash": "0xb994e50c97d318ab877686488b7817dfaf308657fb37a4cc19c4407105283707",
+    "creation_date": "2024-08-27T09:10:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x4d75af94580c43bC7c403b46d335Dba82E81A49C": {
+    "bytecode_hash": "0x5190972cf468a6942f9804e82bcbdeed54a30cd1c05664778e33f69c3ddaf24f",
+    "creation_date": "2024-08-27T09:50:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x4d7e09f73843Bd4735AaF7A74b6d877bac75a531": {
+    "bytecode_hash": "0xf319184a9af505d0efb2a0a8e58dce3ccc9720c9d0d147b4b5b8cbed3279ae96",
+    "creation_date": "2025-01-28T13:18:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "TransparentUpgradeableProxy"
+  },
+  "0x4dd1c76C1B566e10F46305561d2cF97226A79f44": {
+    "bytecode_hash": "0x7d99dcac7baea9599cf5fe7e40d0526268b5cf0efaa52f9b477f3aab577b6354",
+    "creation_date": "2024-08-27T09:44:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x4f8E6BBF4637CCd859CaA9Cc88fCaCAC05A5d251": {
+    "bytecode_hash": "0x27b75342a9d7102515990d2539af82f93144541f2741566d9789b0c3b24a7240",
+    "creation_date": "2022-08-24T19:58:30",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x4fdD5f93795A694a1301cA49cC07AEc19EcEEc9d": {
+    "bytecode_hash": "0xd86b707444b16e3e51e073a656e276ccba7cffb1d3bc4d7a62d77ce16cab7495",
+    "creation_date": "2024-08-31T16:08:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x500e768Ad118035bB326AD723bcA116291923D38": {
+    "bytecode_hash": "0x89d8e91f1f961f930a079b08120d361be55859dbf8a6e6bf12f727770fad8b85",
+    "creation_date": "2024-08-14T13:22:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x5035236243d012d6A2C825228626eD62ff90494F": {
+    "bytecode_hash": "0x08bfb3b596e5c7175e11c23e31b79d54041b8850ac0d2c1995fef47361fa78ae",
+    "creation_date": "2024-08-27T09:45:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x509aB758603aaf54Ad64567137C5cFA522a899d1": {
+    "bytecode_hash": "0x11c812ebe286ff33692b8e83c3646a3413cdbcd6e4d2dd3dd0f563e88fb3a2fa",
+    "creation_date": "2024-08-14T13:56:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x50e1F35c47dC571706da4f87f2606C57F854D0F8": {
+    "bytecode_hash": "0xd8d255d36a89d6dcb8dd6aa76b8bb8f47c6e27941c0925cb30abd262dc9eb933",
+    "creation_date": "2024-08-27T09:16:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x51130A9C92f01Be18397aDc79826bBaf5dAf4118": {
+    "bytecode_hash": "0x684f97996439e8918eea86c396c93cdf0ea31d72592fdfa2cd0e69578690573a",
+    "creation_date": "2024-08-27T09:34:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x5163195bDac96b9be790c80eDbC55BE03F436e0b": {
+    "bytecode_hash": "0x2c764ff5604b5b348f6f533afc7e983734113d5b2404980102fd9a4dbbec2a56",
+    "creation_date": "2024-11-25T13:23:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x517Cb608a08875FF60407F0209a87e093955A6C6": {
+    "bytecode_hash": "0x53301795df05c5761a5dfc35fe79a31eaec6409e8b478c8693fc109c02b2919f",
+    "creation_date": "2024-09-09T11:22:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x5241e34A1eA2BF6F297bAf158e668e23244464a7": {
+    "bytecode_hash": "0xc434f55db4fa789b67b7e4aca1fcda930773c0a7672c6ae65cd3eaa830d8385f",
+    "creation_date": "2024-10-15T05:40:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RewardToken"
+  },
+  "0x5291579cA14767A54E00fEd2872D609E7850dF75": {
+    "bytecode_hash": "0xaef399867092d7b32d740ded464f3821f36c06eb68bbb13d03db4b79117adaf2",
+    "creation_date": "2024-08-27T09:14:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x52b26d9046BEc495914FaE467Ff0e95762C5ed74": {
+    "bytecode_hash": "0x3e7ed9781777bb376082897c72247b0a4ac84bb52842bc6c43e54ca405ad7a8f",
+    "creation_date": "2025-05-29T12:34:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwapPeriphery"
+  },
+  "0x5345562eD3Ce537582A1A568d3B06c8382Cd60BD": {
+    "bytecode_hash": "0x9cd17a7ffce1cec4dc59e5d520525d4fa929734f8b32eb06645d25b793980b2c",
+    "creation_date": "2024-08-31T07:49:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerUngovernedPerspective"
+  },
+  "0x5412ed14FF9D2044981987D472d6C0618eD87d57": {
+    "bytecode_hash": "0x80c79d7bca1e71d39b8928a0d42c15c94c9368e4ede010ae262c089caa34d70f",
+    "creation_date": "2024-08-27T10:39:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x546B744E756Bbaf71f578FfE18BE8e3Ba847987C": {
+    "bytecode_hash": "0xf398f0236959b18aff728cdc4261def5c7779eb63865a3d61ff1754df5338fb1",
+    "creation_date": "2024-08-14T13:20:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0x54c679D19B0be6568821b0f7309EA8105481e035": {
+    "bytecode_hash": "0x94b60f7edaa5b2068b922bcf0d0a5f566d174fffc3ca1d947276d263d769aa94",
+    "creation_date": "2024-08-31T08:13:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x554ee3d9ed7E9ec21E186c7dd636430669812f73": {
+    "bytecode_hash": "0x94f74b98a167f38e9b9ccbe2381663511f24fb8eb32d6e9ca0ac58d03ae0543a",
+    "creation_date": "2021-11-29T15:38:45",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Governance"
+  },
+  "0x56D59F0A1dFB41C1de3cf0EC91CB4308B76d079b": {
+    "bytecode_hash": "0xa4d1c503f5afb66d209fd76fbe28dfae6951e7f017670dd4fb468617dc7f25fe",
+    "creation_date": "2022-08-24T20:04:07",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x56F31BBF98a7E13BA956aBf627142FEf603f9cbC": {
+    "bytecode_hash": "0x7ab9c2ce1179c3ad3651e7565358285831e58f48fb226ddab1691e57ee3b1138",
+    "creation_date": "2024-11-19T10:50:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x575232A826256D648d645aE58980DE1E26894A85": {
+    "bytecode_hash": "0xfd3f6c92aaf5b2abc9576b68dbd5f1bf6f49dc52f7e5cea63746f02228653706",
+    "creation_date": "2024-11-19T11:02:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x57904B4DF131F00DEE9BB75a8FA1D27744035c90": {
+    "bytecode_hash": "0xc123123bd61697483312571f27b0d7ffefb25e845e0f0cf20a4931b59e9656d2",
+    "creation_date": "2024-09-25T09:56:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x58010Bc0CD6101c94EdcB1173B27745Bd8Fa46D7": {
+    "bytecode_hash": "0xb51fdd70d8491e6b66bbf3df533c7f92d287c3abe5482dc10c3cd825c80bd207",
+    "creation_date": "2024-08-27T09:21:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x587CABe0521f5065b561A6e68c25f338eD037FF9": {
+    "bytecode_hash": "0xcbf0e37d737665671afc5b250988dc194c17cccef7ae56e566c459dac33ef1d1",
+    "creation_date": "2024-08-16T09:28:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x5903C59B12219cB93355EEbD3397f1B5dE91B45a": {
+    "bytecode_hash": "0xa3803aa4f89942c481b3938a146358f46fdd7e0efb801c20d495fa7e461a4de2",
+    "creation_date": "2024-09-25T09:56:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AccountLens"
+  },
+  "0x592B8e963FC9853e16bdb74c5b806Ac90ad96929": {
+    "bytecode_hash": "0x067e444797286f5cddf2c2427464762dc3c1eb70e5f3e3dff8a8643dee25c92c",
+    "creation_date": "2024-12-17T13:18:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x5945ae3d5beF0dc695F32FC91f006f2d2D7eaEe1": {
+    "bytecode_hash": "0xbb89c399e7afba1d31dbacb796284bfaeb827939be6d94326d59290c5b508cb8",
+    "creation_date": "2022-09-07T12:07:02",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x59727D354f56D8039Fe9Df10Ce069bAeafB70623": {
+    "bytecode_hash": "0x490ea7760b755b7e08f12232f8e1f3084ea7bc83dcb18ebcbe919daf3a41af76",
+    "creation_date": "2024-08-27T09:51:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x5ADf279fb4C4dEb1781e84A06FE2ff7219287405": {
+    "bytecode_hash": "0x50e3266aa31a50755e9306aa82b3a1a70487253aa3159044b4c6ae66fb7b215c",
+    "creation_date": "2024-08-27T09:22:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x5AfEA59bBd15e297a84f1eF349E7D2eda975bBc5": {
+    "bytecode_hash": "0x6b2d54d0042bafb7186a911787d9e6add577536c939e931204965dc35eb3605c",
+    "creation_date": "2024-08-31T15:39:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x5B447ba6B204A8efDcc5b8f9FDf7361F332dC090": {
+    "bytecode_hash": "0x2ba3b7aef6e2b376649c6de99ec746404d4d01e6d25a78f9204a44402b309d17",
+    "creation_date": "2024-08-31T09:24:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x5Bc2135a78fB289561915cEc4585C5004639fb3d": {
+    "bytecode_hash": "0xd00570901e99f26531f04a741cd5e7e6dbfd50b1f421d5e159e7abcaf6286756",
+    "creation_date": "2024-12-26T02:19:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x5Cc2e68540aF49cC1537C27A5aFa33B89AF06a94": {
+    "bytecode_hash": "0x1a87a6fe83d3a86cb8064796dd20a068ec924aec5615aec6a102d8d5f3882bef",
+    "creation_date": "2024-08-27T09:30:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x5E9381A17d413e8aBA4AcF33786BdB20Ae97Bd34": {
+    "bytecode_hash": "0x4c457bcb0cbbe6e7486b4b515fae0b694ceb139cbd19190298c048293c462211",
+    "creation_date": "2024-08-27T09:30:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x5Ed2652E6cEfeC93A327A668ac90D08f727c6299": {
+    "bytecode_hash": "0xf094efad38fa4fce7c1e6b154ff643c19b39623d082f04cfc0c5ad57ef6197d7",
+    "creation_date": "2024-10-03T09:02:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x5a435d7b7E5f39e19172b0f4D5012363b7d2036F": {
+    "bytecode_hash": "0x08d71ba418a8f4e4da18770e690eedbb2eac538dc2e1313e7510dff00e260650",
+    "creation_date": "2024-09-23T09:13:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x5a47412c769A6a57bA757253fB199eDC3cCFCDe6": {
+    "bytecode_hash": "0x8b39fe930176cc9220272fce15483a1df6a1699b793ee502444cc3664cc25786",
+    "creation_date": "2024-09-18T06:26:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0x5b2075C1463E9bbe3f8B15D695Ab7B6684D67cC6": {
+    "bytecode_hash": "0x953c3e5b8a31713a09adf26a22d86a86c3a7d8601608c582eebcd9f86dd0d165",
+    "creation_date": "2024-08-27T10:12:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x5b3A993Bc8E33b2e2037f1BB70E3e771EcdC8ddf": {
+    "bytecode_hash": "0xfaa15fddd10127708bd6eb1fb546b3f853d9ccd56b752f9bf0cacb4df839b95f",
+    "creation_date": "2024-08-27T09:20:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x5c43Ee87E5Ea1652e566E40949199942fe5D5676": {
+    "bytecode_hash": "0x5728e120b2fbc7991bb43b8f96787c358498fd10d34b0989c7050373d34363ce",
+    "creation_date": "2024-12-26T02:54:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "TransceiverStructs"
+  },
+  "0x5c5B67D71559744d5d1DbB2c9C282761919A25Cf": {
+    "bytecode_hash": "0x09fd44729abf5ff7853d823c05a703a444c73a4c5d7301a4f303ba4ec11495ac",
+    "creation_date": "2024-08-27T09:03:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0x5c7943134B68679355267393f13bCA931c622881": {
+    "bytecode_hash": "0x4f7029021b0e2ed8a853734b97a94e8be82cae2684d6bcc24ba0a72f3c860380",
+    "creation_date": "2024-11-19T10:50:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x5e40D34DEA07f7dd3818ec3EA044B5dB87Db785c": {
+    "bytecode_hash": "0xd518b641823cfe30ded3a4d12e7bcee581a544c10d8e2b63bd25b582d32a1cfb",
+    "creation_date": "2024-10-11T05:35:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x5ffc9CbD2eec444CbEa73f4FF074FF54775E2F06": {
+    "bytecode_hash": "0x334aaf7d41fbfd71d459d9180342f24bf833c56f3f0374b09e4e3fe21c9d36ac",
+    "creation_date": "2024-08-27T10:38:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x6061b6Be1b5922406D674c57d2ce553F2454523E": {
+    "bytecode_hash": "0xe7c7fd8f8063586a1a4ba35853f3ed518f90313574da739390dcbd466c9894a8",
+    "creation_date": "2022-08-18T11:39:55",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "WSTETHOracle"
+  },
+  "0x60Fcc00B94fEE45DCBF0Ba053cD2083DB27955eE": {
+    "bytecode_hash": "0x8ba2dcbea28ee8f32397b9566da786e4bafd649589d1530601c05a0cab221770",
+    "creation_date": "2024-08-27T08:42:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerUngovernedPerspective"
+  },
+  "0x61e09AAD51C03eCb2E2d41D909B07B963B160119": {
+    "bytecode_hash": "0x529491c889d8a1d18e482b45f77832480bc239a04c3c0e3dfd4d63c5fe5d0279",
+    "creation_date": "2024-08-14T13:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AccountLens"
+  },
+  "0x6213f24332D35519039f2afa7e3BffE105a37d3F": {
+    "bytecode_hash": "0x5588dc372749bc7dccf97c0bc5fde76d4c92ae3368ca146ed2bef5ed25f92ab9",
+    "creation_date": "2024-08-16T09:28:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x62357F6Df9B45A638401482f085d9d998fD2Aa6e": {
+    "bytecode_hash": "0x452766d31f44f16cf28f125a54b1f10c12d86ac70d159111cd600bf8a8aa68ce",
+    "creation_date": "2024-09-30T10:37:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x6245cd4E6fef97ccc0508242135fdF2577006cfc": {
+    "bytecode_hash": "0x35dbecd5fbdd5fa8516ea0c857e0cdf3fbba74a7c906f9dc71acaa23ede3cc38",
+    "creation_date": "2024-09-18T06:26:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0x6248E929E0AC57DD7812FFB33B4a30E85a0f99db": {
+    "bytecode_hash": "0x47cb158fa226de550fa7ac76db62d2182590894c3561157c16ae20c8cdf0a469",
+    "creation_date": "2024-08-27T09:16:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x62B87e645D754F350DE58fd057889Fc2d6748b4f": {
+    "bytecode_hash": "0x3b8e216b8df6409736e3bace849c5e97e4971b7119ead11c27197f6b8dbc462c",
+    "creation_date": "2024-08-27T09:18:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x62Fd67Db5108bC9d050895a799810153fa976ded": {
+    "bytecode_hash": "0xe947f31065e40f07226c677fb96caac7930b385d2c029ff4a6a0c379173920a1",
+    "creation_date": "2024-11-07T07:01:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x62fDeB94bdd0F7745c68B9B62C8AF2CD0eB11f68": {
+    "bytecode_hash": "0xeb14478ca45bc18ffd242f35939f7ae6a1b1431bfecede1591e536e6cc17e258",
+    "creation_date": "2024-08-27T10:07:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x630fAbEEadC8322747eb2c22035da4e23d675b90": {
+    "bytecode_hash": "0x148f374fad6540f8d7c9f221899d6cba7665b1be6f14036806727e8362b06122",
+    "creation_date": "2024-08-27T09:37:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x639156f8fEB0cD88205e4861A0224Ec169605acF": {
+    "bytecode_hash": "0x7ffeba7ea0c02d3897864ff2b44519324acdaa939729c10778e45b06b0dd9d3e",
+    "creation_date": "2024-08-14T13:20:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Borrowing"
+  },
+  "0x63E3cC0Aa61f85BBed4b3118185B7c2efAB2e0DE": {
+    "bytecode_hash": "0x21e8221fc21fed2bf424214f6e2754ff012c24ca86a86d188cf0bb09add42365",
+    "creation_date": "2024-09-01T06:43:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x640434aD07990aA702DF882562eE3050a399d277": {
+    "bytecode_hash": "0x7ee362da3060195eb9fed50f9f3922849890f84813fea79a4fa9412b852c812b",
+    "creation_date": "2024-08-27T09:57:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x658ba5f7395774c664C7E6ac18D7E77F7871D45a": {
+    "bytecode_hash": "0x83d34ae864c4d4f4ca90bf2fd533eda06a5dadc9f133447b1dedb4b0fb6fb898",
+    "creation_date": "2024-08-27T09:39:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x65D798dc7C1cC79DEf7F05425FcD9d1a02E930A7": {
+    "bytecode_hash": "0x63eb4f19e192964baa2c28a81c1a44b85116001db346a096f336ee6f6a9a7364",
+    "creation_date": "2024-11-04T11:31:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x6647Fb8856CFc3E2F95F5b6100dD36574988E17B": {
+    "bytecode_hash": "0x357d26166b5480f0ac10dfee9aa6edea106d2fbd6e14bb71e945ff1cdd05686e",
+    "creation_date": "2024-08-27T09:32:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x664Addf3FB9E735a3760794012940867924e1f80": {
+    "bytecode_hash": "0xd0d8a7940045137dbda21b0379a59a6a013f1f41db59f9fa0822c15ccd37dadb",
+    "creation_date": "2024-08-31T15:52:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x66529DD85bdbad70A73B98c86C979Fc6F0d98498": {
+    "bytecode_hash": "0x92c7d00073c76b60aa738e73156d1e145c048218fea4bf1e5fda2962ef81c8ee",
+    "creation_date": "2024-08-16T08:57:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x6653F10CFadC375dc14A0b55db6e5c037b6fa21b": {
+    "bytecode_hash": "0xa6f02fe6a65b61a292696b5400527922292d878364dd66778547e431e58e8921",
+    "creation_date": "2024-08-27T10:39:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x66F616de88EeCa5E1E3b0B6E9914A60A5c09927a": {
+    "bytecode_hash": "0x3295e0a4a489cb0a36efa09e2d4495910eb88a15bf6774862c6256dc87b78d88",
+    "creation_date": "2025-01-28T04:22:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EdgeFactory"
+  },
+  "0x66af61f199Ffee7BCfe52a2b8A18082f0067cA91": {
+    "bytecode_hash": "0xdc146b9162cc408f439c3dbd59c41efbb6a4cc389a5c03868671f34e30fcdfc6",
+    "creation_date": "2024-09-12T09:58:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x675F8028De5cfbe48c8340e8FB079dFD075Bf539": {
+    "bytecode_hash": "0x9c0df10372d9b32dceadb7bd9ea17354d7be342b8652197bda5306aeeec1be8b",
+    "creation_date": "2024-08-31T16:24:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x68004911694EC42f0c56B7144a6A5281fFDD38F7": {
+    "bytecode_hash": "0xd7c63f3acd75afe14730e787ec62f6cd931c0ba69a8456c00ddccdb4bc9dca38",
+    "creation_date": "2021-11-29T15:50:40",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMDefault"
+  },
+  "0x680922A0BEB9701A92B97C4e5B6e7f1A4a3AdF8A": {
+    "bytecode_hash": "0xcbbec485f14965e96b53eeff03cebf71e29bb4a92954bc5e4f0317f367352b45",
+    "creation_date": "2024-08-27T09:30:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x68561819D2fb3a9AF943266f1A11609961dD0264": {
+    "bytecode_hash": "0x3d992e7a2b79e5e162d6d4204b4eadd94281c0752ce2c339867eab7c651c4247",
+    "creation_date": "2024-10-11T05:28:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x691DB6db68cCDC0dB4A58059760d61DCD6Dd8dfC": {
+    "bytecode_hash": "0xa59220a5f8c1e6f5b191f9c0640d18a55c13eb70c1f5e5f0d824fa943a7c33bf",
+    "creation_date": "2024-08-27T10:07:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x6A7c5B6EBFFc65c464f0A3D88913c906bF7A72aF": {
+    "bytecode_hash": "0x205adc9f6801905b7c7adb7b7d386a90960c83f3c091a809e5b9a661fe8f192b",
+    "creation_date": "2024-08-27T10:38:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x6A8E56f5BbE066D1afdcA56a5133722d48D0CD77": {
+    "bytecode_hash": "0x3519a134bda2910fc0e05f998bbaf49c75a28625783da53857cff82cf8c6015f",
+    "creation_date": "2024-09-09T11:18:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x6C34C9051830f58Df56582361436368563bB591D": {
+    "bytecode_hash": "0xb006df7efaa7c0308f3d8c94c4c6bec9d37923bfb767c76a8a33423240b41636",
+    "creation_date": "2024-09-26T10:22:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x6C68D8C829399B040ff8821df2f35a630dF02f10": {
+    "bytecode_hash": "0x529959000ee1bcc5efd4c0caa922629d4a7a351374777b1d94b3814f4f53a80f",
+    "creation_date": "2024-09-26T10:24:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x6C693A2DcA4e49bd0506946DA7334Cf1E880b1d5": {
+    "bytecode_hash": "0x94e170578dfa42fba7a8ac6f02c95b9351a8dd5dff07129cb573eafae0cfc56a",
+    "creation_date": "2024-09-23T11:25:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x6EEdEfD8899AF188CeBa10cf1514d60F44863ec5": {
+    "bytecode_hash": "0xdefdc1e374816a8d6f1509126d599cd64173a99bbf61829630147749b73704d6",
+    "creation_date": "2024-08-27T09:35:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x6F544E6f6245aab0d73A7FC292727639b877ae55": {
+    "bytecode_hash": "0x56791d149a4b8158854503184575f7062c2835594bcba445240aac8706078ba7",
+    "creation_date": "2024-11-14T10:47:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x6F79C23D482EA6d2B075092289aefB86E761EE9D": {
+    "bytecode_hash": "0xaa83cbc93f1b0c3d9351a34b5dada038522d14eb80ef4424d77f3fc85419506d",
+    "creation_date": "2024-08-27T09:28:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x6FA8E73139E3e9dbcF3be9D3f185Ffbc2F58C957": {
+    "bytecode_hash": "0x28834a4a66c6c546087cdb795127a421f0c3ba3efd806780f9368d758ec76d33",
+    "creation_date": "2024-09-03T09:04:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x6Fac9CC26abf132cdfb357C1f38A32cd46bAB5be": {
+    "bytecode_hash": "0x741d4065c3426ab3ae6afd49f4749ec4a9a54f39601715a23959a16b5f506c8c",
+    "creation_date": "2024-09-09T11:18:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x6bADD924D88740dDbD564aE9d7d79113200C24Bf": {
+    "bytecode_hash": "0x8495ea87d38f05cf595036aa1ac4ee582e70d5093775b2c7f062dcb8cdf87043",
+    "creation_date": "2024-08-27T09:38:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x6bF6cc2d082273eF4f373Cb180e05d7D380ecaf6": {
+    "bytecode_hash": "0x32f728f36fa8ac924a4dbcb58148f6130da2bad285427de36a8a491cb5632cb0",
+    "creation_date": "2024-08-27T09:15:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x6c58afE10c9Ce730c12104881901c0fA63Da6Aa8": {
+    "bytecode_hash": "0xe42ee4a3e55d15759322073bb2a542c730789f2993b5a34c2c916927191abec1",
+    "creation_date": "2024-08-31T09:23:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x6d4029f92755Bcf62E73bBD5c9E1887077e56FAc": {
+    "bytecode_hash": "0x5224e7c7b53a045cdc411630570cb3497deecdf610ae5b848bce31eef3583ec8",
+    "creation_date": "2024-08-27T10:12:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x6d6a3c5d8cFAB9aEc10e2f6C08576559DF6DdE0E": {
+    "bytecode_hash": "0xa7648c7958c0be9a9e79b911879bfc475c8999f6c74ffba843e47355bc4c04ae",
+    "creation_date": "2024-08-27T09:40:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x6e0F1a68a08282AADb2c97b9080FD1c72B153b2c": {
+    "bytecode_hash": "0xdaa592a3d7e67ebe8154f1dc61dff7cb556ee90dcadb4b2d5353cd147c1ae41a",
+    "creation_date": "2023-05-17T08:12:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "DToken"
+  },
+  "0x6e23447000a924f5CF6a5748A2F14c36b2C65aec": {
+    "bytecode_hash": "0xe37e2d79af5eb0796fbf183517df77bf822ba29eec49542f2d92aaf07a4cddc6",
+    "creation_date": "2024-09-01T06:46:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x6eeFee325a755C1620Fb9871d0c0763c5Bf9c781": {
+    "bytecode_hash": "0x78d7ca75749b47b57fed25ae99bd0c1dafaef32149e2024d69f77fd5bd741edf",
+    "creation_date": "2024-09-23T09:13:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x70572966fEB31253d2d5aEE07e6323B2C8d96806": {
+    "bytecode_hash": "0xadf5cebda04a2db8913528cd66f76094d330c9fa1573ea54621ad50040195665",
+    "creation_date": "2024-08-27T09:34:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x70B3f6F61b7Bf237DF04589DdAA842121072326A": {
+    "bytecode_hash": "0x91b0a983ab20fdbd7956d2cb5e5e08a52d5346b49f0d3fdaa0ec41353b65d17e",
+    "creation_date": "2024-08-16T05:44:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerRouterFactory"
+  },
+  "0x70a2DC406566Cf6c498EbCa71226770D1bca5Df0": {
+    "bytecode_hash": "0xd20d9e20deca560bf033f92db33511b9dd63b3878e36fd9a72eac310df2dee4f",
+    "creation_date": "2023-04-11T14:44:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Extractor"
+  },
+  "0x7185a1026cA03e29fa6045939F68a6873dFfd024": {
+    "bytecode_hash": "0x29c0e752932ca31617198be8a16b9909624729f6c4de5ea6e03da635d590b111",
+    "creation_date": "2024-11-19T11:02:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x73667C265023c77107E62278e6706f1a376adA5b": {
+    "bytecode_hash": "0xfa5d6b3bb066bd50ce5e1b8db0aa82fe98d814650d3b54242693d6d4db5c0c81",
+    "creation_date": "2024-12-12T06:47:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x73bDDD7B48B653D4e78D88916a40f9890049ebE9": {
+    "bytecode_hash": "0x543f47c5936fee3103e981fcf92d73fa8043a13753532fe7bd5fb1e52d419cc8",
+    "creation_date": "2024-08-27T10:36:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x73cb24f20Ef23fd24D52969398C62ED6030C00cD": {
+    "bytecode_hash": "0x15c105f4cd9e54cdbd0a1b7b17bb17de5f3d63843ce16a724af8d20eb78b96fa",
+    "creation_date": "2024-12-26T02:57:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ERC1967Proxy"
+  },
+  "0x741Beca7cebc054923b2881caA2469fDC33F3217": {
+    "bytecode_hash": "0x0a55fa54b149b0656fe7b7215083a4999286b043328a5ab369526b53146b776b",
+    "creation_date": "2024-08-27T09:53:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x747a726736DDBE6210B9d7187b3479DC5705165E": {
+    "bytecode_hash": "0x87570d9b616f4f84817e1bac878410d798f3c36ce4f592c9fcce0f91b6ae2fee",
+    "creation_date": "2025-01-05T22:02:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GovernedPerspective"
+  },
+  "0x7527E082300fb8D189B3c07dB3BEcc990B5037E7": {
+    "bytecode_hash": "0x21a4108f12c35b38c4b880a2236c86a3163315d24733118388a9c3f34339e6e5",
+    "creation_date": "2022-11-28T11:29:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SwapHandlerUniswapV3"
+  },
+  "0x7528a0DaA9026ea196933538Ad09555A77080b1a": {
+    "bytecode_hash": "0xc2a97f3e27415f8257fc20c7276eb497fd2aef46482d5774aa70d8a6316b93ec",
+    "creation_date": "2022-10-11T08:54:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x75AAf54F12784935128306BEe2520de55890a29A": {
+    "bytecode_hash": "0x2a570fff892e3a265b92a5063346178e02a5da04728f338c04b23ca569582747",
+    "creation_date": "2025-01-28T04:22:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x75E82DE02E3E512f3B0e28862A42055d59DDc1e0": {
+    "bytecode_hash": "0xdf3421271e670e126bb6e2303f008064f94c9f39c8633bddb6443af4505df26a",
+    "creation_date": "2023-05-08T12:43:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0x75c1422C76cA92659FE3ca5a6a9Ec5089b10aF73": {
+    "bytecode_hash": "0xbe97dafa07d212eb8a020c41fed6068b9429d8e8cda0178585bc1ca1f51b4b1e",
+    "creation_date": "2024-08-31T15:36:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x7695A341E1e51CbE2dDF1FEE5FD89f4D7617351c": {
+    "bytecode_hash": "0x9da64662c6e67ebcdea4504c589f8f1a43302012475eda30d76922f9658201da",
+    "creation_date": "2024-09-25T10:07:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerUngovernedPerspective"
+  },
+  "0x76CDd6E4B2E7505BCF55d213513120a487149731": {
+    "bytecode_hash": "0xc8122764d6ef11d5158c87f422289221409699ffbaeee46bf0ab09cd38f875c3",
+    "creation_date": "2024-11-19T10:53:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x76E96f682D1705D6Ff163e8751d8cd926D59A766": {
+    "bytecode_hash": "0xdfd83d04179b99eb2ba582ceda15f441899afe593a192e389a10ffb769c6e91c",
+    "creation_date": "2024-08-31T07:32:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x76f224ecf6A65f465781121F65b665307068cE8D": {
+    "bytecode_hash": "0xcddabd7147e1687cec0968212ddc744bbf22137bba2f9ef8596aafda6c481a81",
+    "creation_date": "2024-08-27T09:54:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x76f623e5E5ddb53B6B91608EfaF0dE3318286eEc": {
+    "bytecode_hash": "0x8415117079a67d655e5a29b928c350e3cf1f9c818cff5fcc68b025510540f684",
+    "creation_date": "2024-12-12T06:51:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x7739a9e31ee060afAe2657dC4Ff8DA11078C2c52": {
+    "bytecode_hash": "0x88a94ea3f9f091ef7298489d07e764fa3816432cbc4f0aecf6d71bac525c44c7",
+    "creation_date": "2024-11-05T11:32:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x77D22F93EFd26417B5CD6D5586A6728FFd4e74c3": {
+    "bytecode_hash": "0x7532ec8dbd10ff3ac2ae4608affcf26694568561426a70faa435142b822b445c",
+    "creation_date": "2024-08-27T09:20:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x77a5D2828A797E76c175435DAfEa5A22fEd573e3": {
+    "bytecode_hash": "0xde5bbad398782a9caaa2b789e1f0f794ca7d3a52bdb4c1ea81b0fdfc29cdac4b",
+    "creation_date": "2024-08-27T09:17:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x7813D94D8276fb1658e7fC842564684005515c9e": {
+    "bytecode_hash": "0x5a51acfd076936e5203ea1d7577a6b8150705a0bd3aa71e8b3fbbbbae67473c4",
+    "creation_date": "2024-08-14T13:24:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swapper"
+  },
+  "0x7882F919e3acCa984babd70529100F937d90F860": {
+    "bytecode_hash": "0x02490639556fb82049b1401bdd386fe802557b8f574f5c4b325d11732123bb1c",
+    "creation_date": "2022-12-01T07:34:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "StakingRewards"
+  },
+  "0x79211feB623CCc1ed357B8Cf14cD60c04D08faB6": {
+    "bytecode_hash": "0x98190c424fb9eacf3b116541f79a97982c552021c1ba043fd877f65d7bd33135",
+    "creation_date": "2024-09-25T09:56:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0x79439576CA22bAF133E0afb232630509d3391d1c": {
+    "bytecode_hash": "0xb54f8da4599c15e5c43da57db056e64e96179d4520574b3ccd6be6ba5a1ad557",
+    "creation_date": "2024-09-01T06:44:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x799E9b58895d7D10306cA6C4cAb51728B142a224": {
+    "bytecode_hash": "0x36adebd0555172ca41032e8a15438195385cf9676f68e07790f2f8493a7411d9",
+    "creation_date": "2024-09-09T11:05:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FactoryGovernor"
+  },
+  "0x7A665a9D504F9F17e0239F7D4a4A555177281dd3": {
+    "bytecode_hash": "0x5a4f39a3a7a3998f0609538e4ba42cfe1f7500cf8037a1d5c7b2abdc25d7e969",
+    "creation_date": "2024-09-01T06:46:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x7BC3fe0e7599dbe6C3556d16b00d7b145f51FbbB": {
+    "bytecode_hash": "0xcab0e27c4a37df583bc146488ed9c5b73e0836d5ada5a03ebe2c93f9c56675dd",
+    "creation_date": "2024-08-27T09:16:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x7C89d05eFB0555DCe244283B9459512fc82B3D4A": {
+    "bytecode_hash": "0x6a298785ebf4f2185d538cbe0b192d0e06c75e69d09adbc0534a4577a58f0e0c",
+    "creation_date": "2025-01-09T21:20:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x7D3edA18100702520c04B1bb08Fb4e51398FC88F": {
+    "bytecode_hash": "0xbda07ee930ecafadf62b70a031ce2ffe001b41b02f1f8907ee45a4a4ead81531",
+    "creation_date": "2024-08-27T10:10:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x7Dd834c7844710435Bd471B7499b16421ee84f3C": {
+    "bytecode_hash": "0xd519d29a0d8563179fff4812a72f4e89a4b2261cf934f578ae07705d51f79ecb",
+    "creation_date": "2024-08-14T13:20:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Initialize"
+  },
+  "0x7F12be038cA9143085fdaff550C883baEbA53fc5": {
+    "bytecode_hash": "0x87899841e61038f282b315a36916ae85e56a31e77dc212a4f20c2f05d228ed67",
+    "creation_date": "2024-09-23T11:30:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x7F2e2AD08aD809ba71e9cdab9339726B53564e82": {
+    "bytecode_hash": "0x3c8b08d3cb3efeed1c074c176a6e56ed7ead100e6d0ce5c987044f0414a31eef",
+    "creation_date": "2024-08-27T10:37:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x7FC56b3c11a5654E5f193fccEA480047aE52325b": {
+    "bytecode_hash": "0xe110c85aeac32c22ed8837ebfa08478f24a8e12e9550c005853fee49e2d342f0",
+    "creation_date": "2025-01-09T21:03:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x7aE18Fe76854fa5d4AE2E2f59323A61caCD41D31": {
+    "bytecode_hash": "0xeca3164b874567841c5cc13d4e20a87ad7b6f144a43f6caf8111487b1ba8b432",
+    "creation_date": "2024-08-27T09:39:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x7b717BDc47dDf02ee85436b468670A7c45dF8D26": {
+    "bytecode_hash": "0x9150f37a7b1762e24533e3af76d9c3c7a0f4075122ed0c3507ef7346da99084c",
+    "creation_date": "2024-09-01T06:45:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x7c37aB8Cd76Ee8888ad7F19C1F8a3A6D1622e9B8": {
+    "bytecode_hash": "0x36dbf0b75662d0364149da785c2c035c253390a05035f9c788ed3f55afc8ba8c",
+    "creation_date": "2024-09-03T09:01:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "LidoFundamentalOracle"
+  },
+  "0x7ceBec7483b8D20CEAa4911b368d0113c020dd10": {
+    "bytecode_hash": "0x2d6da32c95776bfd73cfdf79933c2d1a324e112613cebea3aac92d0965237332",
+    "creation_date": "2024-08-27T10:38:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x7e6d4952A8076d705aaAcc7d5cEbDb2Ea3D6a1fc": {
+    "bytecode_hash": "0xb6bdd546f5d536f7c3f54ba85bbec1748ca4ccdebc6da6bc6fea894b682d95e6",
+    "creation_date": "2024-09-12T09:50:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x7fa4d5E5eFACAB275c555eeC77fbdd3B994521Df": {
+    "bytecode_hash": "0xd82c8a6a1be78042f3f34182b74b6cd5f30f8d7e65db77aa42be11aea8cf43d5",
+    "creation_date": "2024-08-31T07:28:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0x804C4fC1eb2202332eabaB8d2d81b1A5Cd48D875": {
+    "bytecode_hash": "0x4fa933fbafad51394251b9608a04da1e807a805943e40de9cb454496cb57656f",
+    "creation_date": "2024-09-09T11:22:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x806AF31A325bE46812Fc8E8391333c4fA74B1211": {
+    "bytecode_hash": "0x59a20cfdb0aef04a1da9bce45f08491f7f44b68323b8c4e9680d1ea1f2475684",
+    "creation_date": "2025-05-29T12:29:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwapFactory"
+  },
+  "0x80876B9a71766aFA72b4D73472468149D3c580DD": {
+    "bytecode_hash": "0x964ccf8899c3b508ff7e1acee66c1f4321209f0f80678c899e95bbd0376c4fe9",
+    "creation_date": "2024-12-16T13:08:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x809E490d84811f7a3D95Abf3b8467737c6c2Fa4f": {
+    "bytecode_hash": "0x62ee887655ad4c981fa5157994560c756b7496085a190222eb213b7a12536f09",
+    "creation_date": "2024-08-31T13:52:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x80F9B69b6E5774dE49AAE7CF8bb4CD3345Dd8940": {
+    "bytecode_hash": "0xf730090274ea0755e97496813a7abd755cc06692c58f5b7a70ce15c52fcee92f",
+    "creation_date": "2024-09-09T11:22:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x80fc1234A819c0B344E1D4A8a9Ef100426626d5E": {
+    "bytecode_hash": "0x909c20be3125e191bae89d7ccd2e8853e2d251e65e8edb010700e3d97b382486",
+    "creation_date": "2024-08-31T13:37:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x810055eB83B59B736e27B7191d0A0ABE6737f0dF": {
+    "bytecode_hash": "0x13debfa276e3ae680a920b7bc65269d6d1273709f06a294e2202e1b9052f84d6",
+    "creation_date": "2024-12-26T02:57:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "NttManager"
+  },
+  "0x810E3c19475a12C3fCeD08D6217c6536C9747a90": {
+    "bytecode_hash": "0x8cf46eaf00ee9afdf3c7945d43ee8214adc0ee004c4d8a8f969aed742c44fc5b",
+    "creation_date": "2024-11-22T06:25:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x8116Ff3BCF7460FEF6B1b258dd7959Ea3DfDF778": {
+    "bytecode_hash": "0xaad8bf11b470f0c186673f6b25c9347aa55fa22f2974df3de28f7ea0238b3f3a",
+    "creation_date": "2024-08-27T09:22:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x816ED6DFc4a916f7ff3aeBe2CBd8f69068f471ec": {
+    "bytecode_hash": "0xcccd15c102d63e88a53a049c9a1739f02827ea47698299c127e7ded339576e94",
+    "creation_date": "2022-09-07T12:07:55",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x81D21c8f60dfD0f0c91013DCEa964E731f78665e": {
+    "bytecode_hash": "0xcdfb92b770108b29ed70b8af0bcbd6e429c1078f70bfd97531c1b65d902eefe3",
+    "creation_date": "2024-08-27T09:13:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x81Dc4ece6C44b9Ff61C6e4038dcd89771961ece3": {
+    "bytecode_hash": "0x66e358febc7b50e82ad4246c188667a2455bce107d7e3431081655ae0c033ed4",
+    "creation_date": "2024-08-31T13:24:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x8211B9ae40b06d3Db0215E520F232184Af355378": {
+    "bytecode_hash": "0x1712e39c639db51621a698bffaed2027056143a422096041a25a9ea94ffce0ff",
+    "creation_date": "2024-08-27T09:21:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x82667Bf55FeBCdF88f617855b01A30A67b12322c": {
+    "bytecode_hash": "0xe3408e6f6fe66fdb71e6fee8719e174531df00ef2ef09a6871b30e104defec1d",
+    "creation_date": "2022-09-07T12:04:16",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x829414002652Af4527c75594B4aEffb49AC40B74": {
+    "bytecode_hash": "0x88b2553f5320ad93942b80508d6366a9a268cdb6a61181238d863ac6f005c218",
+    "creation_date": "2023-03-13T05:34:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0x83C8E36965fAf05cc63937A8532CEb80Ec86F54B": {
+    "bytecode_hash": "0xb3d0ff8b318fbca00627a9cab565b544bd4b9b5e4755d100c66be96db4c43e58",
+    "creation_date": "2024-08-27T09:35:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x83a27C7AC47D6B4065dD442bA90500d61bfbF440": {
+    "bytecode_hash": "0xd8dd2f4cbc6a0589ced31c51ddc9ef69f4151c4b2ef3c618ff8700da5091d245",
+    "creation_date": "2024-08-27T10:39:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x83e0698654dF4bC9F888c635ebE1382F0E4F7a61": {
+    "bytecode_hash": "0x49a3d3deec03d2a1b347e12375723ffc40a721f7e9d8e4fcc67791e2c4835db5",
+    "creation_date": "2024-09-11T05:45:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0x8453AEEd36efF2c88f237c78ce3e643d04a7AFaC": {
+    "bytecode_hash": "0x0b3b480fe66561125d289592a6652f49c5d743738f98b9966764f6e346899d95",
+    "creation_date": "2024-08-27T09:13:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x8489e3b08B21a611Cd6aA80972E9260F3EC77f71": {
+    "bytecode_hash": "0x0e7b5c4d3f7f446d84335b38673361b77aaf0f4bc2ebb663accf8effc37e50f2",
+    "creation_date": "2024-09-11T06:59:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x84918bF3bc644650CC8EfF5A606a5Ed7fd5cbE15": {
+    "bytecode_hash": "0x5aebe438528b2e4fcd166f1feb4f8150fea69abde4fe9a130ad5f73c82eaefb6",
+    "creation_date": "2024-10-11T09:03:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SwapVerifier"
+  },
+  "0x8542F0461e89bfa3324B0911C63F57B9De6E3177": {
+    "bytecode_hash": "0x51141dcb0aa2d6079d272b25894e6dc6a56311eff46b760b23e5cbf85df185bc",
+    "creation_date": "2025-01-05T22:00:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "WithdrawalQueue"
+  },
+  "0x85A8D8Ec25Ab860a06b70089Efc8EAB0E3F3d201": {
+    "bytecode_hash": "0xa42fa18ebd0bc5b92c318581a75a006fb53ef5349c6319e91717a24327ac3f98",
+    "creation_date": "2024-12-17T13:27:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x86141c87044EBCAf02957a61DEc696722A420119": {
+    "bytecode_hash": "0x4c2786a85165ad6168641868a69c9f30c10580c702f0d7d8960db5252ec0ff9a",
+    "creation_date": "2024-08-27T09:09:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x8667082f128fa13139B859c1b40b4C8014D4A74f": {
+    "bytecode_hash": "0x2d7a7e487db748f0ea7dea2d543841f7420d8555773c902f61f09d3af835d686",
+    "creation_date": "2024-08-16T09:15:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerFactoryPerspective"
+  },
+  "0x869ff5b6f74f534163B3dd303C6861e8aDD454ee": {
+    "bytecode_hash": "0x77a9d29fd56af543b098eb268a3c37c21d4e24a6ec932d6140609a732d18e29a",
+    "creation_date": "2024-08-27T09:54:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x86c4A3f58C1de49BF5CC59037E3467Be07281ead": {
+    "bytecode_hash": "0x69e4bda3a6c208f8aa176ae0e553159e474e3e0621c2f7a67c0ce68d06345ce9",
+    "creation_date": "2024-12-26T02:10:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x8710019824E557F907Fb0B8BD23d610d74dD7444": {
+    "bytecode_hash": "0xfece70c6c29954557e9d994d1e2fea7add3a4ca41e687025f66240e1acf868a5",
+    "creation_date": "2024-08-27T10:35:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x873efB11b064F4643675A11bc265844b357cb47A": {
+    "bytecode_hash": "0xde28ca6344c62aed8b2778bd764886fa915284eb4633698fff6691ab40bcc246",
+    "creation_date": "2024-08-27T09:34:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x87A0584D62aCB0E9F092A44c5d9a96c307b54910": {
+    "bytecode_hash": "0xcd7329184c213c875238d9bc338bbf7f4065c875b929816b6f266ed247064ec3",
+    "creation_date": "2024-08-27T09:52:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x88143dB62d0714094Ef76fB8c106e5D310eC4FD3": {
+    "bytecode_hash": "0x521ba6d11fe5d580bc40cdbcb336491bfb07caa00d237528484172c88da83403",
+    "creation_date": "2024-08-27T09:52:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x8881d3dcC9536664E8e1C8D9A98AA12013d00f57": {
+    "bytecode_hash": "0xcc8105078453dfbedc68f66bf8706261830932e162608e59f37d0cf504dc43f8",
+    "creation_date": "2024-08-27T10:10:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x8918D496d0AA72d3de7C8f2a5F02C27a1472CaDb": {
+    "bytecode_hash": "0x994d7e7ed2fbdca507a58b8e077c2cd474ac5d5a34097d8ab6afbe73c236e77d",
+    "creation_date": "2024-08-27T09:39:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x894c7499F240c0E0205c56d26A5D609C8408De2D": {
+    "bytecode_hash": "0xb5a5b346a65bb0a33fc13510408d5c08122fb11fcba775f637dcd165952c31e4",
+    "creation_date": "2022-02-08T10:56:25",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassMega"
+  },
+  "0x89e8f69c302D352D37De10019a69Df4F7F959Bef": {
+    "bytecode_hash": "0x4d612753f87f7898aae8df4f467d9af88e1540f08574f4230966f50ad1b2811c",
+    "creation_date": "2023-01-02T11:59:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassOHM"
+  },
+  "0x8A1C61Da9655Af0bd5f080BbA03BccD2232F6cb4": {
+    "bytecode_hash": "0xbf05b0471b3aa9a1cad1b80d2c73ade31db8357f23d166e6926ade2f085355d9",
+    "creation_date": "2024-08-14T13:33:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x8A54663bedD1ae4e610B534A3D783cc896d490a5": {
+    "bytecode_hash": "0x7713b73da0b1f6ed8d8eae5f0fe0c586b871a4d57123fdf8e80839bf794215c2",
+    "creation_date": "2024-11-19T10:57:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0x8A5a1ec9496CcBc3FA9D031BfD5E04B1F2dA567B": {
+    "bytecode_hash": "0x88e2b55bee8d6bb90698c4613882428d1f8ece062f8e93094e1889e7fcbe2e1e",
+    "creation_date": "2024-08-27T10:08:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x8B55cdAE45782d0B543f73d064e881b65d3C3550": {
+    "bytecode_hash": "0x1c669bb290935b9364de84a8b28bb08f80243e6c871030667741dd7fc1bbc9b9",
+    "creation_date": "2024-08-27T09:33:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x8E3204ae99605e6fFD2bC72D765F480bF0c05b5d": {
+    "bytecode_hash": "0x95252695d5f90236d1cff04a6d561e0abbfad913819d680dbc52c62a7decdb1c",
+    "creation_date": "2022-06-22T21:31:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulDistributorOwner"
+  },
+  "0x8F358638Eb5D0afF47E5b320213C07235e40ebe2": {
+    "bytecode_hash": "0xb2a834bfd0537fa68b14f36771abc49066996e827244cad5584609b2f2417abe",
+    "creation_date": "2024-08-27T10:37:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x8F59c64fA1Fb2a57e9D084ab3481a13e7db68753": {
+    "bytecode_hash": "0x5b63c883bb5f2f7e6a542152086239f5d93c012f875d159715563a5200f66c3d",
+    "creation_date": "2024-08-31T07:31:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AccountLens"
+  },
+  "0x8F63048De9e67B90F43D6879168f49527b795d54": {
+    "bytecode_hash": "0xdc79e5339c4fc6b945f981d7e69838050c674c49d89666df0ebedb3eca864593",
+    "creation_date": "2024-08-27T09:09:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x8Ff1C814719096b61aBf00Bb46EAd0c9A529Dd7D": {
+    "bytecode_hash": "0x8ab1e2b88c325f73a6da0456e31e5d6b6e60e59b342f32517ee9b7582327d10a",
+    "creation_date": "2024-08-14T13:21:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EVault"
+  },
+  "0x8a14C0190385cA8D9Ac7a134af39f7EBb13D5782": {
+    "bytecode_hash": "0x33ce6fe2e503cdedcc1a78f178130bdabb3e77485d9f1073f44ea6aefbf3f16d",
+    "creation_date": "2024-09-18T08:56:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x8a58aecbE677682D0F037C67F37F5a7a2E94973c": {
+    "bytecode_hash": "0x79509c9bfc46fe2df6a0583e839a53aeb91777f19a0aab74b7b22105ca6c2f7d",
+    "creation_date": "2024-08-14T13:20:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Token"
+  },
+  "0x8ce5249a189869eA829d1C73f230027DBE59BEFF": {
+    "bytecode_hash": "0xd83a2fd2e985faafb63a930debce1acabb2732ee6f0bb3186b341ee3513d2045",
+    "creation_date": "2024-09-23T11:30:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x8dAf2C71fCa7C9BfE07C3a269c04b9d5e7AB043E": {
+    "bytecode_hash": "0xd5dc426f42278810fb24d7b1047adb473c8768df8171b1b0b3b251092eeab4bc",
+    "creation_date": "2024-08-27T09:21:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x8dE06BFbAF4343310706167C55496B8f27812A3D": {
+    "bytecode_hash": "0x70d285e8a0f04c969480a310231d8bdc10e43bbed89ee30049b679443657db1e",
+    "creation_date": "2023-03-13T05:48:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0x8e095BFBe01b07C44acA930f027ABC928D4Cb4bf": {
+    "bytecode_hash": "0x823e5bd7f92229bd1b21a349ba94ad9b93df9ca31bd82670c93d09deaaa4a00e",
+    "creation_date": "2024-12-26T02:57:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "WormholeTransceiver"
+  },
+  "0x9053388bDa7cA8A31763E3341Bcb1E4b3E54C5F3": {
+    "bytecode_hash": "0x358ac5ec33d2dc035cd3b506c9010810e7c74bdaf847c323cf6b10b8126efe31",
+    "creation_date": "2022-08-29T08:18:25",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassLido"
+  },
+  "0x9102F2C3f858Bb514BFeF1DDbdF29F7D12E2dd1f": {
+    "bytecode_hash": "0x88b2553f5320ad93942b80508d6366a9a268cdb6a61181238d863ac6f005c218",
+    "creation_date": "2023-03-13T05:03:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0x91f046E629226B2c78B84Fa1537603961AEAd0C5": {
+    "bytecode_hash": "0xc9689d7a40ccb96d915d323f5d375c253b2439b69c989f01505854c84d6b3ed3",
+    "creation_date": "2024-08-16T09:13:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EscrowPerspective"
+  },
+  "0x91f5a069A5569cB1edecBc4EBa5b85dBF36209e8": {
+    "bytecode_hash": "0x5357df171cf1700b4008eec2e52bdfb4be394586fc25b1b132071b6bd17477a3",
+    "creation_date": "2024-08-31T07:37:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0x922D0c82d70c3c9F8928742E8f75004DEa228FE6": {
+    "bytecode_hash": "0xdee0a154bc010f9b18e9010965d9d3ec09f6b8d81588246d39023edaedca89b1",
+    "creation_date": "2024-08-27T09:39:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x92587bc3c89289540813CFCa9D6E9aa6A759AF90": {
+    "bytecode_hash": "0xd865c670c10766a441b1fc1358a1d53edcd96f3dff45e6342ccb812377b0d341",
+    "creation_date": "2024-08-27T10:39:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x92b172Bd476948d01f858Dd3FaAc4943e3BC775E": {
+    "bytecode_hash": "0x2529ee7021e7636fbe21b97ed5020bf8eed4ebdd8696789fb0366b2d0c73bda4",
+    "creation_date": "2024-11-19T10:53:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x932fDc86108A15126e6b05ff448C22423fbbf266": {
+    "bytecode_hash": "0x4baab1c8ee3abb2d9477694ca7ca0332deec3f47fe35a07c89b379ca8de8bfd3",
+    "creation_date": "2024-09-09T11:23:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x93DE2767E2d7f2EFd2Fd69152cD6837f84b12D20": {
+    "bytecode_hash": "0x51688a7200fd89eb1b16c68523b689d118952b14b5ed3ab6f2a67a99b85de6d1",
+    "creation_date": "2024-11-19T11:03:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x93c59E574Fb98Dd283A8c54E0C7881AD9944FcAA": {
+    "bytecode_hash": "0x45b23974ff075077ee471ea76a4b12aa79a1894c0541e00b5c8b490a8fae6da8",
+    "creation_date": "2024-08-27T09:46:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x94F4183C6781077dA00d616404B5D9Dc684CB4fF": {
+    "bytecode_hash": "0x9953565e6a8ea30248e52a3c118a12a7e6886067c4a5b138f36e5fa3a30f85c6",
+    "creation_date": "2024-08-31T12:35:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x94f68a23f6CC503B9957Cdc5435E473fa00a8498": {
+    "bytecode_hash": "0x60fdac5754287b28807e2bc78a1385e1e9f3a86dfbb0825c96a44ab8b3056481",
+    "creation_date": "2024-08-27T09:47:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x9502ad5ED0CeEd39EB604Ae7f411836bd8e7b925": {
+    "bytecode_hash": "0x15c105f4cd9e54cdbd0a1b7b17bb17de5f3d63843ce16a724af8d20eb78b96fa",
+    "creation_date": "2024-12-26T02:57:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ERC1967Proxy"
+  },
+  "0x951bcDd3551Bb617f3B98FcD9E6A5c0e70432928": {
+    "bytecode_hash": "0x6900eb8cec371fa9cb1e0c4e3ee24669ea0f383197ac691229be91397265ecf3",
+    "creation_date": "2024-08-27T10:37:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x95545a3a2B4329cC939F8256CbFB77c3Ff2F2045": {
+    "bytecode_hash": "0xc502841d0a1a91e971e0239356aa183cb1cb0201f86691ee61c4dad678ec6f1a",
+    "creation_date": "2024-09-09T12:16:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x956C9b887cB8779140EED942fa91f51B13Bd1b86": {
+    "bytecode_hash": "0xd1837ff90c35c9ba6fbd9e9fcb6d5cd2ca8e37d03e347e3a8a4ef8bc6aa9ebf7",
+    "creation_date": "2024-08-27T09:02:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0x95DfdA6Ff77F7193Cb20a7E3531Cc6c5eF42f950": {
+    "bytecode_hash": "0xf5419bb7b4942c76423877d0816c1457d552921d46c96a1318acc5671c7d1497",
+    "creation_date": "2024-08-27T09:46:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x9654114E3d2F62BC959B69365B97d8bc03db4b73": {
+    "bytecode_hash": "0x7695d9bd47f503d723918c88d2c7a18f16dbe97bbfec41a623c3988d15c42037",
+    "creation_date": "2025-01-20T05:33:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x96a678304c280f210288d30bcd2E19359524A653": {
+    "bytecode_hash": "0x84fab88b74c60364f031beb65c2d276d8efc957ea9609ab09f29f30a09645756",
+    "creation_date": "2024-08-27T09:51:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x97fcAa9F3AF1dF83515FeE74aF3cd06cdEC3F4c8": {
+    "bytecode_hash": "0xd0b318e84d7309ec1f829269f983786ebc0a4de19b34db45b03bc4839483be4e",
+    "creation_date": "2025-01-28T04:22:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMLens"
+  },
+  "0x98184FBa0348B8Ca908C1213AC8Cbd4AD1Bee902": {
+    "bytecode_hash": "0x9a8223df7ef23bcde70b8345fd82f83716918c7ddebe5cbf64cfb667d644c260",
+    "creation_date": "2024-08-27T10:35:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x98D7A0b0c895f6C602fE2E6B3AA83EAFAbb92Ce6": {
+    "bytecode_hash": "0xa3ee2d930a0104ac5f9e283d5b0cdedc083f1246d4d55a29d59980b6fde177e9",
+    "creation_date": "2022-03-17T12:04:15",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RiskManager"
+  },
+  "0x990Ec39Ab55cFB15A3d326359045E982977132ef": {
+    "bytecode_hash": "0x26f003ad8172068467fd60cb1da51143f2f6557a9c3c9ede4e0df6271b60a7ef",
+    "creation_date": "2024-11-05T11:32:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x99826E726B8e972Ec291854AD0E109C33516341E": {
+    "bytecode_hash": "0x3140d3d4347b2f2a3235333908ae98d897930077243053d4425a7dead952fce7",
+    "creation_date": "2024-09-09T11:23:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0x999364596758A8c0c6bC5179c1bb1fA12669F345": {
+    "bytecode_hash": "0xea796e8cadb446a2b3a63923978724d58373c923b9f08a30f63854dd9272c1e5",
+    "creation_date": "2024-10-11T05:34:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0x9D2B3052f5A3c156A34FC32cD08E9F5501720ea4": {
+    "bytecode_hash": "0xb5e58b855d3ec9d184bee6558997746f5299bb600c8ede52ebf4efb1871150fb",
+    "creation_date": "2021-12-10T19:50:01",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0x9D2B...0ea4"
+  },
+  "0x9Ee335e15692317A4fAdb221feA0AFfe48953130": {
+    "bytecode_hash": "0x8ef016f2a102583f4bcf66ca3c06544e852e581cfc231df6eaef32f612ad35ab",
+    "creation_date": "2024-08-27T09:03:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0x9F169Aa3f0daB617A9ED1Ba5a73d587a65f6dFaC": {
+    "bytecode_hash": "0x44e8db928f0b04f699cdf5d25ceab0902e956c144b28106c2c28a2dc71f4d39a",
+    "creation_date": "2024-08-31T13:28:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x9a20d3C0c283646e9701a049a2f8C152Bc1e3427": {
+    "bytecode_hash": "0xfa63ce28091f24d9ca9bac911ae67e96e22757f77045ccc55d83a08cc4df9ce7",
+    "creation_date": "2025-01-05T22:00:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnFactory"
+  },
+  "0x9a36847E153c298391d00ECB251932dF9e608395": {
+    "bytecode_hash": "0x23f95decde9c2f325ceec1ed19c10c677cba517ecc34fa48e97294344ebff7d3",
+    "creation_date": "2024-10-03T09:04:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkInfrequentOracle"
+  },
+  "0x9b2583d98fb39aA675CAA33b81EfbD539Bdf276c": {
+    "bytecode_hash": "0xd1999034eebc9ec512edbbc0734188fea911c9c5c4fbe3eca5538c8a8f8a8148",
+    "creation_date": "2024-10-11T09:03:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swapper"
+  },
+  "0x9ba11Acd88B79b657BDbD00B6dE759718AaAdCbA": {
+    "bytecode_hash": "0xb4447091d531fe9bd9ab8b077ad04dadbc139034685bd0800c0c62eee3d7c69e",
+    "creation_date": "2024-09-25T09:42:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "TermsOfUseSigner"
+  },
+  "0x9ba991C56eB386AB58A3373215Afb5cf52ed78A7": {
+    "bytecode_hash": "0x32e485c1b3e327aae40f64f1bb60299daf1ad6321039bbdf6b854e879d978858",
+    "creation_date": "2024-08-14T13:43:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x9bf043B79b9BEFAF3b9839fFC51dF0c008BEFf9C": {
+    "bytecode_hash": "0x980d3a7afe1251b692f829c7cc2db2f11b01488349fcb661d19e1030a62c6caf",
+    "creation_date": "2024-08-27T09:11:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x9c0c01C585a2A7B63EF2a4f998d79E3C1E47336D": {
+    "bytecode_hash": "0x6796aaa523b7ab0cc76418ab48692a48d8145b780bd88a03a304dce6eae0d6da",
+    "creation_date": "2024-09-06T08:52:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0x9c32824d98DBdBDC1c0C47f849E232DF3c5c66ec": {
+    "bytecode_hash": "0x9c144b8a7a5b10d33cd1075a5314dc8012e003bb18648603be1666b168fd271a",
+    "creation_date": "2024-08-27T10:40:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x9cC836e20a6cE4B3F4E8D38574aF3C1CACc2B53d": {
+    "bytecode_hash": "0x97cd5aa15a0164318c62feabba3af3b37b8116725c050fb42605b5be87c0b377",
+    "creation_date": "2024-08-27T10:06:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0x9d927D9551d23a6B6497e955DB1f843A4af854D2": {
+    "bytecode_hash": "0xf6396280e0a55f83c4e9d1cfae2b55cb4e198364204787598ce7140b913587bc",
+    "creation_date": "2024-11-19T11:02:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0x9e82C6a347c5444099DDb1E0B501bbeA1e22C7F0": {
+    "bytecode_hash": "0x7067a495e48614256be467349d37aee8f56547bf968c2e51150407ec7e47f0b7",
+    "creation_date": "2022-12-05T12:00:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0x9eA85BCB76e4D52b03C44366d72cA5915A9F156C": {
+    "bytecode_hash": "0xa121878635c4a275612f3532752858f26c9d5b8b2a1c62d7ef4e15539370103d",
+    "creation_date": "2022-03-17T12:04:52",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Liquidation"
+  },
+  "0xA084A7F49723E3cc5722E052CF7fce910E7C5Fe6": {
+    "bytecode_hash": "0xd82c8a6a1be78042f3f34182b74b6cd5f30f8d7e65db77aa42be11aea8cf43d5",
+    "creation_date": "2024-08-31T07:28:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0xA17130BCc6f2De83BC2C4b39Ac2E9Ed3C8e37e96": {
+    "bytecode_hash": "0x49ae0b74edb3f27fdfba25166e937a044c5dc224dff56f8a29a9b89379bad032",
+    "creation_date": "2024-09-01T06:43:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xA190509D6170Fe2f77Cee1E073EeA611061A8b90": {
+    "bytecode_hash": "0x46e20792ef415f4c361351e13aecc14f757f81d1d3717925f5d27b45a4b4e294",
+    "creation_date": "2024-08-27T10:10:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xA252aF9208E53c0AC6a79A5d0933A8D1F184FEE5": {
+    "bytecode_hash": "0x675679bdb3cf1fbe4e7ecb6c4bff5c3486dd273f5b1dc1fcafd4101e6f8ff6c3",
+    "creation_date": "2024-08-14T13:21:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "BalanceForwarder"
+  },
+  "0xA36d0B930640Ad971bC4B657e4b697313807ff2d": {
+    "bytecode_hash": "0x7fb8e0bf4329e861d30532d438468bbb2b78d8cac75025f63b78675191a09b6b",
+    "creation_date": "2024-10-29T08:09:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnFactory"
+  },
+  "0xA4496d8edee7f6777D8bb9639d8FC1eCA6e17Ce8": {
+    "bytecode_hash": "0x1f5f74229046994f785f99d9b0f9eee5f0ad3a9a926c83d334f55bcaff79902d",
+    "creation_date": "2024-11-19T11:03:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xA4d8c46DA4b7a73Faa058b36EfA305077569bF23": {
+    "bytecode_hash": "0x06f76fdf8199dfa44c66c814428042384cb7f3161d13d81adbee2ed9b5c70ab2",
+    "creation_date": "2024-08-27T09:19:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xA60FAc495f0e52f221437d062815b4db109233D9": {
+    "bytecode_hash": "0x549b1994f7ee2a43b9ae3f5d52e3115269f2af5f53feaef95dec3ef79e939a1d",
+    "creation_date": "2024-08-31T17:19:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xA66F779E656e76bAE0cA7BCA8E731A938412c496": {
+    "bytecode_hash": "0x4b6f41b8b39ebde0765528a8f7c20fe097b6f38891a552d5195b3e526fcbaeb8",
+    "creation_date": "2024-11-26T11:02:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkInfrequentOracle"
+  },
+  "0xA74e9a856DD1bA260169BD577C9235Fb6e9391fE": {
+    "bytecode_hash": "0x0f4f2eec0d73953bc56d415b801096fc1c7846ea87b3536bbbaccc84216f6ad9",
+    "creation_date": "2024-08-27T09:20:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xA81CE0fc611cD3cc81a70d50D3D865F767715a72": {
+    "bytecode_hash": "0x7910b65cd0e87a9f0f9e4d29f51a7e7bfc152d39f54731251387a5db4c76f768",
+    "creation_date": "2024-08-31T08:46:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xA86CB9a3ca1D7556C64592EccFA59737B4e00265": {
+    "bytecode_hash": "0x164b92a1f4514b4607bcffdd19032da39b322d3ac5a73de3d5d91018ca5825db",
+    "creation_date": "2024-08-14T13:46:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0xA86C...0265"
+  },
+  "0xA9839D52E964d0ed0d6D546c27D2248Fac610c43": {
+    "bytecode_hash": "0x689515597c710afdd9ccecc2f1ff66e328bce07b2ea94da6365de5de9d7f6852",
+    "creation_date": "2022-12-01T07:27:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RewardsDistribution"
+  },
+  "0xA9B11f86aEDB82309846C98d92Ef258988a84c8E": {
+    "bytecode_hash": "0x68c6fee3119dcfa7b438e623ffb66a24a3fd3ac906ef56664d229609d115e2a3",
+    "creation_date": "2022-03-17T12:06:10",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swap"
+  },
+  "0xA9E18Ece44DcCd4E623135098C8B0887C87F6128": {
+    "bytecode_hash": "0x81b4e2a96b4947de49cd8bebde44b821f9fde744373104492fe4dee687f880f4",
+    "creation_date": "2024-08-27T10:38:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xA9d733C4BeD26EA9FC3026538E593E58688c62Be": {
+    "bytecode_hash": "0x8d2dbcfcbf4aef1e93d1667ffb1646226fdcfb7968041f90005f0a9a9b502b21",
+    "creation_date": "2024-10-11T05:32:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xACC25c4d40651676FEEd43a3467F3169e3E68e42": {
+    "bytecode_hash": "0x22ee44c6e075592f3ff90c1b83f79a5a491cea1a9bc1b5c0eab87d8fb2f7f2f4",
+    "creation_date": "2022-03-29T10:24:14",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerGeneralView"
+  },
+  "0xADD180D809310c117211af7154a93A1113502fdD": {
+    "bytecode_hash": "0x76932dc1fc8fec142eed97cb425115195990abc6c4ee227fc4ef2e40faa110e5",
+    "creation_date": "2025-01-05T22:02:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnVaultLens"
+  },
+  "0xAb21F487D3A3f126d1A92788c3b1D96AB4093029": {
+    "bytecode_hash": "0x8a5935e04b2e88e720c064f2531e7831d2024b6f94ddc404bd14be69de7d1d23",
+    "creation_date": "2024-09-09T11:21:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0xAeF108aD1B7523b8D5d9f343321275E1AdfF9aB5": {
+    "bytecode_hash": "0xc6a3b8c7d1d84d8bf945bb5b6ae71c10de16e3b7bcc3d84e12711be2d70034ae",
+    "creation_date": "2024-08-31T16:17:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xAed37a234cc880a9e3D9Fd9022013eE0A419493e": {
+    "bytecode_hash": "0x9142fd03d18de41ccf89521cf63842f46e518ef6536f489a35ce5b0685ef2f78",
+    "creation_date": "2021-11-29T15:43:50",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Liquidation"
+  },
+  "0xAfCbe81B8122e7b6e59E6df954AF3Aa37cBE8362": {
+    "bytecode_hash": "0xf0c309b3b59012f73f16a79b3b86764f05ce8e6596283b413c27f77f70c3f28f",
+    "creation_date": "2023-04-17T09:10:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AztecDistributor"
+  },
+  "0xB0dC8194eCA11EF10B4451BD596ed29049a2cf7c": {
+    "bytecode_hash": "0x40c7403a811411cbe0529d154f25e73221ccc7cc943298b2caf0d35e56e311f6",
+    "creation_date": "2024-08-27T09:45:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xB2d329A6e3cd47c7dB5D600EF376dDCB2DDc0773": {
+    "bytecode_hash": "0x7657080156b94697dc742d6e0b32e9d5612792b13af2be0dfad9918120acdcd5",
+    "creation_date": "2024-11-19T10:58:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xB2eA64316eEfc109f8685Cd8751E2468caBC5e76": {
+    "bytecode_hash": "0x2ef9c27a82bc473caad04861cb7fb57f8a772e4298d8900fa2626c0742e64ce6",
+    "creation_date": "2024-09-01T06:44:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xB30f23bc5F93F097B3A699f71B0b1718Fc82e182": {
+    "bytecode_hash": "0x5da5ac83aac6b823f65b21ce557c1800f1a1d3bf4e84ee985bffcda37a316f3a",
+    "creation_date": "2024-08-27T08:41:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EVKFactoryPerspective"
+  },
+  "0xB3b30ffb54082CB861B17DfBE459370d1Cc219AC": {
+    "bytecode_hash": "0xd82c8a6a1be78042f3f34182b74b6cd5f30f8d7e65db77aa42be11aea8cf43d5",
+    "creation_date": "2024-08-31T07:28:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0xB4Ad4D9C02c01b01Cf586C16f01C58c73c7f0188": {
+    "bytecode_hash": "0x4469b0eb64df70d019c7d67e25a500ed340205338d491a5c334eb099ae36679f",
+    "creation_date": "2024-08-14T13:20:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Vault"
+  },
+  "0xB4d68bC247a1DEF6FB0B6d0F69906C5B75Afe2aD": {
+    "bytecode_hash": "0xb309979524f1d02b4789ae928231e993ece63ed3f5ab7184406ef988851e9c1b",
+    "creation_date": "2022-07-11T09:30:25",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RiskManager"
+  },
+  "0xB4efe9d18696915523EF386e763070F0d5FE865f": {
+    "bytecode_hash": "0x79d382edc8545c09c891c237d9b279ee33643ebe34e887a3304b5130dba3ecf3",
+    "creation_date": "2023-04-18T13:49:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerClaims"
+  },
+  "0xB74D6752e40068ECA198A66DB97AFBcD00F7226F": {
+    "bytecode_hash": "0x2561d5e0dbbeefdc859cee563137078f9953a631c0e171936fe3e3d3efe8833c",
+    "creation_date": "2024-12-12T06:51:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xB77D06d97dC1E641Cd514d8dF89bEFc07350b445": {
+    "bytecode_hash": "0x489365ef3e4afe09fa9012773ca8410f71d1ab0ac9ae6948047d0b04903c6453",
+    "creation_date": "2024-08-31T15:40:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xB820032915FDf761Af877c8fa3d7138659026A97": {
+    "bytecode_hash": "0x8380747a1fd360757720c6ea21b768bb36d923f97c5eef32b7039c0f7ef1f787",
+    "creation_date": "2024-08-27T10:08:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xBC8021015db2ca0599e0692d63ae6B91564cf026": {
+    "bytecode_hash": "0x67ae0b6ce9414c30e081cd8b7513833f913e286e5b59ceaaa2c143ef4590eb8f",
+    "creation_date": "2023-04-11T11:44:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerClaims"
+  },
+  "0xBE42faeA74e76CEb62DEfa279bAba3eCfb63B283": {
+    "bytecode_hash": "0x0a0e027d6404cb67124dc8553266a099414a6f093ce803d17a0bcfc3003166bb",
+    "creation_date": "2024-08-27T09:11:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xBa42141648dFD74388f3541C1d80fa9387043Da9": {
+    "bytecode_hash": "0xf6f994d3b2e06121d3c094e71dee47ed89cf240b692e89467f71f9b87649daa0",
+    "creation_date": "2025-01-05T22:00:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarn"
+  },
+  "0xBa8E4ee6EA2c78dab76cAc256c2B7fAaaa8324E2": {
+    "bytecode_hash": "0x85a80c8aa0c13d12428804ac495e5eb19dd2ab43a12007c565704f077e5f7f2c",
+    "creation_date": "2024-09-09T11:21:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0xBb918933b510CDF9008E0f1B6AFE50A587CD9224": {
+    "bytecode_hash": "0x81f0bd526a4368d00dbc3f6cf7bd98cc0eb0760e9cb89e020321ed92c3d9b7bb",
+    "creation_date": "2024-08-27T09:12:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xBbC63A0787f20A252fFdF7A654dF09814Dc15BA1": {
+    "bytecode_hash": "0x20d351b844dcb5e1d691c03a5ba0a9a827fd1dd1291563628e1289d1c386eccd",
+    "creation_date": "2024-09-26T10:20:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xBc312189BA9a87093321609af6de6C5A34d51733": {
+    "bytecode_hash": "0x988c79dc6c1a83d077c232f0438f6e36f20e3d7869b3de55ba4ac8e7d008fb2d",
+    "creation_date": "2024-08-27T09:12:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xBc7A03E1791C0d29FC9Eb8921B9F16035041a2C1": {
+    "bytecode_hash": "0x104cb40dfc4812b5603cc3d1332eaf9d805e6ddd533c33dc0c2ad3a08defdabf",
+    "creation_date": "2024-08-27T09:43:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xBd29b6588031cb2F31b933BcbF1eeFb69a4E2Fa3": {
+    "bytecode_hash": "0x2dbc41783ed49851c2536179917ebde5a948a67eec310254ff92e2c0eea4a84f",
+    "creation_date": "2024-10-29T08:08:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Strategy"
+  },
+  "0xBf442Eb964Fe9b69D722c72AbD7ded46C9B7434b": {
+    "bytecode_hash": "0x9ca68f0802671ecf3e22d2830c400ae0ff5f952f37857160d10125ed89482c26",
+    "creation_date": "2024-08-27T09:37:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xC0121817FF224a018840e4D15a864747d36e6Eb2": {
+    "bytecode_hash": "0x1c1d20c9a7f679a74f3dcdb12673559584ae59671dc10f419e73da44aaf3f75e",
+    "creation_date": "2024-08-31T07:48:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GovernedPerspective"
+  },
+  "0xC018650b9B040F81B3e72014487114067676AfE8": {
+    "bytecode_hash": "0xe90529c706d1052e3bcc3d144e71ffe3d83111c6d244c1a7c68b125d92192d7c",
+    "creation_date": "2024-09-01T06:44:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xC039229EBCef32f898031eB81f646880F39a190B": {
+    "bytecode_hash": "0x9509bbcc96fd445eda9051c801162e70c8ee50e768cd0cfb62928c646e49030e",
+    "creation_date": "2024-08-27T09:38:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xC05055e42986954029A463fED5b4178C24B0D4e1": {
+    "bytecode_hash": "0xe55aca313157f135d1c936cfd0690a3e93fa3e8b65b35aab2ccc4bab96711642",
+    "creation_date": "2024-10-29T09:03:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xC09be111D95171d1D5db43f1324005D21C098B52": {
+    "bytecode_hash": "0x983fbcbd7fbfadd56fa9818a205ccec6ebee8474f5c4f265cc0af82fba989821",
+    "creation_date": "2025-01-05T22:01:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnFactoryPerspective"
+  },
+  "0xC1F6c8E2F625d7f60Bf4b84e34ab0F0b53AD2C6F": {
+    "bytecode_hash": "0xe9a63c0def6932900b420148308542fe053c4913f563e50e4ba1f897143fc4cc",
+    "creation_date": "2024-11-25T13:24:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xC293f25d36fBCAd9931F47D801e93b903164a4C6": {
+    "bytecode_hash": "0x662526e2745ce564c9e6096250c80756569713a7f0da137b15da8b469db221ed",
+    "creation_date": "2023-05-08T12:53:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "DToken"
+  },
+  "0xC2Ca699A973A62540C48C749Dc05F890747c5703": {
+    "bytecode_hash": "0xd468869950ce7a5f55f015e5a90b86ccccfbd8227a62bca6115e14ea89b054cd",
+    "creation_date": "2024-09-11T06:59:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0xC499881FCc94d6755532e2C80b474858a564D637": {
+    "bytecode_hash": "0xb3293117f030caf669175b581430ab13d75bf61ff2ef176e5a078895cf3a7dc4",
+    "creation_date": "2024-09-09T11:17:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0xC567525783af9c2309364ecade152Fd79624a753": {
+    "bytecode_hash": "0x67ccc2511d916365b5fee92b6450c39edbd83c0e53faadf691fa1c29eff83682",
+    "creation_date": "2024-08-16T09:08:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "UtilsLens"
+  },
+  "0xC57D9e4a688551d99645B49126e93589d4b478c8": {
+    "bytecode_hash": "0x785a3dc3a76ce75baf31cc562ca00df3f8ca4905c31bc8273f81e18e1aaa4b21",
+    "creation_date": "2022-10-17T10:48:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SwapHub"
+  },
+  "0xC642C492BbffFb7CCA586245A520afB313DeBb74": {
+    "bytecode_hash": "0xe437073d64a00a39ff984ee008e06eb9a11bec0abb58970609ad4e742c5de2f0",
+    "creation_date": "2024-10-02T10:46:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xC93382d5fcEF4303D7Ed1a3015172E9E03baDD1C": {
+    "bytecode_hash": "0xc0cdd31f401b2c657a8af30fdb8b644306ba40a16ec75501fa4d67ff46130168",
+    "creation_date": "2024-08-27T09:32:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xC99D3aC84f308445Fe60c431c48a3E63eFf0e452": {
+    "bytecode_hash": "0xc057d83d41113f6c78c5bf70f66c73a1f56b7eba4770b6435d12204220e739c2",
+    "creation_date": "2024-08-27T09:57:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xC9DC6c3d9Df09986550b8C0A5ae9119f640AB80f": {
+    "bytecode_hash": "0x4508108d4a015363240026068c33bfbd1b30a6dcfa23020fab7f390f998ab535",
+    "creation_date": "2024-08-31T13:42:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xCC6A0845165ae0868A04D1656673192A0D33af67": {
+    "bytecode_hash": "0x3a2bcaf55caf79671a9cdc4c9f8a52f244fe05c29d02fa02a261e8079678dae2",
+    "creation_date": "2024-08-31T15:40:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xCD04c09a16fC4E8DB47C930AC90C89f79F20aEB4": {
+    "bytecode_hash": "0x3d30af87efb4f6694f3c24b351852c8282a56fe9ce47648124bc77341e0bc9a4",
+    "creation_date": "2021-11-29T16:16:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0xCD04...aEB4"
+  },
+  "0xCEAEF9039C346a17eCF9edacD326dd4E83C77e3A": {
+    "bytecode_hash": "0x47a1e73be4dec82d1004404d477c115284bdf8b074218ae0dc7042b908b3ad65",
+    "creation_date": "2024-09-30T10:37:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0xCF1a6890343Bfac19612c4631332742E5B7d6A86": {
+    "bytecode_hash": "0xd93b8ca25e8a9860d7b4debc2539edd1acf7ce1c23d7e8110d273c54df0e6f07",
+    "creation_date": "2024-08-27T09:51:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xCF4124DEC902765BD8dAB56c883eDC8bc2378631": {
+    "bytecode_hash": "0xcde9287d622a604cb53a42c2560dff9dea17028e92ce60305db8c1f5daaffe2a",
+    "creation_date": "2025-01-27T11:15:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0xCFf632017b84d02bA9049aB71E3d7C9f71248459": {
+    "bytecode_hash": "0x86f1c3b6c07763e57db35213b883d946a4c28236944951136cf474bc991f178b",
+    "creation_date": "2024-08-31T17:21:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xCaB67D0C1F30c961754466818DD333f3902e68F4": {
+    "bytecode_hash": "0xa19925965af7530381fe79f6edb62612c5fbebab1828dbd00d677ad5f43736b9",
+    "creation_date": "2024-12-12T06:54:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xCc560e0D36A80A439CbFddE8f6645e9BdaFF6a8c": {
+    "bytecode_hash": "0x4af05d6b2115e4499a956cf0afa2122325cee200151d886efee370d6f411ca94",
+    "creation_date": "2023-04-13T08:14:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Extractor"
+  },
+  "0xD06aC27144e4d4c0c3d8aDd06e27B809F084d3D3": {
+    "bytecode_hash": "0x26ccad534a6746904daf26f15d39897f4ba1b96d7f853866f31ae988310bbffe",
+    "creation_date": "2024-08-27T09:53:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xD1679029Ae81DA676d9b5850feb6C8EE68f9d04E": {
+    "bytecode_hash": "0x1613b7adbf78de40ae3f068697d645677b31cca5d22d392d8b7d48067e753879",
+    "creation_date": "2022-10-18T13:32:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SwapHandlerUniAutoRouter"
+  },
+  "0xD1d7f938a86e29CD206834a311c8cDC76E08715b": {
+    "bytecode_hash": "0x54469d087e9443888d8b40736eb0e409e1784d75c0524c8b93d7c5e083694ac2",
+    "creation_date": "2024-08-27T10:04:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xD394504A778139Afb8dC76c43Cd681E17163ce4a": {
+    "bytecode_hash": "0xd6b7ac6920cb197e7b7b48f07fb8353b137a6e33d51a2a23b36f920ed0ec50f5",
+    "creation_date": "2024-08-27T09:50:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xD4090c34F09200017210B2E7A9434dbd3c54cD32": {
+    "bytecode_hash": "0x88af520541088fb5e9a9fe9c7dfe9a39a50e9e9d4d4146c4fa563c2eb295d4e8",
+    "creation_date": "2024-08-27T09:53:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xD41641d2D8b3B0DCaEdFab917AA4c140C4dBAb77": {
+    "bytecode_hash": "0xfe08897b15fa32d5107cc91eca712c34ffb438f49fba0235068b204f314b6d67",
+    "creation_date": "2024-08-27T09:10:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xD4dF645c88767275fE1C22709BE415bD7B509199": {
+    "bytecode_hash": "0xbfb4d9b03aa6187c0bb697b532dfa1480665dde0ddbe52cc086c4ed2e3607890",
+    "creation_date": "2024-08-27T09:46:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xD4fF9D4e0A3E5995A0E040632F34271b2e9c8a42": {
+    "bytecode_hash": "0xb1262705748b12d4358c5b6531b5e978f70bac469a935498dc5f18966b6ac045",
+    "creation_date": "2024-08-27T09:19:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xD648Bd39771e10F0BFBF69AFCd966642EE774a88": {
+    "bytecode_hash": "0x4986e46f6ac451839a4cdcda1b2e87253cc22d8ccd206767a8b3097669257fc9",
+    "creation_date": "2024-08-27T09:35:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xD671f3e5597a1396Dc427FBbD6B3e3f6C6FD5363": {
+    "bytecode_hash": "0x622921d9b886fe7af6250fcaeb219309c748f8c5d430762adf3a3d9296205617",
+    "creation_date": "2024-08-27T09:10:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xD75870dCbd1521E6CAd7566FbcA35D72e238572B": {
+    "bytecode_hash": "0xf422637eee8e6d34a069673f1a976de2f7086262e90ef0ff2a634d9395c13d30",
+    "creation_date": "2021-11-29T16:52:37",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassMajor"
+  },
+  "0xD7F9c3F788E958a8A3d06dE857C06dd1D78c682F": {
+    "bytecode_hash": "0xca2418cedf2ab64fea59744a8f3bcd932b2aea6c0f292a746fe43b572d5e1200",
+    "creation_date": "2024-08-27T10:11:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xD9dec32089bbcdb62B57b4A82CA56b5B5Ef52646": {
+    "bytecode_hash": "0x8ba2dcbea28ee8f32397b9566da786e4bafd649589d1530601c05a0cab221770",
+    "creation_date": "2024-08-27T08:47:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerUngovernedPerspective"
+  },
+  "0xDACb0d070C6Fa0ff849854f8041f1D10376C227F": {
+    "bytecode_hash": "0xdc551be70aec1f9bfa9f40ca77d4851d3bccb061d0e97bc6c3c6d83ecd1b2569",
+    "creation_date": "2024-12-17T13:26:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xDC149E485a29Fc9384D8e634Ae9170ae1727BeaB": {
+    "bytecode_hash": "0x0fecda67bd7a38e27790335340f903955bbe1995d14a2f6f2ec00fdf9b42978d",
+    "creation_date": "2024-09-23T11:30:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xDC8af46aDF7143e58047beECA27210D6dc760721": {
+    "bytecode_hash": "0xe9268e9859a61b421cefb9c872f45bf7a0f26fb8c2751903405e72bd38902fb3",
+    "creation_date": "2024-09-23T09:15:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChronicleOracle"
+  },
+  "0xDCb7cF0bFe8a6D9b61d5c29DA4c4F3B48e0829e7": {
+    "bytecode_hash": "0x22c815cb53f98dea7537897d96b22c491d2243515efb2f8d2f9c0bca8c9d62ea",
+    "creation_date": "2024-12-17T13:22:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xDCdA67AC5081E668eA5049bE94905a9aF7dec3DB": {
+    "bytecode_hash": "0x55d3b983df37bb850c319dbd48cecab79a8ba5e2198b0a1633daab27315c57c9",
+    "creation_date": "2024-08-27T09:32:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xDF4513A7c0E611d7B36237CcF0c098733f28f680": {
+    "bytecode_hash": "0x41893e1f52a6c3985238fd4e1ae47f936df922057bb1cdb9734f674a3acff0eb",
+    "creation_date": "2024-11-05T11:32:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xDb69d6A0410977eFD5F68da9995f243A3ed7ff32": {
+    "bytecode_hash": "0x53b6efc9f233321608f318bec07671189b3d2ec6a276c3777be61686452ae045",
+    "creation_date": "2024-08-27T09:38:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xE280D813190c57EaF64a71Ab4DAbc802411C1030": {
+    "bytecode_hash": "0x8e8967ed59d127d6e8bfa9a4dc518486bc6d7d80e49369f3fe23cfe153cb0747",
+    "creation_date": "2024-08-27T09:12:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xE2Df9754b5d6e64Ef11ba3294Ca2279E3310A21B": {
+    "bytecode_hash": "0x39e101b2eed20ebb8b8c68887fb87762fbc14f6daf3b11356db2c26f32c4122b",
+    "creation_date": "2024-11-19T10:58:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xE39Da17508ec3fE7806a58b0aBe15A2df742cBfE": {
+    "bytecode_hash": "0x2554c20dc7df2dea5e7f3463c430cd9c5751293a7619ad5be03917946c7bf852",
+    "creation_date": "2024-08-27T09:17:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xE4044D26C879f58Acc97f27db04c1686fa9ED29E": {
+    "bytecode_hash": "0xd996ca653f18623a1447a9ea43f283726597eab3a6b105c931ba6105dc17928e",
+    "creation_date": "2024-09-03T09:15:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0xE4603a2a5b690d09309aCAa12c4Fd1BBF661edF3": {
+    "bytecode_hash": "0xb7b73eb7fc127daa47d073c51f42ad2ffaac32a8dec41319f653f4d923e89f17",
+    "creation_date": "2024-08-27T09:18:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xE46A0c83F8061DF2B372fe1579aB6CeAe75F4471": {
+    "bytecode_hash": "0x26ae95e770682621078e12f0df234bae9f675c159d0ebcb81be596744e70b9f5",
+    "creation_date": "2024-08-27T09:40:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xE513452372167B3401a300834283f12fB0784758": {
+    "bytecode_hash": "0x702417e448ea4748feaf6174027176c0f923ddb552533fa43268c0cea4ea571e",
+    "creation_date": "2022-09-07T12:08:52",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkBasedOracle"
+  },
+  "0xE56d935405De1600dB78C7b4EF58c8517c56D2bd": {
+    "bytecode_hash": "0x721584a61623dbad0428cc1d4c5ce55105408e9a0a437590ab15211415d5f7ae",
+    "creation_date": "2024-11-19T11:03:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xE5aFE81e63f0A52a3a03B922b30f73B8ce74D570": {
+    "bytecode_hash": "0xec2d4bb2a7cef1c1369c449d5f7d30910a521ac7463415317516ce774bfbfd40",
+    "creation_date": "2022-12-01T07:32:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "StakingRewards"
+  },
+  "0xE5d0A7A3ad358792Ba037cB6eE375FfDe7Ba2Cd1": {
+    "bytecode_hash": "0x415c4b35c5dcc0822c07025b7f0956d0f8868104bbe6c220b0e7bf510c17a045",
+    "creation_date": "2021-11-29T05:20:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Markets"
+  },
+  "0xE60393f757F999bfc599AAB7A35b943c0CB36428": {
+    "bytecode_hash": "0x34042b080353975a44175ba919face8c646caa22861d415c7a1d1794613a2a61",
+    "creation_date": "2024-09-01T06:43:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xE8091846E31b30704af37656cD22171C414E4c08": {
+    "bytecode_hash": "0x3048416d5a6652ff5eb45384c7ed2c8c84204be528d3975a479794590f63b14e",
+    "creation_date": "2024-08-27T09:36:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xE81b5077F30A5F4F48723915d543dB89f5e98e18": {
+    "bytecode_hash": "0x22138b7e9b3bae0cea45916b7fff5395359a2f2ee68eeb6489d72c09cddd2090",
+    "creation_date": "2024-08-27T10:09:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xE8391F3556F19dd5e843361e8CACB073B401ae81": {
+    "bytecode_hash": "0x548da024bb2b9c1f6fc263b87eb9a3c55662273d426de83c39c268e1a5473f7a",
+    "creation_date": "2024-08-27T09:19:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xE87BAb9aEA080B7d2bebb6da6CF00854fBbE85fd": {
+    "bytecode_hash": "0x323e1cd422c643d2a44765af2b1f42de9c5af0ffadfd2d5192c7a2fcf8766b04",
+    "creation_date": "2024-08-27T10:04:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xE8B7516715258aea8c3d3f83c5AbbdAbc14A5Bf3": {
+    "bytecode_hash": "0x744dc8bd1bc64cc5617a8c998099ddec083b2ffa44e3b666e8bc93f50df62b11",
+    "creation_date": "2024-12-26T02:19:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xE93999C098EC339E1CbcEB5bB0C1Fd37a867921c": {
+    "bytecode_hash": "0x553355347f9374f1ab48098064099fa7a5855e42ff5c12ea9c99284f767201e0",
+    "creation_date": "2024-08-27T09:13:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xE96C9749c63cA406C8BAF800c3d101C9701945Dc": {
+    "bytecode_hash": "0xc84b3fbe458711024467a14698faf98f0795673accf96e0b4e381b377e26a72f",
+    "creation_date": "2022-08-17T21:15:15",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swap"
+  },
+  "0xE9c9eF4b49ECE9f4Ab7d3a919cc4CD04542ac064": {
+    "bytecode_hash": "0x57f25ddb5f96df25026a7d9309eac78234e4f8d48c868fe21fdf85cdcd0ea18f",
+    "creation_date": "2024-09-18T08:55:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xEA876b596Bc2e0d6B486C7BBd5106F6C9f16ac23": {
+    "bytecode_hash": "0x549c1678dfac7755d421d0f8b05ab05892d57866965da0e506ee045e332741d3",
+    "creation_date": "2025-01-20T05:39:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xEADDD21618ad5Deb412D3fD23580FD461c106B54": {
+    "bytecode_hash": "0xca0ceb9ebd9835493c32e18ad2951d5eab84ae3c435a81e0eedeb4548e35d890",
+    "creation_date": "2024-08-14T13:18:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SequenceRegistry"
+  },
+  "0xEE385A1E2F0Bfe79D795a9AC680c4aB89033AbAB": {
+    "bytecode_hash": "0x3436db521b4650b0f18ab725a5ffd417708d5f11e91e73b3df52a61fa4cd1438",
+    "creation_date": "2022-04-09T15:19:18",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0xEF1C2fedB798F2D769950D7AB83206eA477E02d2": {
+    "bytecode_hash": "0x61d08da11eb0ecd3ec7ff62dcaf40298773124605af8cd6b0bf8dc47fa3b5a5f",
+    "creation_date": "2024-09-09T11:23:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0xEFB8f3B96DBd72BAa21f6BEee26296f253cF6765": {
+    "bytecode_hash": "0x1157ce38c3308d899750695565fce316c4009344a3ca69beb313c619ec9d230e",
+    "creation_date": "2024-08-27T10:07:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xEa79Ca680840Cc7aD6Df138DAffCb635355E973f": {
+    "bytecode_hash": "0x63b4b7fadb82d475928ed5241c5d7817ddedfc59bcf038987923559c94c928d3",
+    "creation_date": "2024-08-27T09:31:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xEb9Ad7Ec0b11987bF4e800531FE084D6ff6F9CCd": {
+    "bytecode_hash": "0x5e40263b5cb3c117689a2ed070899a47a37b5015825224b7f249dcbc7285a8fe",
+    "creation_date": "2024-08-31T08:15:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xEf1a15461f15F38DFD2c7EBdcCC04aDBAaAC538b": {
+    "bytecode_hash": "0x62c214905adb446ebfb60d82f6a4b668c15d4877010549b7fc82b770e7185b5c",
+    "creation_date": "2024-09-01T06:47:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xEf3f5dAD6779bd4aee85D8914Af3C23AF5bbd3d1": {
+    "bytecode_hash": "0x67ccc2511d916365b5fee92b6450c39edbd83c0e53faadf691fa1c29eff83682",
+    "creation_date": "2024-08-31T07:40:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "UtilsLens"
+  },
+  "0xF0E1DBede5EfC7be5d12BD5EBd8CaDBf6074dDed": {
+    "bytecode_hash": "0x8e107602fda5f3edb8de41892f921097a1835c7be56ab6a81648ae3f2c1ecfe3",
+    "creation_date": "2024-08-14T13:23:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EscrowPerspective"
+  },
+  "0xF376Cf2D9c3C792197EF6cE8a87b97aD1242bcFc": {
+    "bytecode_hash": "0xbf84ca93c3c7f6ce169f987e3352e185ab91482cb13aa84192c0ad1e8dc15edc",
+    "creation_date": "2023-05-17T08:10:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0xF3C1e427Eb1781182949F46555CF944fCd6eF018": {
+    "bytecode_hash": "0x246220be6948471ccafb130ad356817717dcf15eb9daeb3b3325e853efbd3290",
+    "creation_date": "2024-08-27T09:53:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xF3DfF78dA9074B288dB14c4Ba10ba540741E2629": {
+    "bytecode_hash": "0x04f6d61e7c84ee4aae2bc2ea313f8332c9678d8774b4c9c70e484fdffd7f52aa",
+    "creation_date": "2024-09-09T11:22:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0xF48a85f4bC46b0133C9F733a9B8a1a3C37b5cbEb": {
+    "bytecode_hash": "0x29382b9087c6f4c032daca8657cda48bd3555171dd9738da3e018b27d3f1f8d9",
+    "creation_date": "2024-08-27T09:11:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xF5d35536482f62c9031b4d6bD34724671BCE33d1": {
+    "bytecode_hash": "0xd92becfed5a4de5b7095884dbd81b73d96a3a531f28a1dae4870f08e34d9a0a8",
+    "creation_date": "2025-05-29T12:34:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwap"
+  },
+  "0xF86E1E57797fA1A1b979AF7CD474d210109d10f1": {
+    "bytecode_hash": "0x54f6fbaebc223e179b498b35b48aa90bdd3b201fe8c41592ce2119a1c95814ea",
+    "creation_date": "2024-08-31T17:43:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xF86a6f85606b7D0074aEdeA3f8C26B2E70797e04": {
+    "bytecode_hash": "0x1629f815f48b067a6a9fdd65eb4c357431a1c8b4ad159bc707daa56f0024d98c",
+    "creation_date": "2024-08-27T10:09:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xF8e463FCd5DC5AE5E1aA0c4388322279D66e6E9E": {
+    "bytecode_hash": "0x0e674e9d3e45ce682ca592f074deaeaf91f49b0e9be83bd2f0a627b43ab71af2",
+    "creation_date": "2024-10-02T11:10:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xFD310B00523707e6b3A9Ba83c3D6EAC3350CF8eA": {
+    "bytecode_hash": "0x9f74d85c78c40261d81800f7c5251eb05a31e253df8d9415964f2a536d3fbe2a",
+    "creation_date": "2022-11-28T11:26:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassUSDT"
+  },
+  "0xFa908c9B6F91523D563Ca8660F50c49b9571873E": {
+    "bytecode_hash": "0xad34d5ef35ed7a6e1e87458ab49e4905e9d48459ae4bc9d269b5ea55bf05250c",
+    "creation_date": "2024-08-27T09:28:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xFb9FE66472917F0F8966506A3bf831Ac0c10caD4": {
+    "bytecode_hash": "0xf69244407fdf6f484d86b445591cdf2e947a1789d5a48a34288231fe32f1dc7b",
+    "creation_date": "2025-05-29T12:34:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwapFactory"
+  },
+  "0xFb9Fd4552082e0dc3Bb8e94bACB53c109988826d": {
+    "bytecode_hash": "0xc60b2d314ecfc78ae01e1cce8c4080f1e574cfe9c167612418bd58e715779e4c",
+    "creation_date": "2024-08-31T13:44:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xFc15ec9c88ca6FE3edd96465E7c4092e57427c62": {
+    "bytecode_hash": "0x2555b50ed644b0e600c8bfa9b1c2bb6f74ef994d87943b5c8d7763a28155cdce",
+    "creation_date": "2024-12-09T18:30:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IdleTranchesOracle"
+  },
+  "0xFcd3Db06EA814eB21C84304fC7F90798C00D1e32": {
+    "bytecode_hash": "0x9d4a83067b993af6181b1364a3307370d83a445f2fa3d6c9bdd4d12b04dcb12e",
+    "creation_date": "2024-08-14T13:24:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FeeFlowController"
+  },
+  "0xFd2e26727305946Bf7a174f5a73bD82147980a47": {
+    "bytecode_hash": "0x1fa6b5133c54e458748f23d19f7d57032713f7ca489110ed9e6641cf689bbc3f",
+    "creation_date": "2024-08-27T09:36:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xFd78C84d07dd4BA02fBc287290D9F2DB5C56CdED": {
+    "bytecode_hash": "0xfb8fcdd30289ee2638fbc6f5a79552d418b5981577d9fdf25b52cb0e404a7aac",
+    "creation_date": "2025-01-05T21:59:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerEarnVault"
+  },
+  "0xFe9fda2fa2266023D07f2DE975D1D2e890146c2d": {
+    "bytecode_hash": "0xdbbc31e9b18a95bdbca60ab77f197098cf2669408135855ddb2d25194d94612c",
+    "creation_date": "2024-08-27T09:14:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xa03A5af033c80e4A168c679bb5780387c5A91455": {
+    "bytecode_hash": "0x81a6db0b135a4aff386e2e8f21c40f2c66b3270015844fc3c99c569943a82c91",
+    "creation_date": "2024-08-27T09:29:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xa065ca5c2f250171FF8a8F93EdF62C15E5A6f5FD": {
+    "bytecode_hash": "0xbc4f9a94ed99b41269be11f17484d78a052a7c197942cc027ca6ff0dc6a49304",
+    "creation_date": "2024-08-14T13:19:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerKinkIRMFactory"
+  },
+  "0xa0a9511fCb0FCC9Ea046abb417A2703D62F1Edd7": {
+    "bytecode_hash": "0x504924dfc57ea032fe0facd633d9d21dbf8ef6aed5efa379ebe1a1b68119fcf5",
+    "creation_date": "2024-12-05T08:57:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xa11bcc781F24e87d55D256Edd50d6E8D6aa14628": {
+    "bytecode_hash": "0x1cf99958d4209622fc8884a62c1ed13c08be0a8f1e4c702b043d2c72f2705520",
+    "creation_date": "2024-08-27T09:36:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xa1e0C3690e145634c41B6D8A228E6E25EA950B25": {
+    "bytecode_hash": "0x03fd2267798b87b70dbdd5e033853e30d7ba3b836ace09ae91e73854e3af4b43",
+    "creation_date": "2024-08-27T09:28:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xa22392A6011d0066ED02313e5F6E3FdEc943158d": {
+    "bytecode_hash": "0x9e9f858d20aeb1d194ea00f00b39b50122a6bac8271bc8f9dc95e9cf13ff4197",
+    "creation_date": "2024-08-31T15:52:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xa2869a2D515e873F38866f17c22Df5AC59e61DdE": {
+    "bytecode_hash": "0xd2b1967903bd0b3b8de050f56d74619587f290b61c2dd1bd769e0078af33ae24",
+    "creation_date": "2024-08-27T09:38:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xa5190Ba9698E7D8F8CDBfA1a6Bb1f04EF9dD2634": {
+    "bytecode_hash": "0x04d28c32bd39fddba0b9ef08ae993664080b82e9a216a557891c51e576ace356",
+    "creation_date": "2024-08-31T15:41:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xa61f5016F2cd5cec12d091f871fcE1e1df5f0b67": {
+    "bytecode_hash": "0x0494790c190c74f9f3a4df45aada4f54a519326c7ad59d2fe23d21ef1ad7688a",
+    "creation_date": "2024-08-14T13:21:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Governance"
+  },
+  "0xa664Ed382E1076613C5B8be721b5CDB3643B1f20": {
+    "bytecode_hash": "0xf2254d6c98b73c84b3d496bbfc3c4c1eb1374fc3a35ecec856b52d3a1bf8c890",
+    "creation_date": "2024-08-27T09:47:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xa87dA6Bb80fB51155D245B0A6f27184E425B4952": {
+    "bytecode_hash": "0x76b946888337a8d9179b88a2492a3b26169dc89a2bbfd96f0a10634d08cb628c",
+    "creation_date": "2024-08-14T13:44:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xaE9eCE3Dbf4b457dD44A7be8e683DCe3E2c91205": {
+    "bytecode_hash": "0x4778939299af2df0adda67a008aa107fe3def260558208f5397fdea4bbdd563d",
+    "creation_date": "2024-08-27T10:37:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xab81e5A7D896Cc56ffE10197a38dfA683dCe2c3f": {
+    "bytecode_hash": "0x4b51ffa7e4657d457ec572d33ca1b0912ce0857f6856b10b3d47228b188be4ec",
+    "creation_date": "2024-08-27T09:31:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xabcC3Fd22E87A3bb63aF4eC6c41b57872E2AFcbA": {
+    "bytecode_hash": "0x984eddab85cf7aea2ab95949c00d7099287bc1888e3ad82ede889ae7c043f3d6",
+    "creation_date": "2024-08-27T09:51:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xad8a5c16FDF36E568F602d088dD0C0ADe52dd652": {
+    "bytecode_hash": "0x307145c5f0735e384f22fa0b70336e6129dc0c7283b5955d7e6576d963270d07",
+    "creation_date": "2022-01-26T10:36:34",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RiskManager"
+  },
+  "0xae26485ACDDeFd486Fe9ad7C2b34169d360737c7": {
+    "bytecode_hash": "0x39315faba6108652aa325a7c41d7a81d0b946177e89803817b91e77994f47384",
+    "creation_date": "2024-08-14T13:24:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SwapVerifier"
+  },
+  "0xafDB48aa701eA15aD1d670B5fA65a84358e0C127": {
+    "bytecode_hash": "0xbf54c861a508e17ce4793e50de688c0db5d433cf768b5c857bb3b234ec8259ef",
+    "creation_date": "2024-10-02T11:09:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xb013be1D0D380C13B58e889f412895970A2Cf228": {
+    "bytecode_hash": "0xa034fcaae2bda9b64b3876e0c31de3265b35a82e22f84523a936d9e1acef6248",
+    "creation_date": "2025-06-10T12:09:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwapFactory"
+  },
+  "0xb1428B0229F951d6d7d2B8921D6E72B895cC4CDE": {
+    "bytecode_hash": "0x8ac71a0cfb39a0555700296e6e747ae78b16472a081859995806d1e5fd2e8707",
+    "creation_date": "2024-08-27T09:15:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xb18F83C89a9102D10eB25496326506e1Ace34996": {
+    "bytecode_hash": "0x3b054db75f913613eb1b081762789a691d1d3825969f3fed238f75407be56e49",
+    "creation_date": "2024-08-27T09:38:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xb4788d58173496AF67b6C1204c2aE97F60598c9c": {
+    "bytecode_hash": "0x2f04b6cd630282c1ab35c20b5d28242a82ed473b8ce78cf045631784eaeae4fc",
+    "creation_date": "2024-11-07T06:55:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xb4876B74638F417Fa620B6169cdf7690351441fE": {
+    "bytecode_hash": "0x8f9660fc4f2b735729882a3ddfc8ec6fb791a26ce1216ee5024e16cc10aaa62d",
+    "creation_date": "2025-06-22T09:52:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0xb487...41fE"
+  },
+  "0xb8673a940c4f0339D7aD4466A18c298806AB69b4": {
+    "bytecode_hash": "0xd48df764eef72be8683878b610de6e47baca58c7c3420b47029a18a24dd4a29a",
+    "creation_date": "2024-08-31T11:41:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xb8B734D9aCf8E38e34A3808bBFD1dEd52c39c94A": {
+    "bytecode_hash": "0x7a332ee0c981f42e1610a3c8738df126b6ba72418d32b57123d8efcafe0b9533",
+    "creation_date": "2024-08-16T05:45:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "SnapshotRegistry"
+  },
+  "0xbAA3acceE85a34cAB03a587cD9b3A3728EC89E3A": {
+    "bytecode_hash": "0x3e7ed9781777bb376082897c72247b0a4ac84bb52842bc6c43e54ca405ad7a8f",
+    "creation_date": "2025-05-29T12:29:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwapPeriphery"
+  },
+  "0xbC2794fe1c346D7B2973e359Fd818199A192a0cf": {
+    "bytecode_hash": "0x302683f383cc9789a72928ec92ddc14a79ea7ee75fcf5fad38ea13cc8e651af8",
+    "creation_date": "2024-08-27T10:08:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xbD1bBb58E07f0350e8521FdbFB3bFAc50F53AAEF": {
+    "bytecode_hash": "0xff34d5d98092b7e10943a3a45c4b9a65212062606243b1c059b23136ea10cfdf",
+    "creation_date": "2024-08-16T08:55:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AccountLens"
+  },
+  "0xbD3029aB5f6b5281B2b0966058F34F41cA35aFBb": {
+    "bytecode_hash": "0x32e485c1b3e327aae40f64f1bb60299daf1ad6321039bbdf6b854e879d978858",
+    "creation_date": "2024-08-14T13:32:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xbE37356aECd50Aa57cb545eD25053055898611de": {
+    "bytecode_hash": "0x56eebdb9dd4f15966836ec0474cc761f339759b88b22b61df1f068681ac2caf6",
+    "creation_date": "2024-11-25T13:32:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xbF045915CaF2C309A5bA1A3Ae024EFD8E54fB66c": {
+    "bytecode_hash": "0xdbe902367ccee0a622abb161038172dffe6726b0b4204ece0eef4cea2f504e4a",
+    "creation_date": "2024-10-17T09:23:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0xbF04...B66c"
+  },
+  "0xbF893F7062FCcEB83d295e7FB407a64F941d5204": {
+    "bytecode_hash": "0x6462feec0bd647e0d20b23a8676baabbab9a387c97c461e5eff5f301dd9f9e10",
+    "creation_date": "2024-08-31T07:44:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swapper"
+  },
+  "0xbb0D4bb654a21054aF95456a3B29c63e8D1F4c0a": {
+    "bytecode_hash": "0x0b9652d55f2b9b616fab3b715f87b4609ffff782e05ee6c8f065705420083ab9",
+    "creation_date": "2022-08-17T21:03:31",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EToken"
+  },
+  "0xc09B45b31b7DD7B7bEcb348f1Df192C6948986B9": {
+    "bytecode_hash": "0xd393ec6b49d0f4b1ac09cbcee29cae11de76ba79299907b803493f2ce660ed8d",
+    "creation_date": "2024-09-09T11:23:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0xc2d41d42939109CDCfa26C6965269D9C0220b38E": {
+    "bytecode_hash": "0x36ab39e93218600e068ef74a62a1b8660e6c6f217b1737ab235df71c95459fac",
+    "creation_date": "2022-06-05T06:34:56",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSimpleLens"
+  },
+  "0xc35a0FDA69e9D71e68C0d9CBb541Adfd21D6B117": {
+    "bytecode_hash": "0x3bd4f7063a6b7f35f092ed022ce9ba45cb7e786cf658b7becf8e374ac305d797",
+    "creation_date": "2025-06-10T12:09:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerSwap"
+  },
+  "0xc38B1ae5f9bDd68D44b354fD06b16488Be4Bc0d4": {
+    "bytecode_hash": "0xd95d6a19e9bd7dd6dc24ff5eb334313f8cfd691d9ee9240125fa6c7c8952f3e5",
+    "creation_date": "2024-08-27T09:22:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xc3928c5AcE4c047053eBCf547F9d513261e87a78": {
+    "bytecode_hash": "0x785ddc9cba86ef55e458685db3ff19304cbabdc07973d2bff3569202bb5639f2",
+    "creation_date": "2024-08-27T09:21:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xc4406E4a14D2c0378952649BF56716A39CE64c6B": {
+    "bytecode_hash": "0x88a7ee09c5d37abc24d3d02758116ab9b55b5f5702b7987b25ea36c2e2d3fec7",
+    "creation_date": "2024-10-02T11:10:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xc44f2FfA5eAe262a9ca253647c1900a2611229C1": {
+    "bytecode_hash": "0x007cc7b60a5c9d101101e62b58588b0abd64dd48ee3898d940cfb0e1102fcfbb",
+    "creation_date": "2024-09-01T06:47:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xc56F9a895688AA6164cADe142D6C0c006f88C4E8": {
+    "bytecode_hash": "0x9d21cc48ce876d188d129e0faa18d0182e36c4cc2fb9b58ac8de55e0de4168e1",
+    "creation_date": "2024-08-31T08:02:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xc65A8592374c76324F85Fb5E84526C7A8d05A38c": {
+    "bytecode_hash": "0x445ec2e1c3d8a878b1f04ea587654b055acbee1f75ab91beb349783f5adc838f",
+    "creation_date": "2024-08-27T09:50:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xc667d21d0BFfd9007cDB68A119Bc6b121b1Cb2eD": {
+    "bytecode_hash": "0x8e0dacf3ccc50b4030950623253634ed285571aa9d9a3419365b72e17cee22a9",
+    "creation_date": "2024-08-27T10:40:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xc68CB3658ACf1d49547Fa8605dc158D876cD5828": {
+    "bytecode_hash": "0x4d4f2346e96be3daccac456abfb018bc2cfd34a7d6337a2d63f74396b62b0c67",
+    "creation_date": "2024-08-27T08:42:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EscrowedCollateralPerspective"
+  },
+  "0xc697BB6625D9f7AdcF0fbf0cbd4DcF50D8716cd3": {
+    "bytecode_hash": "0xf3ec71e4212334cb4cfe1323fd750d2eb7b0f6c4b4e70c00a779769583306216",
+    "creation_date": "2022-06-16T12:36:39",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulStakes"
+  },
+  "0xc8339D67d3c110dEc5226A497e86d4E18bDe6115": {
+    "bytecode_hash": "0xa2572393387d207b4f18d5082e3e407ee86136cf9fc3245431df386a95c80907",
+    "creation_date": "2024-08-27T09:44:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xc87BFC9DE10B45ADB6D10945F612a3DE5B3E134E": {
+    "bytecode_hash": "0x8bb4cc05144027ddb9b192092515a969f91c3e9ec418a6290870252652085f23",
+    "creation_date": "2022-11-24T09:38:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "WBTCOracle"
+  },
+  "0xc87d5109cfBEF902Df1849cE53aB84Ba1bE9e28e": {
+    "bytecode_hash": "0x6c60b44f7f8dde2e21c06bddf80dfc984149d48b8077e68118efcfbf65fc0725",
+    "creation_date": "2024-08-31T09:09:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xc8b36227C9C496f6d9C06462f285f55C93fBd7D9": {
+    "bytecode_hash": "0x84a0d3d96fd1a100d6dfe59d5001682db25288c40a3a29b4808922b464b54b2c",
+    "creation_date": "2024-09-01T06:45:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xc9775fb90053119Ac99C67f5536dbC02dFd28b2a": {
+    "bytecode_hash": "0xe517321ba9a072cf4c64ab8c5b8bd89a4a6145d4d608cea00c186bdc5ee3e419",
+    "creation_date": "2024-12-09T18:55:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xcAe0A39B45Ee9C3213f64392FA6DF30CE034C9F9": {
+    "bytecode_hash": "0xe7f3e21d5d10b69fadfffa74aaa5421af47fcdd426216c28b0653f415feb52bd",
+    "creation_date": "2024-08-16T05:46:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerKinkIRMFactory"
+  },
+  "0xcB89a692E8233636FDc0033E948dede9762e7cF9": {
+    "bytecode_hash": "0x4e176140ad0dc20d2f51cfae61427dbcd5686637b1ec03213d16999a724be3c0",
+    "creation_date": "2024-08-27T09:36:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xcD28b12c7D6a304ef8D66CC27f25a126ac1174A2": {
+    "bytecode_hash": "0x0a89879dcd4d980545485e359d3ea83b2a8093be83bf04396f79405e2e2b10a9",
+    "creation_date": "2024-08-14T13:22:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "VaultLens"
+  },
+  "0xcE97F1285CCDf04E8bE787064456B124A37B283B": {
+    "bytecode_hash": "0x94b60f7edaa5b2068b922bcf0d0a5f566d174fffc3ca1d947276d263d769aa94",
+    "creation_date": "2024-08-31T09:10:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xcEa9Db0E0602879DCcB2DC2D1Bb343B7f9143073": {
+    "bytecode_hash": "0x96fba0447c51a9c1fab49af767b9466e8fd4dee5cf014a69796b139f25268d3b",
+    "creation_date": "2024-08-27T09:18:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xcb9F947987b833a82A15b87Cf1473a1797846A5E": {
+    "bytecode_hash": "0x2e679341295d459c31dd828304a6ea8d0d09fc7406952090cf40c7fdb75bbf4f",
+    "creation_date": "2024-09-06T08:53:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xccE9D62e73d97CEF4F09c73f6924234B435Ee704": {
+    "bytecode_hash": "0x240531424c4d60f273013ec6150c8ecaad1bfab9eba41b43195ad2b45483154d",
+    "creation_date": "2024-08-27T09:12:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xcdf5E4f31c1706a0224cDa4fDb88CF0e58c7489e": {
+    "bytecode_hash": "0x2e64d1d403ff3ffaebba82a0df3d1133ef4d9e896dc68db21b567fc8079189c3",
+    "creation_date": "2024-08-27T09:56:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xce1b8F00454cd70C04BAA5613541954e9e9eE0DC": {
+    "bytecode_hash": "0x4f8c349fbba39756f4e8f622301ef7ec6a03c0c38205d6f3e2ae5f4afb8d083c",
+    "creation_date": "2024-08-27T09:41:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xd1DD0C964B0d137498C630B8b7fEd1F88631FFF3": {
+    "bytecode_hash": "0x6ecc22dbd35118bbdd67b8a07e30fbb2828c9022855f2503df1ac7779daf64a4",
+    "creation_date": "2024-08-16T09:33:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "LidoOracle"
+  },
+  "0xd1f0AF153fCd8822459Bcfee0705DA8D86b5B92a": {
+    "bytecode_hash": "0x6a1cf1d371565bbe744aed8ae9d73e254f169a14c7a3a921ed616381779b66d7",
+    "creation_date": "2024-08-27T09:29:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xd27Cacb4adB7313478ef85483210fC146Ba90506": {
+    "bytecode_hash": "0xe83c7b8b1a0cddcbb3386d660e6a36d76c735b1caa51f6a3589d22b2b4338a01",
+    "creation_date": "2024-08-27T09:35:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xd327b58B5824F3979DCA46CC5D4e973a3a836D3f": {
+    "bytecode_hash": "0x8d10d5b1b19f729a53745cf2243b44b528b5341381476676f1575df7a58b08d0",
+    "creation_date": "2024-08-27T09:40:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xd39452589E66cBE43b06F4c9bE8E3CbE4129CE96": {
+    "bytecode_hash": "0xa468c684f6d33f4c79654df45957a45ebaee6575a1bfbab3b4f01b27b4c6dd93",
+    "creation_date": "2024-08-27T08:41:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "GovernedPerspective"
+  },
+  "0xd405dcF882235481461f93e36d3bf9a29BeA1054": {
+    "bytecode_hash": "0x6982fb2e5f145440b1f9310bb343d52da3fc9e41220592b43f5bec26bea05a78",
+    "creation_date": "2024-08-27T10:07:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xd524E29E3BAF5BB085403Ca5665301E94387A7e2": {
+    "bytecode_hash": "0xec066a0fa900dc6665ffc296753b42e701cd759e413ddb204e56a8795bf77acb",
+    "creation_date": "2022-06-16T12:38:25",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulDistributor"
+  },
+  "0xd5950Bc3763Af2f61Cb8cE96e68345E0de1919B8": {
+    "bytecode_hash": "0x36e16820b196280e0f29599e9c0e0503a42980ee4323b0e8af01bcdcf1beca80",
+    "creation_date": "2024-08-31T16:15:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xd6266547E3D0aE0548F7888d22DBf94407571d82": {
+    "bytecode_hash": "0x91b1a9e9fa7cfb51ce99d76fbe581728422b1890611a0f8994df5d8536aa7da7",
+    "creation_date": "2025-01-05T21:59:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Hooks"
+  },
+  "0xd737eE2bB39F49C62a436002A77f2710cc45eD98": {
+    "bytecode_hash": "0x62c74e44941157c623647cf4b7a619a3dbaece63f646d201be38a93ab9554c16",
+    "creation_date": "2022-08-17T21:13:05",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Liquidation"
+  },
+  "0xd73dBF824CAB905a7E1687Ec1Ee25fd94FEEEed5": {
+    "bytecode_hash": "0x1457f5b40d07b03e02a2d7f8eade4e2cf9f0f26f496fb7d8dba1e733d0e8b8a1",
+    "creation_date": "2024-09-23T11:20:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xd83b4031A325326109f2ab7444F6a6C008f5c462": {
+    "bytecode_hash": "0x1d57c156010213355821267c18e994071c7b550b3485045dab804be654b8fd23",
+    "creation_date": "2024-08-27T10:05:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xd9274249FD71413342F75168c476CC357B17A3A1": {
+    "bytecode_hash": "0xc1e8a7f4f2b1d2ab890e4a33151a1a7aa488b6287242469cad01238426f4a173",
+    "creation_date": "2024-08-27T10:36:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xd9Fcd98c322942075A5C3860693e9f4f03AAE07b": {
+    "bytecode_hash": "0x910e23fb376f7c032dce889166a2f7eac4c875aec3803f4fe727517f15fd5887",
+    "creation_date": "2021-12-30T12:04:41",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Eul"
+  },
+  "0xd9c823f4061d4a09881D26290BC41D910119C7Ec": {
+    "bytecode_hash": "0x7d19a0132aa39960b794a48c992096fd6f209c864fb6d84afaab3fdc80459817",
+    "creation_date": "2024-09-23T09:13:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xdBBaEA81850b43dB583A80C7dE87551B4914dc83": {
+    "bytecode_hash": "0xa59682870ae6e273f0a24425c1880a4e1fdd3d9673307a30b276259f295b4a9e",
+    "creation_date": "2024-08-27T09:45:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xdD14f5ab795ce9892AF51063235e18c9884eB2e1": {
+    "bytecode_hash": "0x8247b95c71fe2903512a401ef8d91729c30666bf8cbf07e513e2515b83f685a7",
+    "creation_date": "2024-09-01T06:43:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xdF65b1eCD807b20cb8a8c14049dE49048eeF62F6": {
+    "bytecode_hash": "0x63a18d793265039fe549655d568eb89f615e50972398ac9bc515244e6a80ad34",
+    "creation_date": "2024-08-27T09:44:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xdF7EC7D1970362B5f5d031C621152deaB7e1938d": {
+    "bytecode_hash": "0x47416cc38e0a39230e27d63c89426b44e40072fcefe5d1449bbebb5dc1ceed9b",
+    "creation_date": "2024-10-15T06:23:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "UtilsLens"
+  },
+  "0xddd1eA100325D7292811948639370Ad24cEb0334": {
+    "bytecode_hash": "0x99a12dcfde82f77ef8e4053c00fc2ee2115c7c9d9551dbe556b79b076fc0598f",
+    "creation_date": "2024-11-14T10:45:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "OracleLens"
+  },
+  "0xdfE98d04D1d00f1b30B84022d4291C2a70E8d6c6": {
+    "bytecode_hash": "0x31d2c857d47221581a06f3cf7c3c530da1537978cd6a4c37c09da2980a91e570",
+    "creation_date": "2023-04-18T11:26:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AztecDistributor"
+  },
+  "0xdfe70cD7FB6BbD9a519494eD6595A2a9AfAffCBF": {
+    "bytecode_hash": "0x4c298bb3fa7c768aaf542ad98d6502ab821517dbff0e45a94f5544d09288d401",
+    "creation_date": "2024-08-31T12:39:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xe00cc94f1C7b45c4bE822229f177DBDf92817D6f": {
+    "bytecode_hash": "0xe444f296acb852be23454b6aebc5bf8961104e77efa6b182d91b04885fc33aff",
+    "creation_date": "2024-08-27T10:01:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xe0DBFd7c7E54006cDa3202f3D25006a8E7EED566": {
+    "bytecode_hash": "0x6d49a1d2b55d83e7630052f5241f7d547c24b0489f3fe9b62773f41e9e98f6d5",
+    "creation_date": "2024-08-27T09:17:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xe16E7d93720B470C71e02CD2D483ba18aE0e3DF7": {
+    "bytecode_hash": "0xa37466a28849c8cb62482a729100c3e8412170243feffc80cc5b8638c9d098b4",
+    "creation_date": "2024-08-27T09:36:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xe1959F0C88ff3270ed27DF025A943811c2cf1A2e": {
+    "bytecode_hash": "0x68e3fb3ac51751b0146c7042bf0b4410945aa48ceba39e7c9d0e6964c9a7eedd",
+    "creation_date": "2024-08-27T09:45:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xe20582e7FB2E5D1D96D8c8A65B4cdC3F5Dc398f8": {
+    "bytecode_hash": "0x021330a7379743e12dde91942a8a627fda5536cf17e28a4405cfef45de734c1a",
+    "creation_date": "2021-12-07T05:15:17",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swap"
+  },
+  "0xe3000F414f6C93D58F917967C046321ed9692459": {
+    "bytecode_hash": "0xb17d5ff6132c5c21b63811d4a82395991c577784bc966d2c2bed97095c85332b",
+    "creation_date": "2024-08-27T10:08:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xe3033E517fDA8c93957C1Bf40BB272514Bf00450": {
+    "bytecode_hash": "0x602929bfa1cf8a262090dc5c6eb79c1dc04051d0a733b55b206d4bf4e8511190",
+    "creation_date": "2023-03-13T04:58:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0xe322866b7290181Da7A1B9ad37f308519841Cb32": {
+    "bytecode_hash": "0x2c86061a447418aa498338deb109b7a9e10fd8470e54a739d6bfc1f3c42bec4e",
+    "creation_date": "2024-08-27T09:14:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xe374b7a44Dcd6b6eed4a6A845B6e162Ed52924e5": {
+    "bytecode_hash": "0xaef72365e5cbc030ca058b218e17ddc4122065f99d9f2db8262b758506918bde",
+    "creation_date": "2022-04-09T15:20:01",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "DToken"
+  },
+  "0xe46bFb8b191D1C7F6D7b0325D6adBa8A1c947d21": {
+    "bytecode_hash": "0x0735770d28e2a36b9492c58a58ee90a77292cbafe023a4b2e6561caf4a077cfa",
+    "creation_date": "2025-01-27T11:14:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "FixedRateOracle"
+  },
+  "0xe4E191d97A5e96BDBF8092311dfCACE752A4dc93": {
+    "bytecode_hash": "0x0c0740dea06ac7a89dfca4bc1aecdd7a26d7def46378235a8f9a2f6c3400b2ce",
+    "creation_date": "2024-12-17T13:26:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xe5B2ad3978105a0a43Cbf95dA282B1b58c6C246F": {
+    "bytecode_hash": "0x960f8e2d42c501dec8109abf6c8edec66773c111aa2c8859f841f9ea97e4a505",
+    "creation_date": "2024-11-14T10:43:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "AccountLens"
+  },
+  "0xe5cbDD5d016fd2b92338ea4Add64E76378e2ee2F": {
+    "bytecode_hash": "0x9628b2664b3346e114cf4256c3508222232f2cff7918f0126b84b278e8bd2885",
+    "creation_date": "2024-08-31T16:01:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xe6BBD489B220b3FF3a3eE7eafAacbb9b775bB99a": {
+    "bytecode_hash": "0x5a25d3ddca68b61f6d3fd6dd6afffa7a142cd65e279e2c15d4adaeff1b1663de",
+    "creation_date": "2024-10-11T05:35:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xe6b889ddF1b4fc350a6bD56d646273F312881fD3": {
+    "bytecode_hash": "0x91abd98a719b9b2cbde7de89c40191a415747e6b9656861bdaf41a39ace94e72",
+    "creation_date": "2024-09-23T11:23:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RateProviderOracle"
+  },
+  "0xe6bEAab5D8aFE111eFf72dDB85CF05EBA9e17f54": {
+    "bytecode_hash": "0x76207dea06a9468a92aba69c57826e00cbf444359cc1adcf99ebdb2ebe7ba6cf",
+    "creation_date": "2024-08-14T13:23:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EulerFactoryPerspective"
+  },
+  "0xe7884FEe13B1FB49d5598e68D7B4476D0555f81a": {
+    "bytecode_hash": "0xbcd4300df8e715dc44b9d008a358d501fc7d2d05ce9ace6cb9519f40969a3857",
+    "creation_date": "2024-08-27T09:11:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xe7C7b210b22DCEB3667da6Dfe5c54A401897db7D": {
+    "bytecode_hash": "0x75092f4fb2329dd814f563c92a130398cd819f64ba417db057330a74efba58a6",
+    "creation_date": "2021-11-29T05:48:05",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0xe7C7...db7D"
+  },
+  "0xe7a32E7A8b2536924D8ac4913F80d9133558eC27": {
+    "bytecode_hash": "0xbf74ab1b4fdf0862360dde2f401eb5701aebacb779988e233c50a88890040876",
+    "creation_date": "2024-08-27T10:36:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xe83B69EdfD12e477fe47152C0e1D65576B91A1cf": {
+    "bytecode_hash": "0xebfd66db0cbea6aaa48a4c77407d2062de7321597d60512673adf53efc4f55b7",
+    "creation_date": "2022-12-14T07:23:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Governance"
+  },
+  "0xe8D2937D7401002483B06aDfb2940f61A0572812": {
+    "bytecode_hash": "0x7029143a8c73d809c0d25179dc7f90f006251357ad47acaae7b13b98d2a29254",
+    "creation_date": "2024-10-02T11:10:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xeB059be0bfD917d3B47F8bf0cF82eD2DCbe91b88": {
+    "bytecode_hash": "0x754f241b1afdd1ecc334bdb6f54c1e7b39288308c9f08f461b7c68be051b8f56",
+    "creation_date": "2024-11-05T11:32:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xeC29b4C2CaCaE5dF1A491f084E5Ec7C62A7EdAb5": {
+    "bytecode_hash": "0x346b95ec5c2c0e036a9e6f3ced1cc09600d4f73c473c10ba672c3a02687ed321",
+    "creation_date": "2021-11-25T19:51:21",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Installer"
+  },
+  "0xeE366246dD6E089a21d0B3ACfC9241C7580d4e52": {
+    "bytecode_hash": "0xde21a892ba12a169430aee988682eed3c071f549e124c3400686eac56fbf7a7b",
+    "creation_date": "2024-09-01T06:44:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xeb3Ed6A68C69659BfF24A4b996644aaCba68c4ec": {
+    "bytecode_hash": "0x0ca4364ddbe41643d87662ef0f72a836a827c01f2528e32fbe33b807f74d4390",
+    "creation_date": "2024-10-02T11:10:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xed1248Bed1E966141613ca6512c296083612CDEA": {
+    "bytecode_hash": "0xef209cc5ad0c5305db1833cccc1745d56ac194c42135a0c0a2dba4f13cd1eebd",
+    "creation_date": "2024-11-19T10:57:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xf058fE816B01265d1BA0A3bD226049676b107318": {
+    "bytecode_hash": "0xe34968b7154f03c6a016cf08bf02a5c2ea1e57e5cb3c7d11765646979a485849",
+    "creation_date": "2021-11-29T16:54:19",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "IRMClassMidCap"
+  },
+  "0xf159363b9462E843095B36DEEf66166Bd36e7493": {
+    "bytecode_hash": "0x066f268f9fbc227ff0ea6678588178699528dc0ccfaa7573b2977586fc8d46aa",
+    "creation_date": "2024-08-27T09:33:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xf1D4711E64c0305DF167784541A7D2647d72984a": {
+    "bytecode_hash": "0xa2204219d67e075b82ab0eb615c385fd525594224500918dee95c5df65de53b3",
+    "creation_date": "2024-08-27T09:18:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkOracle"
+  },
+  "0xf21842C0dce883D02d0c62AB45AaA2C4dfA4e93C": {
+    "bytecode_hash": "0x29eb70251ebfc8dc6870917222859e28468772c367ac05dbbdc323b5bac69081",
+    "creation_date": "2024-10-21T08:38:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xf2581Cc80A5807405b1C68a47058c4b0f0fDD241": {
+    "bytecode_hash": "0x0202ae07f8f6b8cf2fd49e688e5f7b40fbe2fdf25d421bdc42a375796b49b325",
+    "creation_date": "2021-11-29T16:05:28",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "0xf258...D241"
+  },
+  "0xf344CF1b0C6EbCf68936481E482593dB4916A5d9": {
+    "bytecode_hash": "0x7dd513c9e5bf4d7e6b1d760b3ec7c4f464454cb062d5caea3e2a400ae28a36e7",
+    "creation_date": "2024-09-01T06:47:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xf364CeEE501fb73e5dD7B313ECf0a6b98F6118ea": {
+    "bytecode_hash": "0xd73cf1e1e9ea51e93ab92edb4abf98baf8928e54dbd1202f59822d3d60fc856b",
+    "creation_date": "2024-09-25T09:56:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "UtilsLens"
+  },
+  "0xf39d8B0A77f54442C72ee14C7782Ea7F1C028f1a": {
+    "bytecode_hash": "0x9f85f7b0d4587211ded95fc40a02027f38b055e435718a411e26fd19366e2601",
+    "creation_date": "2023-03-13T05:36:59",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Reverter"
+  },
+  "0xf3e621395fc714B90dA337AA9108771597b4E696": {
+    "bytecode_hash": "0xcbdba99aa9a760c6adc454a2f643d885419dec85acbadeb787ca5697f465d1cd",
+    "creation_date": "2024-10-30T16:08:11",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RewardToken"
+  },
+  "0xf40e8314143B4CF1764CCCd22588a8794a00d8Ca": {
+    "bytecode_hash": "0x0ae89aff9c4a18fdb6f50c90a38d617798f75cb37554b03abc622bd00f7405d5",
+    "creation_date": "2021-12-20T13:00:38",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Swap"
+  },
+  "0xf4f39541220f232A6C6a2DFFcE6dA991aB3A1d87": {
+    "bytecode_hash": "0x5e40263b5cb3c117689a2ed070899a47a37b5015825224b7f249dcbc7285a8fe",
+    "creation_date": "2024-08-31T09:16:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xf55A1b0803adA2aA19d5f3BEc8c0b2363254Bbc6": {
+    "bytecode_hash": "0x8247b95c71fe2903512a401ef8d91729c30666bf8cbf07e513e2515b83f685a7",
+    "creation_date": "2024-09-01T06:41:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xf6D8CcAa6677265F0A419F47539A7A87AA65C987": {
+    "bytecode_hash": "0xf80764df3d05845ada2ec3c1f247e0eeeea0bb8f4a83eea57c62e7609e71137f",
+    "creation_date": "2024-08-27T09:37:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xf8147C4c6CB7c615c32A44EB79C18C43b9Fe2058": {
+    "bytecode_hash": "0xe6593a927352afcd4320c45ac18a30a50436fc2fb88e3f9374dd6a722a76ff99",
+    "creation_date": "2024-11-26T11:33:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "CrossAdapter"
+  },
+  "0xf9FfEb1522C19cE6d48209fdE22Ac003d9A66309": {
+    "bytecode_hash": "0xa18ae8cd422b8589633974b538b4454524bc21125e2c6d0bab3548db9d9fa07f",
+    "creation_date": "2025-01-28T04:22:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "EdgeFactoryPerspective"
+  },
+  "0xf9c08c4c12380A1A1596e075F69273E1De573FD5": {
+    "bytecode_hash": "0xa998ffc3970fd53b51be46b150f7925bdc9899497b84daa76dfc98121a8d8f45",
+    "creation_date": "2024-09-23T11:20:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PendleOracle"
+  },
+  "0xfDE0600A4b2dF2ebA557269B99cC3335fCD20568": {
+    "bytecode_hash": "0x7872c1d5d09a8d726017a082290575f4343c5e4403376a29bd4ab9b5d8f9f663",
+    "creation_date": "2024-09-01T06:45:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "RedstoneCoreOracle"
+  },
+  "0xfDe7A256eCC26a41c52D1Bba66c267d600Cb265b": {
+    "bytecode_hash": "0xcef0007dc8a0e3c354c2ca087b537ab5bc2f9290bd8d347ba850bc3c285dd896",
+    "creation_date": "2025-01-05T21:59:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "Rewards"
+  },
+  "0xfF7A0b71d1c2E8adF2F1d44388A45b7AB0f6be57": {
+    "bytecode_hash": "0x1b8f5368d1aac4db9870ef1227468bb636524e5078a27560413004fe8daa7c92",
+    "creation_date": "2024-10-29T08:08:47",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "WithdrawalQueue"
+  },
+  "0xfa6a85C68E762C94f05d9314e8214cA73F17E2b4": {
+    "bytecode_hash": "0x43a210ee68dac548cbb31959243e149482e22d97e5c8a469ac4ba51cbbe11f62",
+    "creation_date": "2024-12-16T13:10:23",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "PythOracle"
+  },
+  "0xfb034c1C6c7F42171b2d1Cb8486E0f43ED07A968": {
+    "bytecode_hash": "0xe3adc5645a36905294a337f8090ccfee6873d4b5abe886cee3e38a32a40d4238",
+    "creation_date": "2024-12-26T02:56:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "TimelockController"
+  },
+  "0xfd63eED8Db6F5Bae46B2860C4B8a8a07eD8BF8bb": {
+    "bytecode_hash": "0xbfa522ddab8fe272e455248bfb77ff5b74628ef5dfb031db73a8edf9f77d8d3f",
+    "creation_date": "2024-12-12T06:44:35",
+    "deployer": "0xEe009FAF00CF54C1B4387829aF7A8Dc5f0c8C8C5",
+    "name": "ChainlinkInfrequentOracle"
+  }
+}
