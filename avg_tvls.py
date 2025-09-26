@@ -5,13 +5,14 @@ import argparse
 
 def get_average_tvl(protocol: str, start_date: str, end_date: str):
     """
-    Fetches and averages the daily TVL for a given protocol between start_date and end_date.
+    Fetch and average the daily TVL for a given protocol between start_date and end_date.
     Days without TVL data (e.g., before launch) are treated as TVL = 0.
+    Dates are interpreted as UTC calendar days, and API timestamps are converted in UTC.
 
     Parameters:
     - protocol (str): The protocol name (as listed on DeFiLlama).
-    - start_date (str): Start date in YYYY-MM-DD format.
-    - end_date (str): End date in YYYY-MM-DD format.
+    - start_date (str): Start date in YYYY-MM-DD format (UTC).
+    - end_date (str): End date in YYYY-MM-DD format (UTC).
 
     Returns:
     - The average TVL over the given period.
@@ -33,9 +34,9 @@ def get_average_tvl(protocol: str, start_date: str, end_date: str):
     if not tvl_data:
         raise ValueError(f"No TVL data found for protocol {protocol}")
 
-    # Build a map of date -> TVL
+    # Build a map of date -> TVL (convert UNIX seconds to a UTC date to avoid local-TZ skew)
     tvl_map = {
-        datetime.date.fromtimestamp(entry["date"]): entry["totalLiquidityUSD"]
+        datetime.datetime.fromtimestamp(entry["date"], tz=datetime.timezone.utc).date(): entry["totalLiquidityUSD"]
         for entry in tvl_data
     }
 
@@ -55,8 +56,8 @@ def get_average_tvl(protocol: str, start_date: str, end_date: str):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calculate average TVL for a DeFi protocol.")
     parser.add_argument("protocol", type=str, help="The DeFi protocol name (as listed on DeFiLlama).")
-    parser.add_argument("start_date", type=str, help="Start date in YYYY-MM-DD format.")
-    parser.add_argument("end_date", type=str, help="End date in YYYY-MM-DD format.")
+    parser.add_argument("start_date", type=str, help="Start date in YYYY-MM-DD format (UTC).")
+    parser.add_argument("end_date", type=str, help="End date in YYYY-MM-DD format (UTC).")
     args = parser.parse_args()
 
     try:
