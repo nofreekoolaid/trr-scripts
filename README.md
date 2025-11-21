@@ -6,11 +6,11 @@ This repository contains **Python and Bash scripts** for analyzing the **complex
 
 ## **📈 Overview**
 This toolkit helps you compute and summarize:
-1. **Cyclomatic Complexity (TCC)** and **External Calls (TEC)** from Slither’s `function-summary`.
+1. **Cyclomatic Complexity (TCC)** and **External Calls (TEC)** from Slither's `function-summary`.
 2. **Total Decision Points (TDP)** via custom parsing of Solidity/Vyper code.
-3. **Inheritance Depth** from Slither’s `inheritance` printer.
+3. **Inheritance Depth** from Slither's `inheritance` printer.
 4. **Deployment Dates** using Etherscan/Arbiscan.
-5. **TVL Data** for DeFi protocols from DeFiLlama (with linear interpolation support).
+5. **TVL Data** for DeFi protocols from DeFiLlama (with linear interpolation and extrapolation support).
 
 ---
 
@@ -84,6 +84,11 @@ make format-check # Check formatting without changing files
 make test         # Run tests
 make cichecks     # Run all CI checks (tests, lint, format-check)
 make help         # Show all available commands
+
+# Quick TVL queries
+make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
+make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
+make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-31 OPTS='--no-extrapolate'
 ```
 
 Or run directly with uv:
@@ -93,6 +98,80 @@ uv run ruff check --fix .     # Lint and fix
 uv run ruff format .          # Format
 uv run ruff format --check .  # Check formatting
 ```
+
+---
+
+## **📊 TVL Data Analysis**
+
+The `avg_tvls.py` script fetches Total Value Locked (TVL) data from DeFiLlama for any protocol. It supports linear interpolation for missing data and extrapolation at date range boundaries.
+
+### **Quick Start with Make**
+
+The easiest way to query TVL data:
+
+```sh
+# Basic usage: Get daily TVL in CSV format
+make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
+
+# Get average TVL with interpolation/extrapolation
+make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
+
+# Disable extrapolation (only show dates with surrounding data)
+make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-31 OPTS='--no-extrapolate'
+```
+
+### **Using the CLI Tool**
+
+```sh
+# CSV output (default)
+uv run trr.py tvl euler 2025-01-01 2025-01-15
+
+# JSON output
+uv run trr.py tvl euler 2025-01-01 2025-01-15 --format json
+
+# Get only the average (backward compatibility)
+uv run trr.py tvl euler 2025-01-01 2025-01-15 --mean
+
+# Disable extrapolation
+uv run trr.py tvl euler 2025-01-01 2025-01-15 --no-extrapolate
+```
+
+### **Direct Script Usage**
+
+```sh
+# Basic usage
+uv run python avg_tvls.py euler 2025-01-01 2025-01-15
+
+# With options
+uv run python avg_tvls.py euler 2025-01-01 2025-01-15 --format json
+uv run python avg_tvls.py euler 2025-01-01 2025-01-15 --mean
+uv run python avg_tvls.py euler 2025-01-01 2025-01-15 --no-extrapolate
+```
+
+### **Example Output**
+
+**CSV format:**
+```csv
+date,tvl,is_interpolated
+2025-01-01,110398623.00,false
+2025-01-02,111157719.00,false
+2025-01-03,115676449.00,false
+2025-01-04,124228188.00,false
+2025-01-05,137182701.00,false
+```
+
+**Mean format:**
+```
+Average TVL for euler from 2025-01-01 to 2025-01-15: $130,373,951.00
+```
+
+### **Features**
+
+- **Linear Interpolation**: Automatically fills missing dates between data points
+- **Extrapolation** (default): Uses linear extrapolation at start/end dates based on trend from nearest two points
+- **No Extrapolation** (`--no-extrapolate`): Only returns dates that can be interpolated between two surrounding data points
+- **Multiple Formats**: CSV, JSON, or simple mean value
+- **Interpolation Flag**: Each date is marked with `is_interpolated` to show whether it's raw or calculated data
 
 ---
 
@@ -185,6 +264,13 @@ uv run trr.py deployments arb contracts.txt > deployment_dates.txt
 ### **Step 5: Fetch TVL Stats**
 Fetch and compute TVL data over a time range:
 ```sh
+# Using make (easiest)
+make tvl PROTOCOL=dolomite START=2022-12-18 END=2025-02-28 > avg_tvls.csv
+
+# Get just the average
+make avgtvl PROTOCOL=dolomite START=2022-12-18 END=2025-02-28
+
+# Using CLI
 uv run trr.py tvl dolomite 2022-12-18 2025-02-28 --format csv > avg_tvls.csv
 ```
 
@@ -217,6 +303,10 @@ uv run trr.py analyze contracts.txt
 uv run trr.py summary contracts.txt --tsv > dolomite_code.tsv
 uv run trr.py deployments arb contracts.txt > deployment_dates.txt
 uv run trr.py tvl dolomite 2022-12-18 2025-02-28 --format csv > avg_tvls.csv
+
+# Or use make for quick TVL queries
+make tvl PROTOCOL=dolomite START=2022-12-18 END=2025-02-28 > avg_tvls.csv
+make avgtvl PROTOCOL=dolomite START=2022-12-18 END=2025-02-28
 ```
 
 This will produce TSV and CSV outputs showing contract complexity and risk metrics.
