@@ -1,10 +1,12 @@
-import sys
-import json
-import re
-import os
 import ast
+import json
+import os
+import re
 import subprocess
+import sys
+
 from tdp import compute_tdp_from_file  # Import from tdp.py
+
 
 def parse_external_calls(external_calls):
     try:
@@ -21,10 +23,11 @@ def parse_external_calls(external_calls):
             # Return length only if the result is a list
             return len(parsed_ec) if isinstance(parsed_ec, list) else 0
 
-    except (SyntaxError, ValueError) as e:
+    except (SyntaxError, ValueError):
         return 0
 
     return 0
+
 
 # Function to parse Slither function summary output
 def parse_function_summary(data):
@@ -59,7 +62,9 @@ def parse_function_summary(data):
                     func_data = dict(zip(headers, row_values))
 
                     try:
-                        cc_key = next((key for key in func_data.keys() if key.startswith("Cycl")), None)
+                        cc_key = next(
+                            (key for key in func_data.keys() if key.startswith("Cycl")), None
+                        )
                         raw_cc = func_data.get(cc_key, "0")
                         cc = int(raw_cc) if raw_cc.isdigit() else 0
                     except ValueError:
@@ -73,9 +78,10 @@ def parse_function_summary(data):
 
     return contract_summaries
 
+
 # Function to map contract names to file hashes and paths using hashes.json
 def map_contracts_to_hashes(hashes_file, base_dir):
-    with open(hashes_file, "r", encoding="utf-8") as f:
+    with open(hashes_file, encoding="utf-8") as f:
         hashes_data = json.load(f)
 
     base_dir = os.path.abspath(base_dir)  # Normalize base directory path
@@ -92,14 +98,18 @@ def map_contracts_to_hashes(hashes_file, base_dir):
 
     return file_map
 
+
 # Run cloc and return number of Solidity lines
 def get_solidity_loc(filepath):
     try:
-        result = subprocess.run(["cloc", "--json", filepath], capture_output=True, text=True, check=True)
+        result = subprocess.run(
+            ["cloc", "--json", filepath], capture_output=True, text=True, check=True
+        )
         data = json.loads(result.stdout)
         return data.get("Solidity", {}).get("code", 0)
     except Exception:
         return 0
+
 
 # Function to process function summary and map contracts to hashes
 def process_function_summary(hashes_file, function_summary_file):
@@ -108,7 +118,7 @@ def process_function_summary(hashes_file, function_summary_file):
     contract_data = {}
 
     try:
-        with open(function_summary_file, "r", encoding="utf-8") as f:
+        with open(function_summary_file, encoding="utf-8") as f:
             data = f.read()
 
         # Parse function summary
@@ -125,12 +135,13 @@ def process_function_summary(hashes_file, function_summary_file):
                         "cc": stats["cc"],
                         "loc": loc,
                         "tdp": tdp,
-                        "references": references
+                        "references": references,
                     }
     except Exception as e:
         print(f"Error processing {function_summary_file}: {e}", file=sys.stderr)
 
     return {"inputs": contract_data}
+
 
 # Main execution block
 if __name__ == "__main__":

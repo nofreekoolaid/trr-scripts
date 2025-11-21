@@ -1,31 +1,35 @@
 #!/usr/bin/env python3
-import os
+import argparse
 import json
-import requests
+import os
 import subprocess
 import sys
-import argparse
+
+import requests
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Supported networks
-NETWORKS = {
-    "eth": "etherscan.io",
-    "arb": "arbiscan.io"
-}
+NETWORKS = {"eth": "etherscan.io", "arb": "arbiscan.io"}
+
 
 def download_contract(contract_address, network="eth"):
     contract_address = contract_address.lower()
     if network not in NETWORKS:
-        raise ValueError(f"Invalid network: {network}. Supported networks: {', '.join(NETWORKS.keys())}.")
+        raise ValueError(
+            f"Invalid network: {network}. Supported networks: {', '.join(NETWORKS.keys())}."
+        )
 
     domain = NETWORKS[network]
-    API_KEYS = {
-        "eth": os.getenv("ETHERSCAN_API_KEY"),
-        "arb": os.getenv("ARBISCAN_API_KEY")
-    }
+    API_KEYS = {"eth": os.getenv("ETHERSCAN_API_KEY"), "arb": os.getenv("ARBISCAN_API_KEY")}
     API_KEY = API_KEYS[network]
 
     if not API_KEY:
-        raise RuntimeError("❌ Error: Please set the appropriate API_KEY environment variable (ETHERSCAN_API_KEY or ARBISCAN_API_KEY).")
+        raise RuntimeError(
+            "❌ Error: Please set the appropriate API_KEY environment variable (ETHERSCAN_API_KEY or ARBISCAN_API_KEY)."
+        )
 
     API_URL = f"https://api.{domain}/api?module=contract&action=getsourcecode&address={contract_address}&apikey={API_KEY}"
     response = requests.get(API_URL)
@@ -42,13 +46,15 @@ def download_contract(contract_address, network="eth"):
         jq_command = ["jq", "-r", ".result[0].SourceCode", raw_response_path]
         source_code = subprocess.check_output(jq_command, universal_newlines=True).strip()
     except subprocess.CalledProcessError as e:
-        raise RuntimeError(f"Error running jq for source code: {e}")
+        raise RuntimeError(f"Error running jq for source code: {e}") from e
 
     try:
         jq_command = ["jq", "-r", ".result[0].CompilerVersion", raw_response_path]
         raw_compiler_version = subprocess.check_output(jq_command, universal_newlines=True).strip()
         compiler_version = raw_compiler_version.split("+")[0].replace("v", "")
-        print(f"✅ Detected Solidity compiler version: {compiler_version} (Original: {raw_compiler_version})")
+        print(
+            f"✅ Detected Solidity compiler version: {compiler_version} (Original: {raw_compiler_version})"
+        )
     except subprocess.CalledProcessError as e:
         print(f"⚠️ Error fetching compiler version: {e}")
         compiler_version = None
@@ -82,7 +88,11 @@ def download_contract(contract_address, network="eth"):
 
     file_paths = []
     for file_path, content_dict in source_files.items():
-        content = content_dict["content"] if isinstance(content_dict, dict) and "content" in content_dict else content_dict
+        content = (
+            content_dict["content"]
+            if isinstance(content_dict, dict) and "content" in content_dict
+            else content_dict
+        )
         file_path = file_path.lstrip("/")
         full_path = os.path.join(contract_address, file_path)
         os.makedirs(os.path.dirname(full_path), exist_ok=True)
@@ -91,16 +101,22 @@ def download_contract(contract_address, network="eth"):
         file_paths.append(file_path)
 
     # Pick the best guess for entry point file
-    main_contract_path = next((f for f in file_paths if contract_name and contract_name in f), file_paths[0])
+    main_contract_path = next(
+        (f for f in file_paths if contract_name and contract_name in f), file_paths[0]
+    )
 
     # Write contract_details.json with entrypoint + compiler version
     details_path = os.path.join(contract_address, "contract_details.json")
     with open(details_path, "w", encoding="utf-8") as f:
-        json.dump({
-            "contract_address": contract_address,
-            "main_contract_path": main_contract_path,
-            "compiler_version": compiler_version
-        }, f, indent=2)
+        json.dump(
+            {
+                "contract_address": contract_address,
+                "main_contract_path": main_contract_path,
+                "compiler_version": compiler_version,
+            },
+            f,
+            indent=2,
+        )
     print(f"✅ Wrote contract details to {details_path}")
 
     # Write a prep_slither.sh setup script
@@ -123,10 +139,18 @@ echo "✅ solc-select prepared for version {compiler_version}"
     os.chmod(script_path, 0o755)
     print(f"✅ Created `prep_slither.sh` in directory {contract_address}")
 
+
 def main():
-    parser = argparse.ArgumentParser(description="Download and analyze Ethereum/Arbitrum contracts.")
+    parser = argparse.ArgumentParser(
+        description="Download and analyze Ethereum/Arbitrum contracts."
+    )
     parser.add_argument("contract_address", help="Contract address to fetch source code for.")
-    parser.add_argument("--network", choices=["eth", "arb"], default="eth", help="Network (eth=Ethereum, arb=Arbitrum)")
+    parser.add_argument(
+        "--network",
+        choices=["eth", "arb"],
+        default="eth",
+        help="Network (eth=Ethereum, arb=Arbitrum)",
+    )
     args = parser.parse_args()
 
     try:
@@ -134,6 +158,7 @@ def main():
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
