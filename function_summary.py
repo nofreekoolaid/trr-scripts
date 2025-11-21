@@ -1,6 +1,7 @@
-import sys
 import json
 import re
+import sys
+
 
 # Function to parse Slither function summary output
 def parse_function_summary(data):
@@ -27,8 +28,12 @@ def parse_function_summary(data):
 
                 try:
                     external_calls = func_data.get("External Calls", "[]")
-                    tec = len(eval(external_calls)) if external_calls and external_calls != "[]" else 0
-                except:
+                    tec = (
+                        len(eval(external_calls))
+                        if external_calls and external_calls != "[]"
+                        else 0
+                    )
+                except Exception:
                     tec = 0
 
                 total_tcc += tcc
@@ -36,11 +41,12 @@ def parse_function_summary(data):
 
     return {"TCC": total_tcc, "TEC": total_tec}
 
+
 # Run only if executed as a script (not when imported)
 if __name__ == "__main__":
     try:
         if len(sys.argv) > 1:
-            with open(sys.argv[1], "r") as f:
+            with open(sys.argv[1]) as f:
                 data = f.read()
         else:
             data = sys.stdin.read()
