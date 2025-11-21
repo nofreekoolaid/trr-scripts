@@ -8,16 +8,23 @@ from typing import Any, Optional
 import requests
 
 
-def get_tvl_dataset(protocol: str, start_date: str, end_date: str) -> list[dict[str, Any]]:
+def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: bool = True) -> list[dict[str, Any]]:
     """
     Fetch the complete daily TVL dataset for a given protocol between start_date and end_date.
     Missing values are linearly interpolated between available data points.
     Dates are interpreted as UTC calendar days, and API timestamps are converted in UTC.
+    
+    For dates at the beginning or end of the range where data exists only on one side:
+    - If extrapolate=True (default): Uses linear extrapolation based on the two nearest 
+      data points on that side to estimate the TVL value.
+    - If extrapolate=False: Skips these dates, returning only dates that can be 
+      interpolated between two surrounding data points.
 
     Parameters:
     - protocol (str): The protocol name (as listed on DeFiLlama).
     - start_date (str): Start date in YYYY-MM-DD format (UTC).
     - end_date (str): End date in YYYY-MM-DD format (UTC).
+    - extrapolate (bool): Whether to extrapolate values at start/end. Default: True.
 
     Returns:
     - List of dictionaries with keys: 'date' (str), 'tvl' (float), 'is_interpolated' (bool)
@@ -71,8 +78,7 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str) -> list[dict[
                 }
             )
         else:
-            # Need to interpolate or use nearest value
-            # Use all available dates (including outside range) for forward/backward fill
+            # Need to interpolate, extrapolate, or skip
             prev_date, next_date = _find_nearest_dates(current_date, all_available_dates)
 
             if prev_date is not None and next_date is not None:
@@ -96,29 +102,79 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str) -> list[dict[
                         "is_interpolated": True,
                     }
                 )
+            elif not extrapolate:
+                # No extrapolation: skip dates that can't be interpolated between two points
+                pass
             elif prev_date is not None:
-                # Only previous data exists (backward-fill at end)
-                result.append(
-                    {
-                        "date": current_date.isoformat(),
-                        "tvl": tvl_map[prev_date],
-                        "is_interpolated": True,
-                    }
-                )
+                # Only previous data exists - extrapolate forward using trend from two most recent points
+                # Find the two most recent data points before or at current_date
+                dates_before = [d for d in all_available_dates if d <= current_date or d == prev_date]
+                if len(dates_before) >= 2:
+                    # Use the two most recent points to calculate slope
+                    date1 = dates_before[-2]
+                    date2 = dates_before[-1]
+                    tvl1 = tvl_map[date1]
+                    tvl2 = tvl_map[date2]
+                    slope = _get_extrapolation_slope(date1, tvl1, date2, tvl2)
+                    
+                    # Extrapolate from the most recent point
+                    days_diff = (current_date - date2).days
+                    extrapolated_tvl = tvl2 + slope * days_diff
+                    
+                    result.append(
+                        {
+                            "date": current_date.isoformat(),
+                            "tvl": extrapolated_tvl,
+                            "is_interpolated": True,
+                        }
+                    )
+                else:
+                    # Only one data point available, use it directly (fallback)
+                    result.append(
+                        {
+                            "date": current_date.isoformat(),
+                            "tvl": tvl_map[prev_date],
+                            "is_interpolated": True,
+                        }
+                    )
             elif next_date is not None:
-                # Only next data exists (forward-fill at start)
-                result.append(
-                    {
-                        "date": current_date.isoformat(),
-                        "tvl": tvl_map[next_date],
-                        "is_interpolated": True,
-                    }
-                )
+                # Only future data exists - extrapolate backward using trend from two earliest points
+                # Find the two earliest data points after or at current_date
+                dates_after = [d for d in all_available_dates if d >= current_date or d == next_date]
+                if len(dates_after) >= 2:
+                    # Use the two earliest points to calculate slope
+                    date1 = dates_after[0]
+                    date2 = dates_after[1]
+                    tvl1 = tvl_map[date1]
+                    tvl2 = tvl_map[date2]
+                    slope = _get_extrapolation_slope(date1, tvl1, date2, tvl2)
+                    
+                    # Extrapolate backward from the earliest point
+                    days_diff = (current_date - date1).days  # This will be negative
+                    extrapolated_tvl = tvl1 + slope * days_diff
+                    
+                    result.append(
+                        {
+                            "date": current_date.isoformat(),
+                            "tvl": extrapolated_tvl,
+                            "is_interpolated": True,
+                        }
+                    )
+                else:
+                    # Only one data point available, use it directly (fallback)
+                    result.append(
+                        {
+                            "date": current_date.isoformat(),
+                            "tvl": tvl_map[next_date],
+                            "is_interpolated": True,
+                        }
+                    )
             else:
-                # No data available (shouldn't happen if we have any data in range)
-                result.append(
-                    {"date": current_date.isoformat(), "tvl": 0.0, "is_interpolated": True}
-                )
+                # No data available at all (shouldn't happen if we have data in range)
+                if extrapolate:
+                    result.append(
+                        {"date": current_date.isoformat(), "tvl": 0.0, "is_interpolated": True}
+                    )
 
         current_date += datetime.timedelta(days=1)
 
@@ -150,20 +206,39 @@ def _find_nearest_dates(
     return (prev_date, next_date)
 
 
-def get_average_tvl(protocol: str, start_date: str, end_date: str) -> float:
+def _get_extrapolation_slope(
+    date1: datetime.date, tvl1: float, date2: datetime.date, tvl2: float
+) -> float:
+    """
+    Calculate the slope (TVL change per day) between two data points.
+    
+    Parameters:
+    - date1, date2: Two dates with known TVL values
+    - tvl1, tvl2: The TVL values at those dates
+    
+    Returns:
+    - Slope as TVL change per day
+    """
+    days_between = (date2 - date1).days
+    if days_between == 0:
+        return 0.0
+    return (tvl2 - tvl1) / days_between
+
+
+def get_average_tvl(protocol: str, start_date: str, end_date: str, extrapolate: bool = True) -> float:
     """
     Fetch and average the daily TVL for a given protocol between start_date and end_date.
-    This function maintains backward compatibility with the original implementation.
 
     Parameters:
     - protocol (str): The protocol name (as listed on DeFiLlama).
     - start_date (str): Start date in YYYY-MM-DD format (UTC).
     - end_date (str): End date in YYYY-MM-DD format (UTC).
+    - extrapolate (bool): Whether to extrapolate values at start/end. Default: True.
 
     Returns:
     - The average TVL over the given period.
     """
-    dataset = get_tvl_dataset(protocol, start_date, end_date)
+    dataset = get_tvl_dataset(protocol, start_date, end_date, extrapolate)
     tvls = [row["tvl"] for row in dataset]
     return statistics.mean(tvls)
 
@@ -186,18 +261,26 @@ if __name__ == "__main__":
         action="store_true",
         help="Output only the average TVL (backward compatibility mode)",
     )
+    parser.add_argument(
+        "--no-extrapolate",
+        action="store_true",
+        help="Disable extrapolation at start/end dates. When disabled, only dates that can be "
+        "interpolated between two data points are included. By default, extrapolation is enabled "
+        "and uses linear extrapolation based on the two nearest data points to estimate values "
+        "at the beginning or end of the date range where data exists only on one side.",
+    )
     args = parser.parse_args()
 
     try:
         if args.mean:
             # Backward compatibility: output only the mean
-            avg_tvl = get_average_tvl(args.protocol, args.start_date, args.end_date)
+            avg_tvl = get_average_tvl(args.protocol, args.start_date, args.end_date, extrapolate=not args.no_extrapolate)
             print(
                 f"Average TVL for {args.protocol} from {args.start_date} to {args.end_date}: ${avg_tvl:,.2f}"
             )
         else:
             # Output full dataset
-            dataset = get_tvl_dataset(args.protocol, args.start_date, args.end_date)
+            dataset = get_tvl_dataset(args.protocol, args.start_date, args.end_date, extrapolate=not args.no_extrapolate)
 
             if args.format == "json":
                 # JSON output

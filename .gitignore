@@ -57,3 +57,6 @@ avg_tvls.py_old
 .coverage
 htmlcov/
 .pytest_cache/
+
+# Ruff cache
+.ruff_cache/
