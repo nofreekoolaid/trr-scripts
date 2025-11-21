@@ -1,8 +1,7 @@
-import os
-import sys
 import json
+import os
 import subprocess
-from pathlib import Path
+import sys
 from code import analyze_contracts_via_summary  # (or code_metrics if renamed)
 
 
@@ -19,7 +18,7 @@ def process_contract_directory(address):
         print(f"⚠️  Missing contract_details.json in {contract_dir}")
         return
 
-    with open(details_path, "r") as f:
+    with open(details_path) as f:
         details = json.load(f)
 
     compiler_version = details.get("compiler_version")
@@ -54,7 +53,7 @@ def process_contract_directory(address):
 
 
 def main(addresses_file):
-    with open(addresses_file, "r") as f:
+    with open(addresses_file) as f:
         addresses = [line.strip() for line in f if line.strip()]
 
     for address in addresses:
