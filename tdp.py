@@ -1,7 +1,8 @@
+import hashlib
+import json
 import re
 import sys
-import json
-import hashlib
+
 
 # Function to remove comments based on file type
 def remove_comments(lines, file_type):
@@ -37,29 +38,44 @@ def remove_comments(lines, file_type):
 
     return cleaned_lines
 
+
 # Function to calculate Total Decision Points (TDP) based on file type
 def calculate_tdp(lines, file_type):
     if file_type == "sol":
         decision_patterns = [
-            r"\bif\b", r"\belse\b", r"\bwhile\s*\(",
-            r"\bfor\s*\(", r"\brequire\s*\(", r"\bassert\s*\(",
-            r"\brevert\b"
+            r"\bif\b",
+            r"\belse\b",
+            r"\bwhile\s*\(",
+            r"\bfor\s*\(",
+            r"\brequire\s*\(",
+            r"\bassert\s*\(",
+            r"\brevert\b",
         ]
     else:  # Vyper
         decision_patterns = [
-            r"\bif\b", r"\belif\b", r"\bwhile\b", r"\bfor\b", r"\bassert\b", r"\braise\b"
+            r"\bif\b",
+            r"\belif\b",
+            r"\bwhile\b",
+            r"\bfor\b",
+            r"\bassert\b",
+            r"\braise\b",
         ]
 
-    total_tdp = sum(1 for line in lines if any(re.search(pattern, line) for pattern in decision_patterns))
+    total_tdp = sum(
+        1 for line in lines if any(re.search(pattern, line) for pattern in decision_patterns)
+    )
     return total_tdp
+
 
 # Exposed function to compute TDP from a file path
 def compute_tdp_from_file(filepath):
     try:
-        with open(filepath, "r") as f:
+        with open(filepath) as f:
             lines = f.read().splitlines()
 
-        file_type = "sol" if filepath.endswith(".sol") else "vy" if filepath.endswith(".vy") else None
+        file_type = (
+            "sol" if filepath.endswith(".sol") else "vy" if filepath.endswith(".vy") else None
+        )
         if not file_type:
             raise ValueError(f"Unsupported file type for {filepath}")
 
@@ -69,6 +85,7 @@ def compute_tdp_from_file(filepath):
     except Exception as e:
         print(f"⚠️ Error computing TDP for {filepath}: {e}", file=sys.stderr)
         return 0
+
 
 # Main script execution (for CLI use)
 if __name__ == "__main__":
@@ -81,10 +98,16 @@ if __name__ == "__main__":
         if len(sys.argv) > 1:
             for file_path in sys.argv[1:]:
                 try:
-                    with open(file_path, "r") as f:
+                    with open(file_path) as f:
                         lines = f.read().splitlines()
 
-                    file_type = "sol" if file_path.endswith(".sol") else "vy" if file_path.endswith(".vy") else None
+                    file_type = (
+                        "sol"
+                        if file_path.endswith(".sol")
+                        else "vy"
+                        if file_path.endswith(".vy")
+                        else None
+                    )
                     if not file_type:
                         file_results[file_path] = "Error: Unsupported file type"
                         continue

@@ -1,11 +1,12 @@
-import os
-import sys
-import json
-import subprocess
 import hashlib
+import json
 import re
-from slither.slither import Slither
+import subprocess
+import sys
 from pathlib import Path
+
+from slither.slither import Slither
+
 from tdp import compute_tdp_from_file, remove_comments  # Import from tdp.py
 
 
@@ -15,13 +16,16 @@ def get_inheritance_depth_recursive(contract, visited=None):
     if contract in visited or not contract.inheritance:
         return 0
     visited.add(contract)
-    return 1 + max((get_inheritance_depth_recursive(base, visited) for base in contract.inheritance), default=0)
+    return 1 + max(
+        (get_inheritance_depth_recursive(base, visited) for base in contract.inheritance), default=0
+    )
 
 
 def get_cloc_sloc(filepath):
     try:
-        result = subprocess.run(["cloc", filepath, "--json"],
-                                capture_output=True, text=True, check=True)
+        result = subprocess.run(
+            ["cloc", filepath, "--json"], capture_output=True, text=True, check=True
+        )
         cloc_data = json.loads(result.stdout)
         return cloc_data.get("Solidity", {}).get("code", 0)
     except Exception as e:
@@ -31,7 +35,7 @@ def get_cloc_sloc(filepath):
 
 def compute_md5(filepath):
     try:
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(filepath, encoding="utf-8") as f:
             lines = f.readlines()
         cleaned_lines = remove_comments(lines, "sol")
         cleaned_content = "\n".join(cleaned_lines)
@@ -57,7 +61,7 @@ def find_contract_file(contract_name):
     matches = []
     for path in Path.cwd().rglob("*.sol"):
         try:
-            with open(path, 'r') as f:
+            with open(path) as f:
                 lines = f.readlines()
                 names = extract_contract_names(lines)
 
@@ -82,7 +86,7 @@ def analyze_contracts_via_summary(sol_file_path):
     max_inheritance_depth = 0
 
     try:
-        with open("contract_details.json", "r") as f:
+        with open("contract_details.json") as f:
             contract_details = json.load(f)
             contract_address = contract_details.get("contract_address")
     except Exception as e:
@@ -132,16 +136,18 @@ def analyze_contracts_via_summary(sol_file_path):
                     "md5": file_hash,
                     "sloc": sloc,
                     "tdp": tdp,
-                    "contract_address": contract_address
+                    "contract_address": contract_address,
                 }
 
-            contracts.append({
-                "contract": name,
-                "total_tcc": total_tcc,
-                "total_tec": total_tec,
-                "inheritance_depth": inheritance_depth,
-                "md5": file_hash
-            })
+            contracts.append(
+                {
+                    "contract": name,
+                    "total_tcc": total_tcc,
+                    "total_tec": total_tec,
+                    "inheritance_depth": inheritance_depth,
+                    "md5": file_hash,
+                }
+            )
 
         except Exception as e:
             print(f"⚠️ Error processing contract {contract.name}: {e}")
@@ -149,7 +155,7 @@ def analyze_contracts_via_summary(sol_file_path):
     return {
         "max_inheritance_depth": max_inheritance_depth,
         "contracts": contracts,
-        "files": list(files_info.values())
+        "files": list(files_info.values()),
     }
 
 

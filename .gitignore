@@ -1,2 +1,59 @@
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 venv/
+.venv/
+env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project specific
+*.json
+!package.json
+*.log
+output_contracts/
+contract_cache.json
+contract_graph.gexf
+eth
+eth_tvl
+euler-v2
+euler-v2.json
+avg_tvls.py_old
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
