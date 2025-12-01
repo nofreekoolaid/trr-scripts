@@ -48,7 +48,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         self.assertEqual(len(result), 3)
         # All rows should have raw data (tvl_raw is not None)
@@ -72,7 +72,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         self.assertEqual(len(result), 3)
         # Jan 1: raw data
@@ -93,7 +93,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", by_chain=False)
 
         self.assertEqual(len(result), 2)
         # Jan 1: no extrapolation by default, both fields are None
@@ -112,7 +112,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", extrapolate=True)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", extrapolate=True, by_chain=False)
 
         self.assertEqual(len(result), 2)
         # Jan 1: forward-fill from Jan 2 (fallback with only 1 data point)
@@ -130,7 +130,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", by_chain=False)
 
         self.assertEqual(len(result), 2)
         # Jan 1: raw data
@@ -149,7 +149,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", extrapolate=True)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", extrapolate=True, by_chain=False)
 
         self.assertEqual(len(result), 2)
         # Jan 1: raw data
@@ -171,7 +171,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-06")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-06", by_chain=False)
 
         self.assertEqual(len(result), 6)
         # Jan 1: raw
@@ -199,7 +199,7 @@ class TestTVLDataset(unittest.TestCase):
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
         with self.assertRaises(ValueError) as context:
-            get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-31")
+            get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-31", by_chain=False)
 
         self.assertIn("No TVL data available", str(context.exception))
 
@@ -210,7 +210,7 @@ class TestTVLDataset(unittest.TestCase):
         self.mock_get.return_value = mock_response
 
         with self.assertRaises(ValueError) as context:
-            get_tvl_dataset("test-protocol", "2024-01-01", "2024-01-31")
+            get_tvl_dataset("test-protocol", "2024-01-01", "2024-01-31", by_chain=False)
 
         self.assertIn("Error fetching data", str(context.exception))
 
@@ -222,7 +222,7 @@ class TestTVLDataset(unittest.TestCase):
         self.mock_get.return_value = mock_response
 
         with self.assertRaises(ValueError) as context:
-            get_tvl_dataset("test-protocol", "2024-01-01", "2024-01-31")
+            get_tvl_dataset("test-protocol", "2024-01-01", "2024-01-31", by_chain=False)
 
         self.assertIn("No TVL data found", str(context.exception))
 
@@ -361,7 +361,7 @@ class TestCLIOutput(unittest.TestCase):
 
     def test_dataset_format_for_csv(self):
         """Test that dataset format is suitable for CSV output"""
-        dataset = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        dataset = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         # Verify structure suitable for CSV
         self.assertIsInstance(dataset, list)
@@ -378,7 +378,7 @@ class TestCLIOutput(unittest.TestCase):
 
     def test_dataset_format_for_json(self):
         """Test that dataset format is suitable for JSON output"""
-        dataset = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        dataset = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         # Verify JSON serializable
         json_str = json.dumps(dataset)
@@ -417,7 +417,7 @@ class TestDefaultExtrapolationBehavior(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", by_chain=False)
 
         # All 5 dates should be included
         self.assertEqual(len(result), 5)
@@ -432,7 +432,7 @@ class TestDefaultExtrapolationBehavior(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", by_chain=False)
 
         # Jan 1, 2 (before data) should have None for both fields
         self.assertIsNone(result[0]["tvl_raw"])
@@ -489,7 +489,7 @@ class TestSeparateRawAndInterpolatedFields(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         # Jan 1: has raw data
         self.assertEqual(result[0]["tvl_raw"], 1000000.0)
@@ -508,7 +508,7 @@ class TestSeparateRawAndInterpolatedFields(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         for row in result:
             self.assertEqual(row["tvl_raw"], row["tvl_interpolated"])
@@ -524,7 +524,7 @@ class TestSeparateRawAndInterpolatedFields(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=False)
 
         # Jan 2: no raw data but has interpolated value
         self.assertIsNone(result[1]["tvl_raw"])
@@ -539,7 +539,7 @@ class TestSeparateRawAndInterpolatedFields(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", extrapolate=False)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", extrapolate=False, by_chain=False)
 
         # Jan 1: no raw and cannot interpolate (no previous data)
         self.assertIsNone(result[0]["tvl_raw"])
@@ -631,7 +631,7 @@ class TestExtrapolation(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True, by_chain=False)
 
         self.assertEqual(len(result), 5)
         
@@ -667,7 +667,7 @@ class TestExtrapolation(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True, by_chain=False)
 
         self.assertEqual(len(result), 5)
         
@@ -703,7 +703,7 @@ class TestExtrapolation(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False, by_chain=False)
 
         # Should have all 5 dates, Jan 1-2 with None TVL
         self.assertEqual(len(result), 5)
@@ -729,7 +729,7 @@ class TestExtrapolation(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False, by_chain=False)
 
         # Should have all 5 dates, Jan 4-5 with None TVL
         self.assertEqual(len(result), 5)
@@ -755,7 +755,7 @@ class TestExtrapolation(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True)
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True, by_chain=False)
 
         self.assertEqual(len(result), 5)
         
@@ -801,6 +801,197 @@ class TestExtrapolation(unittest.TestCase):
         
         # Without extrapolation should be 1.2M (None values are filtered out)
         self.assertAlmostEqual(avg_without, 1200000.0, places=2)
+
+
+class TestChainBreakdown(unittest.TestCase):
+    """Test the by_chain=True functionality"""
+
+    def setUp(self):
+        self.mock_response_patcher = mock.patch("avg_tvls.requests.get")
+        self.mock_get = self.mock_response_patcher.start()
+
+    def tearDown(self):
+        self.mock_response_patcher.stop()
+
+    def _create_mock_response_with_chains(self, chain_data: dict):
+        """Helper to create a mock API response with chainTvls"""
+        mock_response = mock.MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "tvl": [],  # Empty aggregate, chains only
+            "chainTvls": chain_data,
+        }
+        return mock_response
+
+    def test_by_chain_returns_chain_columns(self):
+        """Test that by_chain=True returns separate columns for each chain"""
+        base_date = datetime.date(2025, 1, 1)
+        chain_data = {
+            "Ethereum": {
+                "tvl": [
+                    make_tvl_entry(base_date, 1000000.0),
+                    make_tvl_entry(base_date + datetime.timedelta(days=1), 1100000.0),
+                ]
+            },
+            "Arbitrum": {
+                "tvl": [
+                    make_tvl_entry(base_date, 500000.0),
+                    make_tvl_entry(base_date + datetime.timedelta(days=1), 550000.0),
+                ]
+            },
+        }
+
+        self.mock_get.return_value = self._create_mock_response_with_chains(chain_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", by_chain=True)
+
+        self.assertEqual(len(result), 2)
+        # Check for chain columns
+        self.assertIn("Ethereum_raw", result[0])
+        self.assertIn("Ethereum_interpolated", result[0])
+        self.assertIn("Arbitrum_raw", result[0])
+        self.assertIn("Arbitrum_interpolated", result[0])
+        self.assertIn("total_raw", result[0])
+        self.assertIn("total_interpolated", result[0])
+
+    def test_chain_totals_sum_correctly(self):
+        """Test that total columns are sum of individual chain values"""
+        base_date = datetime.date(2025, 1, 1)
+        chain_data = {
+            "Ethereum": {
+                "tvl": [make_tvl_entry(base_date, 1000000.0)]
+            },
+            "Arbitrum": {
+                "tvl": [make_tvl_entry(base_date, 500000.0)]
+            },
+        }
+
+        self.mock_get.return_value = self._create_mock_response_with_chains(chain_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-01", by_chain=True)
+
+        # Total should be sum of chains
+        self.assertEqual(result[0]["total_raw"], 1500000.0)
+        self.assertEqual(result[0]["total_interpolated"], 1500000.0)
+
+    def test_chain_interpolation_independent(self):
+        """Test that each chain is interpolated independently"""
+        base_date = datetime.date(2025, 1, 1)
+        chain_data = {
+            "Ethereum": {
+                "tvl": [
+                    make_tvl_entry(base_date, 1000000.0),
+                    make_tvl_entry(base_date + datetime.timedelta(days=2), 1200000.0),
+                ]
+            },
+            "Arbitrum": {
+                "tvl": [
+                    # Missing Jan 1, has Jan 2 only
+                    make_tvl_entry(base_date + datetime.timedelta(days=1), 500000.0),
+                ]
+            },
+        }
+
+        self.mock_get.return_value = self._create_mock_response_with_chains(chain_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=True)
+
+        self.assertEqual(len(result), 3)
+        
+        # Jan 1: Ethereum has raw, Arbitrum has None (can't interpolate)
+        self.assertEqual(result[0]["Ethereum_raw"], 1000000.0)
+        self.assertIsNone(result[0]["Arbitrum_raw"])
+        self.assertIsNone(result[0]["Arbitrum_interpolated"])
+        
+        # Jan 2: Ethereum interpolated (1.1M), Arbitrum has raw
+        self.assertIsNone(result[1]["Ethereum_raw"])
+        self.assertAlmostEqual(result[1]["Ethereum_interpolated"], 1100000.0, places=2)
+        self.assertEqual(result[1]["Arbitrum_raw"], 500000.0)
+        
+        # Jan 3: Ethereum has raw (1.2M), Arbitrum has None
+        self.assertEqual(result[2]["Ethereum_raw"], 1200000.0)
+        self.assertIsNone(result[2]["Arbitrum_raw"])
+
+    def test_by_chain_excludes_borrowed_variants(self):
+        """Test that borrowed/staking/pool2 variants are excluded"""
+        base_date = datetime.date(2025, 1, 1)
+        chain_data = {
+            "Ethereum": {
+                "tvl": [make_tvl_entry(base_date, 1000000.0)]
+            },
+            "Ethereum-borrowed": {
+                "tvl": [make_tvl_entry(base_date, 800000.0)]
+            },
+            "borrowed": {
+                "tvl": [make_tvl_entry(base_date, 800000.0)]
+            },
+            "staking": {
+                "tvl": [make_tvl_entry(base_date, 200000.0)]
+            },
+        }
+
+        self.mock_get.return_value = self._create_mock_response_with_chains(chain_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-01", by_chain=True)
+
+        # Should only have Ethereum, not borrowed variants
+        self.assertIn("Ethereum_raw", result[0])
+        self.assertNotIn("Ethereum-borrowed_raw", result[0])
+        self.assertNotIn("borrowed_raw", result[0])
+        self.assertNotIn("staking_raw", result[0])
+        
+        # Total should only include Ethereum
+        self.assertEqual(result[0]["total_raw"], 1000000.0)
+
+    def test_by_chain_false_returns_aggregate(self):
+        """Test backward compatibility: by_chain=False returns aggregate data"""
+        base_date = datetime.date(2025, 1, 1)
+        
+        # Create response with both aggregate tvl and chainTvls
+        mock_response = mock.MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "tvl": [make_tvl_entry(base_date, 1500000.0)],
+            "chainTvls": {
+                "Ethereum": {"tvl": [make_tvl_entry(base_date, 1000000.0)]},
+                "Arbitrum": {"tvl": [make_tvl_entry(base_date, 500000.0)]},
+            },
+        }
+        self.mock_get.return_value = mock_response
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-01", by_chain=False)
+
+        # Should return aggregate format, not chain format
+        self.assertIn("tvl_raw", result[0])
+        self.assertIn("tvl_interpolated", result[0])
+        self.assertNotIn("Ethereum_raw", result[0])
+        self.assertEqual(result[0]["tvl_raw"], 1500000.0)
+
+    def test_chain_data_with_extrapolation(self):
+        """Test that extrapolation works with chain data"""
+        base_date = datetime.date(2025, 1, 2)
+        chain_data = {
+            "Ethereum": {
+                "tvl": [
+                    make_tvl_entry(base_date, 1000000.0),
+                    make_tvl_entry(base_date + datetime.timedelta(days=1), 1100000.0),
+                ]
+            },
+        }
+
+        self.mock_get.return_value = self._create_mock_response_with_chains(chain_data)
+
+        # Request range starting before data
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-03", by_chain=True, extrapolate=True)
+
+        self.assertEqual(len(result), 3)
+        
+        # Jan 1: extrapolated backward
+        self.assertIsNone(result[0]["Ethereum_raw"])
+        self.assertIsNotNone(result[0]["Ethereum_interpolated"])
+        
+        # Jan 2: raw data
+        self.assertEqual(result[1]["Ethereum_raw"], 1000000.0)
 
 
 if __name__ == "__main__":

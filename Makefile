@@ -16,6 +16,7 @@ help:
 	@echo "  make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-31"
 	@echo "  make tvl PROTOCOL=uniswap START=2024-12-01 END=2024-12-31 OPTS='--extrapolate'"
 	@echo "  make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15 OPTS='--mean'"
+	@echo "  make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-15 OPTS='--no-by-chain'"
 	@echo ""
 	@echo "Average TVL Examples:"
 	@echo "  make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"
