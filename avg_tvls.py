@@ -15,8 +15,8 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
     Dates are interpreted as UTC calendar days, and API timestamps are converted in UTC.
     
     For dates at the beginning or end of the range where data exists only on one side:
-    - If extrapolate=False (default): Returns None for TVL on these dates, indicating
-      no reliable value can be computed. All dates in the range are still included.
+    - If extrapolate=False (default): Returns None for tvl_interpolated on these dates,
+      indicating no reliable value can be computed. All dates in the range are still included.
     - If extrapolate=True: Uses linear extrapolation based on the two nearest 
       data points on that side to estimate the TVL value.
 
@@ -27,7 +27,11 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
     - extrapolate (bool): Whether to extrapolate values at start/end. Default: False.
 
     Returns:
-    - List of dictionaries with keys: 'date' (str), 'tvl' (float|None), 'is_interpolated' (bool)
+    - List of dictionaries with keys:
+      - 'date' (str): The date in YYYY-MM-DD format
+      - 'tvl_raw' (float|None): The actual raw data point, or None if no data exists for this date
+      - 'tvl_interpolated' (float|None): The interpolated/extrapolated value, equals tvl_raw when
+        raw data exists, computed value when interpolated, or None when cannot be computed
     """
     # Convert input dates to date objects
     start_dt = datetime.datetime.strptime(start_date, "%Y-%m-%d").date()
@@ -70,15 +74,16 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
     while current_date <= end_dt:
         if current_date in tvl_map:
             # Raw data exists
+            raw_tvl = tvl_map[current_date]
             result.append(
                 {
                     "date": current_date.isoformat(),
-                    "tvl": tvl_map[current_date],
-                    "is_interpolated": False,
+                    "tvl_raw": raw_tvl,
+                    "tvl_interpolated": raw_tvl,  # When raw exists, interpolated equals raw
                 }
             )
         else:
-            # Need to interpolate, extrapolate, or skip
+            # Need to interpolate, extrapolate, or return None
             prev_date, next_date = _find_nearest_dates(current_date, all_available_dates)
 
             if prev_date is not None and next_date is not None:
@@ -98,17 +103,17 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
                 result.append(
                     {
                         "date": current_date.isoformat(),
-                        "tvl": interpolated_tvl,
-                        "is_interpolated": True,
+                        "tvl_raw": None,
+                        "tvl_interpolated": interpolated_tvl,
                     }
                 )
             elif not extrapolate:
-                # No extrapolation: include date with None value
+                # No extrapolation: include date with None values
                 result.append(
                     {
                         "date": current_date.isoformat(),
-                        "tvl": None,
-                        "is_interpolated": True,
+                        "tvl_raw": None,
+                        "tvl_interpolated": None,
                     }
                 )
             elif prev_date is not None:
@@ -130,8 +135,8 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
                     result.append(
                         {
                             "date": current_date.isoformat(),
-                            "tvl": extrapolated_tvl,
-                            "is_interpolated": True,
+                            "tvl_raw": None,
+                            "tvl_interpolated": extrapolated_tvl,
                         }
                     )
                 else:
@@ -139,8 +144,8 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
                     result.append(
                         {
                             "date": current_date.isoformat(),
-                            "tvl": tvl_map[prev_date],
-                            "is_interpolated": True,
+                            "tvl_raw": None,
+                            "tvl_interpolated": tvl_map[prev_date],
                         }
                     )
             elif next_date is not None:
@@ -162,8 +167,8 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
                     result.append(
                         {
                             "date": current_date.isoformat(),
-                            "tvl": extrapolated_tvl,
-                            "is_interpolated": True,
+                            "tvl_raw": None,
+                            "tvl_interpolated": extrapolated_tvl,
                         }
                     )
                 else:
@@ -171,15 +176,15 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
                     result.append(
                         {
                             "date": current_date.isoformat(),
-                            "tvl": tvl_map[next_date],
-                            "is_interpolated": True,
+                            "tvl_raw": None,
+                            "tvl_interpolated": tvl_map[next_date],
                         }
                     )
             else:
                 # No data available at all (shouldn't happen if we have data in range)
                 if extrapolate:
                     result.append(
-                        {"date": current_date.isoformat(), "tvl": 0.0, "is_interpolated": True}
+                        {"date": current_date.isoformat(), "tvl_raw": None, "tvl_interpolated": 0.0}
                     )
 
         current_date += datetime.timedelta(days=1)
@@ -242,10 +247,10 @@ def get_average_tvl(protocol: str, start_date: str, end_date: str, extrapolate: 
     - extrapolate (bool): Whether to extrapolate values at start/end. Default: False.
 
     Returns:
-    - The average TVL over the given period.
+    - The average TVL over the given period (uses tvl_interpolated values).
     """
     dataset = get_tvl_dataset(protocol, start_date, end_date, extrapolate)
-    tvls = [row["tvl"] for row in dataset if row["tvl"] is not None]
+    tvls = [row["tvl_interpolated"] for row in dataset if row["tvl_interpolated"] is not None]
     if not tvls:
         raise ValueError("No TVL data available for averaging")
     return statistics.mean(tvls)
@@ -296,10 +301,11 @@ if __name__ == "__main__":
                 print(output)
             else:
                 # CSV output (default)
-                print("date,tvl,is_interpolated")
+                print("date,tvl_raw,tvl_interpolated")
                 for row in dataset:
-                    tvl_str = f"{row['tvl']:.2f}" if row['tvl'] is not None else ""
-                    print(f"{row['date']},{tvl_str},{str(row['is_interpolated']).lower()}")
+                    raw_str = f"{row['tvl_raw']:.2f}" if row['tvl_raw'] is not None else ""
+                    interp_str = f"{row['tvl_interpolated']:.2f}" if row['tvl_interpolated'] is not None else ""
+                    print(f"{row['date']},{raw_str},{interp_str}")
 
     except ValueError as e:
         print(f"Error: {e}", file=sys.stderr)
