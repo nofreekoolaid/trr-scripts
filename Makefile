@@ -14,7 +14,7 @@ help:
 	@echo "TVL Examples:"
 	@echo "  make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"
 	@echo "  make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-31"
-	@echo "  make tvl PROTOCOL=uniswap START=2024-12-01 END=2024-12-31 OPTS='--no-extrapolate'"
+	@echo "  make tvl PROTOCOL=uniswap START=2024-12-01 END=2024-12-31 OPTS='--extrapolate'"
 	@echo "  make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15 OPTS='--mean'"
 	@echo ""
 	@echo "Average TVL Examples:"
@@ -78,26 +78,26 @@ cichecks:
 
 # Get TVL data for a protocol
 # Usage: make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
-# Optional: OPTS='--no-extrapolate' or OPTS='--mean'
+# Optional: OPTS='--extrapolate' or OPTS='--mean'
 tvl:
 	@if [ -z "$(PROTOCOL)" ] || [ -z "$(START)" ] || [ -z "$(END)" ]; then \
 		echo "Error: Missing required parameters"; \
 		echo "Usage: make tvl PROTOCOL=<protocol> START=<start-date> END=<end-date>"; \
 		echo "Example: make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"; \
-		echo "Optional: Add OPTS='--mean' or OPTS='--no-extrapolate'"; \
+		echo "Optional: Add OPTS='--mean' or OPTS='--extrapolate'"; \
 		exit 1; \
 	fi
 	@uv run python avg_tvls.py $(PROTOCOL) $(START) $(END) $(OPTS)
 
-# Get average TVL for a protocol (with interpolation/extrapolation)
+# Get average TVL for a protocol (with interpolation)
 # Usage: make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
-# Optional: OPTS='--no-extrapolate' to disable extrapolation
+# Optional: OPTS='--extrapolate' to enable extrapolation at edges
 avgtvl:
 	@if [ -z "$(PROTOCOL)" ] || [ -z "$(START)" ] || [ -z "$(END)" ]; then \
 		echo "Error: Missing required parameters"; \
 		echo "Usage: make avgtvl PROTOCOL=<protocol> START=<start-date> END=<end-date>"; \
 		echo "Example: make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"; \
-		echo "Optional: Add OPTS='--no-extrapolate' to disable extrapolation"; \
+		echo "Optional: Add OPTS='--extrapolate' to enable extrapolation"; \
 		exit 1; \
 	fi
 	@uv run python avg_tvls.py $(PROTOCOL) $(START) $(END) --mean $(OPTS)

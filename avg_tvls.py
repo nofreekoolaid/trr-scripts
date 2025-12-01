@@ -8,26 +8,26 @@ from typing import Any, Optional
 import requests
 
 
-def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: bool = True) -> list[dict[str, Any]]:
+def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: bool = False) -> list[dict[str, Any]]:
     """
     Fetch the complete daily TVL dataset for a given protocol between start_date and end_date.
     Missing values are linearly interpolated between available data points.
     Dates are interpreted as UTC calendar days, and API timestamps are converted in UTC.
     
     For dates at the beginning or end of the range where data exists only on one side:
-    - If extrapolate=True (default): Uses linear extrapolation based on the two nearest 
+    - If extrapolate=False (default): Returns None for TVL on these dates, indicating
+      no reliable value can be computed. All dates in the range are still included.
+    - If extrapolate=True: Uses linear extrapolation based on the two nearest 
       data points on that side to estimate the TVL value.
-    - If extrapolate=False: Skips these dates, returning only dates that can be 
-      interpolated between two surrounding data points.
 
     Parameters:
     - protocol (str): The protocol name (as listed on DeFiLlama).
     - start_date (str): Start date in YYYY-MM-DD format (UTC).
     - end_date (str): End date in YYYY-MM-DD format (UTC).
-    - extrapolate (bool): Whether to extrapolate values at start/end. Default: True.
+    - extrapolate (bool): Whether to extrapolate values at start/end. Default: False.
 
     Returns:
-    - List of dictionaries with keys: 'date' (str), 'tvl' (float), 'is_interpolated' (bool)
+    - List of dictionaries with keys: 'date' (str), 'tvl' (float|None), 'is_interpolated' (bool)
     """
     # Convert input dates to date objects
     start_dt = datetime.datetime.strptime(start_date, "%Y-%m-%d").date()
@@ -103,8 +103,14 @@ def get_tvl_dataset(protocol: str, start_date: str, end_date: str, extrapolate: 
                     }
                 )
             elif not extrapolate:
-                # No extrapolation: skip dates that can't be interpolated between two points
-                pass
+                # No extrapolation: include date with None value
+                result.append(
+                    {
+                        "date": current_date.isoformat(),
+                        "tvl": None,
+                        "is_interpolated": True,
+                    }
+                )
             elif prev_date is not None:
                 # Only previous data exists - extrapolate forward using trend from two most recent points
                 # Find the two most recent data points before or at current_date
@@ -225,7 +231,7 @@ def _get_extrapolation_slope(
     return (tvl2 - tvl1) / days_between
 
 
-def get_average_tvl(protocol: str, start_date: str, end_date: str, extrapolate: bool = True) -> float:
+def get_average_tvl(protocol: str, start_date: str, end_date: str, extrapolate: bool = False) -> float:
     """
     Fetch and average the daily TVL for a given protocol between start_date and end_date.
 
@@ -233,13 +239,15 @@ def get_average_tvl(protocol: str, start_date: str, end_date: str, extrapolate: 
     - protocol (str): The protocol name (as listed on DeFiLlama).
     - start_date (str): Start date in YYYY-MM-DD format (UTC).
     - end_date (str): End date in YYYY-MM-DD format (UTC).
-    - extrapolate (bool): Whether to extrapolate values at start/end. Default: True.
+    - extrapolate (bool): Whether to extrapolate values at start/end. Default: False.
 
     Returns:
     - The average TVL over the given period.
     """
     dataset = get_tvl_dataset(protocol, start_date, end_date, extrapolate)
-    tvls = [row["tvl"] for row in dataset]
+    tvls = [row["tvl"] for row in dataset if row["tvl"] is not None]
+    if not tvls:
+        raise ValueError("No TVL data available for averaging")
     return statistics.mean(tvls)
 
 
@@ -262,25 +270,25 @@ if __name__ == "__main__":
         help="Output only the average TVL (backward compatibility mode)",
     )
     parser.add_argument(
-        "--no-extrapolate",
+        "--extrapolate",
         action="store_true",
-        help="Disable extrapolation at start/end dates. When disabled, only dates that can be "
-        "interpolated between two data points are included. By default, extrapolation is enabled "
-        "and uses linear extrapolation based on the two nearest data points to estimate values "
-        "at the beginning or end of the date range where data exists only on one side.",
+        help="Enable extrapolation at start/end dates. When enabled, uses linear extrapolation "
+        "based on the two nearest data points to estimate values at the beginning or end of the "
+        "date range where data exists only on one side. By default, extrapolation is disabled "
+        "and dates that cannot be interpolated will have None/null TVL values.",
     )
     args = parser.parse_args()
 
     try:
         if args.mean:
             # Backward compatibility: output only the mean
-            avg_tvl = get_average_tvl(args.protocol, args.start_date, args.end_date, extrapolate=not args.no_extrapolate)
+            avg_tvl = get_average_tvl(args.protocol, args.start_date, args.end_date, extrapolate=args.extrapolate)
             print(
                 f"Average TVL for {args.protocol} from {args.start_date} to {args.end_date}: ${avg_tvl:,.2f}"
             )
         else:
             # Output full dataset
-            dataset = get_tvl_dataset(args.protocol, args.start_date, args.end_date, extrapolate=not args.no_extrapolate)
+            dataset = get_tvl_dataset(args.protocol, args.start_date, args.end_date, extrapolate=args.extrapolate)
 
             if args.format == "json":
                 # JSON output
@@ -290,7 +298,8 @@ if __name__ == "__main__":
                 # CSV output (default)
                 print("date,tvl,is_interpolated")
                 for row in dataset:
-                    print(f"{row['date']},{row['tvl']:.2f},{str(row['is_interpolated']).lower()}")
+                    tvl_str = f"{row['tvl']:.2f}" if row['tvl'] is not None else ""
+                    print(f"{row['date']},{tvl_str},{str(row['is_interpolated']).lower()}")
 
     except ValueError as e:
         print(f"Error: {e}", file=sys.stderr)

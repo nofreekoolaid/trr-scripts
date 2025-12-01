@@ -80,8 +80,26 @@ class TestTVLDataset(unittest.TestCase):
         self.assertFalse(result[2]["is_interpolated"])
         self.assertEqual(result[2]["tvl"], 1200000.0)
 
-    def test_forward_fill_at_start(self):
-        """Test forward-fill when data is missing at the start of range (only one data point)"""
+    def test_no_extrapolation_at_start_by_default(self):
+        """Test that by default, data missing at the start has None TVL"""
+        # Data starts on Jan 2, but range starts on Jan 1
+        base_date = datetime.date(2025, 1, 2)
+        tvl_data = [make_tvl_entry(base_date, 1000000.0)]
+
+        self.mock_get.return_value = self._create_mock_response(tvl_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02")
+
+        self.assertEqual(len(result), 2)
+        # Jan 1: no extrapolation by default, TVL is None
+        self.assertTrue(result[0]["is_interpolated"])
+        self.assertIsNone(result[0]["tvl"])
+        # Jan 2: raw data
+        self.assertFalse(result[1]["is_interpolated"])
+        self.assertEqual(result[1]["tvl"], 1000000.0)
+
+    def test_forward_fill_at_start_with_extrapolation(self):
+        """Test forward-fill when data is missing at the start of range (with extrapolate=True)"""
         # Data starts on Jan 2, but range starts on Jan 1
         # With only one data point, should fallback to simple forward-fill
         base_date = datetime.date(2025, 1, 2)
@@ -89,7 +107,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", extrapolate=True)
 
         self.assertEqual(len(result), 2)
         # Jan 1: forward-fill from Jan 2 (fallback with only 1 data point)
@@ -99,8 +117,26 @@ class TestTVLDataset(unittest.TestCase):
         self.assertFalse(result[1]["is_interpolated"])
         self.assertEqual(result[1]["tvl"], 1000000.0)
 
-    def test_backward_fill_at_end(self):
-        """Test backward-fill when data is missing at the end of range (only one data point)"""
+    def test_no_extrapolation_at_end_by_default(self):
+        """Test that by default, data missing at the end has None TVL"""
+        # Data ends on Jan 1, but range ends on Jan 2
+        base_date = datetime.date(2025, 1, 1)
+        tvl_data = [make_tvl_entry(base_date, 1000000.0)]
+
+        self.mock_get.return_value = self._create_mock_response(tvl_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02")
+
+        self.assertEqual(len(result), 2)
+        # Jan 1: raw data
+        self.assertFalse(result[0]["is_interpolated"])
+        self.assertEqual(result[0]["tvl"], 1000000.0)
+        # Jan 2: no extrapolation by default, TVL is None
+        self.assertTrue(result[1]["is_interpolated"])
+        self.assertIsNone(result[1]["tvl"])
+
+    def test_backward_fill_at_end_with_extrapolation(self):
+        """Test backward-fill when data is missing at the end of range (with extrapolate=True)"""
         # Data ends on Jan 1, but range ends on Jan 2
         # With only one data point, should fallback to simple backward-fill
         base_date = datetime.date(2025, 1, 1)
@@ -108,7 +144,7 @@ class TestTVLDataset(unittest.TestCase):
 
         self.mock_get.return_value = self._create_mock_response(tvl_data)
 
-        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02")
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-02", extrapolate=True)
 
         self.assertEqual(len(result), 2)
         # Jan 1: raw data
@@ -352,6 +388,70 @@ class TestCLIOutput(unittest.TestCase):
         self.assertIn("is_interpolated", data[0])
 
 
+class TestDefaultExtrapolationBehavior(unittest.TestCase):
+    """Test the default extrapolation=False behavior"""
+
+    def setUp(self):
+        self.mock_response_patcher = mock.patch("avg_tvls.requests.get")
+        self.mock_get = self.mock_response_patcher.start()
+
+    def tearDown(self):
+        self.mock_response_patcher.stop()
+
+    def _create_mock_response(self, tvl_data):
+        """Helper to create a mock API response"""
+        mock_response = mock.MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {"tvl": tvl_data}
+        return mock_response
+
+    def test_all_dates_included_in_range(self):
+        """Test that all dates in range are included even without extrapolation"""
+        # Data only on Jan 3, range from Jan 1-5
+        base_date = datetime.date(2025, 1, 3)
+        tvl_data = [make_tvl_entry(base_date, 1000000.0)]
+
+        self.mock_get.return_value = self._create_mock_response(tvl_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05")
+
+        # All 5 dates should be included
+        self.assertEqual(len(result), 5)
+        dates = [row["date"] for row in result]
+        self.assertEqual(dates, ["2025-01-01", "2025-01-02", "2025-01-03", "2025-01-04", "2025-01-05"])
+
+    def test_edge_dates_have_none_tvl(self):
+        """Test that dates at edges without extrapolation have None TVL"""
+        # Data only on Jan 3, range from Jan 1-5
+        base_date = datetime.date(2025, 1, 3)
+        tvl_data = [make_tvl_entry(base_date, 1000000.0)]
+
+        self.mock_get.return_value = self._create_mock_response(tvl_data)
+
+        result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05")
+
+        # Jan 1, 2 (before data) should have None
+        self.assertIsNone(result[0]["tvl"])
+        self.assertIsNone(result[1]["tvl"])
+        # Jan 3 (raw data) should have value
+        self.assertEqual(result[2]["tvl"], 1000000.0)
+        # Jan 4, 5 (after data) should have None
+        self.assertIsNone(result[3]["tvl"])
+        self.assertIsNone(result[4]["tvl"])
+
+    def test_average_tvl_filters_none_values(self):
+        """Test that get_average_tvl filters out None values"""
+        # Data only on Jan 2, range from Jan 1-3
+        base_date = datetime.date(2025, 1, 2)
+        tvl_data = [make_tvl_entry(base_date, 1000000.0)]
+
+        self.mock_get.return_value = self._create_mock_response(tvl_data)
+
+        # Should only average the one valid value
+        avg = get_average_tvl("test-protocol", "2025-01-01", "2025-01-03")
+        self.assertEqual(avg, 1000000.0)
+
+
 class TestExtrapolationSlope(unittest.TestCase):
     """Test the _get_extrapolation_slope helper function"""
 
@@ -492,8 +592,8 @@ class TestExtrapolation(unittest.TestCase):
         self.assertTrue(result[4]["is_interpolated"])
         self.assertAlmostEqual(result[4]["tvl"], 1400000.0, places=2)
 
-    def test_no_extrapolate_skips_start_dates(self):
-        """Test that no_extrapolate=True skips dates at the start"""
+    def test_no_extrapolate_includes_start_dates_with_none(self):
+        """Test that extrapolate=False includes all dates but with None for edges"""
         # Data on Jan 3 and Jan 5, range from Jan 1-5
         base_date = datetime.date(2025, 1, 3)
         tvl_data = [
@@ -505,14 +605,21 @@ class TestExtrapolation(unittest.TestCase):
 
         result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False)
 
-        # Should only have Jan 3, 4, 5 (Jan 1-2 are skipped)
-        self.assertEqual(len(result), 3)
-        self.assertEqual(result[0]["date"], "2025-01-03")
-        self.assertEqual(result[1]["date"], "2025-01-04")
-        self.assertEqual(result[2]["date"], "2025-01-05")
+        # Should have all 5 dates, Jan 1-2 with None TVL
+        self.assertEqual(len(result), 5)
+        self.assertEqual(result[0]["date"], "2025-01-01")
+        self.assertIsNone(result[0]["tvl"])
+        self.assertEqual(result[1]["date"], "2025-01-02")
+        self.assertIsNone(result[1]["tvl"])
+        self.assertEqual(result[2]["date"], "2025-01-03")
+        self.assertEqual(result[2]["tvl"], 1100000.0)
+        self.assertEqual(result[3]["date"], "2025-01-04")
+        self.assertAlmostEqual(result[3]["tvl"], 1200000.0, places=2)
+        self.assertEqual(result[4]["date"], "2025-01-05")
+        self.assertEqual(result[4]["tvl"], 1300000.0)
 
-    def test_no_extrapolate_skips_end_dates(self):
-        """Test that no_extrapolate=True skips dates at the end"""
+    def test_no_extrapolate_includes_end_dates_with_none(self):
+        """Test that extrapolate=False includes all dates but with None for edges"""
         # Data on Jan 1 and Jan 3, range from Jan 1-5
         base_date = datetime.date(2025, 1, 1)
         tvl_data = [
@@ -524,11 +631,18 @@ class TestExtrapolation(unittest.TestCase):
 
         result = get_tvl_dataset("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False)
 
-        # Should only have Jan 1, 2, 3 (Jan 4-5 are skipped)
-        self.assertEqual(len(result), 3)
+        # Should have all 5 dates, Jan 4-5 with None TVL
+        self.assertEqual(len(result), 5)
         self.assertEqual(result[0]["date"], "2025-01-01")
+        self.assertEqual(result[0]["tvl"], 1000000.0)
         self.assertEqual(result[1]["date"], "2025-01-02")
+        self.assertAlmostEqual(result[1]["tvl"], 1100000.0, places=2)
         self.assertEqual(result[2]["date"], "2025-01-03")
+        self.assertEqual(result[2]["tvl"], 1200000.0)
+        self.assertEqual(result[3]["date"], "2025-01-04")
+        self.assertIsNone(result[3]["tvl"])
+        self.assertEqual(result[4]["date"], "2025-01-05")
+        self.assertIsNone(result[4]["tvl"])
 
     def test_extrapolation_with_negative_slope(self):
         """Test extrapolation with decreasing TVL"""
@@ -574,7 +688,7 @@ class TestExtrapolation(unittest.TestCase):
         # Average = (900k + 1M + 1.1M + 1.2M + 1.3M) / 5 = 5.5M / 5 = 1.1M
         avg_with = get_average_tvl("test-protocol", "2025-01-01", "2025-01-05", extrapolate=True)
         
-        # Without extrapolation (should have 3 days: Jan 3, 4, 5)
+        # Without extrapolation (Jan 1-2 have None, only uses Jan 3, 4, 5)
         # Jan 3 = 1.1M (raw), Jan 4 = 1.2M (interpolated), Jan 5 = 1.3M (raw)
         # Average = (1.1M + 1.2M + 1.3M) / 3 = 3.6M / 3 = 1.2M
         avg_without = get_average_tvl("test-protocol", "2025-01-01", "2025-01-05", extrapolate=False)
@@ -585,7 +699,7 @@ class TestExtrapolation(unittest.TestCase):
         # With extrapolation average should be 1.1M
         self.assertAlmostEqual(avg_with, 1100000.0, places=2)
         
-        # Without extrapolation should be 1.2M
+        # Without extrapolation should be 1.2M (None values are filtered out)
         self.assertAlmostEqual(avg_without, 1200000.0, places=2)
 
 
