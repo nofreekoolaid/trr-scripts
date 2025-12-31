@@ -1,4 +1,4 @@
-.PHONY: lint lint-fix format format-check test cichecks help
+.PHONY: lint lint-fix format format-check test cichecks tvl avgtvl help
 
 help:
 	@echo "Available commands:"
@@ -8,6 +8,20 @@ help:
 	@echo "  make format-check - Check formatting without changing files"
 	@echo "  make test         - Run tests"
 	@echo "  make cichecks     - Run all CI checks (test, lint, format-check)"
+	@echo "  make tvl          - Get TVL data (use: make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15)"
+	@echo "  make avgtvl       - Get average TVL (use: make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15)"
+	@echo ""
+	@echo "TVL Examples:"
+	@echo "  make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"
+	@echo "  make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-31"
+	@echo "  make tvl PROTOCOL=uniswap START=2024-12-01 END=2024-12-31 OPTS='--extrapolate'"
+	@echo "  make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15 OPTS='--mean'"
+	@echo "  make tvl PROTOCOL=aave START=2025-01-01 END=2025-01-15 OPTS='--no-by-chain'"
+	@echo ""
+	@echo "Average TVL Examples:"
+	@echo "  make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"
+	@echo "  make avgtvl PROTOCOL=aave START=2025-01-01 END=2025-01-31"
+	@echo "  make avgtvl PROTOCOL=compound START=2024-01-01 END=2024-12-31"
 
 lint:
 	uv run ruff check .
@@ -63,3 +77,28 @@ cichecks:
 		exit 1; \
 	fi
 
+# Get TVL data for a protocol
+# Usage: make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
+# Optional: OPTS='--extrapolate' or OPTS='--mean'
+tvl:
+	@if [ -z "$(PROTOCOL)" ] || [ -z "$(START)" ] || [ -z "$(END)" ]; then \
+		echo "Error: Missing required parameters"; \
+		echo "Usage: make tvl PROTOCOL=<protocol> START=<start-date> END=<end-date>"; \
+		echo "Example: make tvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"; \
+		echo "Optional: Add OPTS='--mean' or OPTS='--extrapolate'"; \
+		exit 1; \
+	fi
+	@uv run python avg_tvls.py $(PROTOCOL) $(START) $(END) $(OPTS)
+
+# Get average TVL for a protocol (with interpolation)
+# Usage: make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15
+# Optional: OPTS='--extrapolate' to enable extrapolation at edges
+avgtvl:
+	@if [ -z "$(PROTOCOL)" ] || [ -z "$(START)" ] || [ -z "$(END)" ]; then \
+		echo "Error: Missing required parameters"; \
+		echo "Usage: make avgtvl PROTOCOL=<protocol> START=<start-date> END=<end-date>"; \
+		echo "Example: make avgtvl PROTOCOL=euler START=2025-01-01 END=2025-01-15"; \
+		echo "Optional: Add OPTS='--extrapolate' to enable extrapolation"; \
+		exit 1; \
+	fi
+	@uv run python avg_tvls.py $(PROTOCOL) $(START) $(END) --mean $(OPTS)
