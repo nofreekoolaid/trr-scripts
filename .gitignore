@@ -60,3 +60,4 @@ htmlcov/
 
 # Ruff cache
 .ruff_cache/
+node_modules/
