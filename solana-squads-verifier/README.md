@@ -1,11 +1,11 @@
-# Squads Multisig Verifier
+# Squads Multisig Verifier (Python)
 
-A CLI tool to verify Squads v4 multisig configuration for Solana programs. Analyzes upgrade authorities, threshold requirements (n-of-m), and timelock durations.
+Verify Squads v4 multisig configuration for Solana programs. Analyzes upgrade authorities, threshold requirements (n-of-m), and timelock durations.
 
 ## Installation
 
 ```bash
-npm install
+pip install -r requirements.txt
 ```
 
 ## Prerequisites
@@ -26,29 +26,29 @@ export SOLANA_RPC_URL=https://your-rpc-endpoint.com
 
 ```bash
 # Basic usage
-npx ts-node src/cli.ts program <programId>
+python -m squads_verifier program <programId>
 
 # With name for display
-npx ts-node src/cli.ts program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD --name "Klend"
+python -m squads_verifier program KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD --name "Klend"
 
 # Output as JSON
-npx ts-node src/cli.ts program <programId> --format json
+python -m squads_verifier program <programId> --format json
 
 # Output as Markdown
-npx ts-node src/cli.ts program <programId> --format markdown
+python -m squads_verifier program <programId> --format markdown
 
 # Save to file
-npx ts-node src/cli.ts program <programId> --output report.md --format markdown
+python -m squads_verifier program <programId> --output report.md --format markdown
 ```
 
 ### Analyze a Multisig Directly
 
 ```bash
 # By multisig address
-npx ts-node src/cli.ts multisig <multisigAddress>
+python -m squads_verifier multisig <multisigAddress>
 
 # JSON output
-npx ts-node src/cli.ts multisig <multisigAddress> --format json
+python -m squads_verifier multisig <multisigAddress> --format json
 ```
 
 ### Batch Verify Multiple Programs
@@ -57,37 +57,49 @@ Create a JSON file with programs to verify:
 
 ```json
 [
-  { "programId": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD", "name": "Klend" },
-  { "programId": "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH", "name": "Drift" }
+  { "program_id": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD", "name": "Klend" },
+  { "program_id": "dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH", "name": "Drift" }
 ]
 ```
 
 Run batch verification:
 
 ```bash
-npx ts-node src/cli.ts batch programs.json
+python -m squads_verifier batch programs.json
 
 # Output formats: summary (default), json, markdown
-npx ts-node src/cli.ts batch programs.json --format json --output results.json
+python -m squads_verifier batch programs.json --format json --output results.json
 ```
 
 ### List Well-Known Programs
 
 ```bash
-npx ts-node src/cli.ts list-known
+python -m squads_verifier list-known
 ```
 
-## Output Formats
+## Example Output
 
-### Table (default)
 ```
 ──────────────────────────────────────────────────────────────────────
-MULTISIG: 6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+PROGRAM: Klend
 ──────────────────────────────────────────────────────────────────────
-Threshold:          5 of 10
-Timelock:           4.0 hours
-Timelock (seconds): 14400
-Create Key:         Cyv5n1Ct4wLzCJoM7BDgwxkQ6rAZyyPAGWUu1yqF1Se1
+Program Information:
+  Program ID:         KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD
+  ProgramData:        9uSbGW1y9H5Av6H5TKxQ1wnFApSq2t3oEpfF2YfjDQGA
+  Upgrade Authority:  GzFgdRJXmawPhGeBsyRCDLx4jAKPsvbUqoqitzppkzkW
+  Is Upgradeable:     Yes
+
+Vault Information:
+  Vault Address:      GzFgdRJXmawPhGeBsyRCDLx4jAKPsvbUqoqitzppkzkW
+  Parent Multisig:    6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+  Vault Index:        0
+
+Multisig Configuration:
+  Multisig Address:   6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM
+  Threshold:          5 of 10
+  Timelock:           4.0 hours
+  Timelock (seconds): 14400
+  Create Key:         Cyv5n1Ct4wLzCJoM7BDgwxkQ6rAZyyPAGWUu1yqF1Se1
 
 Members:
   5ggs2vd1csz74YMCzxesmcUEd3ycYFKAW6kfyttVYwBv
@@ -95,46 +107,22 @@ Members:
   ...
 ```
 
-### JSON
-```json
-{
-  "address": "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM",
-  "threshold": 5,
-  "memberCount": 10,
-  "thresholdDisplay": "5 of 10",
-  "timeLockSeconds": 14400,
-  "timeLockHours": 4,
-  "timeLockDisplay": "4.0 hours",
-  "members": [...]
-}
-```
-
-### Markdown
-Formatted report suitable for documentation.
-
 ## Programmatic Usage
 
-```typescript
-import { Connection } from "@solana/web3.js";
-import { verifyProgram, verifyMultisigDirect } from "squads-verifier";
+```python
+from squads_verifier import verify_program, verify_multisig_direct
 
-const connection = new Connection("https://api.mainnet-beta.solana.com");
+# Verify a program
+result = verify_program(
+    "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+    program_name="Klend"
+)
 
-// Verify a program
-const result = await verifyProgram(
-  connection,
-  "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
-  "Klend"
-);
+print(result.multisig.threshold_display)  # "5 of 10"
+print(result.multisig.time_lock_hours)    # 4.0
 
-console.log(result.multisig?.thresholdDisplay); // "5 of 10"
-console.log(result.multisig?.timeLockHours);    // 4
-
-// Analyze multisig directly
-const multisig = await verifyMultisigDirect(
-  connection,
-  "6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM"
-);
+# Analyze multisig directly
+multisig = verify_multisig_direct("6hhBGCtmg7tPWUSgp3LG6X2rsmYWAc4tNsA6G4CnfQbM")
 ```
 
 ## What It Checks
@@ -173,6 +161,6 @@ const multisig = await verifyMultisigDirect(
 
 ## Dependencies
 
-- `@solana/web3.js` - Solana SDK
-- `@sqds/multisig` - Official Squads v4 SDK
-- `commander` - CLI framework
+- `requests` - HTTP client for Solana RPC
+- `base58` - Base58 encoding/decoding
+- `click` - CLI framework
